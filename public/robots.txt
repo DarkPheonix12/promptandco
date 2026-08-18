@@ -1,0 +1,35 @@
+# robots.txt for Prompt&Co.
+# Allow all legitimate search and AI crawlers
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# OpenAI - allows content to appear in ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# Other legitimate AI crawlers
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://promptco.online/sitemap.xml
