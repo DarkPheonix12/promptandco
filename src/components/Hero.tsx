@@ -46,6 +46,7 @@ export function Hero() {
         // Done typing, trigger analyze after short pause
         typingTimerRef.current = setTimeout(() => {
           setDemoPhase("analyzing");
+          setIsAnalyzing(true);
         }, 600);
       }
     };
@@ -61,7 +62,6 @@ export function Hero() {
   useEffect(() => {
     if (demoPhase !== "analyzing") return;
 
-    setIsAnalyzing(true);
     typingTimerRef.current = setTimeout(() => {
       setIsAnalyzing(false);
       setShowResults(true);
@@ -79,6 +79,9 @@ export function Hero() {
 
     typingTimerRef.current = setTimeout(() => {
       setDemoPhase("resetting");
+      setShowResults(false);
+      setPromptText("");
+      demoQueryIdx.current += 1;
     }, 5000);
 
     return () => {
@@ -89,10 +92,6 @@ export function Hero() {
   // Resetting phase — go back to input, then next query
   useEffect(() => {
     if (demoPhase !== "resetting") return;
-
-    setShowResults(false);
-    setPromptText("");
-    demoQueryIdx.current += 1;
 
     typingTimerRef.current = setTimeout(() => {
       setDemoPhase("typing");

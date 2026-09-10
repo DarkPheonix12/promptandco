@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -483,13 +484,13 @@ export default function ContactPage() {
                       </div>
 
                       {/* Back to home */}
-                      <a
+                      <Link
                         href="/"
                         className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors"
                       >
                         <Icon name="arrow-right" size={14} className="rotate-180" />
                         Back to home
-                      </a>
+                      </Link>
                     </div>
                   </motion.div>
                 )}

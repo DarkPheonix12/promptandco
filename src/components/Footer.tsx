@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Icon } from "./Icons";
 import { AnimatedLogo } from "./AnimatedLogo";
 
@@ -49,12 +50,12 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-3">
+            <Link href="/" className="flex items-center gap-2 mb-3">
               <AnimatedLogo size={32} />
               <span className="text-lg font-bold tracking-tight">
                 Prompt<span className="text-brand-accent">&</span>Co.
               </span>
-            </a>
+            </Link>
             <p className="text-xs text-white/40 leading-relaxed max-w-[260px] mb-5">
               AI search optimization agency specializing in AEO, GEO, entity
               optimization, content and authority across the AI search

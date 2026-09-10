@@ -270,7 +270,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Build and send the AI visibility report email
-      const reportHtml = buildReportEmail(scrapedData, analysis, data.improve);
+      const reportHtml = buildReportEmail(scrapedData, analysis);
 
       const reportResult = await resend.emails.send({
         from: FROM_EMAIL,

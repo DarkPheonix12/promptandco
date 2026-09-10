@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const aiNodes = [
@@ -55,7 +55,6 @@ function ConnectionLine({
 
 export function SearchShift() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
     <section

@@ -9,14 +9,6 @@ function getScoreColor(score: number): string {
   return "#dc2626";
 }
 
-function getScoreBg(score: number): string {
-  if (score >= 80) return "#16a34a";
-  if (score >= 70) return "#65a30d";
-  if (score >= 60) return "#d97706";
-  if (score >= 50) return "#ca8a04";
-  return "#dc2626";
-}
-
 function getScoreLabel(score: number): { text: string; description: string } {
   if (score >= 80) return { text: "Strong", description: "Your AI visibility is performing well. Focus on maintaining and scaling what's working." };
   if (score >= 70) return { text: "Good", description: "Solid foundation with room to grow. A few targeted optimizations can push you ahead of competitors." };
@@ -32,8 +24,7 @@ function getOverallScore(scores: AnalysisResult["scores"]): number {
 
 export function buildReportEmail(
   scrapedData: ScrapedData,
-  analysis: AnalysisResult,
-  goal: string
+  analysis: AnalysisResult
 ): string {
   const overallScore = getOverallScore(analysis.scores);
   const overallColor = getScoreColor(overallScore);

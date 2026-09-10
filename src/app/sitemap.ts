@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { posts } from "@/content/research";
 
 const baseUrl = "https://promptco.online";
 
@@ -77,5 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/glossary`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 },
   ];
 
-  return [...staticPages, ...servicePages, ...industryPages, ...locationPages, ...resourcePages];
+  const researchPages = posts.map((post) => ({
+    url: `${baseUrl}/resources/research/${post.meta.slug}`,
+    lastModified: new Date(post.meta.dateModified),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...servicePages, ...industryPages, ...locationPages, ...resourcePages, ...researchPages];
 }

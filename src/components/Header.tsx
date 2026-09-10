@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { navigation } from "@/lib/data";
 import { Icon } from "./Icons";
 import { AnimatedLogo } from "./AnimatedLogo";
@@ -27,12 +28,12 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-15 lg:h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <AnimatedLogo size={36} />
             <span className="text-lg font-bold text-brand-dark tracking-tight">
               Prompt<span className="text-brand-primary">&</span>Co.
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">

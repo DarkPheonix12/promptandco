@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1e"/>
+      <stop offset="35%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0a0f1e"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="260" fill="url(#brand)" opacity="0.14"/>
+  <circle cx="180" cy="540" r="300" fill="#2563eb" opacity="0.08"/>
+  <text x="80" y="150" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="6" fill="#2563eb">PROMPT&amp;CO.</text>
+  <text x="80" y="360" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Be the brand AI recommends.</text>
+  <rect x="80" y="420" width="110" height="6" rx="3" fill="url(#brand)"/>
+  <text x="80" y="470" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#94a3b8">AEO · GEO · AI Search Optimization</text>
+  <text x="80" y="530" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#64748b">2026 AI Citation Study — now on promptco.online</text>
+</svg>

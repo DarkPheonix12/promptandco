@@ -1,0 +1,256 @@
+export const meta = {
+  slug: "2026-ai-citation-study",
+  title:
+    "The 2026 AI Citation Study: Who Actually Gets Cited by AI — and What the Data Says You Can Control",
+  description:
+    "A source-by-source synthesis of the published 2026 AI-citation research: how ChatGPT, Perplexity, Gemini, AI Overviews, AI Mode, Copilot and Claude cite sources, where the studies disagree, and which levers have evidence behind them.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Research",
+  tags: ["AI search", "citations", "GEO", "AEO", "brand visibility"],
+  readingTimeMinutes: 14,
+  faq: [
+    {
+      question: "What is an AI citation?",
+      answer:
+        "An AI citation is a named source — a website, domain, brand, study or dataset — that an AI assistant includes in its answer to a question. It is the unit of visibility in AI search: if your brand is not cited, it is effectively not present.",
+    },
+    {
+      question: "Why do the published overlap numbers disagree so much?",
+      answer:
+        "The studies measure different things. Some count how many AI-cited URLs also rank in Google's top 10, others measure how much two AI engines draw from the same source pool, and still others track overlap of the same query across engines over time. Different baskets, definitions and engines produce numbers that range from roughly 20% to 55% — none are wrong, they are measuring different claims.",
+    },
+    {
+      question: "Should I optimize for rankings or for AI citations?",
+      answer:
+        "Both, but the two are no longer the same job. Across the largest 2025–2026 datasets, roughly one-third of AI-cited URLs also rank in Google's top 10, and the reverse — cited pages that rank — is even lower. Ranking helps, but the evidence points to citation-specific work: named sources in third-party content, freshness, honest structured data, and presence on the platforms AI systems reference.",
+    },
+    {
+      question: "How long does an AI citation last?",
+      answer:
+        "Not long. A 2026 longitudinal study covering eight models across ten months found that 73.5% of cited URLs appeared exactly once, and that brand-level citation presence decays with a half-life around 31 days. The same body of research recommends remeasuring on 2–4 week windows.",
+    },
+    {
+      question: "Can I make an AI assistant cite me directly?",
+      answer:
+        "There is no direct submission or guaranteed formula. The evidence points to strengthening the signals that co-occur with citations: being a named source in authoritative third-party content, keeping pages updated, adding honest structured data, and making content technically accessible to crawlers.",
+    },
+    {
+      question: "How often should I measure my AI visibility?",
+      answer:
+        "More often than SEO taught you. Best-practice studies recommend 7–8 or more repeated prompts per query within a measurement run, and remeasurement windows of 2–4 weeks, because single-run numbers are noisy: repeated runs of the same prompt can show source overlap as low as 32–43%.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **AI citation** — a named source (site, domain, brand, study or dataset) that an AI
+  assistant includes in its answer. It is the unit of visibility in AI search: if an AI
+  doesn't cite you, you aren't in the answer. This report is a synthesis of the published
+  2026 research — what it agrees on, where it contradicts itself, and what it says you can
+  actually control.
+</DefinitionCard>
+
+By September 2026, the question "who does AI cite?" has moved from speculation to
+measurement. A wave of public datasets spanning millions of AI answers makes it possible to
+see how ChatGPT, Perplexity, Gemini, Google AI Overviews, AI Mode and Copilot behave as
+citers. The findings are useful and sometimes counterintuitive. But the numbers also
+disagree with each other, sometimes sharply — and the difference is method, not error.
+
+This is the edition we can publish honestly today: a source-by-source synthesis of that
+research, an explanation of why the headline numbers conflict, a per-engine read of
+citation behavior, and a playbook of the levers that have evidence behind them. We also lay
+out the original panel we are building, because as of today no public dataset covers all six
+engines with an open, replicable method.
+
+## The headlines worth knowing
+
+**AI is present in roughly half of US searches.** BrightEdge's tracking put AI Overviews
+presence around 48% of queries in early 2026, with wide variance by vertical — roughly 88%
+for healthcare, 83% for education, 82% for B2B technology, and low single digits for some
+retail query patterns. Different trackers use different methods, so treat any single number
+as a range, not a fact.
+
+**Most citations are one-and-done.** The most robust finding in the field is that citation
+pools are shallow and volatile. Across ten months and eight models, Trakkr found 73.5% of
+cited URLs appeared only once, with brand-level citation presence decaying at a half-life of
+about 31 days. In parallel, Wellows reported 79.6% of sources cited by exactly one engine
+(just 0.31% cited by all five), and SurfacedBy put the "single engine only" figure at 69.6%.
+
+**Gemini is the outlier citer.** Across the cloro, SurfacedBy and OtterlyAI datasets, Gemini
+cites sources in only about 41% of answers while the other engines cite 95–98% of the time.
+If your brand is invisible in Gemini answers, that may be a symptom of Gemini's lower
+citation rate rather than of you.
+
+**Ranking and being cited are different jobs.** The overlap between "ranks in Google's top
+10" and "gets cited by AI" consistently lands around 32–38% across the largest datasets
+(Ahrefs 37.9%, seoClarity ~32%, DerivateX 35%), while the reverse — cited pages that rank —
+is much lower. Rank helps; it is not the same game.
+
+**Freshness and structure compound.** Content updated within roughly the last month is cited
+at materially higher rates across large citation samples, and pages using how-to or FAQ
+structured data are cited at multiples of pages without it. Both are good news, because both
+are under your control.
+
+## Why the studies disagree (and how to read them)
+
+The most confusing thing about AI-search coverage is that the "overlap" story points in
+opposite directions at the same time. Three statements are all true:
+
+- **5WPR tracked a collapse**: overlap between AI answers and traditional top-10 rankings
+  fell from roughly 70% to under 20% across about two years of tracked branded queries.
+- **BrightEdge tracked a rise**: AI Overviews' overlap with the organic top 10 rose from
+  around 32% in May 2024 to roughly 54.5% by late 2025.
+- **Ahrefs, seoClarity, DerivateX and The Stacc measured a stable middle**: about 32–38% of
+  AI-cited URLs also rank in the organic top 10.
+
+When studies contradict each other, the answer is method:
+
+| Study | What "overlap" means | Scale | Result |
+| --- | --- | --- | --- |
+| Ahrefs (2026-03) | % of AI-cited URLs that also rank top 10 | 4M cited URLs, 863K keywords | ~37.9% |
+| seoClarity (2025-10) | % of top sources for cited keywords that rank top 10 | 362K keywords | ~32% |
+| DerivateX (2026-07) | Cross-engine source overlap, B2B queries | 100 queries, 1,259 citations | ~35% |
+| The Stacc (2026-05) | % of cited pages ranking in top 10 | 1,000 AI Overviews | 38% |
+| BrightEdge (2025-09) | AIO vs organic top-10 overlap trend | Longitudinal | 32% → ~54.5% |
+| 5WPR (2026-05) | AI answer vs ranking overlap, branded queries | ~2 years tracked | ~70% → &lt;20% |
+
+The reconciliation matters more than any single number:
+
+- **"Cited pages that rank"** — a URL already ranking in Google's top 10 that then gets
+  cited — is what most studies measure, and it is modest (~32–38%) and drifting.
+- **"Ranking pages that get cited"** is far lower; position helps but is no guarantee.
+- **"Collapse vs rise"** is partly a surface difference. AI Overviews increasingly mirrors
+  Google's own top results (BrightEdge's rising line), while standalone assistants such as
+  ChatGPT build their own pools (5WPR's falling line). Neither study is wrong; they are
+  tracking different engines through different phases.
+
+The practical takeaway: treat every single overlap number with suspicion, and never bet a
+strategy on one engine's snapshot.
+
+## How each engine cites (per-engine signatures)
+
+Across the 2026 datasets, the engines display distinct, reproducible citation personalities:
+
+| Engine | Sources per answer (typical) | Citation rate | Distinctive behavior |
+| --- | --- | --- | --- |
+| ChatGPT (Search) | ~3.7–12 depending on study | Cites in 95%+ of answers | Large unique source pool (~76% of its citations are unique to it in one large sample); rotates UGC and community pages heavily. |
+| Google AI Mode | ~17–20 | High | Source-dense; leans on top domains (~58% from top-10 domains in one instrumentation study); shares only ~13.7% of URLs with classic AI Overviews. |
+| Google AI Overviews | ~4.2 | High | Listicle-friendly; Wikipedia ~24%, Reddit ~22%, YouTube ~23% of cited domains in one 1,000-AIO sample; about 47% of citations go to the top 1% of domains. |
+| Perplexity | High | 95%+ | Most link-transparent assistant; citation density high and stable. |
+| Copilot | ~5 | High | Sparser citations, fewer sources per answer. |
+| Gemini | ~11 (SurfacedBy) | **~41%** | The outlier: cites in well under half of answers; when it does cite, it is source-dense. |
+| Claude | — | High | The outlier in source type: it largely avoids UGC — about 0.02% of Claude's citations went to YouTube in a five-engine study, far below the 20%+ typical of other engines. Prefers documentation and primary sources. |
+
+Two structural patterns stand out.
+
+**Assistants recycle a small elite, then fan out.** The Stacc found the top 1% of domains
+collected roughly 47% of citations across 1,000 AI Overviews; health vertical analyses show
+similar concentration (top-10 domains ≈ 71% of citations, led by NIH, Mayo Clinic and CDC).
+If you are not in the elite for your category, your fight is real but winnable — the other
+~53% is a long tail of thousands of mid-sized domains.
+
+**The engines diverge on where they look.** The source-type signature differs sharply: AI
+Overviews lean on encyclopedic and community domains (Wikipedia, Reddit, YouTube); ChatGPT
+rotates UGC and product pages while its Reddit share collapsed from ~60% to ~10% in the
+100M-citation sample Semrush analyzed; and Claude filters out UGC almost entirely in favor of
+primary documentation. A single "make yourself citable" playbook is the wrong answer; the
+right playbook is engine-aware.
+
+## What the evidence says is under your control
+
+The strongest, most replicable levers come from controlled experiments and replications
+(Aggarwal et al., KDD 2024, plus published replications) and large citation datasets:
+
+| Lever | Evidence | Source type |
+| --- | --- | --- |
+| Named sources (expert quotes + attribution) | ~+41% visibility in controlled GEO tests | Controlled experiment |
+| Statistics and data in answers | ~+33% visibility | Controlled experiment |
+| Citations and references in content | ~+28% visibility | Controlled experiment |
+| FAQ structured data | ~+44% in experiment; FAQ/how-to schema cited at ~2.3–2.8× baseline in a 1,000-AIO sample | Experiment + correlation |
+| Freshness (updated within ~30 days) | ~3.2× citation rate in a large citation sample | Correlation |
+| Brand mentions → citations | Only ~23% of brand mentions become citations — being named is necessary but not sufficient | Point-in-time dataset |
+
+And the negative controls: in the same experiments, keyword stuffing actively reduced
+visibility (about −8%). Google has stated it gives no special ranking weight to `llms.txt`.
+And promises to "get you into ChatGPT" or guaranteed citations have no basis in the technical
+literature.
+
+Underneath everything is accessibility. When OtterlyAI examined a million-citation sample,
+roughly 73% of sites carried at least one technical barrier that could prevent citation —
+primarily client-side rendering that hides content from crawlers. If an AI agent cannot parse
+your page's raw HTML, nothing else you do matters.
+
+## Why you should check the engine, not default to Google
+
+One underreported pattern: for commercial and review-style queries, AI answers are heavily
+populated by third-party listicles and comparison content. DerivateX found that roughly 63%
+of the AI-cited sources in its B2B topic set were exactly that kind of content.
+
+The implications are awkward but actionable:
+
+- **Own the source pattern.** If listicles and comparisons win, you cannot just build pages —
+  you need your brand named inside the formats AI cites from, on authoritative domains.
+- **Build cadence, not one-shot hits.** Trakkr's ~31-day half-life and 5WPR's 3–5 day
+  citation-pool churn say: measure, then move, then measure again. Citation equity does not
+  compound the way backlinks were taught to.
+- **Don't measure once.** The most replicable methodology advice (Schulte and colleagues,
+  2026) is blunt: run each query 7–8 or more times per session, remeasure on 2–4 week
+  windows, and expect 32–43% source overlap between runs of the same prompt. Your KPI is a
+  distribution, not a point.
+
+## The gap we're closing: the Prompt&Co. AI Citation Panel
+
+Every dataset above has a limitation — and they are all different:
+
+- **Coverage.** Only one public commercial dataset covers all six ecosystems including
+  Claude. Most cover three to five.
+- **Replicability.** Almost none publish their full query basket and dates, so nobody can
+  re-run them or compare series over time.
+- **Tool bias.** Some trackers also sell the tooling they measure with, which can inflate the
+  appearance of their own sources.
+- **No random baseline.** Few publish the "how much overlap would happen by chance" reference
+  point that every overlap number needs to be read against.
+
+Our original panel — what we will publish as **Edition 01** in the coming weeks — is designed
+against those gaps: a frozen basket of query and prompt sets, all six engines (ChatGPT,
+Perplexity, Gemini, AI Overviews plus AI Mode, Copilot, Claude), repeated runs per query,
+published dates, and cross-engine overlap normalized against a random baseline. The method,
+the basket and the raw tables get published rather than gated. This article sets the stage
+for that panel; the next editions will be the data.
+
+If you would like to know what your brand currently looks like inside these answers, that is
+the shortest conversation we have — a free **AI visibility audit** across the same engines.
+[Start it here](/contact).
+
+## Sources & notes
+
+- Trakkr — AI citations across 108K URLs, 8 models, 10 months: half-life and volatility (2026).
+- Wellows — 22.7M citations: source pools and cross-engine overlap (2026).
+- SurfacedBy — 5-engine citation study: 127,198 citations including Claude (2026).
+- Ahrefs — SEO and AI: 4M AI Overview-cited URLs, 863K keywords (March 2026).
+- seoClarity — AI search visibility: 362K cited keywords and ranking overlap (October 2025).
+- DerivateX — B2B overlap audit: 100 queries, 1,259 citations (July 2026).
+- The Stacc — 1,000 AI Overviews: domain concentration and schema multipliers (May 2026).
+- BrightEdge — ZERO guide: AI Overview presence and overlap tracking (September 2025 / February 2026).
+- 5WPR — AI vs rankings longitudinal overlap study (May 2026).
+- cloro — State of AI Search and AI Search Index: engine citation rates, source counts, and
+  the 735-query frozen-basket precedent (July 2026).
+- OtterlyAI — 1M AI citations: technical-barrier analysis (February 2026).
+- BuzzStream — 12,000 AI responses: mention-to-citation conversion and AI Mode source counts (June 2026).
+- Aggarwal et al. — AEO/GEO controlled experiments, KDD 2024, plus published replications:
+  expert quotes, statistics, citations, FAQ schema, and the keyword-stuffing penalty.
+- Schulte and colleagues — "Don't Measure Once": repeated-run methodology and source Jaccard ranges (2026).
+- Ranqo — 102K prompt responses: brand ladder, own-domain share and listicle formats, [arXiv:2606.20065](https://arxiv.org/abs/2606.20065) (2026).
+- Semrush — 100M AI citations: Reddit share shift and LinkedIn shares by engine (2026).
+- Machine Relations / Presenc — vertical citation-concentration research for healthcare and SaaS (2026).
+
+**Data caveats.** AI assistants change deployment constantly; these are point-in-time
+studies with differing methods and dates. We report them as published and flag where they
+conflict. Where you see "typical", the figure varies by study and query set. We do not claim
+access to any engine's internal ranking data — only to what the engines return to prompts,
+which is what these studies (and our future panel) capture.
+
+**Conflicts of interest.** No tracker whose data we cite paid for, sponsored, or was involved
+in this page. When our own panel launches, its method and conflicts will be published
+alongside the data.
