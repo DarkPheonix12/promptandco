@@ -10,6 +10,7 @@ import { Methodology } from "@/components/Methodology";
 import { Industries } from "@/components/Industries";
 import { Testimonials } from "@/components/Testimonials";
 import { CaseStudies } from "@/components/CaseStudies";
+import { Founders } from "@/components/Founders";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -62,7 +63,10 @@ export default function Home() {
         {/* 10. Case Studies */}
         <CaseStudies />
 
-        {/* 11. FAQ */}
+        {/* 11. Know the Founders */}
+        <Founders />
+
+        {/* 12. FAQ */}
         <FAQ />
 
         {/* 12. Final CTA */}
