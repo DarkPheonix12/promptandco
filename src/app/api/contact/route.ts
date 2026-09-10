@@ -4,7 +4,9 @@ import { scrapeWebsite } from "@/lib/scraper";
 import { analyzeWithGemini } from "@/lib/gemini";
 import { buildReportEmail } from "@/lib/email-templates";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 const NOTIFICATION_EMAIL = "founder@promptco.online";
 const FROM_EMAIL = "Prompt&Co. <noreply@promptco.online>";
@@ -192,6 +194,14 @@ function buildThankYouEmail(data: ContactFormData): string {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!resend) {
+      console.error("Contact form error: RESEND_API_KEY is not configured");
+      return NextResponse.json(
+        { error: "Service not configured" },
+        { status: 500 }
+      );
+    }
+
     const data: ContactFormData = await request.json();
 
     // Validate required fields
