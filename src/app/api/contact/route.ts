@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { scrapeWebsite } from "@/lib/scraper";
+import { analyzeWithGemini } from "@/lib/gemini";
+import { buildReportEmail } from "@/lib/email-templates";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const NOTIFICATION_EMAIL = "founder@promptco.online";
 const FROM_EMAIL = "Prompt&Co. <noreply@promptco.online>";
-const SITE_URL = "https://promptco.online";
 
 interface ContactFormData {
   name: string;
@@ -209,7 +211,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send notification email to founder
+    // 1. Send immediate notification to founder
     const notificationResult = await resend.emails.send({
       from: FROM_EMAIL,
       to: NOTIFICATION_EMAIL,
@@ -226,17 +228,79 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send thank you email to the lead
-    const thankYouResult = await resend.emails.send({
-      from: FROM_EMAIL,
-      to: data.email,
-      subject: `Thank you for reaching out, ${data.name}! — Prompt&Co.`,
-      html: buildThankYouEmail(data),
-    });
+    // 2. Scrape website, analyze with Gemini, and send report to lead
+    if (data.website) {
+      // Always try to build a report — even if scraping fails, use fallback data
+      let scrapedData;
+      let analysis;
 
-    if (thankYouResult.error) {
-      console.error("Thank you email error:", thankYouResult.error);
-      // Don't fail the request if thank you email fails — notification was sent
+      try {
+        console.log(`[Pipeline] Scraping website: ${data.website}`);
+        scrapedData = await scrapeWebsite(data.website);
+        console.log(`[Pipeline] Scraped successfully: ${scrapedData.title || "no title"}, ${scrapedData.wordCount} words`);
+      } catch (scrapeError) {
+        console.error("[Pipeline] Scrape failed, using fallback:", scrapeError);
+        // Create minimal scraped data so the report still works
+        scrapedData = {
+          url: data.website,
+          title: data.website,
+          description: "",
+          headings: [],
+          textContent: "",
+          images: [],
+          links: [],
+          hasStructuredData: false,
+          hasSchemaMarkup: false,
+          openGraph: { title: "", description: "", image: "" },
+          twitterCard: { title: "", description: "" },
+          wordCount: 0,
+          language: "en",
+          canonicalUrl: data.website,
+        };
+      }
+
+      try {
+        console.log(`[Pipeline] Analyzing with Gemini for: ${data.improve}`);
+        analysis = await analyzeWithGemini(scrapedData, data.improve);
+        console.log(`[Pipeline] Scores:`, analysis.scores, `Fallback: ${analysis.isFallback}`);
+      } catch (geminiError) {
+        console.error("[Pipeline] Gemini failed, using fallback:", geminiError);
+        // Use fallback scores
+        analysis = await analyzeWithGemini(scrapedData, data.improve);
+      }
+
+      // Build and send the AI visibility report email
+      const reportHtml = buildReportEmail(scrapedData, analysis, data.improve);
+
+      const reportResult = await resend.emails.send({
+        from: FROM_EMAIL,
+        to: data.email,
+        subject: `Your AI Visibility Report for ${scrapedData.title || data.website} — Prompt&Co.`,
+        html: reportHtml,
+      });
+
+      if (reportResult.error) {
+        console.error("[Pipeline] Report email error:", reportResult.error);
+      } else {
+        console.log(`[Pipeline] Report sent successfully to ${data.email}`);
+      }
+
+      // Also send report to founder
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to: NOTIFICATION_EMAIL,
+        subject: `AI Report Generated: ${data.name} from ${data.company}`,
+        html: reportHtml,
+        replyTo: data.email,
+      });
+    } else {
+      // No website provided, send basic thank you
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to: data.email,
+        subject: `Thank you for reaching out, ${data.name}! — Prompt&Co.`,
+        html: buildThankYouEmail(data),
+      });
     }
 
     return NextResponse.json({
