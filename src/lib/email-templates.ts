@@ -2,15 +2,27 @@ import { ScrapedData } from "./scraper";
 import { AnalysisResult, SCORE_LABELS } from "./gemini";
 
 function getScoreColor(score: number): string {
-  if (score >= 75) return "#16a34a";
+  if (score >= 80) return "#16a34a";
+  if (score >= 70) return "#65a30d";
+  if (score >= 60) return "#d97706";
   if (score >= 50) return "#ca8a04";
   return "#dc2626";
 }
 
-function getScoreLabel(score: number): string {
-  if (score >= 75) return "Strong";
-  if (score >= 50) return "Needs Work";
-  return "Critical";
+function getScoreBg(score: number): string {
+  if (score >= 80) return "#16a34a";
+  if (score >= 70) return "#65a30d";
+  if (score >= 60) return "#d97706";
+  if (score >= 50) return "#ca8a04";
+  return "#dc2626";
+}
+
+function getScoreLabel(score: number): { text: string; description: string } {
+  if (score >= 80) return { text: "Strong", description: "Your AI visibility is performing well. Focus on maintaining and scaling what's working." };
+  if (score >= 70) return { text: "Good", description: "Solid foundation with room to grow. A few targeted optimizations can push you ahead of competitors." };
+  if (score >= 60) return { text: "Moderate", description: "Some signals are present, but key gaps exist that may cause AI platforms to overlook your brand." };
+  if (score >= 50) return { text: "Needs Work", description: "Significant opportunities are being missed. Without action, competitors will continue to gain AI visibility in your space." };
+  return { text: "Critical", description: "Your brand has minimal AI visibility. This is a major gap that needs immediate attention to stay competitive." };
 }
 
 function getOverallScore(scores: AnalysisResult["scores"]): number {
@@ -28,18 +40,19 @@ export function buildReportEmail(
 
   const scoreRows = Object.entries(analysis.scores)
     .map(
-      ([key, score]) => `
+      ([key, score]) => {
+        const label = getScoreLabel(score);
+        return `
     <tr>
-      <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">
-        <span style="color: #334155; font-size: 14px; font-weight: 500;">${SCORE_LABELS[key as keyof typeof SCORE_LABELS]}</span>
+      <td style="padding: 14px 16px; border-bottom: 1px solid #f1f5f9;">
+        <span style="color: #0f172a; font-size: 14px; font-weight: 600;">${SCORE_LABELS[key as keyof typeof SCORE_LABELS]}</span>
+        <p style="color: #64748b; font-size: 12px; margin: 2px 0 0 0;">${label.description}</p>
       </td>
-      <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-align: right;">
-        <span style="display: inline-block; background: ${getScoreColor(score)}15; color: ${getScoreColor(score)}; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: 700;">${score}/100</span>
+      <td style="padding: 14px 16px; border-bottom: 1px solid #f1f5f9; text-align: right; white-space: nowrap;">
+        <span style="display: inline-block; background: ${getScoreColor(score)}12; color: ${getScoreColor(score)}; padding: 6px 14px; border-radius: 20px; font-size: 15px; font-weight: 700; border: 1px solid ${getScoreColor(score)}25;">${score}/100</span>
       </td>
-      <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-align: right;">
-        <span style="color: ${getScoreColor(score)}; font-size: 12px; font-weight: 600;">${getScoreLabel(score)}</span>
-      </td>
-    </tr>`
+    </tr>`;
+      }
     )
     .join("");
 
@@ -65,6 +78,8 @@ export function buildReportEmail(
       </div>`
     : "";
 
+  const overallLabel = getScoreLabel(overallScore);
+
   return `
     <!DOCTYPE html>
     <html>
@@ -72,30 +87,61 @@ export function buildReportEmail(
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <body style="margin: 0; padding: 0; background-color: #f0f4f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
       <div style="max-width: 600px; margin: 0 auto; padding: 32px 16px;">
 
         <!-- Header -->
-        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 24px;">
-          <h1 style="color: white; font-size: 22px; margin: 0 0 8px 0;">Your AI Visibility Report</h1>
-          <p style="color: rgba(255,255,255,0.6); font-size: 13px; margin: 0;">${scrapedData.url}</p>
+        <div style="background: linear-gradient(160deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 24px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <p style="color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 8px 0;">Prompt&Co.</p>
+            <h1 style="color: white; font-size: 24px; margin: 0 0 8px 0; font-weight: 800;">Your AI Visibility Report</h1>
+            <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 0;">${scrapedData.url}</p>
+          </div>
         </div>
 
-        <!-- Overall Score -->
-        <div style="background: white; border-radius: 12px; padding: 32px; border: 1px solid #e2e8f0; margin-bottom: 16px; text-align: center;">
-          <p style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px 0;">Overall AI Visibility Score</p>
-          <div style="display: inline-block; width: 100px; height: 100px; border-radius: 50%; border: 4px solid ${overallColor}; line-height: 92px;">
-            <span style="color: ${overallColor}; font-size: 36px; font-weight: 800;">${overallScore}</span>
+        <!-- Overall Score with Nature Background -->
+        <div style="border-radius: 16px; overflow: hidden; margin-bottom: 24px; position: relative;">
+          <!-- Nature background image -->
+          <div style="background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 35%, #90EE90 35%, #228B22 60%, #2d5a27 100%); padding: 40px 32px; text-align: center; position: relative;">
+            <!-- Sky elements -->
+            <div style="position: absolute; top: 8px; left: 40px; width: 60px; height: 25px; background: rgba(255,255,255,0.6); border-radius: 20px;"></div>
+            <div style="position: absolute; top: 15px; right: 60px; width: 45px; height: 18px; background: rgba(255,255,255,0.5); border-radius: 20px;"></div>
+            <div style="position: absolute; top: 5px; left: 200px; width: 35px; height: 14px; background: rgba(255,255,255,0.4); border-radius: 20px;"></div>
+            <!-- Sun -->
+            <div style="position: absolute; top: 10px; right: 30px; width: 40px; height: 40px; background: #FFD700; border-radius: 50%; box-shadow: 0 0 20px rgba(255,215,0,0.5);"></div>
+            <!-- Trees -->
+            <div style="position: absolute; bottom: 0; left: 15px;">
+              <div style="width: 0; height: 0; border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 40px solid #1a6b1a;"></div>
+              <div style="width: 8px; height: 15px; background: #5c3d2e; margin: 0 auto;"></div>
+            </div>
+            <div style="position: absolute; bottom: 0; right: 20px;">
+              <div style="width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 35px solid #228B22;"></div>
+              <div style="width: 6px; height: 12px; background: #5c3d2e; margin: 0 auto;"></div>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 80px;">
+              <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 28px solid #2d8b2d;"></div>
+              <div style="width: 5px; height: 10px; background: #5c3d2e; margin: 0 auto;"></div>
+            </div>
+
+            <!-- Score overlay -->
+            <div style="position: relative; z-index: 2;">
+              <p style="color: rgba(255,255,255,0.9); font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 12px 0; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">Overall AI Visibility Score</p>
+              <div style="display: inline-block; width: 120px; height: 120px; border-radius: 50%; background: white; box-shadow: 0 8px 32px rgba(0,0,0,0.2); line-height: 120px; border: 4px solid ${overallColor};">
+                <span style="color: ${overallColor}; font-size: 42px; font-weight: 800;">${overallScore}</span>
+              </div>
+              <p style="color: white; font-size: 16px; font-weight: 700; margin: 12px 0 4px 0; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">${overallLabel.text}</p>
+              <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 0; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">${overallLabel.description}</p>
+            </div>
           </div>
-          <p style="color: ${overallColor}; font-size: 14px; font-weight: 600; margin: 8px 0 0 0;">${getScoreLabel(overallScore)}</p>
         </div>
 
         ${fallbackNote}
 
         <!-- Detailed Scores -->
-        <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 16px; overflow: hidden;">
-          <div style="padding: 16px 16px 8px 16px; border-bottom: 1px solid #e2e8f0;">
-            <h2 style="margin: 0; color: #0f172a; font-size: 16px;">Detailed Scores</h2>
+        <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px; overflow: hidden;">
+          <div style="padding: 16px 16px 12px 16px; border-bottom: 1px solid #e2e8f0;">
+            <h2 style="margin: 0; color: #0f172a; font-size: 16px;">Breakdown by Category</h2>
           </div>
           <table style="width: 100%; border-collapse: collapse;">
             ${scoreRows}
@@ -103,31 +149,34 @@ export function buildReportEmail(
         </div>
 
         <!-- Insights -->
-        <div style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; margin-bottom: 16px;">
-          <h2 style="margin: 0 0 16px 0; color: #0f172a; font-size: 16px;">Key Insights</h2>
+        <div style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+          <h2 style="margin: 0 0 16px 0; color: #0f172a; font-size: 16px;">Key Insights & Recommendations</h2>
           ${insightsHtml}
         </div>
 
         <!-- CTA Section -->
-        <div style="background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 16px;">
-          <h2 style="color: white; font-size: 20px; margin: 0 0 8px 0;">Ready to Improve Your AI Visibility?</h2>
-          <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin: 0 0 24px 0; line-height: 1.6;">
-            Get a comprehensive audit and a tailored strategy to help ${scrapedData.title || "your brand"} become the top recommendation across AI search platforms.
-          </p>
-          <table role="presentation" style="margin: 0 auto;">
-            <tr>
-              <td style="padding: 0 8px 0 0;">
-                <a href="mailto:founder@promptco.online?subject=AI%20Visibility%20Consultation%20-%20${encodeURIComponent(scrapedData.url)}" style="display: inline-block; background: white; color: #2563eb; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">
-                  Email Us
-                </a>
-              </td>
-              <td style="padding: 0 0 0 8px;">
-                <a href="https://promptco.online/contact" style="display: inline-block; background: rgba(255,255,255,0.15); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,0.3);">
-                  Book a Call
-                </a>
-              </td>
-            </tr>
-          </table>
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 20px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <h2 style="color: white; font-size: 20px; margin: 0 0 8px 0;">Ready to Boost Your AI Visibility?</h2>
+            <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin: 0 0 24px 0; line-height: 1.6;">
+              Book a free 15-minute consultation and let's discuss how to get ${scrapedData.title || "your brand"} recommended by AI platforms.
+            </p>
+            <table role="presentation" style="margin: 0 auto;">
+              <tr>
+                <td style="padding: 0 6px 0 0;">
+                  <a href="mailto:founder@promptco.online?subject=AI%20Visibility%20Consultation%20-%20${encodeURIComponent(scrapedData.url)}" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                    Email Us
+                  </a>
+                </td>
+                <td style="padding: 0 0 0 6px;">
+                  <a href="https://cal.com" style="display: inline-block; background: rgba(255,255,255,0.1); color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,0.2);">
+                    Book a Free Call
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
 
         <!-- Footer -->
