@@ -384,7 +384,7 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ## 015 — The Three-Layer Protocol Stack: Agent-Ready Content for MCP, A2A, and WebMCP (Article #15)
 
 - Status: **written + committed + pushed**
-- Commit: (see git log)
+- Commit: be6a7c8
 - URL: https://promptco.online/resources/research/agent-ready-content-2026-mcp-a2a
 - Brief: docs/content-briefs/015-agent-ready-content-2026-mcp-a2a.md
 
