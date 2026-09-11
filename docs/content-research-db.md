@@ -351,4 +351,34 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
+## 014 — The "Near Me" Answer Economy: AI Local Search in 2026 (Article #14)
+
+- Status: **written + committed + pushed**
+- Commit: (see git log)
+- URL: https://promptco.online/resources/research/local-near-me-ai-citations-2026
+- Brief: docs/content-briefs/014-local-near-me-ai-citations-2026.md
+
+### Targeting
+- Primary query: "local AI search 2026" / "AI Overviews local SEO" / "chatGPT recommend local business" / "'near me' AI citations"
+- Intent: informational + practitioner decision (local SEOs, multi-location brands); commercial. Spoke of hub 005; distinct from #13 (Google surfaces), #12 (community), F1 (per-engine divergence). Scope: local-service intent, citation evidence, the visibility gap, the window.
+
+### Research (fresh 2026)
+- Anchor — SearchAtlas Jan 17 2026: 104,855 URL citations, 6 platforms, Oct 27–Dec 3 2025; 35,385 unique domains (2,878 DA), 14,300 merged with GBP. DA/DR/Domain Power NEGATIVELY correlated with LLM rank (OpenAI/Grok/AI Mode strongest; Perplexity weaker; overall decoupled); GBP composite score strongest +0.16 (small), replied reviews +0.11, review count +0.10, rating +0.06, posts −0.01, citation count +0.03, heatmap rank negative; range −0.01…+0.16; semantic relevance strongest (OpenAI/Grok/AI Mode 0.18–0.19, Perplexity 0.10, Copilot 0.04); freshness Gemini 0.13 / OpenAI 0.09 / Perplexity 0.02 / Copilot−Grok−AI Mode negative; Perplexity homepage-heavy; Copilot/AI Mode balanced.
+- Anchor — Steady Demand AI Citation Ledger (Ben Fisher, updated Sep 9 2026): 1,500 queries, 50 metros, 10 categories, 10,229 citations. Own-site Gemini 49.6% (Jul 58.8%) > all directories/forums/reviews combined (margin 22 pts → ~7 pts); recommended businesses 91% at 4.5+ stars; Reddit reversal 13.7%→1.7% Gemini / ChatGPT earlier (~5 wks); directories absorbed (19.1%); pack repeat 83.3% vs Gemini 5.1%; Gemini vs ChatGPT domain overlap 8.3%, same top business 4.9%; ChatGPT own-site 10.5% / directories 46.0% vs Gemini 17.7%; 3,738 businesses / 2,474 domains / 1.8% multi-metro (Terminix/Orkin nationals); long-tail individual businesses.
+- Prevalence — Whitespark 2026 via SEJ (Heitzman Jul 22 2026): AIO 68% vs pack 39%; informational 92%; hybrid 97%; simple transactional ~15% (packs >90%); vertical variance; price/cost trigger >80%.
+- Consumers — BrightLocal 2026 (n=1,002): 45% use genAI local (7.5x YoY); 74% seek <3-month reviews; 47% won't use <20 reviews; 31% only 4.5+; 80% fully-answered; 19% expect same-day reply (up from 6%). Whitespark panel: review signals 16–20% classical ranking.
+- Gap — SOCi 2026 Local Visibility Index via Angarum Jul 15 2026: ChatGPT 1.2% / Perplexity 7.4% / 3-pack 35.9%; ChatGPT ~883M MAU; AIO ~55% overall / ~78% local+restaurant; schema+FAQs +44% (correlational); 70% expect AEO / ~20% started.
+- Off-page split — Omniscient Digital (23,000+): owned content ~23%, off-page ~77%. Kevin Indig (1.2M): 44.2% citations in first 30% of page; entity-rich passages. Ahrefs 17M: AI-cited content 25.7% fresher. DeepDiveAudits May 2026 (47 audits): 88% fail ≥4/6 signals; retest 6/9 full-fix → 6–9 weeks. Ahrefs null: 1,885 pages + JSON-LD → no 30-day citation change. PromptQuorum 25k queries: #1 → AIO inclusion ~25%; near-zero outside top-10. GatherUp: 67% don't fact-check AI.
+- Competitors: SEJ, Whitespark, BrightLocal, SOCi, Angarum, Steady Demand, SearchAtlas, DeepDiveAudits, Elev8, Search Engine Land (van Luijtelaar). Gap: prevalence roundups vs authority correlations vs vendor audits; nobody synthesizes 1.2%-vs-35.9% gap + two-source-system economics + semantic-relevance-not-authority + 12–18 month window into one operator decision framework.
+
+### Gaps & differentiation
+- Gap: pieces split into (a) prevalence-stat roundups, (b) authority-correlation math, (c) vendor audits, (d) agency ledgers — no synthesis owns the visibility gap + the two-source-system + the operator decision.
+- Original contribution: "AI recommends 1.2%" visibility gap frame; the two-source-system (Gemini own-site 49.6% vs ChatGPT directories 46% — engines read different parts of local web); "map rank is a proxy, not a mechanism" (DA negative, heatmap negative, GBP modest); volatility honesty (Reddit reversal, pack vs AI instability 83.3% vs 5.1%); schema null (Ahrefs) + correlational +44% reconciliation; operator playbook (answer-first pages, original local data, NAP/entity consistency, review cadence, cost guides, directory floor); 12–18 month labeled window.
+
+### QA & validation
+- Passed: lint (MDX ignored by config, 0 errors), tsc, build (22 routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly one BlogPosting + one FAQPage ld+json block.
+- Pending: Phase 25 report delivered in-task; commit+push hash recorded above.
+
+---
+
 (End of file)
