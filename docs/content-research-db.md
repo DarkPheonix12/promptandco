@@ -266,8 +266,8 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ## 011 — llms.txt: The 137K-Site Audit, Who Reads It, When It Matters (Article #11)
 
-- Status: **written** (validation passed; commit pending)
-- Commit: pending (this commit)
+- Status: **written + committed + pushed**
+- Commit: 73a9b04
 - URL: https://promptco.online/resources/research/llms-txt-2026-evidence
 - Brief: docs/content-briefs/011-llms-txt-2026-evidence.md
 
@@ -289,4 +289,8 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ### QA & validation
 - Passed: lint (MDX ignored by config, 0 errors), tsc, build (19 routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 questions / canonical https://promptco.online/resources/research/llms-txt-2026-evidence / sitemap ref / index ref / og:type article).
-- Pending: commit + push + Phase 25 report.
+- Pending: Phase 25 report delivered in-task; commit+push hash recorded above.
+
+---
+
+(End of file)
