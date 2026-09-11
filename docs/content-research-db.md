@@ -293,4 +293,33 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
+## 012 — Reddit & Community: The AI-Citation Source You're Quoting Wrong (Article #12)
+
+- Status: **written** (validation passed; commit pending)
+- Commit: pending (this commit)
+- URL: https://promptco.online/resources/research/reddit-community-ai-citations-2026
+- Brief: docs/content-briefs/012-reddit-community-ai-citations-2026.md
+
+### Targeting
+- Primary query: "Reddit AI citations 2026" / "Reddit Perplexity citations" / "Reddit SEO for AI"
+- Intent: informational + practitioner decision; commercial. Spoke of hub 005 (community/platform fan-out). Differentiated from #9 (earned media/PR broadly) — thread-level community layer with volatility mechanics.
+
+### Research (fresh 2026)
+- Red-engage (Apr 2026, 10,000+ citations/90 days): top-10 shares (Perplexity 46.7%, AIO 21%, ChatGPT 18%, Gemini 15%); top-5 subreddits ≈35% of B2B SaaS; 300–600-word comments > posts; upvote threshold ~50.
+- Correction sources: 5W/Bluefish/PikaSEO trace via CiteFlow (46.7% = top-10 concentration; Profound full-volume ≈6.6%); Everything-PR/Evertune 200M + Tinuiti Q1 2026 (20–24%; brand cite 13.05% vs ChatGPT 0.59%); Cairrot 1.5M prompts (2.05% Perplexity share / 16.6% prompt share; local lift 1.83→3.17%; Claude none since Mar 2026).
+- Hidden influence: Discovered Labs (144,284 citations; ChatGPT 27% slots vs 0.35% visible; Google 2.11%; Gemini 0.99%).
+- Volatility: ChatGPT 60%→<10% Sep 2025 (licensing; recovered ~13%); Reddit v Perplexity Oct 2025 → ~86% drop; ZeroClick (Jun 2026, 7,905 retrievals): Perplexity retrieval 3.5%; AIO retrieves 27.8% vs ChatGPT 15.1% but cites ~10x less; 5 anchor threads = 62% of retrievals; scam-warning threads 1.57 vs 0.97 baseline; astroturfing traced but authentic wins.
+- Format: Resocial triangulation (5 formats ≈3/4 of citations; pos 5% vs neg 6.1%); Semrush 248K URLs (80% <20 upvotes, 70% <20 comments, median ~900 days); SE Ranking Jul 2026 (share ~2.3→4.5%; 9% survivor posts → 48% of citations; ~10 median upvotes).
+- Competitors: Red-engage, ThriveStack, Authoricy, OperatorIQ, EMGI, Discovered Labs, Resocial, Everything-PR, CiteFlow, Cairrot, ZeroClick Labs. Gap: nobody reconciles method-dependent numbers + volatility + hidden-influence + concentration into one survivable strategy.
+
+### Gaps & differentiation
+- Gap: playbooks built on a single headline number (46.7%) or vendor metrics; no shared "the number depends on definition" reconciliation or volatility timeline.
+- Original contribution: "you're quoting it wrong" framing (top-10 vs full-volume with three magnitudes); volatility timeline (Sep 2025 collapse, Oct 2025 lawsuit); retrieved-vs-cited-vs-shown gap; format-first play (structure beats engagement); anchor-thread concentration/fragility; per-engine pairing map; Phase 16 comparison table.
+
+### QA & validation
+- Passed: tsc, build (20 routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 / canonical / sitemap / index / og:type article).
+- Pending: commit + push + Phase 25 report.
+
+---
+
 (End of file)

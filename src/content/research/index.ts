@@ -32,6 +32,9 @@ import SchemaAiCitations2026, {
 import LlmsTxt2026Evidence, {
   meta as llmsTxt2026EvidenceMeta,
 } from "./llms-txt-2026-evidence.mdx";
+import RedditCommunityAiCitations, {
+  meta as redditCommunityAiCitationsMeta,
+} from "./reddit-community-ai-citations-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -45,6 +48,7 @@ const pmeta = eeatAiTrustSignalsMeta as ResearchMeta;
 const qmeta = earnedMediaAiSearchPlaybookMeta as ResearchMeta;
 const rmeta = schemaAiCitations2026Meta as ResearchMeta;
 const smeta = llmsTxt2026EvidenceMeta as ResearchMeta;
+const tmeta = redditCommunityAiCitationsMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -90,6 +94,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: smeta,
     Content: LlmsTxt2026Evidence as ComponentType,
+  },
+  {
+    meta: tmeta,
+    Content: RedditCommunityAiCitations as ComponentType,
   },
 ];
 
