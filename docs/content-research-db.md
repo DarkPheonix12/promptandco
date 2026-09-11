@@ -241,7 +241,7 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ## 010 — Schema Is Not an AI Citation Lever (Article #10 — spoke of hub 005)
 
 - Status: **written + committed + pushed**
-- Commit: (this commit)
+- Commit: f19ec7e
 - URL: https://promptco.online/resources/research/schema-ai-citations-2026-evidence
 - Brief: docs/content-briefs/010-schema-ai-citations-2026-evidence.md
 
