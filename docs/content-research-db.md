@@ -573,8 +573,8 @@ Status: published.
 Score: 7.9.
 URL: https://promptco.online/resources/research/content-formats-ai-citations-listicles-2026
 Brief: docs/content-briefs/21-content-formats-ai-citations-listicles-2026.md
-Commit: TBD
-Pushed: TBD
+Commit: b1653b7
+Pushed: b1653b7
 
 ### Targeting
 - Primary query: "content formats AI citations" / "listicle AI search" / "best content type for ChatGPT" / "format AI SERPs"
