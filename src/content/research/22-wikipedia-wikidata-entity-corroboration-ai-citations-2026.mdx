@@ -1,0 +1,165 @@
+export const meta = {
+  slug: "wikipedia-wikidata-entity-corroboration-ai-citations-2026",
+  title: "Wikipedia and Wikidata Are the Entity Corroboration Spine of AI Citations",
+  description:
+    "Wikipedia takes 47.9% of ChatGPT's top-10 citations and Wikipedia + Reddit drive 25%+ of them. Wikidata-verified brands earn 2.7x more AI Overview citations. The corroboration chain, with 2026 evidence.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Strategy",
+  icon: "🏛️",
+  tags: [
+    "Wikipedia",
+    "Wikidata",
+    "entity SEO",
+    "knowledge graph",
+    "AI citations",
+    "GEO",
+    "brand SERP",
+  ],
+  readingTimeMinutes: 9,
+  faq: [
+    {
+      question: "What share of AI citations come from Wikipedia?",
+      answer:
+        "In 5W's Q1 2026 audit of 680M+ citations, Wikipedia took 13.15% and Reddit 11.97% — together 25%+ of all US ChatGPT citations (Similarweb Jan–Feb 2026). Wikipedia holds 47.9% of ChatGPT's top-10 citation share and roughly 7.8% to 12.1% of all ChatGPT citations depending on the study. Resocial's weighted average puts Wikipedia at 32% of citations across five engines.",
+    },
+    {
+      question: "Do I need a Wikipedia article to be cited by AI?",
+      answer:
+        "No — it is a strong trigger, not a requirement. Wikidata applies no notability threshold, so a well-referenced Wikidata item, complete Organization schema with a sameAs array, and consistent third-party corroboration can establish an entity without a Wikipedia article. RanketAI notes top RAG-path citations are achievable without Wikipedia. If your brand qualifies under Wikipedia's notability guidelines, an accurate, well-sourced entry remains one of the highest-leverage activities available.",
+    },
+    {
+      question: "How does Wikidata help with AI citations?",
+      answer:
+        "Wikidata gives your brand a machine-readable identity — a permanent QID that disambiguates you from similarly named entities and bridges your site to the knowledge graphs AI consults. Kalicube's analysis of 75,000+ brands found Wikidata-verified brands are 3.2× more likely to earn a knowledge panel and 2.7× more likely to appear in AI Overview citations. In an Ahrefs case study, a Wikidata entry appeared in Google's graph the same day the site's Organization schema added the sameAs link.",
+    },
+    {
+      question: "Is Wikipedia the top source on every AI engine?",
+      answer:
+        "No. Wikipedia is top-5 on every major platform, but it is close to ChatGPT-anchored: Conductor's seven-month, 1,056-point study found ChatGPT and ChatGPT Search are the only Wikipedia-anchored engines. Perplexity is the inverse — Reddit-led (46.7% of its top-10 share) with Wikipedia near 12.4%. Gemini runs ~38%, AI Overviews ~25%, and Claude weighs Wikipedia plus tier-1 editorial heavily.",
+    },
+    {
+      question: "What's the fastest path to entity corroboration?",
+      answer:
+        "The four-node chain: (1) Organization schema with sameAs on your site, (2) a well-referenced Wikidata entry with your QID, (3) third-party profiles and press that describe you the same way, and (4) a Wikipedia article if you meet notability. Legal, healthcare, finance, and mid-market brands not eligible for Wikipedia can use Wikidata plus directory, review, and government-registry listings. Reach ~30 authoritative corroborating sources for full knowledge-panel confidence.",
+    },
+  ],
+};
+
+<DefinitionCard>
+**Entity corroboration** is the state where independent sources — your site's schema, Wikidata, Wikipedia, review sites, and editorial media — describe the same entity with the same facts. AI systems check it *before* they evaluate content quality: a page from a recognizable, corroborated entity gets past the retrieval filter; a page from a blurred one does not, no matter how well written.
+</DefinitionCard>
+
+This article extends the [entity optimization guide](/resources/research/entity-optimization-2026) and the [AI Citation Levers hub](/resources/research/ai-citation-levers-2026). It pairs with the [Reddit citation study](/resources/research/reddit-community-ai-citations-2026) because the two platforms anchor opposite engines.
+
+---
+
+## The spine
+
+Across the largest 2026 syntheses of AI citation data, two domains dominate in a way that resembles infrastructure more than content marketing.
+
+5W's Q1 2026 Citation Source Audit — a synthesis of nine independent datasets covering **680M+ tracked citations** — found **Wikipedia (13.15%) and Reddit (11.97%) together account for more than 25% of ChatGPT citations in the US** (Similarweb panel, Jan–Feb 2026, ~600,000 citation events). Within ChatGPT's ten most-referenced domains, **Wikipedia alone holds 47.9% of citations**; Reddit is a distant second near 12%.
+
+Resocial's weighted cross-engine analysis reaches the same conclusion from the other direction: **Wikipedia ~32% of citations by weighted average**, Reddit 21%, tier-1 editorial 14%, brand-owned content 11%, government/academic 8%.
+
+The radical part of the 5W finding: **the Wall Street Journal, the New York Times, and Bloomberg do not appear in the top 20.** The traditional PR tier system — the "get picked up in a business paper" playbook — does not map to how AI engines source answers. The structural break is real, and it reframes who the "greatest authorities" are in the answer layer.
+
+---
+
+## Entity corroboration is the pre-filter
+
+The mechanism that makes Wikipedia matter is upstream of citations entirely.
+
+Radiant Elephant's read of retrieval-augmented generation pipelines is the clearest statement of it: **before an AI system evaluates whether a page's content is good enough to cite, it evaluates whether it understands what entity the page represents.** Is this from a real company? A verifiable author? Does the brand exist as a recognized entity in the knowledge graph? A page that fails this first filter is never evaluated for content at all.
+
+This is why Wikipedia appears in virtually every LLM training dataset — roughly 3% of GPT-3's training data traces to it — and why academic retrieval systems (REALM, DPR) use Wikipedia explicitly because it demonstrably reduces hallucinations. When an AI can cross-reference a claim against a stable reference entry, it gains confidence. When it cannot, it hedges or omits.
+
+In Kalicube's framing, corroboration is the "Grounded" gate: one source asserting something is a claim; two confirming it is corroboration; **three independent, high-confidence sources converging is consensus — and at consensus the AI stops saying "claims to be" and starts saying "is."** Below the threshold it hedges; above it, it asserts.
+
+---
+
+## The four-node chain
+
+Entity corroboration is a chain, not a single asset. Each node works on a different part of the retrieval stack:
+
+| Node | What it does | Engine layer it feeds |
+|------|--------------|----------------------|
+| **Organization schema + sameAs** | Declares "this page = this real-world entity" in code | Recognition and disambiguation |
+| **Wikidata (QID)** | Machine-readable identity, no notability bar | Knowledge graph grounding |
+| **Wikipedia article** | Independent verification, structured reference | Pre-training weight + RAG retrieval |
+| **Third-party set** | Editorial, reviews, directories, registries | Grounding confidence ("is" vs "claims to be") |
+
+The chain propagates. RanketAI describes the pathway explicitly: **Wikidata → Google Knowledge Graph → AI Overview → Gemini.** Improve one Wikidata property and it can flow through the entire downstream stack. Their summary for organizations is blunt: *one accurate Wikidata entry can outperform hundreds of content pieces* — because the entity graph determines whether your content is even eligible to be retrieved.
+
+---
+
+## Wikidata is the low-barrier entry
+
+The practical question for most brands — particularly mid-market, healthcare, legal, and finance — is that Wikipedia's notability bar is genuinely high: in-depth independent coverage in reliable sources is required, and self-editing gets reverted.
+
+**Wikidata is different.** It applies no notability threshold. Any registered editor can create a well-referenced item for a legitimate organization: instance-of, official website, founding date, headquarters — each property backed by a reference. Because properties without references can be deleted, the references are the actual work.
+
+The measured effects:
+
+- **3.2× more likely to earn a knowledge panel** with a Wikidata entry (Kalicube, 75,000+ tracked brands).
+- **2.7× more likely to appear in AI Overview citations** with Wikidata verification — independent of organic ranking position.
+- Ahrefs' case study: its Wikidata entry was indexed the **same day** its Organization schema added the Wikidata sameAs link; a knowledge panel appeared within **7 days**; and the panel **remained after the Wikipedia and Wikidata pages were removed** — the graph anchor is sticky.
+- An LSE experiment on thesis records found **47% more downloads and doubled Wikipedia traffic** from Wikidata exposure alone.
+
+The sameAs array is the connector: it is the "entity canonical." One Organization schema block listing the QID, the LinkedIn profile, and the Crunchbase page tells the retrieval stack that the entity on your site is the same entity defined in trusted public databases. Schema App's controlled case study isolated sameAs as the variable and measured immediate entity-confidence gains.
+
+---
+
+## Wikipedia is ChatGPT's spine, not everyone's
+
+The engine differentiation matters for budgeting. Conductor's seven-month citation study (1,056 data points, Sep 2025–Mar 2026) found **ChatGPT and ChatGPT Search are the only Wikipedia-anchored engines in the dataset** — ChatGPT Search cited Wikipedia first for the Education intent in every one of the seven months.
+
+The per-engine Wikipedia shares tell the same story:
+
+| Engine | Wikipedia share (within top-10 cited / all) |
+|--------|---------------------------------------------|
+| ChatGPT | 47.9% top-10; ~7.8–12.1% all |
+| Gemini | ~38% |
+| Claude | ~41% (Wikipedia + tier-1 editorial weighted) |
+| Google AI Overviews | ~25% |
+| Perplexity | ~12.4% top-10 (Reddit-led at 46.7%) |
+
+Perplexity and ChatGPT are near-inverse on the Wikipedia-vs-Reddit axis. A brand visible in one is often invisible in the other — the reason cited cross-engine overlap is only ~11% of domains. If your buyers research on ChatGPT, Wikipedia is the single highest-leverage asset available. If they use Perplexity, the Reddit playbook matters more than the entity spine.
+
+---
+
+## The concentration risk
+
+The dominance of two domains is also a fragility. Semrush's three-month, 230,000-prompt study found ChatGPT **actively redistributing away from single-source over-reliance**: Reddit fell from 60% to 10% of responses within six weeks, and Wikipedia's share of responses fell from 55% to under 20% during the same period — a shift isolated to ChatGPT, while Perplexity and AI Mode stayed stable.
+
+Two lessons follow. First, **retrieval is not citation**: Semrush also found 85% of pages ChatGPT retrieves are never actually cited. Being retrieved by the engine is the floor; corroboration decides whether you clear the citation bar. Second, **depth of corroboration is the hedge**: the two-domain concentration is real but actively managed by the platforms. Brand strategy built on a single Wikipedia article is exposed; a corroboration set across Wikidata, editorial, reviews, and community survives the redistribution.
+
+---
+
+## Practical playbook
+
+**1. Audit your entity first.** Search your brand across ChatGPT, Perplexity, Gemini, and AI Mode. Note where answers hedge ("claims to be"), contradict, or fail to recognize you. That is the corroboration gap.
+
+**2. Build the Wikidata node (Day 1).** Create or verify the QID with referenced properties: instance of, founded, headquarters, official website. Bidirectionally link any Wikipedia article.
+
+**3. Wire the sameAs array (Day 1–2).** Organization schema with Wikidata, LinkedIn, Crunchbase, and social profiles. Link founder/executive Person schema to their entities.
+
+**4. Decide on Wikipedia with honesty.** If notability fails, spend the eligibility months earning qualifying coverage instead of gambling on deletion-prone drafts. Content you cannot source dies on the platform.
+
+**5. Corroborate with 30+ sources.** The knowledge-panel confidence threshold in Kalicube's analysis sits around 30 independent authoritative sources — a spread of editorial, directories, reviews, and registries describing you identically.
+
+**6. Match the engine to your buyers.** ChatGPT-heavy audiences justify the full Wikipedia + Wikidata build; Perplexity-heavy audiences shift budget to community and in-language sources.
+
+---
+
+## Sources & notes
+
+1. 5W Public Relations. "The State of AI Citations 2026" / "5W Citation Source Audit – Q1 2026" (680M+ citations; Wikipedia 13.15%, Reddit 11.97%, ChatGPT 47.9% top-10; 11% cross-engine overlap; WSJ/NYT/Bloomberg absent from top-20). Jun 2 2026 and May 11 2026. https://www.prnewswire.com/news-releases/chatgpts-new-gatekeepers-wikipedia-reddit-and-the-sites-now-shaping-what-america-buys-302778843.html
+2. Resocial. "State of AI Search 2026: How 5 Engines Pick Their Citations" (weighted Wikipedia 32%; per-engine shares). May 11 2026. https://resocial.us/blog/state-of-ai-search-2026/
+3. Presenc AI. "Wikipedia Citation Rate by AI Assistant 2026." May 15 2026. https://presenc.ai/research/wikipedia-citation-rate-by-ai-assistant-2026
+4. Quick Digital / Kalicube data (3.2× knowledge panel, 2.7× AIO citations with Wikidata; Ahrefs 7-day panel case study; 30-source threshold). Mar 5 2026. https://quickdigital.org/knowledge-panel-optimization/
+5. Radiant Elephant. "Entity Optimization for AI Search: Wikipedia, Wikidata, and sameAs Schema" (entity confidence precedes content evaluation; LSE 47% experiment; 800B facts/8B entities; Schema App sameAs case study). Jul 14 2026. https://www.radiantelephant.com/entity-optimization-wikipedia-wikidata-sameas-ai/
+6. RanketAI. "Entity SEO Is Back — Why Wikidata and Knowledge Graph Matter Again in the LLM Era" (propagation chain; QID semantics; notability mechanics). Aug 3 2026. https://www.ranketai.com/en/blog/deep-dive-entity-seo-wikidata-llm-era-2026-04-15
+7. Conductor. "How AI Search Engines Choose Sources and Citations" (1,056 data points, Sep 2025–Mar 2026; ChatGPT Search Wikipedia-anchored). May 7 2026. https://www.conductor.com/academy/how-ai-citations-differ/
+8. TheStacc / Semrush synthesis (Wikipedia 12.1% of ChatGPT citations, 47.9% top-10; Reddit 60%→10%; Wikipedia 55%→under 20%; 85% retrieved-never-cited). Jul 10 2026. https://thestacc.com/blog/wikipedia-chatgpt-citations/
+9. Kalicube Framework (Algorithmic Trinity; Gate 7 Grounded; "claims to be" vs "is"; NEEATT). 2026. https://kalicube.com/

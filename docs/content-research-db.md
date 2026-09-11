@@ -598,4 +598,36 @@ Pushed: b1653b7
 
 ---
 
+## 022 — Wikipedia and Wikidata Are the Entity Corroboration Spine of AI Citations
+
+Status: published.
+Score: 7.8.
+URL: https://promptco.online/resources/research/wikipedia-wikidata-entity-corroboration-ai-citations-2026
+Brief: docs/content-briefs/22-wikipedia-wikidata-entity-corroboration-2026.md
+Commit: 0000000
+Pushed: 0000000
+
+### Targeting
+- Primary query: "Wikipedia AI citations" / "Wikidata entity SEO AI" / "Wikipedia ChatGPT citations" / "knowledge graph AI Visibility"
+- Intent: informational (brand managers, PR/communications, GEO practitioners, mid-market brands). Complements #6 entity optimization. Spoke of hub 005.
+
+### Research (fresh 2026)
+- 5W Citation Source Audit Q1 2026 (680M+ citations, 9 datasets): Wikipedia 13.15% + Reddit 11.97% = 25%+ of US ChatGPT citations; Wikipedia 47.9% of ChatGPT top-10; Perplexity Reddit 46.7% top-10; only 11% domains cited by both ChatGPT and Perplexity; WSJ/NYT/Bloomberg absent from top-20.
+- Resocial State of AI Search 2026: weighted Wikipedia 32% / Reddit 21% / tier-1 editorial 14% / brand-owned 11% / gov-academic 8% / YouTube 6%. Per-engine Wikipedia: ChatGPT 47.9%, Gemini 38.1%, Claude 41.2%, AIO 25.3%, Perplexity 12.4%.
+- Presenc AI (May 15 2026): Wikipedia most-leveraged single domain — ChatGPT 7.8% all + 47.9% top-10; Perplexity ~4.6% (after Reddit 6.6%); AIO ~4%.
+- Quick Digital / Kalicube: Wikidata-verified brands 3.2× knowledge panel, 2.7× AIO citations (75,000+ tracked); Ahrefs same-day Wikidata indexing, 7-day panel, panel survived removal; 30+ sources for full panel confidence.
+- Radiant Elephant (Jul 14 2026): entity confidence precedes content quality in RAG; Wikipedia ~3% of GPT-3 training data; LSE Wikidata +47% downloads / 2× traffic; Google KG 800B facts / 8B entities; Wikidata no notability bar; sameAs = entity canonical (Schema App case).
+- RanketAI (Apr 15 2026): Wikidata → Google KG → AI Overview → Gemini propagation; "one accurate Wikidata entry can outperform hundreds of content pieces"; unreferenced properties deletable; bidirectional links required.
+- Conductor (May 7 2026, 1,056 data points): ChatGPT/ChatGPT Search only Wikipedia-anchored engines; cited Wikipedia first on Education 7 straight months; LinkedIn #11→#5.
+- TheStacc/Semrush (Jul 10 2026): Wikipedia 12.1% of ChatGPT citations / 47.9% top-10; Reddit 60%→10% and Wikipedia 55%→under 20% of responses in 6 weeks (ChatGPT redistribution); 85% of retrieved pages never cited; Wikipedia 43% general / 22% commerce.
+
+### Gaps & differentiation
+- Gap: competitors publish "get a Wikipedia article" wishlists. Nobody frames Wikipedia+Wikidata as an engine-differentiated corroboration spine with the 5W/Resocial/Conductor share data side by side.
+- Original contribution: "entity corroboration is the pre-filter" (RAG recognition precedes content evaluation); "spine not solution" four-node chain (schema → Wikidata → Wikipedia → third-party); "Wikipedia is ChatGPT's spine specifically" (Perplexity inverse/Reddit-anchored); "Wikidata is the low-barrier entry" (3.2×/2.7×, no notability bar); "the concentration risk" (25%+ two-domain share + active redistribution → corroboration breadth is the hedge); "retrieval ≠ citation" (85% never cited).
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build, rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks; DB hashes backfilled after push.
+
+---
+
 (End of file)
