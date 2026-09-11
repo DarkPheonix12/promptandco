@@ -604,8 +604,8 @@ Status: published.
 Score: 7.8.
 URL: https://promptco.online/resources/research/wikipedia-wikidata-entity-corroboration-ai-citations-2026
 Brief: docs/content-briefs/22-wikipedia-wikidata-entity-corroboration-2026.md
-Commit: 0000000
-Pushed: 0000000
+Commit: d6c8eb8
+Pushed: d6c8eb8
 
 ### Targeting
 - Primary query: "Wikipedia AI citations" / "Wikidata entity SEO AI" / "Wikipedia ChatGPT citations" / "knowledge graph AI Visibility"
