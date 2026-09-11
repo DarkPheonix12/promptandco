@@ -726,4 +726,37 @@ Pushed: 2f404cc1684daec1b57e7f89718f9622b802bd24
 
 ---
 
+## 026 — Structured Data After the FAQ Death: What Schema Actually Does in 2026
+
+### Status (filled after build & push)
+Status: published.
+Score: 7.7.
+URL: https://promptco.online/resources/research/structured-data-schema-ai-search-2026
+Brief: docs/content-briefs/26-structured-data-schema-ai-search-2026.md
+Commit: 0000000000000000000000000000000000000000
+Pushed: 0000000000000000000000000000000000000000
+
+### Targeting
+- Primary query: "schema markup AI search 2026" / "FAQPage schema deprecated" / "structured data AI citations" / "schema AI Overviews" / "JSON-LD AI search"
+- Intent: informational (technical SEOs, developers, marketing leads). Technical-infrastructure installment after the comprehensive #23–#25 leads-focused run; pairs with the entity-optimization piece.
+
+### Research (fresh verification + pool re-contact)
+- FAQPage fully deprecated May 7 2026 (restricted to gov/health since Aug 2023); Rich Results Test support dropped Jun 2026; Search Console API removed Aug 2026. HowTo deprecated Aug 2023. 7 types (Book Actions, Course Info, ClaimReview, Estimated Salary, Learning Video, Special Announcement, Vehicle Listing) phased out Jun 2025; API dropped Jan 2026; Mueller (Nov 2025) confirmed a program. 14 active types in 2026 (Article, Breadcrumb, Product/MerchantListing/ProductVariants, Recipe, Event, LocalBusiness, JobPosting, Video, Organization, Speakable, Return/Shipping Policy, Loyalty Program, Carousel).
+- Google May 2026 AI optimization guide: "There's no special schema.org markup you need to add"; no machine-readable/AI-specific files; llms.txt ignored. May 15 2026 spam policy added "attempts to manipulate generative AI responses." Mar 2026 core update penalized schema/content mismatch (FAQPage on non-FAQ, HowTo on opinion, Article on non-editorial).
+- Ahrefs controlled study (May 2026): 1,885 pages, matched diff-in-diff, 30 days before/after JSON-LD → AI Mode +2.4%, ChatGPT +2.2% (noise), AIO −4.6% (small decline); caveat: dataset pages already had 100+ AIO citations. Ahrefs 75,000-brand: mentions vs backlinks correlation 0.664 vs 0.218 (YouTube 0.737). Correlation ≠ causation (6M-URL correlation explained).
+- searchVIU experiment: ChatGPT/Claude/Perplexity/Gemini/Gemini AI Mode extract only visible HTML at runtime; JSON-LD/Microdata/RDFa invisible at citation-selection time → schema works via index enrichment (crawl → KG/index → AI query-time → citation).
+- Entity-first architecture: Organization with stable @id + sameAs→Wikidata/LinkedIn/Crunchbase strongest single signal; Person with worksFor + sameAs = E-E-A-T; Article dateModified recency; BreadcrumbList hierarchy; @id reuse across pages = entity graph.
+- Contradictory correlational studies noted: BrightEdge 44% AIO uplift; rankdraft/DM 2.5–3.2×; Ciselity 35% (BrightEdge 2026); SetProduct 29-AIO dataset (every cited article had FAQPage; many FAQPage articles never cited).
+- Agent-ready frame: Google agent-ready guidance (crawlability, semantic HTML, accessible interactions, stable interfaces); Microsoft NLWeb (R.V. Guha) uses Schema.org as data layer for conversational AI; Schema.org WebPageSemanticRepresentation proposal (AI agent consumption).
+- Pool re-contact: Wikipedia/Wikidata entity corroboration (022); entity-first optimization (011); llms.txt (020); E-E-A-T trust signals.
+
+### Gaps & differentiation
+- Gap: schema content splits into "still sell FAQPage as a rich-result trick" (deprecated) and "schema literally does nothing" (Ahrefs-literalist). Nobody gives the post-May-2026 map: what died, what survived, what schema is actually for now.
+- Original contribution: 14-vs-8 live/dead map; "the engine doesn't read your JSON-LD at citation time — it reads the index" pipeline; entity-graph thesis (Organization→@id→sameAs→Wikidata→Person→Article) as the compounding layer; FAQ rich-result death ≠ FAQ comprehension death; schema-as-infrastructure (NLWeb/agent-ready) frame.
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (26 article routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified BlogPosting + FAQPage ld+json blocks (site Organization blocks present on all article pages).
+
+---
+
 (End of file)

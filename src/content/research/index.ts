@@ -74,6 +74,9 @@ import WhatChangedAiSearch2026, {
 import HowToMeasureAiSearchInfluence2026, {
   meta as howToMeasureAiSearchInfluence2026Meta,
 } from "./25-how-to-measure-ai-search-influence-2026.mdx";
+import StructuredDataSchemaAiSearch2026, {
+  meta as structuredDataSchemaAiSearch2026Meta,
+} from "./26-structured-data-schema-ai-search-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -101,6 +104,7 @@ const admeta = wikipediaWikidataEntityCorroborationMeta as ResearchMeta;
 const aemeta = saasAiSearchCitationPlaybookMeta as ResearchMeta;
 const afmeta = whatChangedAiSearch2026Meta as ResearchMeta;
 const agmeta = howToMeasureAiSearchInfluence2026Meta as ResearchMeta;
+const ahmeta = structuredDataSchemaAiSearch2026Meta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -202,6 +206,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: agmeta,
     Content: HowToMeasureAiSearchInfluence2026 as ComponentType,
+  },
+  {
+    meta: ahmeta,
+    Content: StructuredDataSchemaAiSearch2026 as ComponentType,
   },
 ];
 

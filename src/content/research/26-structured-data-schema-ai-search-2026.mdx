@@ -1,0 +1,166 @@
+export const meta = {
+  slug: "structured-data-schema-ai-search-2026",
+  title: "Structured Data After the FAQ Death: What Schema Actually Does in 2026",
+  description:
+    "Eight schema types are dead. Google says no special markup is required. The Ahrefs study found no direct citation lift. So what is JSON-LD actually doing — and why does the entity layer still matter?",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Technical SEO",
+  icon: "🧩",
+  tags: [
+    "schema markup",
+    "JSON-LD",
+    "FAQPage deprecated",
+    "AI citations",
+    "structured data",
+    "entity SEO",
+    "AI Overviews",
+    "agent-ready",
+  ],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "Is schema markup required for AI Overview citations?",
+      answer:
+        "Google's official May 2026 guidance says no. Its exact line: 'There's no special schema.org markup you need to add' for generative AI search. The Ahrefs controlled study (1,885 pages, May 2026) found no measurable citation uplift from adding JSON-LD — AI Mode and ChatGPT moved within statistical noise. Schema still helps AI systems understand your content and resolve your entity, but it is not a ticket into AI answers. It is infrastructure.",
+    },
+    {
+      question: "What happened to FAQ schema in May 2026?",
+      answer:
+        "Google fully deprecated the FAQ rich result on May 7, 2026 — the expandable question-and-answer dropdowns in Google Search stopped appearing for all sites, including government and health domains. Search Console lost FAQ reporting in June 2026; the API dropped it in August. FAQPage remains a valid schema.org type and AI engines still use it to extract clean Q&A pairs, but the rich result reward is gone. Keep FAQPage on pages with genuine visible Q&A content; stop shipping it as a rich-result tactic.",
+    },
+    {
+      question: "Which schema types still work in 2026?",
+      answer:
+        "Fourteen types still earn Google rich results in 2026: Article, BreadcrumbList, Product (with MerchantListing and ProductVariants), Recipe, Event, LocalBusiness, JobPosting, Video, Organization, Speakable, Return Policy, Shipping Policy, Loyalty Program, and Carousel. Eight types are dead or irrelevant for most sites: Book Actions, Course Info, ClaimReview, Estimated Salary, Learning Video, Special Announcement, Vehicle Listing, and FAQPage. The four most impactful for AI citation specifically are Organization (entity identity), Article (authorship and freshness), FAQPage (Q&A extraction, no rich result), and BreadcrumbList (hierarchy).",
+    },
+    {
+      question: "Does ChatGPT or Perplexity read JSON-LD directly?",
+      answer:
+        "Not at the point of citation selection. An experiment by searchVIU tested five major AI systems — ChatGPT, Claude, Perplexity, Gemini, and Google AI Mode — and all extracted only visible HTML during real-time page fetching. Hidden structured data (JSON-LD, Microdata, RDFa) was not processed at the point a citation decision was made. Schema works indirectly: Google and Bing parse your JSON-LD during normal crawling, feed it into their knowledge graphs and entity indexes, and AI platforms query those enriched indexes when selecting sources. Schema is an index-time input, not a runtime one.",
+    },
+    {
+      question: "What is entity linking and why does it matter for AI citations?",
+      answer:
+        "Entity linking is connecting your Organization and Person schema to known entities in external databases — especially Wikipedia and Wikidata. Use the sameAs property to link your Organization to your Wikidata Q-identifier, LinkedIn, Crunchbase, and other verified profiles. Give the block a stable @id and reuse it across every page so all your content resolves to one recognized brand. Linking your content to a Wikidata identifier is widely regarded as one of the strongest 2026 signals for being retrieved and cited in generative AI, because it maps you to a known entity in the graph these engines already trust.",
+    },
+  ],
+};
+
+<DefinitionCard>
+**Schema markup** in 2026 is no longer a ranking trick. It is an identity layer — the machine-readable contract between your website and every AI system that touches it: Google's Knowledge Graph, Bing's entity index, ChatGPT's retrieval pipeline, Perplexity's source ranking, and the AI agents that Microsoft's NLWeb is beginning to deploy. Eight schema types are dead. Google says no special markup is required. The Ahrefs study found no direct citation lift. And yet the entity layer — Organization → @id → sameAs → Wikidata → Person → Article — remains one of the few bounded technical investments that compounds across every AI surface.
+</DefinitionCard>
+
+This pairs with the [SaaS AI search playbook](/resources/research/saas-ai-search-citation-playbook-2026), the [2026 year in review](/resources/research/what-changed-ai-search-2026-year-in-review), and the [measurement sequel](/resources/research/how-to-measure-ai-search-influence-2026).
+
+---
+
+## The race is over. Fourteen types survived; eight are dead.
+
+Between August 2023 and May 7, 2026, Google conducted the most aggressive schema simplification in its history.
+
+The dead list: FAQPage rich results (fully sunset May 7, 2026 — including for government and health sites that had kept them since 2023). HowTo rich results (deprecated August 2023 for general sites). Seven more types in one announcement: Book Actions, Course Info, ClaimReview, Estimated Salary, Learning Video, Special Announcement, Vehicle Listing (announced June 2025; Search Console reporting dropped September 2025; API support removed January 2026). John Mueller confirmed in November 2025 that the simplification was a program, not a one-off.
+
+The fourteen types that remain: Article, BreadcrumbList, Product (with MerchantListing and ProductVariants), Recipe, Event, LocalBusiness, JobPosting, Video, Organization, Speakable, Return Policy, Shipping Policy, Loyalty Program, and Carousel.
+
+The reason matters. Google's stripped out types that confused users or got abused. Investing in deprecated markup is wasted engineering. And Google's March 2026 core update went further — it actively penalized sites shipping schema that didn't match visible page content: FAQPage blocks for FAQ content that wasn't there, HowTo on opinion pieces, Article on non-editorial pages. The era of schema-as-rich-result-slot-machine is over.
+
+---
+
+## What Google actually said in May 2026
+
+Google published an official guide titled "Optimizing your website for generative AI features on Google Search" with a section explicitly called "Mythbusting generative AI search: what you don't need to do." Schema was one of the myths:
+
+> "Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add."
+
+The guide went further: no new machine-readable files, no AI-specific text files, no special markup formats. `llms.txt` is ignored — creating one "will neither harm nor help your site's visibility or rankings in Google Search."
+
+But the guide does not say schema is worthless. It recommends continuing to use structured data as part of a normal SEO program because it still helps with conventional rich results — a real, separate benefit from AI citation. The nuance the "FAQ is dead" camp misses: Google still parses FAQPage markup. It still understands your content better when you structure it. The SERP feature is gone; the comprehension is not.
+
+---
+
+## The Ahrefs study and the correlation trap
+
+In May 2026, Ahrefs published the most rigorous controlled test of schema's effect on AI citations: 1,885 pages, matched difference-in-differences design, 30 days before and after adding JSON-LD, measured across Google AI Overviews, AI Mode, and ChatGPT.
+
+The result was nothing. AI Mode moved +2.4%, ChatGPT +2.2% — close enough to zero to be statistical noise across thousands of URLs. AI Overviews actually ticked down slightly.
+
+The critical caveat: every page in the dataset was already receiving 100+ AI Overview citations before schema was added. The study can't speak to whether markup helps undiscovered pages — which is a legitimate blind spot.
+
+The industry correlation is real but misleading. AI-cited pages are more likely to carry JSON-LD — but those pages also belong to authoritative, well-maintained sites doing everything else right. Ahrefs' 75,000-brand analysis found branded web mentions correlate with AI visibility at 0.664; backlinks at 0.218. Schema markup is the same statistical trap that overweighted meta keyword tags in 2008 and AMP in 2018.
+
+The independent studies claiming 2.5–3.2× citation lift with schema — BrightEdge, RankDraft, Ciselity, DM — are correlational, not controlled. They measure what sites with schema are doing, not what schema alone does. The honest position: treat schema as a support signal with a separate SEO benefit. Do not treat it as a GEO tactic.
+
+---
+
+## The engine doesn't read your JSON-LD at the point of citation
+
+This is the structural finding that explains why schema works indirectly. An experiment by searchVIU tested five major AI systems — ChatGPT, Claude, Perplexity, Gemini, Google AI Mode — and every one extracted only visible HTML during real-time page fetching. Hidden structured data — JSON-LD in script tags, Microdata attributes, RDFa annotations — was invisible to the systems at the moment they selected which source to cite.
+
+The pipeline works like this:
+
+1. **Crawl and index.** Googlebot and Bingbot parse your JSON-LD during normal site crawling. Valid schema gets added to their entity indexes.
+2. **Index enrichment.** Search engines validate schema against Schema.org definitions. Valid, accurate schema feeds into Knowledge Graphs and entity indexes.
+3. **Query-time retrieval.** When ChatGPT, Perplexity, or Google AI Mode generate an answer, they query these enriched indexes — not the raw page. The schema has already been absorbed.
+4. **Citation selection.** The AI selects sources from the enriched index based on content quality, entity matches, and topical authority. The JSON-LD is not re-read.
+
+This means schema markup functions as an API between your website and the index, not as a direct input to the model. Your Organization schema does not get "read" by ChatGPT. It gets absorbed by Bing's entity index, which ChatGPT's live search queries. The distinction matters operationally: the schema needs to be accurate at crawl time, served in server-rendered HTML (not client-side JavaScript), and consistent with your visible content.
+
+---
+
+## The entity graph: what actually compounds
+
+Strip away the correlational studies and the controlled experiments, and the remaining unambiguous finding is that entity resolution — helping an engine map your pages to a single, known thing in the world — is the schema investment that compounds.
+
+**Organization schema** (one per site, on every page): name, URL, logo, `sameAs` array linking to your Wikipedia page, Wikidata Q-identifier, LinkedIn, Crunchbase, and verified profiles. A stable `@id` reused identically across every page so all your content resolves to one recognized brand rather than a set of unconnected pages. This single block does more for citation confidence than any other, because it turns a pile of pages into a named entity the engine can trust.
+
+**Person schema** (per author): name, URL, `jobTitle`, `worksFor` pointing at the Organization, `sameAs` linking to LinkedIn, GitHub, ORCID, or a verified professional site. Named authors with credentials and consistent publishing history are signals AI systems use to evaluate source trustworthiness. Every content piece should carry Author schema with professional profile links — the E-E-A-T encoding that both Google and AI systems weight.
+
+**Article schema** (every editorial page): `headline`, `datePublished`, `dateModified`, author, publisher, image. The `dateModified` property is particularly important: AI systems have recency preferences, and accurate modification timestamps signal actively maintained content. Keep it honest — update it only with meaningful changes.
+
+**BreadcrumbList** (every page): low effort, no downside, feeds AI extractors a clean site hierarchy.
+
+Together these four types — Organization + Person + Article + BreadcrumbList — form the entity graph. They are the technical floor. The "best X vs Y" comparison schema, the Speakable tag for voice assistants, the Product + Review block for e-commerce — those are vertical-specific additions on top of the graph, not substitutes for it.
+
+---
+
+## FAQPage after May 7: dead rich result, live comprehension signal
+
+Here is the precise FAQPage status in September 2026:
+
+- **Rich results**: gone. FAQPage no longer produces visible search features for any site.
+- **Rich Results Test**: FAQ support dropped June 2026.
+- **Search Console API**: FAQ support removed August 2026.
+- **Schema.org validity**: FAQPage remains a valid type. Google still parses it for content understanding.
+- **AI extraction**: engines still use FAQPage markup to identify clean question-and-answer pairs they can lift into conversational answers. Every cited article in SetProduct's 29-placement AIO dataset carried FAQPage schema — but many articles with FAQPage were never cited, confirming it is one signal among many.
+
+The practical response: keep FAQPage on pages with genuine visible Q&A content where the JSON-LD matches the on-page text. Stop shipping hollow FAQ content padded to trigger a rich result that no longer exists. The deprecation removes the SERP incentive for hollow FAQ content — which is a net positive, because genuine FAQ content remains valuable for AI comprehension.
+
+---
+
+## The agent-ready frame
+
+Google's updated AI optimization guidance draws a line that most schema-focused write-ups miss: "special schema for AI" is in the same category as `llms.txt` — tactics Google explicitly says are not needed. The guidance instead emphasizes crawlability, indexability, semantic HTML, accessible interactions, and stable interfaces that an agent can observe and operate. Schema supports these fundamentals; it does not replace them.
+
+Microsoft's NLWeb project (built by R.V. Guha, Schema.org's creator) uses Schema.org as the data layer for conversational AI interfaces on websites — turning any site into something an AI agent can interrogate. Schema is not a ranking signal in this frame. It is an interface between the site and the systems that read it.
+
+The Schema.org community is actively proposing new types — including `WebPageSemanticRepresentation` for AI agent consumption — that signal the next evolution: from markup-as-SEO to markup-as-infrastructure. The teams that invest in the entity graph today are building the foundation for whatever agent-readiness standards crystallize next.
+
+---
+
+## Sources & notes
+
+1. Space & Story. "Every structured data type Google still rewards in 2026 (and the 8 that don't)" (14 active types; FAQPage fully sunset May 7; HowTo restricted; June 2025 Henry Hsu 7-type phase-out; Nov 2025 Mueller program). May 26 2026. https://spaceandstory.co/blog/structured-data-types-google-2026
+2. Scale Xpert. "Does Structured Data Help AI Search? Google's Official Answer for 2026" (FAQ deprecated May 7; Search/Atlas Dec 2024 no correlation between schema volume and citation rate; May 2026 AI guide mythbusting; visible Q&A formatting > JSON-LD alone). Jun 4 2026. https://scale-xpert.com/structured-data-ai-search-google-2026/
+3. MV3 Marketing. "Schema Markup for AI Search: What Actually Works in 2026" (Nogami/Tannenbaum Sep 2025 test: well-implemented schema = AIO + highest organic ranking; Search/Atlas Dec 2024 no correlation; May 2026 guide: "no special schema required"; FAQPage deprecated). Aug 12 2026. https://www.mv3marketing.com/blog/schema-markup-for-ai-search-what-actually-works-in-2026/
+4. CMSWire / Zach Ball. "Your Next AEO Budget Should Not Fund Schema" (Ahrefs 1,885-page matched diff-in-diff: no uplift in AI Mode/ChatGPT, slight AIO decline; Ahrefs 75,000-brand: mentions 0.664 vs backlinks 0.218; searchVIU: all 5 AI systems extract only visible HTML). Sep 3 2026. https://www.cmswire.com/digital-marketing/does-structured-data-actually-improve-answer-engine-citations/
+5. AuthorityTech. "Does Schema Markup Help AI Citations? Ahrefs Tested 1,885 Pages" (Ahrefs study details; correlation ≠ causation; 6 million URL correlation explained). May 15 2026. https://authoritytech.io/curated/schema-markup-ai-citations-ahrefs-study-2026
+6. Search Engine Land / Einat Hoobian-Seybold. "How to use schema markup to optimize for the agentic web" (NLWeb by R.V. Guha; schema = infrastructure for agent-ready sites; complete > spread thin; JSON-LD preferred). Jun 1 2026. https://searchengineland.com/schema-markup-optimize-agentic-web-479080
+7. Scalevise. "Google AI Search Guide Shifts Focus Beyond Schema" (Google agent-ready: crawlability, semantic HTML, accessible interactions, stable interfaces; schema not required; WebMCP/UCP references). Jul 28 2026. https://scalevise.com/resources/google-ai-search-guide-schema-agent-ready-websites/
+8. Numinam. "Schema markup for AI agents: the complete guide" (B2A2C model; schema for decisions not display; 40% more likely to cite with comprehensive schema; only 33% implement any). Mar 10 2026. https://www.numinam.com/en/blog/schema-markup-for-ai-agents-complete-guide
+9. TheStacc. "Schema Markup for AI Agents: An Implementation Guide" (index enrichment pipeline; entity linking via @id + sameAs; 6 schema types). Jul 10 2026. https://thestacc.com/blog/schema-markup-ai-agents/
+10. Unified Platforms. "9 Schema Markup Types That Win AI Citations" (Organization + sameAs → Wikidata = strongest 2026 signal; FAQPage post-deprecation; @id reuse across pages). Aug 11 2026. https://unifiedplatforms.com/blogs/aeo/schema-markup-types-that-win-ai-citations/
+11. Outline Technologies. "Schema Markup for AI Search: The Complete 2026 Implementation Guide" (BrightEdge 44% AIO increase; dateModified recency; Speakable; per-type priority table). May 13 2026. https://outline.ad/blog/schema-markup-ai-search/
+12. Setproduct. "How to get cited in Google AI Overviews (GEO guide with real data)" (29 AIO citations; every cited article had FAQPage; 6 predictive signals; 40-70 word answer paragraphs). Sep 8 2026. https://www.setproduct.com/blog/how-to-get-cited-in-google-ai-overviews
+13. RankDraft. "Schema Markup for AI Overviews: Complete Guide" (65% AI Mode citations have structured data; 2.5× lift; 4 Tier-1 schemas; GSC AI Overviews filter). Apr 4 2026. https://rankdraft.io/blog/schema-markup-for-ai-overviews-complete-guide/
+14. Astro SEO Blog. "Schema Markup That Wins AI Citations" (post-May 7 reality; JSON-LD in head; both Rich Results Test + Schema.org Validator; author entity patterns). Jun 19 2026. https://astroseoblog.com/blog/schema-markup-that-wins-ai-citations-2026
