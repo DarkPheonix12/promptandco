@@ -354,7 +354,7 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ## 014 — The "Near Me" Answer Economy: AI Local Search in 2026 (Article #14)
 
 - Status: **written + committed + pushed**
-- Commit: (see git log)
+- Commit: e1af87a
 - URL: https://promptco.online/resources/research/local-near-me-ai-citations-2026
 - Brief: docs/content-briefs/014-local-near-me-ai-citations-2026.md
 
