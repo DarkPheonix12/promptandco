@@ -534,4 +534,37 @@ Pushed: 05a3043
 
 ---
 
+## 020 — How Zero-Click Search Changed the Economics of SEO in 2026
+
+Status: published.
+Score: 8.0.
+URL: https://promptco.online/resources/research/zero-click-search-ai-overview-economics-2026
+Brief: docs/content-briefs/20-zero-click-search-ai-overview-economics-2026.md
+Commit: TBD
+Pushed: TBD
+
+### Targeting
+- Primary query: "zero-click search 2026" / "AI Overviews reduce clicks" / "zero-click marketing" / "AI Mode traffic measurement"
+- Intent: informational (CMOs, SEO leads, content strategists). Complement to #13 (AI Mode vs AI Overviews). Spoke of hub 005.
+
+### Research (fresh 2026)
+- SparkToro / Fishkin (Jun 8 2026, Similarweb panel): 68.01% US zero-click Jan–Apr 2026 (vs 60.45% 2024); AIO on 20%+ of searches cuts CTR ~60%; Clicks 1X+ −9.51pp (−22.9%); AI Mode 0.34%; 232 open-web clicks / 1,000 searches.
+- Pew panel (Mar 2025, cited 2026): 8% click with AI summary vs 15% without (~47%); citation clicks 1%; 26% sessions end after AIO page vs 16%.
+- Ahrefs (Dec 2025): position-one CTR on AIO keywords 0.073→0.016; counterfactual-adjusted 58% reduction (up from 34.5% Apr 2025).
+- Seer Interactive (Jun 2024–Feb 2026): AIO-keyword organic CTR 1.76%→0.61% (−65%); cited brands +120% organic clicks/impression (Apr 2026).
+- Agarwal & Sen (SSRN Apr 2026): randomized field experiment, 1,065 participants; AIO → organic clicks −38%; zero-click 54%→72%.
+- Google I/O 2026: AI Mode >1B monthly users; queries >2×/quarter. ~93% AI Mode zero-click (Semrush avg 4.3 queries/session). LeafWorldMedia: ranking-vs-citation overlap 75%→17-38%.
+- Mintec (Aug 8 2026): AI Mode follow-up queries in regular GSC performance report; generative AI report shows only aggregated impressions; "yes, pricing" tell.
+- Google May 6 2026 five AIO/AI Mode updates (inline links, hover previews, Subscribed label, Explore new angles) — attribution tweaks, not traffic recovery.
+- Cite Solutions (Jul 25 2026): AIO-query zero-click ~83%; citation half-life ~4.5 weeks; AI search traffic converts ~4× better.
+
+### Gaps & differentiation
+- Gap: vendors publish either "SEO is dead" panic or "AI Overviews are fine" apologetics. Nobody triangulates the click-suppression claim across three methods side by side, or splits success into two scoreboards.
+- Original contribution: two-scoreboard thesis (clicks vs citations measure different wins); triangulated AIO click claim (Pew panel + Ahrefs counterfactual + randomized field); cited-brands +120% clicks (citation amplifies clicks for the cited); three-zone zero-click portfolio (click/hybrid/citation); AI Mode follow-up-query measurement blind spot; 4.5-week citation half-life lever.
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (28 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks.
+
+---
+
 (End of file)
