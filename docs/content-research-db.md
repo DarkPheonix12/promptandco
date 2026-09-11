@@ -766,8 +766,8 @@ Status: published.
 Score: 8.0.
 URL: https://promptco.online/resources/research/ai-contact-flow-lead-routing-2026
 Brief: docs/content-briefs/27-ai-contact-flow-lead-routing-2026.md
-Commit: 0000000000000000000000000000000000000000
-Pushed: 0000000000000000000000000000000000000000
+Commit: 02a390bd367eda4d3af238e041e991143ce20785
+Pushed: 02a390bd367eda4d3af238e041e991143ce20785
 
 ### Targeting
 - Primary query: "AI contact flow" / "AI lead routing" / "chatbot replace contact form" / "AI support deflection 2026" / "agentic lead capture" / "contact page conversion"
