@@ -410,4 +410,36 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
+## 016 — Five Engines, Five Rules: The 2026 Per-Engine Citation Divergence Matrix
+
+Status: published.
+Score: 9.3.
+URL: https://promptco.online/resources/research/per-engine-citation-divergence-2026
+Brief: docs/content-briefs/f1-per-engine-citation-divergence-2026.md
+Commit: TBD
+Pushed: TBD
+
+### Targeting
+- Primary query: "per-engine citation differences" / "ChatGPT vs Perplexity vs Gemini citations" / "AI search engine source comparison 2026" / "which sources does each AI engine cite"
+- Intent: informational + practitioner decision (B2B content/SEO/GEO strategists, agency leads). Flagship of hub 005; differentiates from #13 (Google surfaces only) by covering all five engines. Crown-jewel evidence piece of the series.
+
+### Research (fresh 2026)
+- MR Research (May 24 2026): 11,500 queries; Vu et al. arXiv:2601.16858. GPT-4o 0.0% Google top-10 overlap; Perplexity 14.3%; Gemini 8.5%. ChatGPT Bing-dependent when browsing; Perplexity own crawler; Gemini Google grounding. AuthorityTech 366K citations across 12 models.
+- AI Search Index / cloro (Jul 6 2026 State + Jul 16 Edition 01): Fixed 735-query basket, 5 engines. Citation presence: AI Mode 100%, Perplexity 100%, Copilot 98.6%, ChatGPT 98.4%, Gemini 32.9%. Sources/answer: AI Mode 19.5, ChatGPT 13.3, Perplexity 10.6, Copilot 5.1, Gemini 4.4. Compression Q2→Q3: ChatGPT 21→12, AI Mode 21→10. Top domains: YouTube 2,598, Reddit 771, Google 695. Perplexity citation memory 67% vs ChatGPT/Gemini 34%.
+- MERIIN (Jun 14 2026): 25 questions × 3 engines; 559 citations → 322 domains. 72% single-engine; 4% all-three. Volume 2.4× range (ChatGPT 4.24, Perplexity 7.80, Gemini 10.32).
+- SlateHQ (Aug 27 2026): 1,000 questions × 4 engines; 31,128 citations. Links/answer: Perplexity 19.08, Claude 12.49, AIO 9.42, ChatGPT 3.10, Gemini 0.07. ChatGPT-Perplexity page overlap 0.9%. 74.1% not in Google top-10. Reddit: Perplexity 1,051×, ChatGPT/Claude 0. 88.7% single-engine.
+- GetMentioned (Apr 22 2026): 412,000 citations, 26,000+ domains. 474 all-three (<2%). ChatGPT ~19K unique; Gemini ~1,500 unique. Gemini "listicle engine" 36.77%. 64% of Gemini top-100 absent from other models' top-500.
+- Conductor (May 7 2026): 7 engines, Sep 2025–Mar 2026, 1,056 data points. Per-engine editorial identities: ChatGPT Search encyclopedic; Perplexity video-anchored; AIO video-biased; AI Mode exploratory/Google properties; Gemini YouTube every intent; Claude institutional.
+- MR Index v2 (Aug 4 2026): 10,661 runs, 17,266 domains, 82 days. Reddit 12.6% (4 engines only); domain authority r²=0.05.
+- CiteMetrix (May 18 2026) + Resocial (May 11 2026): Per-engine source shares; Wikipedia 32% weighted; Reddit 21%; tier-1 14%; brand 11%.
+
+### Gaps & differentiation
+- Gap: every competitor publishes one engine or two-engine comparison. Nobody assembles: (a) citation presence rates, (b) citations per answer, (c) per-engine source-type preference, (d) cross-engine overlap from multiple independent studies, (e) brand-vs-source overlap paradox (35-42% vs <1%), (f) longitudinal editorial identity.
+- Original contribution: convergence paradox (agree on brands, disagree on pages); per-engine signature map with five-column evidence table; citation compression trend; Gemini paradox (83.7% mention, 21.4% link); multi-engine investment matrix; "optimize for AI search" obituary backed by convergent evidence from 5+ independent studies.
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (24 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks. Fixed `<2` MDX-parse error before build.
+
+---
+
 (End of file)
