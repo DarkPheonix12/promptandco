@@ -1,0 +1,162 @@
+export const meta = {
+  slug: "freshness-playbook-2026",
+  title:
+    "The 2026 Freshness Playbook: How Content Updates Actually Move AI Citation Rates",
+  description:
+    "The 3.2x citation gap between month-old and year-old pages, why recency works inside answer engines, and a tiered update system you can run without gutting your archive.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Practical",
+  tags: ["freshness", "content refresh", "content lifecycle", "citation growth", "AEO"],
+  readingTimeMinutes: 11,
+  faq: [
+    {
+      question: "How big is the freshness effect on AI citations?",
+      answer:
+        "In a 105,000-article longitudinal sample (ConvertMate, January 2026), pages updated within the previous month captured 3.2x the citation share of pages last updated a year or more ago — and over 3.8x the share of pages updated two or more years ago.",
+    },
+    {
+      question: "Is bumping the date alone enough to refresh a page?",
+      answer:
+        "No. Visibly falsifying update signals trains both engines and people to distrust your timestamps, and answer systems recrawl content — not timestamps. The reliable pattern is a real content edit, a truthful visible timestamp, and a confirmation the page was re-fetched.",
+    },
+    {
+      question: "Should I refresh old URLs or replace them?",
+      answer:
+        "Refresh old URLs. Google's own guidance has long been to update in place rather than move or recreate content — relocated pages lose accumulated signals and day-one re-fetch windows. New URLs also mean your citation history starts over.",
+    },
+    {
+      question: "How often should different pages be refreshed?",
+      answer:
+        "Tier it. Money and trend-dependent pages: meaningful updates on a 2- to 4-week cadence. Evergreen reference: quarterly to semi-annual verification. News and data pages: continuously, where warranted. The important discipline is matching the cadence to how much the topic actually changes.",
+    },
+    {
+      question: "What is the single biggest freshness mistake?",
+      answer:
+        "Rewriting away the content that originally got you cited. Refreshing means preserving, strengthening, and dating your evidence — not replacing the exact facts and quotes that a retrieval system already matched. Update the weakest sections, keep your citations citable, and repoint internal links at the refreshed page.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **Freshness** — the measurable tendency of answer engines and AI-assisted search to
+  prefer content that shows recent, real update signals. In large citation samples the gap
+  is decisive: pages updated inside the last month are associated with roughly **3.2x** the
+  citation share of pages a year or older. Freshness is not a tax you pay to search engines —
+  it is a property of the *evidence pool* that assistants are allowed to cite.
+</DefinitionCard>
+
+In the [2026 AI citation study](/resources/research/2026-ai-citation-study) we flagged
+"recently updated wins" as one of the few levers with strong cross-engine evidence. This
+article is the working version of that finding: the underlying data, the mechanisms that
+make recency matter inside answer engines, and a tiered update system you can run on an
+existing archive without breaking what already works.
+
+## The evidence: how large, how measured
+
+The cleanest public number comes from **ConvertMate's January 2026 analysis of 105,000
+articles** tracked over time. The headline relationships, normalized across categories:
+
+| Last updated | Relative citation share |
+| --- | --- |
+| Within the last ~30 days | **3.2x** baseline |
+| 1–3 months ago | ~2x |
+| 3–12 months ago | ~1.3x |
+| 1–2 years ago | ~1x (baseline) |
+| 2+ years ago | ~0.85x |
+
+Read it as an association, not a causal guarantee: sites that update frequently also tend
+to do other things well. But the size of the gradient, in a large longitudinal sample, is
+why freshness keeps appearing in citation research.
+
+Two complementary signals reinforce it. Trakkr's studies of answer-engine behaviour found
+roughly **73.5% of AI-search sessions end in the first answer** — if your page is the
+source that snapshot is built from, you win the session; recency materially influences which
+page the snapshot is built from. And the retrieval research we covered in the
+[crawler playbook](/resources/research/ai-crawlers-2026-readiness) shows assistants budget
+limited fetches per query and favour content that behaves like it is active.
+
+## Why recency works inside answer engines
+
+Three mechanisms, roughly in order of how much they matter:
+
+- **Recency-biased snapshot selection.** When an engine assembles an answer, it can draw its
+  source snapshot from any candidate page that matches. Fresh pages that still carry the
+  exact evidence win because the retrieval layer considers recency a ranking input for
+  queries with temporal intent — and a distressingly large share of commercial queries have
+  temporal intent.
+- **The evidence-pool copy problem.** Assistants copy and cache source text with the answer.
+  Yesterday's page, cached, is what gets quoted; today's correction or improvement only
+  enters the answer when the agent re-fetches the URL. A refresh cadence is cheap insurance
+  that your current best version — not last quarter's — is what gets cited.
+- **The back-fill effect.** Answer engines re-run and re-fetch frequently asked questions.
+  A page that visibly updates invites re-verification; a page that has not changed in
+  eighteen months reads as stale to the same machinery, even when the content is timeless.
+
+## A tiered update system that respects your archive
+
+You do not need to rewrite your whole site monthly. You need a cadence engine tied to how
+much a topic actually changes:
+
+**Tier 1 — Money and trend-dependent pages (every 2–4 weeks).** Pricing, methodology,
+comparisons, compatibility matrices, "best X" lists, and any page whose search demand
+moves with trends. Update the facts, dates, and examples that drift; verify numbers; add a
+visible edit note where useful.
+
+**Tier 2 — Evergreen reference (quarterly to half-yearly).** Definitions, fundamentals,
+and long-lived explainers. The job is *verification*: read it, check links and numbers
+still hold, update the timestamp honestly only if you changed content.
+
+**Tier 3 — News and data pages (continuous).** Where you own a dataset or a timeline (our
+[research index](/resources/research) lives here), append entries as they occur. Continuous
+artifacts like this are the most citation-friendly content class that exists, because every
+update hands the engine legitimate new evidence on a stable URL.
+
+For each tier the discipline is identical:
+
+1. **Edit, then date — never just date.** A timestamp you cannot justify is a liability in
+   both directions: engines that distrust it, and the missed re-fetch you were hoping to
+   trigger. Google's own guidance has consistently been to update old URLs in place rather
+   than move or recreate them, precisely because the signals live on the URL.
+2. **Preserve what got you cited.** Before you touch a page, note the specific facts and
+   quotes that are likely in answer snapshots. Refresh around them. Rewriting away your
+   cited evidence is the single most common way sites convert a good freshness program into
+   a citation regression.
+3. **Repoint internal links at the refreshed asset.** When you improve a page, tell the
+   rest of the site — and the crawlers doing the re-fetch — by linking to it from your
+   [sitemap](/sitemap.xml) and your most-linked article.
+4. **Measure on citation share, not traffic.** Track the 30-day window: which pages appear
+   as sources or are quoted in assistants, before and after a refresh. Traffic and organic
+   rankings lag and lie; the citation window is the honest scoreboard.
+5. **Keep a platform changelog.** If your team publishes a lightweight "what changed this
+   week" list for materially updated pages, you create an internal source-of-truth that
+   also happens to be engine-friendly evidence.
+
+## What honesty looks like in practice
+
+We have deliberately not invented a "perfect cadence" number here, because the cross-engine
+controlled experiment that would prove one does not exist yet — it is exactly the kind of
+measurement our upcoming **Edition 01 panel** is built to run. What the available evidence
+supports is directional: pages active on roughly **two-to-four-week** cycles outperform
+inactive pages, month-old content beats year-old content by a wide margin, and
+truthful, verifiable updates behave better than cosmetic date bumps in every dataset we
+have seen. If you implement nothing else: pick ten pages that matter, give each a real edit
+every month, and watch whether their citation footprint moves in two cycles. That is the
+whole playbook, and it is honest enough to run your business on.
+
+## Sources & notes
+
+- **ConvertMate, January 2026** — longitudinal analysis of 105,000 articles on the
+  relationship between update recency and citation share. We report it as an association;
+  the relative-share gradient is as published.
+- **Trakkr, 2026** — answer-engine behaviour research reporting that ~73.5% of sessions end
+  in the first answer ("one-and-done").
+- **Google, 2025 guidance** — documented advice to refresh content in place rather than
+  relocate or recreate it, keeping existing URLs (office-hours and docs commentary).
+- **Cadence guidance (2–4 weeks)** — our own directional synthesis of the citation-window
+  research, not a controlled public experiment. A cross-engine controlled test is on the
+  roadmap for our upcoming research panel (Edition 01).
+- Where this article discusses mechanisms (snapshot selection, evidence-pool copying,
+  re-fetch behaviour), the mechanisms are reasonable inferences from the public data above,
+  not independently verified engine internals. We are explicit about that because the
+  distinction matters.
