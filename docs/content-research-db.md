@@ -698,8 +698,8 @@ Status: published.
 Score: 7.9.
 URL: https://promptco.online/resources/research/how-to-measure-ai-search-influence-2026
 Brief: docs/content-briefs/25-measure-ai-search-influence-2026.md
-Commit: 0000000000000000000000000000000000000000
-Pushed: 0000000000000000000000000000000000000000
+Commit: 2f404cc1684daec1b57e7f89718f9622b802bd24
+Pushed: 2f404cc1684daec1b57e7f89718f9622b802bd24
 
 ### Targeting
 - Primary query: "measure AI search visibility" / "track ChatGPT citations" / "AI Mode Search Console" / "AI search reporting 2026" / "share of voice AI search"
