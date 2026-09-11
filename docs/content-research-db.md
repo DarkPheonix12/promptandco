@@ -733,8 +733,8 @@ Status: published.
 Score: 7.7.
 URL: https://promptco.online/resources/research/structured-data-schema-ai-search-2026
 Brief: docs/content-briefs/26-structured-data-schema-ai-search-2026.md
-Commit: 0000000000000000000000000000000000000000
-Pushed: 0000000000000000000000000000000000000000
+Commit: 2b29722810626ecb576dd7da7e92bedfb39de290
+Pushed: 2b29722810626ecb576dd7da7e92bedfb39de290
 
 ### Targeting
 - Primary query: "schema markup AI search 2026" / "FAQPage schema deprecated" / "structured data AI citations" / "schema AI Overviews" / "JSON-LD AI search"
