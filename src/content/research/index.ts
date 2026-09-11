@@ -47,6 +47,9 @@ import AgentReadyContent2026McpA2a, {
 import PerEngineCitationDivergence, {
   meta as perEngineCitationDivergenceMeta,
 } from "./per-engine-citation-divergence-2026.mdx";
+import AnswerEconomyB2b, {
+  meta as answerEconomyB2bMeta,
+} from "./answer-economy-b2b-ai-shortlist-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -65,6 +68,7 @@ const umeta = aiModeVsAiOverviewsMeta as ResearchMeta;
 const vmeta = localNearMeAiCitationsMeta as ResearchMeta;
 const wmeta = agentReadyContent2026McpA2aMeta as ResearchMeta;
 const xmeta = perEngineCitationDivergenceMeta as ResearchMeta;
+const ymeta = answerEconomyB2bMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -130,6 +134,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: xmeta,
     Content: PerEngineCitationDivergence as ComponentType,
+  },
+  {
+    meta: ymeta,
+    Content: AnswerEconomyB2b as ComponentType,
   },
 ];
 

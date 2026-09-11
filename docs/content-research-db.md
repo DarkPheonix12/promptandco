@@ -416,8 +416,8 @@ Status: published.
 Score: 9.3.
 URL: https://promptco.online/resources/research/per-engine-citation-divergence-2026
 Brief: docs/content-briefs/f1-per-engine-citation-divergence-2026.md
-Commit: TBD
-Pushed: TBD
+Commit: d62aedb
+Pushed: d62aedb
 
 ### Targeting
 - Primary query: "per-engine citation differences" / "ChatGPT vs Perplexity vs Gemini citations" / "AI search engine source comparison 2026" / "which sources does each AI engine cite"
@@ -439,6 +439,38 @@ Pushed: TBD
 
 ### QA & validation
 - Passed: lint (0 errors), tsc, build (24 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks. Fixed `<2` MDX-parse error before build.
+
+---
+
+## 017 — The Answer Economy: How AI Chatbots Rewired the B2B Shortlist in 2026
+
+Status: published.
+Score: 9.0.
+URL: https://promptco.online/resources/research/answer-economy-b2b-ai-shortlist-2026
+Brief: docs/content-briefs/f2-answer-economy-b2b-ai-shortlist-2026.md
+Commit: TBD
+Pushed: TBD
+
+### Targeting
+- Primary query: "B2B buyers AI chatbot research" / "AI shortlist vendor selection" / "answer economy B2B" / "how buyers use AI to choose software"
+- Intent: informational + commercial decision (B2B marketing leaders, CMOs, sales enablement, GTM strategy). Flagship bridge from research to agency offer; pairs with F1 (supply side) and #9 earned media (execution).
+
+### Research (fresh 2026)
+- G2 Answer Economy Report (Apr 15 2026): 1,076 B2B buyers, Mar 2026. 51% AI-first start (up from 29%); 71% rely on AI chatbots; 53% say AI more productive; AI = #1 shortlist influencer; 69% vendor switch; 33% bought from unknown; 85% AI-mention lift; 80% accelerated decision; 45% review citations #1 trust; 64% encounter inaccuracies; comparing vendors #1 use case (41%); ChatGPT 63%.
+- G2 Buyer Behavior Report (Jul 22 2026): 1,000+ buyers, 50+ interviews. Review sites 38% surpassed AI chatbots 37%; 61% use/plan AI agents; IT security 39% delay; finance 31%→46%; evaluation longest stage for 40%.
+- Kevin Indig/G2 (Jun 26 2026): G2 22.4% influence; 30,000 citations; 10% more reviews → 2% more AI citations.
+- Semrush (Jul 8 2026): 622 professionals; 92% AI-shaped shortlist; 83% AI-influenced decision.
+- Forrester 2026: 89% adoption; 13 stakeholders + 9 influencers.
+- 6sense 2025: pre-contact favorite wins 80%; shortlist 3.2→2.5.
+- AI-referred traffic 14.2% vs 2.8% Google organic (5.1x).
+- 70-80% buyer journey untracked (Similarweb dark funnel).
+
+### Gaps & differentiation
+- Gap: G2 report gets press releases; nobody builds operational playbook translating "reference to inference" into what content teams, review programs, and GTM strategy do in practice.
+- Original contribution: "third compression" thesis (Sanders); two-step pattern (AI sets shortlist, reviews validate); attribution blind spot (70-80% untracked); review-AI flywheel; shrinking shortlist; conversion gap pre-traffic.
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (25 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks.
 
 ---
 
