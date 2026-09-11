@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import ArticleLayout from "@/components/research/ArticleLayout";
 import PrimeReads from "@/components/blog/PrimeReads";
 import { getPost, posts } from "@/content/research";
-import { researchPath, researchUrl } from "@/lib/research";
+import { blogPath, blogUrl } from "@/lib/blog";
 import { siteConfig } from "@/lib/data";
 
 export const dynamicParams = false;
@@ -31,7 +31,7 @@ export async function generateMetadata({
     openGraph: {
       type: "article",
       locale: "en_US",
-      url: researchUrl(slug),
+      url: blogUrl(slug),
       siteName: siteConfig.name,
       title: post.meta.title,
       description: post.meta.description,
@@ -46,12 +46,12 @@ export async function generateMetadata({
       images: ["/og-image.svg"],
     },
     alternates: {
-      canonical: researchPath(slug),
+      canonical: blogPath(slug),
     },
   };
 }
 
-export default async function ResearchArticlePage({
+export default async function BlogArticlePage({
   params,
 }: {
   params: Promise<{ slug: string }>;

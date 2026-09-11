@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { posts } from "@/content/research";
+import { blogPath } from "@/lib/blog";
 
 const baseUrl = "https://promptco.online";
 
@@ -85,5 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages, ...industryPages, ...locationPages, ...resourcePages, ...researchPages];
+  const blogPages = posts.map((post) => ({
+    url: `${baseUrl}${blogPath(post.meta.slug)}`,
+    lastModified: new Date(post.meta.dateModified),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...servicePages, ...industryPages, ...locationPages, ...resourcePages, ...researchPages, ...blogPages];
 }
