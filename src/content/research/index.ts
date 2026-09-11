@@ -50,6 +50,9 @@ import PerEngineCitationDivergence, {
 import AnswerEconomyB2b, {
   meta as answerEconomyB2bMeta,
 } from "./answer-economy-b2b-ai-shortlist-2026.mdx";
+import YoutubeAiCitations, {
+  meta as youtubeAiCitationsMeta,
+} from "./youtube-ai-citations-video-search-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -69,6 +72,7 @@ const vmeta = localNearMeAiCitationsMeta as ResearchMeta;
 const wmeta = agentReadyContent2026McpA2aMeta as ResearchMeta;
 const xmeta = perEngineCitationDivergenceMeta as ResearchMeta;
 const ymeta = answerEconomyB2bMeta as ResearchMeta;
+const zmeta = youtubeAiCitationsMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -138,6 +142,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: ymeta,
     Content: AnswerEconomyB2b as ComponentType,
+  },
+  {
+    meta: zmeta,
+    Content: YoutubeAiCitations as ComponentType,
   },
 ];
 

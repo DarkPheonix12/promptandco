@@ -448,8 +448,8 @@ Status: published.
 Score: 9.0.
 URL: https://promptco.online/resources/research/answer-economy-b2b-ai-shortlist-2026
 Brief: docs/content-briefs/f2-answer-economy-b2b-ai-shortlist-2026.md
-Commit: TBD
-Pushed: TBD
+Commit: b344823
+Pushed: b344823
 
 ### Targeting
 - Primary query: "B2B buyers AI chatbot research" / "AI shortlist vendor selection" / "answer economy B2B" / "how buyers use AI to choose software"
@@ -471,6 +471,35 @@ Pushed: TBD
 
 ### QA & validation
 - Passed: lint (0 errors), tsc, build (25 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks.
+
+---
+
+## 018 — YouTube Is a Text Asset: How AI Reads and Cites Your Videos in 2026
+
+Status: published.
+Score: 7.5.
+URL: https://promptco.online/resources/research/youtube-ai-citations-video-search-2026
+Brief: docs/content-briefs/18-youtube-ai-citations-video-search-2026.md
+Commit: TBD
+Pushed: TBD
+
+### Targeting
+- Primary query: "YouTube AI citations" / "optimize YouTube for AI search" / "video GEO"
+- Intent: informational (content marketers, video producers, SEO/GEO practitioners). Spoke of hub 005.
+
+### Research (fresh 2026)
+- OtterlyAI (Mar 2 2026): 100M+ citations, 30 days, 6 platforms. YouTube 31.8% social citations; 94% long-form; Perplexity 38.7%, AI Overviews 36.6%, AI Mode 19.6%, ChatGPT 4.4%; popularity r=-0.03; timestamps Google-only; 78% multi-citation.
+- Indexly (May 15 2026): 3M+ URLs, 95K prompts, 5 engines. 22,781 YT citations; 7,083 unique videos; Perplexity 3.75%, ChatGPT 0.003%.
+- Similarweb (Jul 13 2026): YT SEO vs GEO; description r=0.31; Ask YouTube launch May 2026.
+- Rankshift/BrightonSEO (May 4 2026): 1.7M citations; TRYSEO case study 64% share of voice.
+- Goodie AI (Aug 2026): YT share 18.9%→39.2% (Aug-Dec 2025).
+
+### Gaps & differentiation
+- Gap: every competitor publishes tactical "optimize YouTube for AI" lists. Nobody centers the core insight: video is a text asset; popularity is irrelevant (r=-0.03).
+- Original contribution: "YouTube is a text asset" reframe; engine-specific targeting map; timestamp multiplier (Google-only); long tail (7,083 unique videos, top 50=14%); YouTube GEO vs SEO distinction.
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (26 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref). Verified exactly 2 ld+json blocks.
 
 ---
 
