@@ -261,3 +261,32 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ### QA & validation
 - Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
 - Pending: commit + push + Phase 25 report.
+
+---
+
+## 011 — llms.txt: The 137K-Site Audit, Who Reads It, When It Matters (Article #11)
+
+- Status: **written** (validation passed; commit pending)
+- Commit: pending (this commit)
+- URL: https://promptco.online/resources/research/llms-txt-2026-evidence
+- Brief: docs/content-briefs/011-llms-txt-2026-evidence.md
+
+### Targeting
+- Primary query: "does llms.txt matter" / "llms.txt AI search" / "llms.txt study 137k"
+- Intent: informational + practitioner decision; commercial (redirects wasted-effort spend). Spoke of hub 005; sibling to schema verdict (#10) and crawler readiness (#2).
+
+### Research (fresh 2026, source re-verified)
+- Anchor: Ahrefs / Linehan & Guan, published **June 15, 2026** (dataset May 2026; the 2025-11-10 date on the URL is stale page metadata — re-verified via multiple 2026 coverages), 137,210 domains + Bot Analytics: 28% publish (~38k, upper bound); 97% of valid files zero requests; of served, 96% bots / 77% not AI; AI 19.5% ceiling (agents 10.5% with Claude-Code top, training 5.3% GPTBot 4.51%, retrieval 1.1%, assistants ~2%); SEO audit tools ~21.7%; 12% studying the standard; Slackbot > PerplexityBot; zero AI bots on 404s (98% human); Lighthouse ~1 in 1,000.
+- Convergence nulls: SE Ranking Nov 2025 (~300k domains, no correlation; removing feature improved XGBoost model); OtterlyAI 90-day (62,100+ AI visits; /llms.txt 84 visits, ~3x worse than avg page); EZY Research 12 weeks/83 sites (OpenAI 3,990 vs 7; Anthropic 3,120 vs 9; Perplexity 775 vs 0; Googlebot 5,125 vs 67; Meta-ExternalAgent 193 vs 172); Digital Applied Apr 2026 (~900 domains, 7 mo, 1,227 requests, 88% zero, zero frontier-lab crawlers).
+- Adoption: Originality.ai 8.8x in 12 months (4,088 → 36,120 by May 2026; 38,980 incl. llms-full/ai.txt).
+- Content: Common Crawl Jul 2026 crawl (Aug 2026) — 6.5M URLs, 69.8% 404, 19.61% 200, 11.72% text body; denial policies; prompt-instruction language in a subset.
+- Platforms: Google MYTHBUSTING (not required; clarified Jun 15, 2026); Mueller "temporary crutch... not done for search"; Lighthouse 13.3.0 agentic-browsing audit (May 7, 2026); WebMCP origin trial Chrome 149; A2A (Apr 2025); OpenAI/Anthropic crawler docs → robots.txt.
+- Competitors analyzed: Ahrefs blog, SEJ, Rabbit Rank, Foundgrove, Perkins Growth, Primo Interactive, llmtxt.info, BetterAISearch, Digital Applied, ppc.land, Originality.ai, EZY (+12). Gap: single-study recaps vs vendor cheerleading; none assemble convergent multi-method nulls into a decision framework or connect to agents/WebMCP/docs boundary.
+
+### Gaps & differentiation
+- Gap: market splits between "dead" (single-study recaps) and "future-proof" (vendors); nobody gives the reader hierarchy (agents > training > auditors > retrieval), the structural why (map vs control file; nobody probes 404s), and a four-box allocation.
+- Original contribution: "read, not weighted" thesis; inverted reader pyramid; four-study convergence table; WebMCP/A2A horizon; if-you-publish-do-it-right rules; search-readiness comparison table (Phase 16); own-logs base-rate framing (97% = default not bug).
+
+### QA & validation
+- Passed: lint (MDX ignored by config, 0 errors), tsc, build (19 routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 questions / canonical https://promptco.online/resources/research/llms-txt-2026-evidence / sitemap ref / index ref / og:type article).
+- Pending: commit + push + Phase 25 report.

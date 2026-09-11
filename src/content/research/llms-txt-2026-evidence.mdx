@@ -1,0 +1,242 @@
+export const meta = {
+  slug: "llms-txt-2026-evidence",
+  title:
+    "llms.txt in 2026: The 137,000-Site Audit, Who Actually Reads the File, and When It Still Matters",
+  description:
+    "Ahrefs' 137,000-domain log audit found 97% of published llms.txt files got zero requests in a month — while the AI retrieval bots that decide citations made up 1.1% of the little traffic that existed. Who really reads the file, why it cannot move citations, and where it still pays (coding agents, WebMCP, docs).",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Technical",
+  tags: ["llms.txt", "AI crawlers", "robots.txt", "coding agents", "WebMCP", "AI citations"],
+  readingTimeMinutes: 8,
+  faq: [
+    {
+      question: "Does publishing llms.txt help my site get cited by AI search engines?",
+      answer:
+        "No strong evidence exists that it does. Ahrefs' June 2026 analysis of 137,210 domains found 97% of published llms.txt files received zero requests in May 2026, and the AI retrieval bots behind ChatGPT and Perplexity answers were just 1.1% of the traffic that did exist. SE Ranking modeled ~300,000 domains and found no link between the file and AI citation frequency. It is infrastructure agents read, not a citation lever.",
+    },
+    {
+      question: "Who actually reads llms.txt files?",
+      answer:
+        "Coding agents and developer tooling, then training crawlers. Claude-Code (Anthropic's coding agent) fetched the file more than any AI search or assistant bot, and the agentic-web category drove 10.5% of requests versus 1.1% for AI retrieval bots. Slackbot — a link-unfurl bot — requested the file more often than PerplexityBot did.",
+    },
+    {
+      question: "Should I publish an llms.txt file in 2026?",
+      answer:
+        "Keep it proportional. It is cheap insurance and worth doing if a platform generates it for you, especially for developer-docs and API sites whose users run coding agents. But the base rate is blunt: a 97% chance nothing reads it in any given month, and no AI system 'goes looking' for files that aren't there. Do not spend budget on it expecting AI citations — spend that on the content, entity and trust levers engines have shown they read.",
+    },
+    {
+      question: "Does Google use llms.txt?",
+      answer:
+        "Google Search ignores it. The AI-search guide's 'MYTHBUSTING' section says machine-readable files such as llms.txt are not required for generative-AI features, and John Mueller has called it 'a temporary crutch, perhaps to save some tokens' for coding tools, 'not done for search.' The only Google property touching it is Chrome's Lighthouse, which audits llms.txt under a new 'agentic browsing' category — developer tooling, not a ranking signal.",
+    },
+    {
+      question: "What is the difference between robots.txt and llms.txt?",
+      answer:
+        "Robots.txt is a control file every crawler checks constantly — in EZY Research's 12-week logs, OpenAI's crawler fetched robots.txt 3,990 times versus 7 times for llms.txt, and Perplexity fetched llms.txt zero times. llms.txt is an optional opt-in map of your content that agents fetch when directed, not speculatively. Robots.txt decides whether AI can reach you; llms.txt is guidance for what already reached you.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **llms.txt in 2026** — a map file that the citation engines barely fetch. In Ahrefs'
+  137,000-domain audit, 97% of published files got zero requests in a month, and the AI
+  retrieval bots that actually decide citations were 1.1% of the little traffic that
+  existed. The rare readers were coding agents (Claude-Code at the top) and training
+  crawlers (GPTBot) — infrastructure and future-proofing, not a visibility lever.
+</DefinitionCard>
+
+In the [11-levers model](/resources/research/ai-citation-levers-2026), llms.txt sits where
+schema markings sit after the controlled evidence got in: real, cheap, and read by the wrong
+readers for the job you probably wanted it for. This article is the dedicated, evidence-led
+treatment — the sibling verdict to [schema's null result](/resources/research/schema-ai-citations-2026-evidence),
+now with the largest log dataset we have on who actually fetches the file.
+
+## One number changed the debate
+
+**97%.** That is the share of published llms.txt files that received **zero requests of any
+kind** in May 2026 — no bots, no humans, nothing. The number comes from Ahrefs' analysis of
+**137,210 domains** (Linehan & Guan, published June 2026), and it turned the loudest single
+file in AI search from a "must-have 2026 tactic" into a measured question.
+
+The paradox that makes the number interesting: adoption is exploding. The same 28% of that
+technical-skewed panel publish the file — roughly 38,000 domains — and Originality.ai's
+tracker shows instances grew **8.8x in twelve months** (4,088 → 36,120 by May 2026, 38,980
+including llms-full.txt and ai.txt). More sites than ever are publishing a file that almost
+nobody requests. That is a signal about *who is selling* the tactic, not about what engines
+read.
+
+## What the 137,000-site audit actually measured
+
+The methodology matters, because it is the cleanest look at this file to date. Ahrefs took
+every domain in its Web Analytics panel that received traffic in May 2026, checked each root
+for an `llms.txt` returning HTTP 200, then used Bot Analytics to classify **every request**
+to the `/llms.txt` path — split by HTTP response (200 vs 404) and by individual user agent.
+
+Two consequences shape every other number in this article:
+
+- **"Fetched" is not "read".** Many bots pull the file and never act on it. Every figure
+  below is therefore a *ceiling* on actual llms.txt consumption — real usage is at or below
+  what the logs show.
+- **99.9% of the story is the null.** Of ~38,000 valid files, 97% drew nothing at all. All
+  llms.txt traffic in the study came from ~1,100 domains and about 22,000 requests.
+
+## Who fetches the file: the inverted pyramid
+
+When the file *is* fetched, the reader list is the opposite of what its promoters assumed.
+96% of requests came from bots, but **77% of those bots are not AI tools at all** — and the
+AI bots that did show up are the wrong AI bots:
+
+| Reader category | Share of requests | Why it matters |
+| --- | --- | --- |
+| SEO audit tools | ~21.7% | The industry studying itself; Ahrefs' own crawlers included |
+| **AI agents & agentic infra** | **10.5%** | Claude-Code top of *all* AI bots; coding agents, not search |
+| AI training crawlers | 5.3% | GPTBot alone 4.51%; ClaudeBot 0.80%; DeepseekBot 0.02% |
+| Discoverability / validator bots | 3.6% | Audit the standard, not the site |
+| AI assistants | ~2% | Consumer chatbot surfaces |
+| **AI retrieval bots** | **1.1%** | OAI-SearchBot, PerplexityBot — the bots that decide citations |
+
+The comparison that lands it: **Slackbot — the chat link-unfurl bot — requested llms.txt
+more often than PerplexityBot did.** And the negative result is equally clean: AI bots never
+go looking for files that don't exist. Split by HTTP response, missing files drew 98% human
+traffic (SEOs checking competitors) and the AI-bot share of those 404s was **zero**. Even
+the Chrome Lighthouse audit that reignited the debate produced roughly **1 in 1,000** of all
+requests. The taxonomies line up: AI agents are a real audience and AI search retrieval is
+not — yet.
+
+## Four independent methods, the same null
+
+A single null can replicate badly; four different designs agreeing is different. Alongside
+Ahrefs' server logs:
+
+- **SE Ranking (Nov 2025)** modeled ~300,000 domains — of which about 10% had the file — and
+  found **no correlation between llms.txt and AI-citation frequency**. They then built a
+  gradient-boosted prediction model to catch a weak signal; removing the llms.txt feature
+  *improved* the model's accuracy. The variable was behaving as noise.
+- **OtterlyAI (90 days, 62,100+ AI bot visits)** tracked what crawlers actually hit: the
+  `/llms.txt` path received 84 visits — roughly **3x worse than an average content page**.
+- **EZY Research (12 weeks, 83 sites with live logs)** compared robots.txt and llms.txt
+  fetches on the same estate: OpenAI 3,990 vs **7**; Anthropic 3,120 vs **9**; PerplexityBot
+  775 vs **0**; Googlebot 5,125 vs 67. The one counter-intuitive datapoint: **Meta's
+  Meta-ExternalAgent read llms.txt (193) more often than it read robots.txt (172)** — the
+  only major AI company currently consuming the file at scale.
+- **A 900-domain, seven-month server-log study** saw just 1,227 family-path requests total,
+  with 88% of the estate never requested once and **zero verified frontier-lab crawlers**
+  among the readers.
+
+Methodological convergence is the point: logs, a predictive citation model, crawl tracking,
+and a second log study all land in the same place. There is no well-populated citation
+pathway through llms.txt today.
+
+## Why the file cannot move citations — structurally
+
+Robots.txt and llms.txt look like siblings and behave differently. **Robots.txt is a control
+file every crawler checks on every crawl** — that is why it drew thousands of fetches in the
+same logs where llms.txt drew single digits. **llms.txt is an optional, opt-in map:** agents
+fetch it *when directed*, not speculatively, and no AI system penalizes you for not having
+one. Publishing cannot put you on any AI radar, because nothing goes looking for it.
+
+The platform record agrees:
+
+- **Google** — the AI-search guide's MYTHBUSTING section states machine-readable files like
+  llms.txt are **not required** for generative-AI features and carry no signal; **John
+  Mueller** has called the file "not done for search" — "a temporary crutch, perhaps to save
+  some tokens" for AI coding tools. The only Google property touching it is **Chrome
+  Lighthouse**, which added an llms.txt audit on **May 7, 2026** — filed under a new
+  *agentic browsing* category, not the SEO audit group. Google's own taxonomy says agent
+  tooling, not search optimisation.
+- **OpenAI / Anthropic / Perplexity** — crawler documentation points to **robots.txt**;
+  llms.txt appears in their own developer-docs as a lightweight map. No major engine has
+  committed to reading it for ranking, retrieval, or citations.
+
+So the honest label is *future-readiness infrastructure*: a standard that could matter
+through the agent layer, that no citation engine currently weights.
+
+## Where the file genuinely matters in 2026
+
+The one audience with a documented, real use case: **coding agents and developer tooling.**
+Claude-Code out-fetched every AI retrieval bot, assistant, and training crawler except
+GPTBot; Cursor, GitHub Copilot, Continue, and Aider read the file to navigate documentation
+sites; Mintlify's internal data shows agents reach for llms-full.txt at more than twice the
+rate of the standard file. If your customers run coding agents, or agents act on your site
+on their behalf, a clean llms.txt stands a real chance of being read.
+
+Two supporting arguments keep it rational:
+
+- **The WebMCP horizon.** Google's weight is not on llms.txt — it is on WebMCP (the Web Model
+  Context Protocol), structured agent-to-site tool contracts in HTML, shipping in an origin
+  trial in Chrome 149, alongside the A2A protocol announced in April 2025. llms.txt is
+  scaffolding the agent layer may standardize around; it is optionality, not today's
+  visibility.
+- **Common Crawl's July 2026 crawl** found that even when the file exists, quality varies
+  enormously: of 6.5M sampled URLs, 69.8% returned 404, and under half of the 200s carried a
+  text body. Validated files carry policy language and — in a subset — **instructions
+  addressed to the model itself**. Agents trust ingested content, which is why prompt
+  injection in auto-generated files is a real audit finding.
+
+## The decision framework
+
+1. **Developer-docs / API / SDK site → publish, and do it properly.** Link the file from
+   your HTML and docs (agents fetch when directed), keep redirects and status clean (the
+   Lighthouse audit only fails on a server error), and keep the map accurate, not marketing.
+2. **Marketing, e-commerce, and local sites → optional.** If a platform hands you the file,
+   keep it. Do not spend budget on it expecting AI citations.
+3. **If you publish, do it right:** follow the spec (llmstxt.org) so validators parse it,
+   keep it a map of the site rather than a pitch, keep it current, and do not bake prompt
+   instructions into it.
+4. **Measure from your own logs.** Your server logs are the only test that settles it for
+   your site — and the base rate is that a 97% chance nothing reads it in any given month is
+   the default, not a bug. The
+   [measurement buyer's guide](/resources/research/ai-visibility-measurement-buyers-guide)
+   covers how to track named AI mentions without fooling yourself.
+
+## Search-readiness: what actually moves AI surfaces
+
+| Element | What it does | 2026 evidence | Verdict |
+| --- | --- | --- | --- |
+| robots.txt | Controls crawler access; checked on every crawl | Thousands of fetches per crawler (EZY); determines whether engines can reach you | Mandatory hygiene — with [real AI-crawler policy](/resources/research/ai-crawlers-2026-readiness) |
+| sitemap.xml | URL discovery | Standard crawl input | Standard hygiene |
+| LLMs.txt | Opt-in content map for agents | 97% zero requests; retrieval 1.1%; four-study null | Optional; agents/docs only |
+| WebMCP / A2A | Structured agent-to-site contracts | Origin trial in Chrome 149 | Early; the agent-worthy horizon |
+| Schema / JSON-LD | Entity wiring, training facts, Bing/Copilot | Controlled: no citation lift on visible pages | Hygiene + [training-layer facts](/resources/research/schema-ai-citations-2026-evidence) |
+| Visible facts + entity & trust wiring | What engines actually cite | Retrieval extracts visible HTML; rank + corroboration dominate | The actual citation levers ([hub](/resources/research/ai-citation-levers-2026)) |
+
+## Bottom line
+
+llms.txt is a real file with a real — and narrow — audience: **coding agents, developer
+docs, and future agent infrastructure.** It is not, on any 2026 dataset, a citation lever.
+Publish it as cheap insurance if it is free or your buyers run agents; make sure your
+crawl-access and content-entity layers are genuinely working; and spend the citation budget
+on the levers the engines have shown they read — the entity, trust, and evidence work covered
+in the [11-levers hub](/resources/research/ai-citation-levers-2026). Your own server logs are
+the tiebreaker, and the base rate is on your side: you are not doing anything wrong when the
+file stays quiet.
+
+## Sources & notes
+
+- **Ahrefs / Linehan & Guan, June 2026 (May 2026 logs)** — 137,210 domains: 28% publish;
+  97% of valid files zero requests; 96% of served traffic bots; 77% not AI; AI 19.5% ceiling
+  (agents 10.5% with Claude-Code top, training 5.3% with GPTBot 4.51%, retrieval 1.1%,
+  assistants ~2%); 12% studying the standard; Slackbot &gt; PerplexityBot; zero AI bots on
+  404s (98% human); Lighthouse ~1 in 1,000. The anchor study for this article.
+- **SE Ranking, Nov 2025** — ~300,000 domains, ~10% adoption; no correlation with citation
+  frequency; removing the feature improved an XGBoost model.
+- **Originality.ai, Jun/Jul 2026** — 4,088 → 36,120 llms.txt instances (8.8x) by May 2026;
+  38,980 incl. llms-full.txt + ai.txt, 3M+ sites scanned.
+- **OtterlyAI, 2026 (90 days)** — 62,100+ AI bot visits; /llms.txt = 84 visits, ~3x worse
+  than average pages.
+- **EZY Research, Jul 2026 (27 Apr–19 Jul window)** — 83 live sites, 12 weeks: OpenAI 3,990
+  vs 7; Anthropic 3,120 vs 9; PerplexityBot 775 vs 0; Googlebot 5,125 vs 67;
+  Meta-ExternalAgent 172 vs 193.
+- **Server-log study (Digital Applied, Apr 2026)** — ~900 domains, 7 months: 1,227 family
+  requests; 88% of estate zero; zero verified frontier-lab crawlers.
+- **Common Crawl, Aug 2026 (Jul 2026 crawl)** — 6.5M sampled URLs: 69.8% 404, 19.61% 200,
+  11.72% text body at /llms.txt; denial policies (CCBot 26.23%, GPTBot 20.00%, ClaudeBot
+  18.88%); prompt-instruction language present in a subset.
+- **Google, 2026** — AI-search MYTHBUSTING (llms.txt not required; clarified Jun 15, 2026);
+  Mueller: "not done for search," a "temporary crutch"; Lighthouse 13.3.0 agentic-browsing
+  audit (May 7, 2026); WebMCP origin trial Chrome 149; A2A (Apr 2025).
+- **Mintlify, 2026** — internal data: agents reach llms-full.txt at &gt;2x the standard-file
+  rate. Vendor datapoint, treated as indicative not audited.
+- Correlational-vs-causal and fetch-vs-read distinctions are labeled wherever numbers
+  appear; every effect figure (e.g., 97%, 1.1%, 10.5%) is a ceiling, not a floor.

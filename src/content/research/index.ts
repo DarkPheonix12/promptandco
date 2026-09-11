@@ -29,6 +29,9 @@ import EarnedMediaAiSearchPlaybook, {
 import SchemaAiCitations2026, {
   meta as schemaAiCitations2026Meta,
 } from "./schema-ai-citations-2026-evidence.mdx";
+import LlmsTxt2026Evidence, {
+  meta as llmsTxt2026EvidenceMeta,
+} from "./llms-txt-2026-evidence.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -41,6 +44,7 @@ const ometa = seoGeoAeoLlmoGuideMeta as ResearchMeta;
 const pmeta = eeatAiTrustSignalsMeta as ResearchMeta;
 const qmeta = earnedMediaAiSearchPlaybookMeta as ResearchMeta;
 const rmeta = schemaAiCitations2026Meta as ResearchMeta;
+const smeta = llmsTxt2026EvidenceMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -82,6 +86,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: rmeta,
     Content: SchemaAiCitations2026 as ComponentType,
+  },
+  {
+    meta: smeta,
+    Content: LlmsTxt2026Evidence as ComponentType,
   },
 ];
 
