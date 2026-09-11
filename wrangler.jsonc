@@ -9,6 +9,12 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "RATE_LIMIT_DB",
+      "database_name": "promptco-rate-limit",
+      "database_id": "bda35c17-cbea-43d4-abb3-27848b29104f"
+    }
+  ]
 }
-

@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import { scrapeWebsite } from "@/lib/scraper";
 import { analyzeVisibility, heuristicAnalysis } from "@/lib/analysis";
 import { buildReportEmail } from "@/lib/email-templates";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -199,6 +200,23 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: "Service not configured" },
         { status: 500 }
+      );
+    }
+
+    // ── Rate limiting (per-IP + global daily LLM budget) ──
+    const limit = await checkRateLimit(request);
+    if (!limit.allowed) {
+      console.warn(
+        `[RateLimit] blocked ${getClientIp(request)} (${limit.reason})`
+      );
+      return NextResponse.json(
+        {
+          error:
+            limit.reason === "global_daily_limit"
+              ? "We've reached today's free assessment capacity. Please try again tomorrow or email founder@promptco.online directly."
+              : "Too many assessment requests from your network. Please try again later.",
+        },
+        { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } }
       );
     }
 
