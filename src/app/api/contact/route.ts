@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { scrapeWebsite } from "@/lib/scraper";
-import { analyzeWithGemini } from "@/lib/gemini";
+import { analyzeVisibility, heuristicAnalysis } from "@/lib/analysis";
 import { buildReportEmail } from "@/lib/email-templates";
 
 const resend = process.env.RESEND_API_KEY
@@ -270,13 +270,20 @@ export async function POST(request: NextRequest) {
       }
 
       try {
-        console.log(`[Pipeline] Analyzing with Gemini for: ${data.improve}`);
-        analysis = await analyzeWithGemini(scrapedData, data.improve);
-        console.log(`[Pipeline] Scores:`, analysis.scores, `Fallback: ${analysis.isFallback}`);
-      } catch (geminiError) {
-        console.error("[Pipeline] Gemini failed, using fallback:", geminiError);
-        // Use fallback scores
-        analysis = await analyzeWithGemini(scrapedData, data.improve);
+        console.log(`[Pipeline] Running visibility analysis for: ${data.improve}`);
+        analysis = await analyzeVisibility(scrapedData, {
+          industry: data.industry,
+          targetMarket: data.targetMarket,
+          improve: data.improve,
+          message: data.message,
+        });
+        console.log(
+          `[Pipeline] Provider: ${analysis.provider}, Fallback: ${analysis.isFallback}, Scores:`,
+          analysis.scores
+        );
+      } catch (analysisError) {
+        console.error("[Pipeline] Analysis threw unexpectedly, using heuristics:", analysisError);
+        analysis = heuristicAnalysis(scrapedData);
       }
 
       // Build and send the AI visibility report email

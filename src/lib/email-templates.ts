@@ -1,5 +1,6 @@
-import { ScrapedData } from "./scraper";
-import { AnalysisResult, SCORE_LABELS } from "./gemini";
+import type { ScrapedData } from "./scraper";
+import type { AnalysisResult } from "./analysis";
+import { SCORE_LABELS } from "./analysis";
 
 function getScoreColor(score: number): string {
   if (score >= 80) return "#16a34a";
@@ -60,6 +61,77 @@ export function buildReportEmail(
     </div>`
     )
     .join("");
+
+  // ── Persona section ──
+  const personaHtml = analysis.persona
+    ? `
+    <div style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+      <h2 style="margin: 0 0 4px 0; color: #0f172a; font-size: 16px;">Who's asking AI about businesses like yours</h2>
+      <p style="margin: 0 0 16px 0; color: #64748b; font-size: 12px;">The buyer persona our analysts modeled for this assessment</p>
+      <div style="background: #f8fafc; border-radius: 8px; padding: 16px;">
+        <p style="margin: 0 0 6px 0; color: #0f172a; font-size: 15px; font-weight: 700;">${analysis.persona.name} — ${analysis.persona.role}</p>
+        <p style="margin: 0 0 10px 0; color: #64748b; font-size: 12.5px;">${analysis.persona.companyType}</p>
+        <p style="margin: 0 0 4px 0; color: #334155; font-size: 13.5px; line-height: 1.6;"><strong style="color: #0f172a;">Goal:</strong> ${analysis.persona.goals}</p>
+        <p style="margin: 0; color: #334155; font-size: 13.5px; line-height: 1.6;"><strong style="color: #0f172a;">Pain:</strong> ${analysis.persona.painPoints}</p>
+      </div>
+    </div>`
+    : "";
+
+  // ── Simulated AI prompts section ──
+  const outcomeMeta: Record<string, { label: string; color: string }> = {
+    mentions_brand: { label: "MENTIONS YOU", color: "#16a34a" },
+    cites_brand: { label: "CITES YOU", color: "#16a34a" },
+    competitor_only: { label: "COMPETITOR NAMED", color: "#dc2626" },
+    no_mention: { label: "YOU'RE INVISIBLE", color: "#dc2626" },
+  };
+  const promptsHtml =
+    analysis.simulatedPrompts.length > 0
+      ? `
+    <div style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+      <h2 style="margin: 0 0 4px 0; color: #0f172a; font-size: 16px;">Prompts your buyers are asking AI right now</h2>
+      <p style="margin: 0 0 16px 0; color: #64748b; font-size: 12px;">Modeled from your market — this is where AI visibility is won or lost</p>
+      ${analysis.simulatedPrompts
+        .map(
+          (p) => `
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-bottom: 8px;">
+        <p style="margin: 0 0 8px 0; color: #334155; font-size: 14px; line-height: 1.5; font-style: italic;">\u201c${p.prompt}\u201d</p>
+        <span style="display: inline-block; background: ${outcomeMeta[p.outcome]?.color ?? "#64748b"}12; color: ${outcomeMeta[p.outcome]?.color ?? "#64748b"}; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 12px; border: 1px solid ${outcomeMeta[p.outcome]?.color ?? "#64748b"}25;">${outcomeMeta[p.outcome]?.label ?? "CHECK MANUALLY"}</span>
+      </div>`
+        )
+        .join("")}
+    </div>`
+      : "";
+
+  // ── Quick wins section ──
+  const impactColors: Record<string, string> = { high: "#16a34a", medium: "#d97706", low: "#64748b" };
+  const quickWinsHtml =
+    analysis.quickWins.length > 0
+      ? `
+    <div style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+      <h2 style="margin: 0 0 4px 0; color: #0f172a; font-size: 16px;">Your 90-day action plan</h2>
+      <p style="margin: 0 0 16px 0; color: #64748b; font-size: 12px;">Highest-impact moves first</p>
+      ${analysis.quickWins
+        .map(
+          (w, i) => `
+      <div style="border-left: 3px solid ${impactColors[w.impact] ?? "#2563eb"}; background: #f8fafc; border-radius: 0 8px 8px 0; padding: 14px 16px; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <span style="color: #2563eb; font-weight: 700; font-size: 13px;">${i + 1}.</span>
+          <span style="color: #0f172a; font-weight: 700; font-size: 14px;">${w.title}</span>
+          <span style="margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; color: ${impactColors[w.impact] ?? "#64748b"}; text-transform: uppercase;">${w.impact} impact</span>
+        </div>
+        <p style="margin: 0; color: #475569; font-size: 13.5px; line-height: 1.6;">${w.action}</p>
+      </div>`
+        )
+        .join("")}
+    </div>`
+      : "";
+
+  const summaryHtml = analysis.summary
+    ? `
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 18px 20px; margin-bottom: 20px;">
+      <p style="margin: 0; color: #1e40af; font-size: 14px; line-height: 1.65;"><strong>Analyst summary:</strong> ${analysis.summary}</p>
+    </div>`
+    : "";
 
   const fallbackNote = analysis.isFallback
     ? `<div style="background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
@@ -129,6 +201,10 @@ export function buildReportEmail(
 
         ${fallbackNote}
 
+        ${summaryHtml}
+
+        ${personaHtml}
+
         <!-- Detailed Scores -->
         <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px; overflow: hidden;">
           <div style="padding: 16px 16px 12px 16px; border-bottom: 1px solid #e2e8f0;">
@@ -144,6 +220,10 @@ export function buildReportEmail(
           <h2 style="margin: 0 0 16px 0; color: #0f172a; font-size: 16px;">Key Insights & Recommendations</h2>
           ${insightsHtml}
         </div>
+
+        ${promptsHtml}
+
+        ${quickWinsHtml}
 
         <!-- CTA Section -->
         <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 20px; position: relative; overflow: hidden;">
