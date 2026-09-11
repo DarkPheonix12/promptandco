@@ -325,7 +325,7 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ## 013 — Google AI Is Two Engines: AI Mode vs AI Overviews (Article #13)
 
 - Status: **written + committed + pushed**
-- Commit: (see git log)
+- Commit: 57ef366
 - URL: https://promptco.online/resources/research/ai-mode-vs-ai-overviews-2026
 - Brief: docs/content-briefs/013-ai-mode-vs-ai-overviews-2026.md
 
