@@ -1,0 +1,247 @@
+export const meta = {
+  slug: "schema-ai-citations-2026-evidence",
+  title:
+    "Schema Is Not an AI Citation Lever: The 2026 Controlled Evidence, the Correlation Trap, and Where Markup Still Pays",
+  description:
+    "Cited pages are 3x more likely to have JSON-LD — yet controlled tests found adding schema produced no citation lift. Why the correlation misleads, what engines actually read, the attribute-rich nuance, and the five places markup still earns its keep.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Technical",
+  tags: ["schema", "JSON-LD", "structured data", "FAQ rich results", "llms.txt", "AI citations"],
+  readingTimeMinutes: 11,
+  faq: [
+    {
+      question: "Does adding schema markup increase citations on pages AI already cites?",
+      answer:
+        "The best-controlled 2026 evidence says no. Ahrefs tracked 1,885 pages that added JSON-LD against ~4,000 matched controls across Google AI Overviews, AI Mode and ChatGPT: no statistically significant uplift on any platform (AI Mode +2.4%, ChatGPT +2.2%, AI Overviews −4.6%). Four separate statistical tests converged on the same null result. Markup may help a page clear initial crawling or indexing, but it does not push an already-visible page higher.",
+    },
+    {
+      question: "Why do AI-cited pages always seem to have schema?",
+      answer:
+        "Correlation without causation. In a 6-million-URL analysis, cited pages were roughly three times more likely to carry JSON-LD (53% vs 19%) — but the sites that implement structured data also invest in technical SEO, authoritative content, links and maintenance, which are the actual citation drivers. Once you control for ranking position and authority (Fischman's corrected models; Ahrefs' difference-in-differences), the schema effect collapses to zero.",
+    },
+    {
+      question: "Do AI engines even read JSON-LD during retrieval?",
+      answer:
+        "Not at the citation-selection step. Live-retrieval tests (searchVIU) across ChatGPT, Claude, Perplexity, Gemini and AI Mode found all five extract only visible HTML; hidden JSON-LD, Microdata and RDFa were ignored. Williams-Cook's planted tests show engines can read markup the same way they read ordinary text — not as validated structured objects. The one documented counter-example: Bing's LLMs (which power Copilot and parts of ChatGPT's index) are explicitly said to benefit from schema, and Google's own structured-data pipeline feeds training corpora.",
+    },
+    {
+      question: "Is attribute-rich schema worth more than generic schema?",
+      answer:
+        "Carefully. One 730-citation study found Product/Review schema with populated prices and ratings cited at 61.7% vs 41.6% for generic types — but pages with no schema at all sat at 59.8%. The honest reading: dense facts win, and visible fact text alone nearly matched rich markup. Markup is not the unlock; the concrete, quotable facts are. Keep those facts visible in prose and in the markup, and treat schema as infrastructure, not as the lever.",
+    },
+    {
+      question: "What about FAQ schema and llms.txt — do they still matter?",
+      answer:
+        "Both have narrow, shrinking roles. FAQ rich results were fully sunset by Google in May 2026, and controlled tests found FAQPage schema neutral for AI retrieval (−1.7% over 480 queries). llms.txt: Ahrefs' 137,000-domain audit found 97% of published files received zero requests in May 2026, and the largest AI consumer was agentic/coding tooling (Claude-Code), not citation engines. Neither is an AI-citation lever; both retain legitimate niche uses.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **Schema and AI citations in 2026** — the gap between what correlated data implies and
+  what controlled experiments measure. Cited pages are ~3x more likely to carry JSON-LD, yet
+  every well-controlled 2026 test found adding schema produced no positive citation lift on
+  already-visible pages. Structured data survives as infrastructure — entity wiring,
+  training-corpus facts, Bing/Copilot, last-mile attribute precision — not as a citation
+  lever.
+</DefinitionCard>
+
+In the [11-levers model](/resources/research/ai-citation-levers-2026), schema (lever 9)
+sits in the *openly contested* column, and this article explains exactly why. The evidence
+story of 2026 is a story of a correlation that survived, a causal effect that did not, and
+a nuance — attribute-rich vs generic markup — that most of the conversation still misses.
+No other claim in this series has produced such a complete stack of controlled tests
+pointing one direction, so it deserves the full treatment.
+
+## The correlation everyone quotes — and the trap hidden in it
+
+Start with the number that created the "schema for AI" industry. In a May 2026 analysis of
+**6 million URLs**, Ahrefs found AI-cited pages carry JSON-LD about **three times more
+often** than non-cited pages (roughly 53% vs 19%; Linehan & Guan, 2026). An independent
+corpus worker in the same period — AirOps analyzed 16,851 queries — found JSON-LD pages
+cited at 38.5% vs 32.0% for pages without it (a +6.5-point gap; Indig, 2026). The peer-
+reviewed side agrees: Schanbacher's study of 1,508 German real-estate sites found FAQPage
+(OR ≈ 13, p < .001) and Product (OR ≈ 4) schema associated with ChatGPT visibility.
+
+Three sources, three different designs, one consistent correlation. It is real. It is also
+predictable, for one boring reason: **the sites that implement schema are the sites that
+also implement everything else.** Schema is the visible tip of a site managed by a competent
+team that also writes good content, earns links, and maintains the technical layer. The
+correlation exists because the *practice* of doing schema and the *practice* of getting
+cited share a common cause. Even the famous GEO-16 structured-data finding — r = 0.63 and a
+"+39% citation impact" figure that vendors still quote — inherits a fundamental flaw: its
+corpus was harvested *from* citations, with no uncited population to compare against. The
++39% is an over-quoted artifact of sampling, not a measurement of cause.
+
+## The 2026 controlled evidence: adding schema changes nothing
+
+The reason these correlations don't settle it is that 2026 finally produced the
+experiments. All of them ran on matched, controlled designs — and all of them came back
+near zero.
+
+- **Ahrefs' difference-in-differences RCT (May 2026).** After the correlational audit,
+  the researchers tracked **1,885 pages that added JSON-LD** against ~4,000 matched
+  controls from August 2025 to March 2026, measuring citations across Google AI Overviews,
+  AI Mode, and ChatGPT. Results: AI Mode +2.4% (statistically indistinguishable from
+  zero), ChatGPT +2.2% (indistinguishable from zero), AI Overviews **−4.6%** (small but
+  statistically significant — a decline). Four separate tests, same direction: schema did
+  not move citations for pages AI already had access to. The pages were not new or
+  invisible; they were mid- to high-visibility pages where markup was the only variable.
+- **The GEO Lab FAQPage experiment (480 queries).** A controlled side-by-side found FAQPage
+  markup at **−1.7%** and, more importantly, exposed the mention-vs-citation gap: Gemini
+  *mentioned* a marked-up test page 21.2% of the time yet *cited* it **0%** (Ferreira,
+  2026). The graph is consulted; the page is not linked.
+- **Authority Radar's 90-day FAQ study (August 2026).** 120 matched pages, ~12,000 prompt-
+  runs: ChatGPT +0.1pp (null), AI Mode/OAO +0.1pp (null), Gemini −0.5pp (null). The single
+  exception was Perplexity at **+1.3pp** — modest, at a 90% confidence interval, but real.
+  Every null result to date has held; Perplexity is the only engine where FAQ markup
+  measurably helps.
+- **Fischman's corrected models (SSRN 6284518, Feb 2026).** The largest single citation
+  corpus around schema (730 observed citations across ChatGPT and Gemini) initially looked
+  negative — pooled OR 0.546, p < .001 — but the effect turned out to be an artifact: the
+  citations inherited Google's rank bias. Corrected for retrieval position, schema presence
+  (OR 0.678), entity richness (OR 1.001) and alignment (OR 1.068) all go null, while
+  position dominates: OR 0.762 per position, 43% citation at position 1 collapsing to 5% by
+  position 7. **Rank is the lever; markup is not.**
+- **searchVIU's live-retrieval test.** Five AI systems — ChatGPT, Claude, Perplexity,
+  Gemini, and AI Mode — all extract only visible HTML when selecting a citation source;
+  in-page JSON-LD, Microdata, and RDFa are ignored at that step. Williams-Cook's planted
+  tests reached the same place differently: engines read malformed JSON-LD as ordinary
+  *text* (DUCKYEA test), which is why "your schema is broken" rarely breaks retrieval and
+  "your schema is perfect" rarely improves it.
+
+The institutional column backs the experiments. Google's first official AI-search doc
+("MYTHBUSTING") says flatly that schema.org markup is **not required** for AI features, and
+the FAQ rich-results program — the last prominent *visible* payoff of FAQPage markup — was
+fully sunset on **May 7, 2026**.
+
+## The nuance that survives: attribute-rich markup and visible facts
+
+If markup were uniformly worthless, that would be the whole story. It isn't. The controlled
+data supports a finer claim: **facts win; markup format mostly doesn't matter; and
+attribute-rich markup correlates with facts-rich pages.**
+
+In Fischman's corpus, pages carrying Product or Review schema with *populated* prices,
+ratings, and attributes were cited at **61.7%**, versus 41.6% for generic types. Then the
+critical detail that almost everyone reporting this skipped: pages with **no schema at all
+sat at 59.8%** — statistically indistinguishable from the rich-markup group (as verified by
+Daniel Cheung's June 2026 re-analysis of the full paper). Rich schema ≈ no schema; generic
+schema was the actual loser. citability.dev's per-type tracking across three engines
+agrees with the ordering — FAQPage 71%, HowTo 66%, Article 58%, TechArticle 55% — and with
+the "*which fields are filled*" point: populated `author`, `dateModified`, and `headline`
+matter more than which type you choose (Haller, 2026). Perplexity weights
+SoftwareApplication and Product; Claude's citability runs hot on FAQ content.
+
+Two places where markup is genuinely read rather than ignored:
+
+- **Bing's LLMs.** Schema is *documented* as helpful for Copilot and for Bing's side of
+  the ChatGPT index (Capconvert's synthesis of Bing's Canel's guidance, 2026) — the one
+  agent pipeline where a schema-positive statement survives scrutiny.
+- **The training layer, not the retrieval layer.** Engine pre-training draws on the Web
+  Data Commons' extracted RDF — 106B quads from ~3.1B entities — so high-quality markup on
+  high-quality pages feeds the *parametric* memory that later gets recited as "knowledge."
+  That is a long-horizon brand-facts channel, distinct from (and slower than) live citation.
+
+And then there is the inference the correlated data drags in as a rider: aggregateRating
+and review presence behave like *corroboration*, not markup. In Ahrefs' companion audit,
+a brand with no review profile got cited **1%** of the time; one actively collecting
+reviews, **75.3%** — while review platforms alone supply ~14% of all citations. That is the
+real [entity and trust wiring](/resources/research/eeat-ai-trust-signals-2026) doing
+work that gets mis-attributed to schema.
+
+## So where does markup still pay in 2026? Five uses
+
+Honest bottom line. Schema is not an AI-citation *growth* lever, but it is not dead. It
+pays in five specific places — each labeled for what it is:
+
+1. **Entity and disambiguation infrastructure.** The `sameAs` array and Organization
+   `@id` spine are a merge instruction telling engines your profiles describe one entity.
+   This is the [entity layer](/resources/research/entity-optimization-2026), not a
+   citation lever — but it is the layer everything else needs.
+2. **Training-corpus brand facts.** Consistent, populated markup feeds Web Data Commons and,
+   eventually, parametric recall. Slow, compounding, invisible in any 3-month window —
+   hygiene, not a switch (Web Data Commons, 2026).
+3. **Bing / Copilot compatibility.** The one documented live-retrieval consumer that reads
+   schema. Cheap insurance; zero downside; real (Capconvert, 2026).
+4. **Last-mile attribute precision on pages already cited.** On content that clears
+   retrieval, populated price/rating/spec attributes give an answer engine exact quotable
+   facts instead of forcing it to paraphrase. This is where attribute-rich markup arguably
+   edges visible text — a real but *marginal* effect, and only on pages that would be
+   cited anyway. (Practitioner-standard; no controlled study isolates it.)
+5. **Visible facts first, markup second.** The 59.8%-vs-61.7% result means you get almost
+   all the benefit by writing the facts into the page in plain prose. Markup is a
+   transcript of facts in a machine-traceable shape, and a copy of that transcript in the
+   training layer — it is never a substitute for the fact.
+
+Yes — that includes every page in this research series, which carries BlogPosting and
+FAQPage JSON-LD. It's last-mile SEO infrastructure and semantic context, not a citation
+trick. Writing this article didn't make this article citable; writing *evidence* will,
+which is the point.
+
+## The reallocation rule
+
+If you budget schema as an AI-citation strategy, 2026 says you have it backwards. The
+controlled stack — Ahrefs' RCT, the GEO Lab's FAQ test, Authority Radar's 90-day run,
+Fischman's position-corrected models, searchVIU's retrieval tests — agrees on three
+decisions:
+
+- **Keep schema, but as hygiene.** One Organization block, a complete `sameAs` array, one
+  FAQ block on genuinely varied questions, populated attributes where facts exist. Budget
+  it like server monitoring: necessary, small, and *not* the growth line.
+- **Spend the citation budget on rank and visible facts.** Position decides citation fate
+  (43% at rank 1 → 5% at rank 7; Fischman, 2026). Content that earns the slot — the
+  evidence-led levers covered in the
+  [hub article](/resources/research/ai-citation-levers-2026) — is what rank is made of.
+- **Treat every vendor "schema +39%" pitch as a correlation claim.** The GEO-16 figure is
+  an artifact of citation-harvested sampling; the controlled RCT the vendors don't quote
+  came back null or negative. Ask for their controlled n, not their correlation.
+
+If you're measuring this rather than litigating it, the
+[citation-intelligence buyer's guide](/resources/research/ai-visibility-measurement-buyers-guide)
+covers how to track named mentions without fooling yourself with a noisy week — and the
+[AI crawler readiness check](/resources/research/ai-crawlers-2026-readiness) covers why
+your schema matters less than whether the engine can reach your page in the first place.
+
+## Sources & notes
+
+- **Ahrefs / Linehan & Guan, May 2026** — 6M-URL audit (cited pages ~3x JSON-LD, ~53% vs
+  19%) and the difference-in-differences RCT (1,885 treated vs ~4,000 controls, Aug 2025–
+  Mar 2026): AIO −4.6% (significant), AI Mode +2.4% (null), ChatGPT +2.2% (null). The
+  anchor controlled study for this article.
+- **Fischman, Feb 2026 (SSRN 6284518)** — 730 citations, position-corrected GEE models:
+  schema presence OR 0.678 (p=.296), entity richness OR 1.001, alignment OR 1.068, rank OR
+  0.762/position, 43%→5% position-1→7 story; attribute-rich 61.7% vs generic 41.6%, with
+  the no-schema 59.8% baseline as verified by **Cheung, June 2026** (second-order
+  re-analysis of the full paper).
+- **GEO Lab / Ferreira, 2026** — 480-query FAQ experiment: −1.7% null; Gemini mention 21.2%
+  vs cite 0%.
+- **Authority Radar, August 2026** — 120 matched pages, ~12,000 prompt-runs, 90-day: only
+  Perplexity +1.3pp (90% CI); ChatGPT/AIO/Gemini null.
+- **AirOps / Indig, 2026** — 16,851 queries: JSON-LD 38.5% vs 32.0% (correlational).
+- **searchVIU, 2026** — live-retrieval test: five systems read visible HTML only;
+  JSON-LD/Microdata/RDFa ignored at citation-selection.
+- **Williams-Cook (DUCKYEA test), 2026** — malformed JSON-LD read as text; schema is not
+  validated structure at retrieval.
+- **GEO-16 / Ferencz, 2026** — structured data r=0.63 and the "+39%" logistic figure;
+  sampling-flaw caveat (citation-harvested corpus) noted in the text against quoting it as
+  cause.
+- **Schanbacher, 2026 (peer-reviewed)** — FAQPage OR ≈ 13, Product OR ≈ 4, 1,508 German
+  real-estate sites; correlational.
+- **citability.dev / Haller, 2026** — per-type and per-field citability; attribute-field
+  hierarchy (author URL, dateModified, headline); engine-specific weightings.
+- **Google, 2026** — "MYTHBUSTING" AI-search doc ("structured data not required");
+  FAQ rich-results sunset May 7, 2026. **Mueller, 2026** — llms.txt as a temporary crutch.
+- **Ahrefs, May 2026 (llms.txt audit)** — 137,000 domains: 28% publish; 97% zero requests
+  in May 2026; of served, 96% software bots; retrieval bots 1.1% of requests (0.6%
+  effective); Claude-Code the largest AI consumer at 10.5%. **Martha van Berkel (cited by
+  Cheung)** — "llms.txt ain't gonna save you" context.
+- **Ahrefs / AIOSite (Trustpilot analysis), 2026** — no review profile cited 1% vs active
+  review collection 75.3%; review platforms ~14% of citations.
+- **Web Data Commons, 2026** — 106B RDF quads from ~3.1B entities; markup feeds training
+  corpora and parametric memory.
+- **Capconvert / Canel (Bing), 2026** — schema documented as helpful for Copilot and the
+  Bing-fed ChatGPT index; the one schema-positive live-retrieval claim we treat as
+  reliable.
+- Correlational vs controlled distinction is stated inline wherever a number is quoted;
+  no figure above is imported from a vendor deck without its sampling caveat attached.

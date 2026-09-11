@@ -235,3 +235,29 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ### QA & validation
 - Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
 - Pending: commit + push + Phase 25 report.
+
+---
+
+## 010 — Schema Is Not an AI Citation Lever (Article #10 — spoke of hub 005)
+
+- Status: **written + committed + pushed**
+- Commit: (this commit)
+- URL: https://promptco.online/resources/research/schema-ai-citations-2026-evidence
+- Brief: docs/content-briefs/010-schema-ai-citations-2026-evidence.md
+
+### Targeting
+- Primary query: "does schema markup help AI citations" / "JSON-LD GPT citations" / "schema structured data AI search 2026" / "FAQ schema ChatGPT"
+- Intent: informational + commercial; technical SEOs deciding whether schema budget is a citation strategy. Resolves hub's openly-contested schema lever (9) with the controlled-evidence stack; pairs with entity (sameAs), crawlers (rendering), E-E-A-T (author/attribute fields), measurement spokes.
+
+### Research (fresh 2026)
+- Sources: Ahrefs (Linehan & Guan, May 2026; 6M URLs + DiD RCT 1,885 vs ~4,000; AIO −4.6% sig / AI Mode +2.4% null / ChatGPT +2.2% null); Fischman (SSRN 6284518, Feb 2026; rank-corrected GEE null; attribute-rich 61.7% vs generic 41.6% vs no-schema 59.8%); GEO Lab FAQ 480-query (−1.7%; mention 21.2% vs cite 0%); Authority Radar 90-day (Perplexity +1.3pp only); searchVIU live-retrieval (HTML-only at citation-selection); Williams-Cook DUCKYEA (JSON-LD read as text); GEO-16 (+39% is sampling artifact); AirOps 16,851 queries (38.5 vs 32.0 correlational); Schanbacher peer-reviewed (FAQPage OR≈13); citability.dev per-type/per-field; Google MYTHBUSTING + FAQ rich-results sunset May 7 2026; Bing/Canel Copilot; Web Data Commons 106B quads; Ahrefs llms.txt 137k audit; Trustpilot review-presence rider.
+- Competitors analyzed: Backlinko, Ahrefs blog, Search Engine Land, Andrew Clark/Growth Memo, Daniel Cheung (+5).
+- Entities: JSON-LD, schema.org, FAQPage, Product/Review schema, attribute-rich vs generic, FAQ rich results, llms.txt, Web Data Commons, retrieval rank, difference-in-differences, training layer vs retrieval layer, Copilot/Bing index.
+
+### Gaps & differentiation
+- Gap: competitors either cheerlead schema for AI (vendor correlational decks) or dismiss it outright (Ahrefs headline); none split correlational vs controlled AND keep the attribute-rich/no-schema-59.8% nuance with a per-use allocation.
+- Original contribution: correlational-vs-causal verdict; five places markup still pays with honesty labels (entity spine, WDC training feed, Bing/Copilot, last-mile attributes, visible-facts-first); rank-dominates reallocation rule (43%→5%); own-site meta-aware admission (FAQ/BlogPosting = infrastructure, not citation trick).
+
+### QA & validation
+- Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
+- Pending: commit + push + Phase 25 report.
