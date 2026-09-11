@@ -195,6 +195,69 @@ export const services = [
       "Brand references",
     ],
   },
+  {
+    id: "ai-visibility",
+    slug: "ai-visibility",
+    title: "AI Visibility",
+    shortTitle: "Visibility",
+    description:
+      "See exactly where, how and why your brand appears across AI answers — and what to do about it.",
+    longDescription:
+      "You can't improve what you don't measure. We monitor how your brand appears across ChatGPT, Google AI Overviews and AI Mode, Perplexity, Gemini, Copilot and Claude — tracking share of voice, citation sources, sentiment and accuracy, and benchmarking you against the competitors AI systems mention instead of you.",
+    icon: "chart",
+    benefits: [
+      "AI answer monitoring",
+      "Share of voice tracking",
+      "Competitor benchmarking",
+      "Prompt & query coverage",
+      "Citation source tracking",
+      "Sentiment & accuracy checks",
+      "Monthly visibility reporting",
+      "Alerting on changes",
+    ],
+  },
+  {
+    id: "technical-seo",
+    slug: "technical-seo",
+    title: "Technical SEO",
+    shortTitle: "Technical",
+    description:
+      "Fix the crawlability, structure and speed foundations that AI and search systems depend on.",
+    longDescription:
+      "If AI systems and search crawlers can't access, render and parse your site cleanly, nothing else matters. We audit and fix the technical foundation — crawlability, rendering, information architecture, structured data and performance — so every other optimization effort compounds on solid ground.",
+    icon: "wrench",
+    benefits: [
+      "Crawl & index diagnostics",
+      "Core Web Vitals",
+      "Structured data",
+      "Information architecture",
+      "Internal linking",
+      "Server response & rendering",
+      "Schema implementation",
+      "Log & bot analysis",
+    ],
+  },
+  {
+    id: "digital-pr",
+    slug: "digital-pr",
+    title: "Digital PR",
+    shortTitle: "Digital PR",
+    description:
+      "Earn the mentions, citations and third-party sources that AI systems trust.",
+    longDescription:
+      "AI systems learn who to recommend from what the web says about you — not just from your own site. We run digital PR programs that earn mentions in the publications, directories and communities your category's AI answers are built from, turning third-party validation into a durable visibility asset.",
+    icon: "globe",
+    benefits: [
+      "Digital PR campaigns",
+      "Expert commentary placement",
+      "Data-led stories",
+      "Industry publication outreach",
+      "Podcast & webinar appearances",
+      "Directory & profile cleanup",
+      "Brand mention monitoring",
+      "Relationship building",
+    ],
+  },
 ];
 
 // ─── Methodology Steps ───
