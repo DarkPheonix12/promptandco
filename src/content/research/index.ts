@@ -11,12 +11,16 @@ import FreshnessPlaybook, {
 import BuyersGuide, {
   meta as buyersGuideMeta,
 } from "./ai-visibility-measurement-buyers-guide.mdx";
+import CitationLevers, {
+  meta as citationLeversMeta,
+} from "./ai-citation-levers-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
 const emeta = aiCrawlersReadinessMeta as ResearchMeta;
 const fmeta = freshnessPlaybookMeta as ResearchMeta;
 const bmeta = buyersGuideMeta as ResearchMeta;
+const lmeta = citationLeversMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -34,6 +38,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: bmeta,
     Content: BuyersGuide as ComponentType,
+  },
+  {
+    meta: lmeta,
+    Content: CitationLevers as ComponentType,
   },
 ];
 

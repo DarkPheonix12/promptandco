@@ -107,12 +107,30 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
-## 005 — Planned: The 11 Levers of AI Citation (Article #5)
+## 005 — The 11 Levers of AI Citation (Article #5 — hub)
 
-- Status: **planned** (in progress)
-- Working slug: `ai-citation-levers-2026`
-- Working title: "The 11 Levers of AI Citation: What Actually Controls Whether AI Assists Cite You"
-- Ur: hub guide for the cluster; consolidates Articles 1–4 into one decision document for brands.
-- Research phase: fresh web research in progress (2026-09-11).
+- Status: **written** (validation in progress)
+- Commit: pending
+- URL: https://promptco.online/resources/research/ai-citation-levers-2026
+- Brief: docs/content-briefs/005-ai-citation-levers-2026.md
+
+### Targeting
+- Primary query: "what gets cited by AI" / "AI citation factors" / "how to get cited by AI"
+- Primary intent: informational hub; commercial (methodology-led entry)
+- Supporting queries: "AI ranking factors 2026", "GEO levers", "why won't ChatGPT cite me", "ChatGPT vs Perplexity citations overlap", "is schema important for AI search"
+- Funnel: awareness → consideration
+- Role: hub for cluster (links to 001, 002, 003, 004; they link back).
+
+### Research (fresh 2026)
+- Sources: SIGIR '26 competitive GEO (252,000 trials); GEO-16 (arXiv:2509.10762, 1,702 citations); Aggarwal/Princeton KDD 2024; Ahrefs 2025-26 (75k brands, llms.txt, schema RCT); Wix AI Search Lab & HubSpot (>1M citations); citations.press (60,350); ConvertMate (105k); RankSenseAI synthesis; Zyppy 54-study meta; Trakkr; Muck Rack; Stacker (239%); llmreach/whyiq engine syntheses; Watanabe & Nakayashiki AEO natural experiment; Ranqo arXiv; Foragentis; TurboAudit; AirOps; Moz; Weather/Meltwater.
+- Competitors analyzed: RankSenseAI report, llmreach.ai, whyiq.ai, TurboAudit, Dupple, authoritytech.io, citations.press, Searchless Journal, AuditAE, Foragentis, Trakkr guide, Restplex, eastbound (definition pages), and 5 repeated academic syntheses.
+- Entities: ChatGPT/Perplexity/Gemini/Claude/AI Overviews/Brave, OAI-SearchBot/GPTBot/PerplexityBot/Google-Extended/ClaudeBot, RAG, citation, retrieval, grounded answer, earned media, E-E-A-T, entity verification, schema, freshness, listicle, comparison, fan-out, volatility, Matthew effect, tailwind.
+
+### Gaps & differentiation
+- Gap: no competitor publishes an evidence-ranked lever model that (a) preserves the disagreements (schema), (b) separates gatekeepers/differentiators/refinements, and (c) states volatility + tailwind-inflation caveats. Market noise is "AI scores" and laundry lists.
+- Original contribution: 11-lever evidence-rated model; engine weight-table; "what changed in 2026"; SIGIR-derived diagnostic; horizon sequencing (Foragentis). Remains hub of the cluster.
+
+### QA & validation
+- Pending: lint, tsc, build, rendered checks (200/h1/schema/canonical/sitemap/index), then commit + push + Phase 25 report.
 
 ---

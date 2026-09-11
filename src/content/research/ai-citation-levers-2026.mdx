@@ -1,0 +1,305 @@
+export const meta = {
+  slug: "ai-citation-levers-2026",
+  title:
+    "The 11 Levers of AI Citation in 2026: What Actually Decides Whether AI Assists Cite You",
+  description:
+    "Every lever that gets brands cited by ChatGPT, Perplexity, Gemini and Claude — evidence-ranked into gatekeepers, differentiators and refinements, with the disagreements shown plainly.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Practical",
+  tags: ["AI citations", "GEO", "AEO", "AI visibility", "citation levers", "AI SEO"],
+  readingTimeMinutes: 15,
+  faq: [
+    {
+      question: "What is the single most important factor for getting cited by AI?",
+      answer:
+        "Retrievability: whether the assistant's crawler can actually fetch and parse your page. Across a 54-study meta-analysis, URL accessibility scored the strongest citation factor (9.5/10), and crawler-visit research shows 88.5% of pages are fetched exactly once. If the page cannot be retrieved, every other lever is moot.",
+    },
+    {
+      question: "Does schema markup actually help AI citations?",
+      answer:
+        "The evidence is genuinely split. The GEO-16 study found structured data associated with roughly a +39% lift, and an AirOps analysis measured 38.5% vs 32% on ChatGPT. But Ahrefs' controlled study of 1,885 schema-enabled pages against 4,000 matched controls found near-zero uplift — and a sitewide rollout reported a huge AI Overview gain but declines on ChatGPT, Gemini and Copilot. Treat schema as hygiene, not as a lever that saves weak content.",
+    },
+    {
+      question: "Why doesn't ranking #1 on Google get me cited?",
+      answer:
+        "Because retrieval has disconnected from rank. The overlap between Google's organic top-10 and AI-cited sources collapsed from roughly 76% in mid-2025 to 17-38% by early 2026 in several measurements, and ChatGPT's cited sources overlap Google's top-10 by only about 6.8%. Assistants retrieve and re-rank their own candidate pool, and fan-out queries reach far past page one.",
+    },
+    {
+      question: "Is freshness really that important for AI citations?",
+      answer:
+        "Yes, and engines differ in how much. ConvertMate measured ~3.2x citation share for pages updated within the last month; independent analyses put content under three months old at ~3x the citation rate of two-year-old pages. Perplexity weights freshness at roughly 40% of its ranking signal and deprioritizes content older than 30 days for fast-moving topics, while ChatGPT responds far more slowly to updates.",
+    },
+    {
+      question: "Can I trust an 'AI visibility score' dashboard?",
+      answer:
+        "Check how it is measured before trusting it. AI citations are volatile — one analysis found 40-60% month-over-month churn and only ~30% of brands visible in one answer still visible in the next — and raw before/after multiples are inflated by platform growth (a controlled natural experiment found headline growth of ~6x overstates the credible intervention effect of roughly 2x). Numbers are only as good as the sampling behind them.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **AI citation** — when an assistant names and links a source inside its answer. It differs
+  from a ranking in one decisive way: engines retrieve many pages but **cite only a
+  handful**. In a 2026 controlled study of 252,000 competitive trials across six models,
+  two candidates could hold identical content quality while the position and topic match
+  alone decided which one was cited. That is the landscape this hub article maps.
+</DefinitionCard>
+
+This is the parent page of our 2026 research series. Where the [citation
+study](/resources/research/2026-ai-citation-study) measured *who* gets cited, this article
+answers *why* — by ranking the levers that 2026 evidence actually supports, separating what
+is verified from what is contested, and tripping over the disagreements instead of smoothing
+them. The [crawler playbook](/resources/research/ai-crawlers-2026-readiness) covers lever 1
+in depth, [freshness](/resources/research/freshness-playbook-2026) covers lever 3, and
+[measurement](/resources/research/ai-visibility-measurement-buyers-guide) covers how to
+track all of them.
+
+The levers are organized into three groups mirroring how retrieval actually works:
+**gatekeepers** (fail one, and your odds collapse to near zero), **differentiators** (these
+decide which of the retrieved pages wins the citation slot), and **refinements** (real but
+never sufficient). Each lever carries an evidence rating: **verified** (multiple
+independent datasets agree), **supported** (one strong study), **contested** (large,
+reputable studies disagree), or **hypothesis** (directional, not proven).
+
+## Gatekeepers: without these, nothing else matters
+
+**Lever 1 — Retrievability and renderability (verified, 9.5/10).** "Can the crawler fetch
+and parse it?" is the strongest single predictor of citation across a 54-study
+meta-analysis (Zyppy, 2026), and crawler-visit research found **88.5% of pages are visited
+exactly once** by AI crawlers (Trakkr, 2026) — the first visit is effectively the only
+visit. That means server-rendered HTML with your answers inside, AI crawlers allowed in
+your robots.txt and at your CDN, and no JavaScript-only content. This is the whole subject
+of our [technical readiness playbook](/resources/research/ai-crawlers-2026-readiness),
+including the 73% of sites that carry at least one technical barrier to citation in a
+million-citation audit (OtterlyAI, 2026).
+
+**Lever 2 — Topic match and commercial completeness (verified gatekeeper).** In the
+controlled SIGIR 2026 competitive study, topical relevance was the largest driver of being
+cited *first* — and explicit price information was one of the few content factors that
+consistently helped across all six models tested. "Complete" matters more than "long": for
+commercial queries, a page that omits price and key specifications can lose the slot to a
+shorter but complete competitor. This is the most under-rated lever in the entire model.
+
+**Lever 3 — Recency and freshness (verified, engine-dependent).** Pages updated within the
+last month carried ~3.2x the citation share of year-old pages in a 105,000-article analysis
+(ConvertMate, 2026), and roughly 3x the citation rate of two-year-old pages in independent
+2026 syntheses (RankSenseAI, 2026). Perplexity weights freshness at ~40% of its ranking
+signal and deprioritizes content older than 30 days on fast-moving topics (llmreach
+research synthesis, 2026); ChatGPT incorporates freshness far more slowly. See the
+[full freshness playbook](/resources/research/freshness-playbook-2026).
+
+**Lever 4 — Position in the candidate pool (verified, and the quiet scandal of AEO).
+** The same SIGIR study found list position was the second-largest driver of first-citation
+— a page retrieved third is measurably less likely to be cited than a page retrieved first,
+all else equal. Combined with fan-out ("the engine expands one question into several
+sub-queries", scored 9.3/10 in the Zyppy meta), the implication is practical: you win
+citations by being the strongest answer **across a topic cluster**, not by one head-term
+win. This is also why ~60% of AI Overview citations come from URLs outside the organic
+top-20 in 2026 (AirOps, 2026), and why the classic "rank page one" mental model leaks
+traffic in AI search.
+
+## Differentiators: these decide who wins the slot
+
+Once you pass the gatekeepers, a small set of content properties separates the cited from
+the retrieved-but-ignored page.
+
+**Lever 5 — Original research and proprietary data (verified, the biggest single
+differentiator).** Original research and proprietary data cite at **38–65%** versus
+**6–15%** for standard blog content in 2026 syntheses (RankSenseAI, 2026), and the
+foundational Princeton GEO benchmark found adding machine-extractable provenance —
+quotations, statistics, citations — was the best single lever, worth roughly a **+41%**
+visibility gain (Aggarwal et al., KDD 2024). The mechanism is intuitive and confirmed by
+the Matthew-effect research: models prefer sources that say something the parametric
+knowledge doesn't already contain. Data and analysis nobody else has means you are the only
+source for the answer, and you cannot recurse out of "the only source".
+
+**Lever 6 — Format matched to intent (verified, enormously under-rated).** Listicles are
+repeatedly measured as the most-cited content format across engines — ~21–22% of all
+citations (Wix AI Search Lab, 2026; Ranqo GEO-at-Scale paper, 2026) — and "best-X"
+listicles plus comparisons dominate commercial queries: comparison format reached ~95%
+citation on ChatGPT in one million-plus-citation analysis (HubSpot/Wix, 2026). The related
+finding that reframes strategy: ranked-list *pages* on other people's sites account for
+~81% of ChatGPT citations and ~75% of Claude citations, while **homepages are the least
+cited page type** (7% and 4% respectively; citations.press, 60,350-citation analysis,
+2026). If your AI strategy is homepage-led, it is pointed at the least-cited object in the
+retrieval pool.
+
+**Lever 7 — Answer-first structure with self-contained passages (verified).** ~44% of LLM
+citations come from the first third of a page, and ~72% of ChatGPT-cited pages contained a
+direct answer immediately after a question-phrased heading (authoritytech research
+synthesis of the Princeton-derived analysis, 2026). The GEO-16 framework measured semantic
+HTML — clean headings, lists, one-h1 hierarchy, answer-first text — as its second-strongest
+pillar (+42%). Every section should survive being read alone: that is where the engine
+reaches in.
+
+**Lever 8 — Quotable specificity and evidence density (verified).** Named numbers, named
+speakers, sourced claims: statistics paired with sources +30.6%, inline citations to
+authoritative references +27.5%, and named expert quotes +40.9% in the Princeton-derived
+benchmarks (authoritytech, 2026). Dense factual prose is what gets lifted verbatim;
+adjectives and hedging get summarized away. This is the lever our own series uses
+throughout — every number above has a named source.
+
+**Lever 9 — Authority, authorship, and entity trust (verified; engine-weighted).** Named
+authors carry an outsized citation odds ratio (~1.40 vs 1.12 baseline; Yext/llmreach
+analysis, 2026). Gemini applies entity-chain verification — claims cross-referenced against
+your Knowledge Graph, LinkedIn, and third-party pages — before elevating a source
+(llmreach, 2026), so inconsistent entity details actively cost citations. Claude's live
+fetching leans on Brave's independent index (an independent ~400-query measurement put
+Claude-to-Brave citation overlap at ~79%; whyiq.ai, 2026), which almost nobody optimizes.
+
+**Lever 10 — Earned media and third-party corroboration (verified; the dominant 2026
+story).** More than 85% of non-paid AI citations go to earned media, not brand-owned pages
+(Muck Rack, 2025; recurring across 2026 studies). Two large independent analyses put this
+relationship at the top of the correlation charts: branded web mentions correlate with AI
+Overview visibility at ~0.66 against ~0.22 for backlinks (Ahrefs, 75,000-brand study,
+2025; December 2025 follow-up found YouTube mentions even stronger at ~0.74), and earned
+distribution produced a 239% median lift in citations in a controlled 30-brand test across
+eight platforms (Stacker, March 2026). Combine with the listicle finding and the strategy
+is clear — the highest-value citation asset is a slot on a trusted *third-party* ranked
+list, which makes AI visibility an earned-placement discipline as much as a content one.
+
+## Refinements: real, cheap, and never sufficient
+
+**Lever 11 — Schema and machine-readable structure (contested — read this carefully).**
+The honest position on structured data is that the research genuinely disagrees:
+
+- **For:** GEO-16 scored structured data as its third-strongest pillar (associated with
+  ~+39%); the platform analysis behind it also found FAQPage schema the strongest single
+  predictor among on-page signals (r=0.61 in a 10,000-query glove). A 2025-26 AirOps
+  pipeline analysis measured JSON-LD pages at 38.5% vs 32.0% citation on ChatGPT.
+- **Against:** Ahrefs' controlled study — 1,885 pages that added JSON-LD against 4,000
+  matched controls — found near-zero citation uplift on AI Overviews, AI Mode and
+  ChatGPT, with a small *decline* on AI Overviews. A sitewide schema rollout presented at
+  BrightonSEO 2026 found +1,500% AI Overview citations but *decreases* on ChatGPT, Gemini
+  and Copilot. Across the 54-study meta, schema scored a middling 5.6/10.
+- **Verdict:** Google says no special schema is required for AI Overviews, and the Ranqo
+  research team explicitly treats schema as hygiene while it runs a protocol to test it.
+  Implement valid, honest schema (Organization, breadcrumbs, BlogPosting, FAQPage where
+  true) because it is cheap and it helps Google-side extraction. Do not let it substitute
+  for evidence-rich content.
+
+**What the 2026 data says does not matter:** `llms.txt` is effectively inert — 97% of
+files across 137,210 domains received zero bot requests in May 2026, and Google has
+publicly declined to support it (Ahrefs, 2026). Exact-match keyword density is at the
+bottom of every correlation table (r≈0.09 in one 10,000-query analysis). Formatting-only
+edits produced no measurable effect in the controlled SIGIR study. And "prompting the
+model" — C-SEO — has repeatedly failed replication (Puerto et al., 2025; Ranqo protocol
+P7).
+
+## The engine weight-table (2026)
+
+Engines are not interchangeable; the same lever ranks differently on each. Table sources:
+Semrush 126M-prompt index, Yext 17.2M-citation research, GEO-16, Ahrefs 2025-26 studies,
+citations.press, whyiq.ai, llmreach, TurboAudit's per-engine audit.
+
+| Engine | Retrieval base | Top-weighted levers | Citation density |
+| --- | --- | --- | --- |
+| ChatGPT | Bing-backed + OpenAI retrieval | Consensus (Wikipedia/Reddit/listicles), authority, structure, named authors | ~7–15 sources/answer |
+| Perplexity | Proprietary index, sub-document snippets | Freshness (~40%), direct answers, Reddit/community, every-paragraph self-containment | Cites on ~100% of queries |
+| Gemini | Google index + Knowledge Graph | E-E-A-T, entity-chain verification, owned-brand authority, images | ~3–12 sources/answer |
+| Claude | Live fetches; strong Brave tie-in | Depth, technical docs, clean attribution, server-rendered HTML | ~5–8 sources/answer |
+| AI Overviews / AI Mode | Google Search index + fan-out | Classic SEO prerequisites, E-E-A-T, accessibility, structure | ~4–5 sources/answer |
+
+Two consequences worth stating plainly. First, cross-engine agreement is low: only ~11–18%
+of cited domains are shared between ChatGPT and Perplexity in multiple 2026 measurements —
+being visible "in AI" is really being visible in *each engine your audience actually uses*.
+Second, the biggest single-use spend is therefore dictated by audience, not by which
+dashboard is loudest.
+
+## What changed in 2026
+
+- The Google-to-AI rank overlap collapsed (76% → 17–38% where measured; ChatGPT↔Google
+  top-10 overlap ~6.8%) — ranking stopped being the prediction of citation.
+- Schema graduated from "best practice" to "genuinely contested" — a controlled study and
+  a sitewide rollout both found near-zero or negative effects outside Google.
+- Earned media was confirmed as the dominant citation source by multiple large
+  independent analyses (Muck Rack, Stacker, Ahrefs, citations.press).
+- Citation volatility was documented for the first time at scale (40–60% month-over-month;
+  ~30% persistence) — making single screenshots and one-off "visibility scores"
+  scientifically worthless.
+- Google folded generative-AI optimization into its formal SEO documentation (2026) —
+  an industry signal that separated the discipline from the hacks.
+- A controlled natural experiment showed why most published "X% AI growth" numbers are
+  inflated: raw 6.1x referral growth turned out to be roughly 2x of real, intervention-
+  aligned effect once platform tailwind was netted out (Watanabe & Nakayashiki, 2026).
+
+## The diagnostic workflow
+
+If your brand is missing from answers, the fix order is determined by where you fail (we
+adapted this from the SIGIR 2026 diagnostic):
+
+1. **Are you retrieved at all?** If absent from citations entirely, fix accessibility
+   first (lever 1) — the [crawler playbook](/resources/research/ai-crawlers-2026-readiness)
+   is the checklist.
+2. **Cited but never recommended first?** The content won retrieval but lost the slot:
+   audit levers 2, 3, 6 and 7 before anything else.
+3. **Winning individual slots but not categories?** Shift to cluster and fan-out coverage
+   (lever 4) and earned placement on the ranked lists your category is already drawn from
+   (lever 10).
+4. **All green but no movement after 30–90 days?** The signal is probably off-site:
+   build corroboration (lever 10) and re-measure on a four-week window
+   ([measurement guide](/resources/research/ai-visibility-measurement-buyers-guide)),
+   because a single week is noise.
+
+Sequence by horizon, as the 2026 state-of-the-discipline research recommends: structure and
+freshness edits pay off in 30–90 days; authority and mention-building in 6–12 months;
+category-signal compounding in 12–36 months (Foragentis State of AEO/GEO, 2026).
+
+## The 11-lever checklist
+
+**Gatekeepers:** retrievable and renderable · topic-complete (price/specs where
+commercial) · genuinely fresh · positioned inside the retrieval pool
+**Differentiators:** original data · format matches intent · answer-first, self-contained
+structure · quotable specificity · authority and entity consistency · earned third-party
+corroboration
+**Refinements:** honest, valid schema
+
+That is the complete, 2026-evidence-ranked model. It has no shortcuts, and — to be blunt
+about the honest part — no single one of these levers guarantees a citation, because
+citation is probabilistic: engines re-fetch on their own schedules, and volatility runs
+wild from week to week. What the evidence supports is that failing a gatekeeper
+eliminates you at one stroke, and the differentiators decide every contested slot. The
+[Data behind all of this](/resources/research/2026-ai-citation-study), the
+[full freshness research](/resources/research/freshness-playbook-2026), and the
+[crawler technical layer](/resources/research/ai-crawlers-2026-readiness) build this model
+out one layer at a time.
+
+## Sources & notes
+
+Evidence ratings are labeled for every lever; the "contested" digits are shown because
+hiding a well-run study that disagrees with the consensus would be dishonest. Primary
+sources and 2026 syntheses referenced in this article:
+
+- **SIGIR '26** (Vishwakarma, Kumar & Jamidar, "What Gets Cited"), 252,000 controlled
+  two-document comparisons across six models — gatekeeper/differentiator logic, topic
+  match, price, position, formatting-null result.
+- **GEO-16** (Kumar & Palkhouski, arXiv 2509.10762), 1,702 citations — pillar correlations
+  and the G≥0.70 threshold.
+- **Princeton GEO benchmark** (Aggarwal et al., KDD 2024) — quotations/statistics/citations
+  as the strongest single lever (~+41%).
+- **Ahrefs 2025–26 studies** — mentions vs backlinks (75,000 brands; YouTube follow-up),
+  llms.txt zero-request finding, controlled schema study.
+- **Wix AI Search Lab (2026) and HubSpot State of AEO (2026)** — >1M citations, format
+  shares, ~95% comparison citation on ChatGPT.
+- **citations.press (2026)** — 60,350-citation analysis: ranked-list dominance and
+  homepage under-performance.
+- **ConvertMate (Jan 2026)** — 105,000-article freshness gradient (~3.2x, 30-day window).
+- **RankSenseAI AI Search Citation Factors (Jul 2026)** — synthesis; original-data
+  citation gap; three-month freshness multiple; ChatGPT↔Google overlap.
+- **Zyppy 54-study meta-analysis (2026)** — factor scores including accessibility 9.5/10.
+- **Trakkr (2026)** — 88.5% single-visit crawler finding; 73.5% one-and-done sessions.
+- **Muck Rack (Dec 2025)** — earned media ~85% of non-paid citations.
+- **Stacker (Mar 2026)** — 239% median lift from earned distribution (2,600+ prompts).
+- **llmreach.ai (Jun 2026) / whyiq.ai (Aug 2026)** — engine-behaviour syntheses
+  (Perplexity 40% freshness weight, Gemini entity-verification, Claude-Brave overlap).
+- **Watanabe & Nakayashiki (arXiv 2606.04362, Jun 2026)** — AEO natural experiment;
+  tailwind inflation; ~2x credible effect.
+- **Kumar / Ranqo (arXiv 2606.20065, Jun 2026)** — stature ladder 73/44/11%; listicle
+  share; sentiment volatility; Matthew effect.
+- **Foragentis State of AEO/GEO (Apr 2026)** — horizons; vendor-measurement critique.
+- **TurboAudit (Feb 2026)** — rank-overlap collapse; per-engine audit synthesis.
+
+Where a number originates in a secondary synthesis rather than the study named in the
+sentence, we say so. Statistics whose mechanism we cannot verify are stated as measured
+associations. This article makes no causal claim for any lever that lacks a controlled test.
