@@ -295,8 +295,8 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ## 012 — Reddit & Community: The AI-Citation Source You're Quoting Wrong (Article #12)
 
-- Status: **written** (validation passed; commit pending)
-- Commit: pending (this commit)
+- Status: **written + committed + pushed**
+- Commit: 3e93b37
 - URL: https://promptco.online/resources/research/reddit-community-ai-citations-2026
 - Brief: docs/content-briefs/012-reddit-community-ai-citations-2026.md
 
