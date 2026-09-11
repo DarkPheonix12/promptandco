@@ -107,10 +107,35 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
-## 005 — The 11 Levers of AI Citation (Article #5 — hub)
+## 006 — Entity Optimization in 2026 (Article #6 — spoke of hub 005)
 
-- Status: **written** (validation in progress)
-- Commit: pending
+- Status: **written + committed + pushed**
+- Commit: pending (this commit)
+- URL: https://promptco.online/resources/research/entity-optimization-2026
+- Brief: docs/content-briefs/006-entity-optimization-2026.md
+
+### Targeting
+- Primary query: "entity optimization AI search" / "entity SEO 2026" / "brand entity"
+- Intent: informational + technical; commercial. Deepens hub levers 9–10.
+
+### Research (fresh 2026)
+- Sources: GEO Lab/Ferreira Zenodo experiment (Apr 2026); Searchless.ai 500-brand tracking; Victorious 175-brand test (Jul 2026); Semrush Nov 2025 (230k prompts/100M citations, via Gist); Ahrefs 2025-26; Wills/Searchbloom rho≈0.577; Growth Memo ghost citation; Machine Relations entity chains; Kalicube entity home (SEL Mar 2026); Whitespark 2026; llmreach Gemini entity verification.
+- Competitors analyzed: OrganiKPI, Gist, LBJ, Jottler, Nobori, Searchbloom, Searchless, LeadsNow ×2, SEO Strategy Ltd, Machine Relations, Fokal (+13 total).
+- Entities: Knowledge Graph, Wikidata QID, sameAs, Organization schema, entity home, disambiguation, corroboration, ghost citation, NAP, Knowledge Panel, entity chains, Gemini AI Mode, Wikipedia, LinkedIn/Crunchbase.
+
+### Gaps & differentiation
+- Gap: no competitor anchors entity work on a controlled recognition-gating experiment or separates recognition/disambiguation/corroboration cleanly.
+- Original contribution: gating mechanism + ghost-citation link + 4-part build + 30-day sprint + per-engine layer divergence + "necessary not sufficient" tie to hub.
+
+### QA & validation
+- Pending: commit + push + rendered verification + Phase 25 report.
+
+---
+
+## 005 — The 11 Levers of AI Citation (Article #5 — hub) (Article #5 — hub)
+
+- Status: **written + committed + pushed**
+- Commit: c58643c
 - URL: https://promptco.online/resources/research/ai-citation-levers-2026
 - Brief: docs/content-briefs/005-ai-citation-levers-2026.md
 

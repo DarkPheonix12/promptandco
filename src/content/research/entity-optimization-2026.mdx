@@ -1,0 +1,207 @@
+export const meta = {
+  slug: "entity-optimization-2026",
+  title:
+    "Entity Optimization in 2026: Why AI Engines Cite Brands They Can Resolve — and No One Else",
+  description:
+    "Entity resolution happens before citation selection. Why recognition gates every other lever, the 2026 evidence, and a four-part build: entity home, Wikidata QID, identity consistency, corroboration.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Technical",
+  tags: ["entity SEO", "knowledge graph", "entity signals", "sameAs", "Wikidata", "brand entity"],
+  readingTimeMinutes: 12,
+  faq: [
+    {
+      question: "What is the difference between entity recognition and a citation?",
+      answer:
+        "Recognition is whether an engine can confidently resolve your brand as one thing before it retrieves anything. Citation is whether your page is then named and linked in the answer. A controlled 2026 experiment found page-level entity density had no effect on citations at all while a test domain had not first cleared recognition — recognition gates everything downstream.",
+    },
+    {
+      question: "Is a Wikidata entry required to get cited by AI?",
+      answer:
+        "No, but it is the cheapest strong disambiguation anchor available. Wikidata has no notability threshold — unlike Wikipedia — and feeds Google's Knowledge Graph as machine-readable data. Pointing your Organization schema's sameAs array at your QID closes the loop in both directions.",
+    },
+    {
+      question: "What is a 'ghost citation'?",
+      answer:
+        "Growth Memo's 2026 analysis found cases where a brand's content informs an answer without the brand being named — content cited, entity absent. It happens when a page wins retrieval but the engine has no high-confidence entity record behind the brand, so it borrows the content and credits a competitor or nobody.",
+    },
+    {
+      question: "How long does entity work take to show up in AI answers?",
+      answer:
+        "The identity layer — an Organization schema with a complete sameAs array, a Wikidata item, and consistent profiles — registers within weeks to a few months. Third-party corroboration compounds over many months. Recognition itself typically takes a quarter or more in crowded categories; it is a slow, compounding signal, not a same-week switch.",
+    },
+    {
+      question: "Does entity optimization replace content and technical work?",
+      answer:
+        "No — it sits underneath them. Recognition decides whether your page-level levers reach the citation layer at all; content quality decides whether a recognized entity wins the slot. The GEO Lab zero-citation experiment cut both ways: density helped nothing before recognition, and original, brand-owned concepts in the same test showed 20% citation after recognition cleared. Both layers matter.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **Entity optimization** — making your brand resolvable as one verified thing across every
+  surface an AI engine reads: your site, your schema, Wikidata, LinkedIn, Crunchbase,
+  review platforms, and press coverage. The mechanism is structural, not stylistic: AI
+  engines run an entity-resolution pass *before* selecting sources, so a brand an engine
+  cannot confidently resolve never reaches the stage where citation is decided.
+</DefinitionCard>
+
+In the [11-levers model](/resources/research/ai-citation-levers-2026), levers 9 and 10 are
+about authority and earned corroboration. This article builds the layer underneath them.
+The cleanest way to see it is a controlled experiment run in April 2026: the GEO Lab tested
+a single domain across 22 competition queries at entity densities ranging from 12.9 to 29.5
+entities per thousand words — and got **zero citations at every density level**, because
+the test domain had never cleared entity recognition in the first place (Ferreira, 2026,
+preprint on Zenodo). Page-level signal did nothing until the machine could answer one
+question first: *who published this, and do independent sources agree?*
+
+## The mechanism: resolution before citation
+
+Every answer surface — Google's Knowledge Graph and Gemini, ChatGPT's retrieval layer,
+Perplexity's index, Brave/Claude's live fetches — resolves the entities in a query before
+it collects sources. The practical consequence is a decision hierarchy with three layers:
+
+1. **Recognition** — does the system know your brand exists and what it is?
+2. **Disambiguation** — when multiple near-identical names exist, does it pick *you*?
+3. **Corroboration** — do independent sources agree with the facts you assert?
+
+An engine that cannot clear the first two layers will still use your content — it will just
+attribute it to nobody, or to a competitor it *can* resolve. Growth Memo's 2026 analysis
+named this the **ghost citation**: content informing an answer while the brand receives no
+credit, because the entity behind the page is unresolved (Indig, 2026). If you have ever
+felt "we get quoted but never named" in an AI answer, this is the mechanism.
+
+## The 2026 evidence that entity work moves the needle
+
+- **Recognition gating is measurable.** In a 2026 tracking study of 500+ brands across
+  ChatGPT, Perplexity and Gemini, **88% had no structured entity data at all**, 42% were
+  not mentioned by ChatGPT in category questions even with real organic presence, 61% were
+  cited inconsistently across engines — and only 2.4% appeared consistently on all three,
+  every one of which had entity signals across six or more external domains (Searchless.ai,
+  2026). Recognition, not content volume, segregated the visible from the invisible.
+- **Entity-representation feeds the largest brand-name dataset.** Google's curated
+  Knowledge Graph and its Wikidata-backed structured records are what Gemini's
+  entity-verification layer draws on when deciding whether to *name* a source rather than
+  borrow from it anonymously (llmreach, 2026). Brands without a high-confidence record get
+  content used, then remain unnamed — the ghost-citation state.
+- **Mention density behaves like a floor.** In a July 2026 test of 175 brands, 96% were
+  described accurately when asked about *directly*, yet 89% never appeared in answers when
+  not named — and brands with fewer than ~2,000 indexed web pages mentioning them were
+  named in answers just **3% of the time** (Victorious, 2026). Corroboration volume acts as
+  a gate below which naming rarely happens.
+- **Given recognition, page quality decides the slot.** In the same GEO Lab that found
+  zero citations on an unrecognized domain, queries about concepts that domain itself
+  originated produced ~20% citation once recognition cleared (Ferreira, 2026). That is the
+  exact split this article is about: entity work buys you admission; evidence-rich content
+  (levers 5–8 in the [hub article](/resources/research/ai-citation-levers-2026)) wins the slot.
+
+## The four-part build
+
+**1. Give the entity a home page.** One canonical URL — almost always your About page —
+that functions as the source of truth: an Organization JSON-LD block with `@id` set to
+your canonical domain plus founding date, leadership, category, and a one-line description
+(standardized practice; Kalicube's formalization of the entity home, March 2026). Google
+now pulls Knowledge Panel descriptions from this page when a Wikipedia article is absent.
+State who you are in plain prose too — engines resolve what the text says, not just what
+the markup claims.
+
+**2. Establish the machine-readable identity: Wikidata QID.** Wikidata applies no
+notability threshold and feeds the Knowledge Graph as structured data. Create the item —
+instance of (P31), official website (P856), founding date (P571), one-line description — and
+record the QID. Support-data research in 2026 found Wikipedia citation volume correlating
+strongly with LLM recommendation visibility in category questions (rho ≈ 0.58 in CRM
+software; Wills, 2026); Wikidata is the achievable half of that signal for brands that will
+not meet Wikipedia's bar.
+
+**3. Wire the sameAs array and enforce identity consistency.** Your Organization schema's
+`sameAs` array is a merge instruction: each URL tells the engine that profile describes the
+same entity as your canonical domain. Point it at Wikidata, LinkedIn, Crunchbase, your
+Google Business Profile, GitHub and verified social profiles — then make every profile
+agree, *verbatim*, on the canonical name and the one-line description. Declare genuine name
+variants in `alternateName` rather than letting engines guess. This is NAP consistency
+raised from "where you are" to "what you are": each consistent profile is independent
+confirmation, each drift splits your corroboration across thin fragments.
+
+**4. Earn cross-domain corroboration.** Recognition is ultimately confirmed by *other
+people's* pages. Research on "entity chains" frames each earned placement — a feature, an
+analyst mention, a review, a podcast, a profile — as a verification node on an independent
+domain engines already retrieve, with five or more independent domains carrying consistently
+described facts as the commonly observed working threshold (Machine Relations, 2026). The
+signal-shape data matches: branded *mentions* correlate with AI visibility roughly three
+times more strongly than backlinks (≈0.66 vs ≈0.22; Ahrefs, 2025-26), and brand-name
+presence on review and profile platforms materially raises ChatGPT citation probability
+(Link Building Journal synthesis, 2026). Every unlinked mention still counts toward the
+entity layer, which is why digital PR has become entity infrastructure.
+
+## The 30-day entity sprint
+
+- **Week 1:** audit state — does a Knowledge Panel exist, is a Wikidata QID present, does
+  your About page carry a complete Organization block, which profiles disagree? Use the
+  free Knowledge Graph Search API and brand-name searches in ChatGPT and Gemini ("What is
+  [brand]? What does it do and where is it based?") and log every error.
+- **Week 2:** rewrite the About page as an entity home; ship Organization JSON-LD with
+  `@id`, `name`, `url`, `foundingDate`, `description`, `logo`.
+- **Week 3:** create the Wikidata item; record the QID; build the `sameAs` array including
+  it; align LinkedIn, Crunchbase, Google Business Profile and directories to the one
+  canonical name and description.
+- **Week 4 onward:** re-run the brand prompts monthly and the Knowledge Graph API check
+  quarterly. The deltas between "what the engine says now" and "what the engine said last
+  month" are your progress report — the errors that persist point at the source that still
+  disagrees.
+
+Timeline honesty: the identity layer registers within weeks; corroboration compounds over
+6–12 months; recognition in crowded categories typically takes a quarter or more
+(Foragentis, 2026; Jottler, 2026). It is a slow, compounding signal. Nothing in this
+article happens overnight, and nothing about it replaces the content and
+[technical](/resources/research/ai-crawlers-2026-readiness) layers — it unlocks them.
+
+## What must still be handled separately
+
+Entity work is necessary, not sufficient. Three gaps in the 2026 data keep it honest:
+
+- **Entity density is not content quality.** The GEO Lab's controlled test found density
+  alone did nothing before recognition. Don't stuff entity names into prose; build the
+  record, then win slots with evidence (the 
+  [11-levers hub](/resources/research/ai-citation-levers-2026) is the content half).
+- **Per-engine layers have diverged.** ChatGPT's source layer rebalanced hard in late 2025
+  (Reddit citations ~60% → ~10%, Wikipedia ~55% → under 20%; Semrush, 230,000 prompts,
+  November 2025), Google AI Mode cites Wikipedia in only ~2% of responses, and LinkedIn
+  holds at roughly 15% as the most stable source. One identity, several engine layers:
+  the same QID and sameAs spine serve all of them, which is exactly why a single entity
+  foundation out-earns engine-specific reshuffling.
+- **The Knowledge Panel is a lagging indicator.** Its absence does not mean failure, and
+  its presence is not the prize. What you actually want is naming behavior: use the
+  brand-prompt polling in the sprint above to test whether engines *name* you rather than
+  merely describe your category.
+
+For the measurable side of this — does your share of named mentions move — the
+[citation-intelligence buyer's guide](/resources/research/ai-visibility-measurement-buyers-guide)
+covers what to track and how to avoid fooling yourself with a noisy week.
+
+## Sources & notes
+
+- **GEO Lab / Ferreira, 2026** — controlled entity-density experiment (22 queries, Zenodo
+  preprint 10.5281/zenodo.19450361): zero citations before recognition; ~20% on
+  brand-originated content after. The strongest controlled evidence on gating we found.
+- **Searchless.ai, 2026** — 500-brand tracking across ChatGPT, Perplexity and Gemini
+  (88% / 42% / 61% / 2.4% figures).
+- **Victorious, July 2026** — 175-brand recognition-and-mention test (96% / 89% / 3%
+  figures).
+- **Semrush, November 2025** — 230,000+ prompts, 100M+ citations; ChatGPT Reddit/Wikipedia
+  rebalancing; AI Mode ~2% Wikipedia; LinkedIn ~15%, as reported in Gist's 2026 synthesis.
+- **Ahrefs 2025-26** — mentions (≈0.66) vs backlinks (≈0.22) correlation; December 2025
+  follow-up (YouTube ≈0.74).
+- **Wills / Searchbloom, March 2026** — Wikipedia-citation correlation rho ≈ 0.577
+  (CRM-software category measurements).
+- **Growth Memo / Indig, 2026** — the "ghost citation" phenomenon (content used, brand
+  unnamed).
+- **Machine Relations, 2026** — entity-chain framework; five-domain corroboration
+  threshold; cross-domain verification reasoning (Zhang et al., arXiv 2604.19113; Guo et
+  al., arXiv 2604.07927).
+- **llmreach, 2026** — Gemini Knowledge Graph entity-verification layer. **Kalicube, March
+  2026** (via Search Engine Land) — entity-home formalization. **Whitespark, 2026** —
+  local-survey expert consensus ("mentions are the new link").
+- Where a statistic comes from a secondary synthesis rather than the study itself, we say
+  so inline. Entity mechanics are described at the level public engineering documentation
+  and peer-reviewed research support; where a step is practitioner-standard (notably the
+  entity home and sameAs wiring), it is labeled as such.

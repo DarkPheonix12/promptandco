@@ -14,6 +14,9 @@ import BuyersGuide, {
 import CitationLevers, {
   meta as citationLeversMeta,
 } from "./ai-citation-levers-2026.mdx";
+import EntityOptimization, {
+  meta as entityOptimizationMeta,
+} from "./entity-optimization-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -21,6 +24,7 @@ const emeta = aiCrawlersReadinessMeta as ResearchMeta;
 const fmeta = freshnessPlaybookMeta as ResearchMeta;
 const bmeta = buyersGuideMeta as ResearchMeta;
 const lmeta = citationLeversMeta as ResearchMeta;
+const nmeta = entityOptimizationMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -42,6 +46,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: lmeta,
     Content: CitationLevers as ComponentType,
+  },
+  {
+    meta: nmeta,
+    Content: EntityOptimization as ComponentType,
   },
 ];
 
