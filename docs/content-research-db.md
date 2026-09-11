@@ -759,4 +759,34 @@ Pushed: 2b29722810626ecb576dd7da7e92bedfb39de290
 
 ---
 
+## 027 — The AI Contact Flow: Why Agents Are Replacing Your Form (and What Converts)
+
+### Status (filled after build & push)
+Status: published.
+Score: 8.0.
+URL: https://promptco.online/resources/research/ai-contact-flow-lead-routing-2026
+Brief: docs/content-briefs/27-ai-contact-flow-lead-routing-2026.md
+Commit: 0000000000000000000000000000000000000000
+Pushed: 0000000000000000000000000000000000000000
+
+### Targeting
+- Primary query: "AI contact flow" / "AI lead routing" / "chatbot replace contact form" / "AI support deflection 2026" / "agentic lead capture" / "contact page conversion"
+- Intent: informational (marketing leads, CMOs, sales ops, support leaders). Capstone of the operational run — the "last mile" that converts AI-search visibility into booked conversations.
+
+### Research (fresh verification + pool re-contact)
+- Problem side: contact pages are a compliance step dumping all inquiry types into one inbox (SleekAI); ~97% of visitors never contact (Acute); ~60% of inquiries lost to slow response (Newo); tourism customer writes to 3–5 agencies and books with first concrete reply (Doroshenko); avg AI query ~23 words vs 4 for Google.
+- Case studies: Doroshenko travel pilot (78% automated; 6h→30s; +40% hot-lead conversion; ~25h/wk saved; €95–140/mo; escalation rules). TaskFlow/Agentmelt (72% deflection; 4.2h→90s; CSAT 4.1→4.6; $180K avoided hiring; 12% retention; generous escalation). Engine/Salesforce (50% chat resolved; −15% handle time; +16% CSAT; API action-taking). Trustpilot (99% backlog cut; 28% deflection; −45% handle time; 8 weeks live). Agibank (75% deflection; 22.5K/mo; 245K since launch; compliance auto-escalation). Ridhira/HyperLeap (7.5× queries; 92% booking conversion; 4× qualified leads; 66% ↓ CPL; client-disclosed). Deburise (+40% conversion; sub-30s reply; 3× meetings; CPL $285→$172; 5-minute window; phased 20%→100%). Hunter Douglas/Decagon (AOV +85% for AI-interacted customers; $1M+ from AI conversations; 40% deflection; localized agents; AI installation guide).
+- Routing mechanics: SleekAI (per-team routing, calendar booking, webhook+transcript, "honor 'talk to a person' immediately"). Landbot (four-exit framework; classify prospect/customer/unclear; one KB two policies). ContactYou (intent-based branching; 47 calendars; sub-300ms handoff; 99.2% junk suppression).
+- AI referral conversion context: Data-Mania (500+ B2B; AI 14.2% vs 2.8% organic; ChatGPT 62.6%@15.9%; Claude 18.5%@16.8%; Gemini 10.6%@3.0%; Perplexity 7.3%@$1.42 RPV; 73% ChatGPT → GA4 Direct). Ahrefs first-party (0.5% visits → 12.1% signups). Seer (15.9% vs 1.76%). Adobe (+42% e-comm; 4.4× booking premium). Contrarian Kaiser & Schulze (973 e-comm sites: ChatGPT underperforms organic 13% for average e-comm — high-intent/research yes, mass-market impulse no). Statcounter (ChatGPT 78.16%, Gemini 8.65%, Perplexity 7.07%, Claude 2.91%). Conductor (~87.4% ChatGPT). ~70% of AI referrals without referrer.
+- Pool re-contact: measurement (025); AI referral converts 14.2% vs 2.8% (from pool via #20); zero-click economics.
+
+### Gaps & differentiation
+- Gap: agency chatbot copy sells "engagement"; AI-search content sells "visibility." Nobody ties the two: the last mile that converts AI-referred traffic into booked meetings/tickets, with deflection-vs-CSAT resolved by real case studies.
+- Original contribution: "the contact form is a compliance step, not a conversion surface"; "speed is the sale" (6h→30s, 5-minute window); "classify before you capture" (four-exit rule, one KB two policies); "deflection that raises CSAT" (consolidated 2026 cases); "the invisible 70%" (contact flow as the capture point for unobservable AI traffic); "conversation log = next content calendar."
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (27 article routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified BlogPosting + FAQPage ld+json blocks (site Organization blocks present on all article pages).
+
+---
+
 (End of file)
