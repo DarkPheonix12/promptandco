@@ -8,11 +8,15 @@ import AiCrawlersReadiness, {
 import FreshnessPlaybook, {
   meta as freshnessPlaybookMeta,
 } from "./freshness-playbook-2026.mdx";
+import BuyersGuide, {
+  meta as buyersGuideMeta,
+} from "./ai-visibility-measurement-buyers-guide.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
 const emeta = aiCrawlersReadinessMeta as ResearchMeta;
 const fmeta = freshnessPlaybookMeta as ResearchMeta;
+const bmeta = buyersGuideMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -26,6 +30,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: fmeta,
     Content: FreshnessPlaybook as ComponentType,
+  },
+  {
+    meta: bmeta,
+    Content: BuyersGuide as ComponentType,
   },
 ];
 

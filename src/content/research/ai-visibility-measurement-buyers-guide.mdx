@@ -1,0 +1,151 @@
+export const meta = {
+  slug: "ai-visibility-measurement-buyers-guide",
+  title:
+    "How to Measure AI Visibility in 2026: A Buyer's Guide to Citation-Intelligence Tools",
+  description:
+    "The tools market exploded before the measurement standard did. What citation-intelligence tools can and cannot prove, how to vet them, and a self-serve system that costs nothing.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Practical",
+  tags: ["citation tracking", "AI SEO tools", "measurement", "AEO", "analytics"],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "Can any tool tell me my 'AI score' or rank?",
+      answer:
+        "Treat single-number scores with suspicion. Assistants are non-deterministic and re-fetch on their own schedules, so a stable, comparable ranking of your site across engines requires controlled, repeated sampling. Any product that sells you a definitive AI rank without a published methodology and raw-data export is selling you a projection.",
+    },
+    {
+      question: "What should I measure instead of a score?",
+      answer:
+        "Five things: whether you are retrieved at all, over which time window, on which assistants, from which pages, and whether the assistant links, quotes, or paraphrases you. Retrieval, page-level source share, and verbatim attribution are all more honest and more actionable than a composite score.",
+    },
+    {
+      question: "How often should I re-measure AI visibility?",
+      answer:
+        "Weekly for trend-sensitive pages, monthly for evergreen. Citation pools churn on roughly four-week windows — partly because answer engines cache source snapshots — so monthly at minimum, and weekly if you are running an active refresh program.",
+    },
+    {
+      question: "Do I need to buy a tool at all?",
+      answer:
+        "Not to start. A fixed battery of twenty to fifty money queries, run manually through a few assistants on a weekly cadence, with sources and quoted text recorded, gives you a defensible baseline within a month. Tooling is worth buying once the manual system proves the signal exists for your category.",
+    },
+    {
+      question: "How do I trust a vendor's claims about measurement methodology?",
+      answer:
+        "Ask four questions: what queries and sample, how often re-measured, does it distinguish surfaced vs quoted attribution, and can you export the underlying raw data. If a vendor cannot answer all four in writing, treat their dashboard numbers as directional at best.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **Citation intelligence** — the practice of measuring whether, where, and how often AI
+  assistants retrieve and attribute your content. The market for tools that sell this
+  grew faster than the standard for measuring it, so the 2026 buyer's problem is not
+  scarcity of dashboards — it is scarcity of trustworthy ones. This guide is a framework
+  for telling the two apart, plus a measurement system that needs no vendor at all.
+</DefinitionCard>
+
+Everything in this series has leaned on public citation research — BrightEdge, Trakkr,
+ConvertMate, OtterlyAI, Wellows, cloro and others. Those are measurement *publications*,
+which is precisely the standard we want you to hold the tools you buy to. This article is
+the working version: what to measure, which categories of tools exist and what each can
+actually prove, how to vet any tool in four questions, and a self-serve system that costs
+nothing. As with everything else here, we do not rank vendors — we do not yet run the kind
+of controlled cross-engine test that would make those rankings honest. (That laboratory is
+planned; details in our [citation study](/resources/research/2026-ai-citation-study).)
+
+## What you actually need to measure
+
+Before evaluating tools, settle the five questions that matter. Every credible tool maps
+to at least one of these:
+
+1. **Are you retrieved at all?** Zero-retrieval means everything downstream is moot — the
+   failure usually lives in the [technical layer](/resources/research/ai-crawlers-2026-readiness).
+2. **Over what time window?** Measurement tied to a fixed date is stale. You need repeated
+   samples across weeks, because engines re-fetch on their own schedule and citation pools
+   churn on ~four-week windows.
+3. **On which assistants?** ChatGPT, Gemini, Claude, Perplexity, Copilot and AI Mode answer
+   differently and pull from different indexes. A single-engine number is not "AI visibility."
+4. **From which pages?** Page-level source share tells you which assets to refresh — that is
+   where the [freshness playbook](/resources/research/freshness-playbook-2026) plugs in.
+5. **Linked, quoted, or paraphrased?** Verbatim attribution is the strongest signal and the
+   rarest to see reported; surfaced-but-not-cited is the honest middle; a bare link is the
+   weakest evidence of influence.
+
+If a tool cannot express what it measures in terms like these, you cannot act on it.
+
+## The tool categories and what each can prove
+
+| Category | What it monitors | What it honestly proves |
+| --- | --- | --- |
+| Assistant-answer monitoring | Live answers to a query battery across assistants | Whether, when and how you appear; page-level sources |
+| Retrieval / index visibility | Sites' presence in assistants' internal or simulated retrieval | Consistent retrieval over time, if sampling is repeated and documented |
+| Technical-audit ("AI readiness") | Renderability, robots.txt, schema, sitemap, response freshness | That you have removed blockers — as in our crawler playbook, this is necessary, not sufficient |
+| Freshness / change automation | Detects content updates, re-fetch behaviour | That the page changed and was re-checked; citation lift still needs its own measurement |
+| Search-analytics proxies | Organic clicks/sessions as stand-ins for AI influence | Weak and indirect — incidental AI sessions get folded into "brand" or "direct" |
+
+Two traps to watch for. First, **the composite-score trap**: a vendor's proprietary "AI
+score" that blends a dozen inputs into one number is, by construction, unverifiable and
+unrepeatable across the market; its only testable property is that it goes up when you pay.
+Second, **the retrieval-conflation trap**: monitoring simulated retrieval is not the same as
+monitoring what assistants actually write, and assistants that *show* a source often do not
+*quote* it. A dashboard that cannot tell you the difference cannot tell you whether you are
+winning.
+
+## The four-question vendor vet
+
+Ask every vendor these four questions and require written answers:
+
+1. **What queries and sample?** How were the queries chosen, how many, from which verticals,
+   and is the sample neutral to your product category (or engineered to flatter it)?
+2. **How often is it re-measured?** Weekly? Monthly? Once at onboarding? A tool that samples
+   your site once and then projects is a poster, not a monitor.
+3. **Can it distinguish surfaced vs quoted attribution?** If "citation" means "mentioned",
+   and you cannot see verbatim matches, you are being sold reach when you need evidence.
+4. **Can you export the raw data?** Methodology, query dates, per-engine results, per-page
+   results. Dashboards are read-only lies; exports are checkable facts.
+
+Red flags: guaranteed numbers ("ranked #1 in X"), scores with unpublished formulas, reports
+dated to a single snapshot that get "refreshed" by re-running the same static date,
+single-engine coverage sold as the whole market, and no changelog of methodology changes —
+the ones that quietly change the queries each month so the score always trends up.
+
+## The self-serve system that costs nothing
+
+Before you pay for anything, run this for four weeks:
+
+1. **Fix a query battery.** Twenty to fifty money queries — the same ones the [citation
+   study](/resources/research/2026-ai-citation-study) methodology recommends: branded,
+   category, comparison, and "best/alternative" intents.
+2. **Schedule a weekly pass.** Run the battery through two or three assistants on the same
+   weekday. Record: surfaced (yes/no), source pages, and any verbatim quoted lines.
+3. **Keep it in a sheet.** One row per query per week, one column per assistant. After four
+   weeks you have forty-plus repeated samples — enough to see a signal in most categories.
+4. **Snap public pages publicly.** Archive your money pages (and your changelog) in the
+   Wayback Machine or a plain dated archive so retrieval and freshness changes are
+   auditable later.
+5. **Correlate with your refresh program.** Pair the tracker with your [freshness
+   cadence](/resources/research/freshness-playbook-2026) and look at the 30-day window:
+   which pages you refreshed, when, and whether their surfaced/verbatim counts moved in the
+   next two cycles.
+
+That system produces the same decision-grade answers as half the market — transparency,
+repeatability and page-level detail included — and it costs your time instead of a license.
+Buy a tool when the manual passes prove the signal is real for your category and you need
+the automation to hold a larger battery. When we run our Edition 01 panel, this same
+manual-first logic is how we will keep the automated result honest.
+
+## Sources & notes
+
+- This article is a methodological framework, not a vendor benchmark. We have deliberately
+  avoided naming and ranking commercial tools because a defensible cross-engine benchmark
+  requires controlled sampling we have not yet run; publishing one without that would
+  violate the honesty standard this series follows.
+- The measurement categories, the surfaced-vs-quoted distinction, and the four-week
+  citation-window observation follow from the research cited across the rest of the series
+  (BrightEdge, Trakkr, ConvertMate, OtterlyAI, Wellows, cloro) and are consistent with the
+  findings in our [2026 AI citation study](/resources/research/2026-ai-citation-study).
+- The self-serve measurement system (query battery, weekly pass, page-level verbatim
+  tracking, archival) is our own standard operating procedure for internal research
+  projects and is described here in full so readers can reproduce it.
