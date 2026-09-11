@@ -509,8 +509,8 @@ Status: published.
 Score: 7.3.
 URL: https://promptco.online/resources/research/multilingual-ai-search-international-geo-2026
 Brief: docs/content-briefs/19-multilingual-ai-search-international-geo-2026.md
-Commit: TBD
-Pushed: TBD
+Commit: 05a3043
+Pushed: 05a3043
 
 ### Targeting
 - Primary query: "multilingual AI search" / "international GEO" / "AI search language bias" / "ChatGPT English bias"
