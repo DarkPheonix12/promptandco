@@ -1,0 +1,241 @@
+export const meta = {
+  slug: "ai-mode-vs-ai-overviews-2026",
+  title:
+    "Google AI Is Two Engines: The 13.7% Citation Overlap Between AI Mode and AI Overviews",
+  description:
+    "AI Overviews and AI Mode agree on what to say 86% of the time — and cite different sources on 86% of queries. The per-query URL overlap is just 13.7%. That gap is a measurement-units story, a divergence mechanism, a source-type divide, and a dual-surface optimization play.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Strategy",
+  tags: ["AI Overviews", "AI Mode", "Google", "citations", "GEO", "query fan-out"],
+  readingTimeMinutes: 9,
+  faq: [
+    {
+      question: "Do AI Mode and AI Overviews cite the same sources?",
+      answer:
+        "Rarely, on a per-query basis. Ahrefs' 540,000-query-pair study of US data shows citation URL overlap of just 13.7% (16.3% for top-3 sources), with word-level overlap around 16%. Replicate studies land in the same range: Finseo measured 13.7% URL and 18.7% domain overlap across 42,937 prompt-days, and SE Ranking roughly 10.7% URL and 16% domain. There is a catch about units: while the two surfaces diverge query-by-query, they are actually the most similar pair at aggregate level — BrightEdge's top-100 domain comparison shows AI Overviews and AI Mode overlap about 59%.",
+    },
+    {
+      question: "Why do they cite different sources if they are both Google?",
+      answer:
+        "The two surfaces run different retrieval pipelines. Google states AI Overviews and AI Mode may use different models and techniques, and AI Mode splits a query into multiple parallel sub-questions (query fan-out), scoring passages against those sub-questions rather than whole pages. That produces more, longer answers with a wider source set: about 9–11 URLs per answer versus 6–8 for AI Overviews, roughly 4x the answer length, and more entities. AI Mode is also more likely to actually cite what it retrieves (97% vs 89% of responses).",
+    },
+    {
+      question: "If I am cited in AI Overviews, will I appear in AI Mode?",
+      answer:
+        "Frequently, but not automatically, and never alone. Ahrefs found that 61% of the time AI Mode includes the entities AI Overviews used — then adds more on top. Victorious' study of 1,540 queries found 77% of unique cited domains appear on only one surface, with zero exact citation matches. Track each surface separately; treat 'cited in AI Mode but not AI Overviews' (or vice versa) as an actionable signal rather than a contradiction.",
+    },
+    {
+      question: "Should I optimize for AI Mode or AI Overviews?",
+      answer:
+        "Both, because they serve different jobs and their weight is skewing how you measure results. AI Overviews has far broader distribution (~2.5B monthly users vs ~1B reported for AI Mode) and skews toward video and community sources. AI Mode cites more, answers 4x longer, and prefers encyclopedic and market-research sources. And remember that either surface suppresses organic clicks: Seer Interactive measured organic CTR dropping from 1.76% to 0.61% when an AI Overview is present. Measure visibility and revenue, not clicks.",
+    },
+    {
+      question: "Does ranking at the top of organic search get me into AI Overviews or AI Mode?",
+      answer:
+        "Partially, and less every month. BrightEdge's 16-month data shows AI Overview citations that come from pages in the organic top-10 have grown from 32.3% to 54.5%, but 45.5% of citations still come from pages outside the top organic results — and AI Mode diverges further because it scores passages against sub-questions. Neither surface is static either: roughly 45% of an AI Overview's citations change between generations, so any snapshot needs a re-baseline date.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **AI Overviews vs AI Mode in 2026** — Google's two answer surfaces agree on the *answer*
+  86% of the time, yet cite different sources on the *receipts*: the per-query citation URL
+  overlap between AI Overviews and AI Mode is just **13.7%** (word-level overlap roughly 16%).
+  The two surfaces run different retrieval pipelines with different source-type preferences, so
+  a single AI-visibility strategy cannot treat Google as one engine.
+</DefinitionCard>
+
+In the [11-levers model](/resources/research/ai-citation-levers-2026), Google is the largest
+single distribution channel for AI answers — and it is the one most people treat as a single
+channel. By mid-2026 that is wrong. Google ships at least two answer surfaces with materially
+different retrieval pipelines, citation behavior, and source preferences: **AI Overviews**, the
+lighter box under a subset of queries, and **AI Mode**, the two-column, multi-turn experience
+that became the default for some query classes after Google I/O in May 2026. This article is
+the honest treatment of the gap between them, the evidence that quantifies it, and the dual-
+surface play that survives it. The per-engine story beyond Google (ChatGPT, Perplexity, Gemini,
+Copilot) gets its own treatment in our flagship study later; here the question is narrower and
+stranger: *why does the same company's two answer engines disagree about the same query?*
+
+## The paradox: near-identical answers, different receipts
+
+Start with what the two surfaces agree on. Ahrefs' December 2025 study (Despina Gavoyannis and
+Xibeijia Guan, using 730,000 query pairs from US Brand Radar, September 2025) found AI Mode and
+AI Overviews produce semantically similar answers **86% of the time** — 89.7% of the pairs scored
+above 0.8 on cosine similarity. For users, the answer is effectively the same.
+
+Then look at the receipts: of those same query pairs, only **13.7% of citation URLs overlap**
+(16.3% for the top-three cited sources per query). Word-level overlap (Jaccard) is about 16%.
+Same first sentence, 2.51%. Identical responses, 0.51%.
+
+One stat is why practitioners trust Google to be "one engine"; the other is why the engines keep
+citing different vendors for the same question. Both are true. Almost everything useful about AI
+Mode in 2026 is inside the space between them.
+
+## The measurement reconciliation: two engines wearing one coat
+
+The public debate over "the real overlap number" is a units argument wearing a data-set
+argument's clothes. Replicate studies cluster tightly *once you line up the measurement*:
+
+| Study | Unit | Overlap |
+| --- | --- | --- |
+| Ahrefs (Dec 2025), 540k query pairs | citation URL, per query | 13.7% |
+| Ahrefs, top-3 sources | citation URL, per query | 16.3% |
+| Finseo (Sep 2026), 42,937 prompt-days | URL / domain, per query | 13.7% / 18.7% |
+| SE Ranking | URL / domain, per query | ~10.7% / ~16% |
+| Victorious, 1,540 queries | any exact citation match | 0 matches; 77% of domains on one surface only |
+| **BrightEdge AI Catalyst (Apr 2026)** | **top-100 cited domains, all queries** | **AIO vs AI Mode ≈ 59% — the *highest* pair** |
+
+Read that last row carefully, because it resolves the confusion. Per query, AI Overviews and AI
+Mode cite *different* things. But if you aggregate each surface's most-cited 100 domains across
+many queries, the two surfaces are the **most similar pair** in the field — more than Gemini is
+to either (34% vs AI Overviews, 27% vs AI Mode) and more than Gemini is to ChatGPT (39%).
+
+The reconciliation: **the divergence is at the query level, not the ecosystem level.** Same
+wardrobe, different engines. A vendor trying to force "one Google footprint" via aggregate
+visibility numbers will see convergence and conclude the surfaces are interchangeable. The same
+vendor, watching a single buyer-query, sees 86% different sources and correctly cannot optimize
+both surfaces with one set of signals. Both views are right; they are measuring different units.
+Quoting a single "overlap percentage" for "Google AI" without specifying the unit is how the
+confusion reproduces. (For the same units trap in citation tracking generally, the
+[measurement buyer's guide](/resources/research/ai-visibility-measurement-buyers-guide) has the
+full treatment.)
+
+## Why they diverge: query fan-out and passage-level scoring
+
+The divergence is not a bug; the two pipelines are built differently.
+
+- **Query fan-out.** AI Mode splits a query into multiple parallel sub-questions and answers
+  each passage-level. Google's own guidance confirms AI Overviews and AI Mode "may use different
+  models and techniques" to answer a query. More sub-questions, more worlds to pull sources from.
+- **More sources, fewer gaps.** AI Mode cites in ~97% of responses, AI Overviews in ~89% (Ahrefs),
+  so the no-citation gap is rarer there. On URLs per answer, Finseo counted AI Mode at ~10.8 versus
+  AI Overviews at ~6.3; ApiSerpent/Adamarant data puts the pair at ~9.2 versus ~7.7.
+- **Passage scoring, not page scoring.** AI Mode scores passages against the unseen
+  sub-questions, so a mid-page passage or a niche database can win a citation that the overall
+  page would never earn in AI Overviews. This is the closest thing to old passage-based
+  (Maximized Answer) indexing in the current stack — and it rewards different page shapes.
+- **Entity multiplication.** Ahrefs found AI Mode's answers are roughly **4x longer** with
+  **3.3 entities versus 1.3** in a paired answer, and that it includes the AI Overviews entities
+  plus *more* about 61% of the time. Brand carry from the light surface to the heavy one is
+  real — but it arrives with more competitors.
+
+## The source-type divide: who leans where
+
+The two surfaces have distinct dietary preferences. Ahrefs' source-share deltas, plus MR
+Research's July 2026 ratio analysis (AI Mode share ÷ AI Overviews share), give a consistent
+picture:
+
+| Source type | Lean | Evidence |
+| --- | --- | --- |
+| Video (YouTube) | AI Overviews | cited ~2x vs AI Mode; YouTube is AIO's top domain |
+| Community (Reddit) | roughly even | similar frequency on both; see our [community piece](/resources/research/reddit-community-ai-citations-2026) |
+| Wikipedia | AI Mode | 28.9% of AI Mode citations vs 18.1% in AIO |
+| Quora | AI Mode | ~3.5x AIO's share |
+| Health / medical | AI Mode | ~2x AIO's share |
+| Facebook | AI Mode | ~2x AIO's share |
+| Market research / databases | AI Mode | G2 1.81:1, Grand View Research 1.90:1, MarketsandMarkets 1.63:1, Mordor 1.60:1 |
+| Wire services / consulting | AI Overviews | PR Newswire 0.67:1, Deloitte 0.71:1 (ratio below 1 = AIO-leaning) |
+
+Weird but repeatable: the *reference layer* (Wikipedia, Quora, databases) feeds AI Mode, while
+the *broadcast layer* (video, wired press) feeds AI Overviews. If you are a software vendor, the
+practical read is that your G2 or comparison profile is disproportionately a Gemini/AI Mode
+asset, while your YouTube and press coverage are disproportionately an AI Overviews asset. The
+[entity layer](/resources/research/entity-optimization-2026) and the
+[earned-media layer](/resources/research/earned-media-ai-search-playbook-2026) belong on
+different surfaces' menus.
+
+## Volatility and the snapshot caveat
+
+Every overlap figure in this article is a snapshot. Ahrefs flagged that roughly **45% of an AI
+Overview's citations change between generations**; BrightEdge's 16-month run shows AI
+Overviews/organic citation overlap drifting from **32.3% to 54.5%** while 45.5% of citations
+still come from pages outside the organic top-10. The May 2026 I/O "merge" throughline is mostly
+a *UI* merge — AI Mode surfacing as the default for more queries — and the behavioral split
+between the two retrieval pipelines persists where it matters. Add the wider fact that
+cross-engine zeroshared-domain queries run 35–40% (Search Atlas, 5.5M responses) and the honest
+conclusion is: treat any single-number overlap figure as dated, label its unit, and re-baseline
+your own tracking quarterly. QuickSEO's observation that two engines disagree about a brand's
+presence 62% of the time stops being a measurement error once you accept the divergence is
+structural.
+
+## The dual-surface playbook
+
+Given two engines, one of which aggregates to the same top-100 as the other but never in the
+same query, the defensible play has four moves:
+
+1. **Split your optimization target, not your Google budget.** Structure and passage clarity for
+   AI Mode; video, community threads, and press mentions for AI Overviews; entity + Wikipedia
+   depth for both. They are different muscle groups.
+2. **Track AI Mode and AI Overviews separately — and log the 'diverged' state.** Being cited on
+   one surface and absent on the other is a signal, not a bug. It tells you which of your assets
+   the other surface is not seeing, which is a specific, amenable problem.
+3. **Play the carry, price the competition.** The 61% brand-carry means AI Mode often adopts your
+   AI Overviews citation — but only as part of a longer, more crowded answer. Your AI Overviews
+   win is your AI Mode baseline, never your AI Mode finish line.
+4. **Measure revenue, not clicks.** Seer Interactive (3,119 queries, 42 clients, 25.1M
+   impressions, Jun 2024–Sep 2025) measured organic CTR falling from **1.76% to 0.61%** when an
+   AI Overview is present — a 61% decline — a finding that has only aged in one direction. If your
+   dashboard still rewards clicks, both surfaces will look like failure even when they are
+   converting.
+
+## Search-readiness: two surfaces, measured
+
+| Element | Surface it serves | 2026 evidence | Verdict |
+| --- | --- | --- | --- |
+| Passage-level depth (answer the sub-questions) | AI Mode | ~4x longer, ~10.8 URLs/answer, passage scoring | Highest-leverage editorial input |
+| Wikipedia / reference-layer coverage | AI Mode | 28.9% vs 18.1% | Your AI Mode floor |
+| Video + community + press presence | AI Overviews | YouTube #1, ~2x; Reddit similar | Your AIO floor |
+| G2 / comparison / database profiles | AI Mode | G2 1.81:1, Grand View 1.90:1 | Underrated AI Mode asset |
+| Citation-gap closure | AI Mode | 97% vs 89% cited | Less empty answers in AI Mode |
+| Per-surface tracking with 'diverged' flag | both | 77% single-surface domains (Victorious) | Surfaces must not share a dashboard row |
+| Quarterly re-baseline | both | ~45% AIO citations change per generation | Any snapshot is dated |
+
+## Bottom line
+
+Google's two answer surfaces say the same thing and cite different people. The 13.7% per-query
+URL overlap coexists with a 59% aggregate top-100 similarity because **their divergence lives at
+query level, not ecosystem level** — same coat, two engines, different retrieval pipelines. That
+reconciliation is the practical takeaway: stop quoting a single "Google overlap number," track
+each surface separately, and allocate by source-type preference — passage and reference depth for
+AI Mode, video and community and press for AI Overviews. Pair it with the
+[11-levers hub](/resources/research/ai-citation-levers-2026) and the
+[community thread](/resources/research/reddit-community-ai-citations-2026), and watch this space
+for the five-engine divergence study that maps the same question across everything else.
+
+## Sources & notes
+
+- **Ahrefs, Dec 15, 2025 — "Are AI Mode and AI Overviews the same answer?" (Gavoyannis & Guan).**
+  US Brand Radar, Sep 2025. 540,000 query pairs for citation analysis; 730,000 for similarity.
+  Key figures: 13.7% URL overlap (16.3% top-3), ~16% word overlap, 2.51% same first sentence,
+  0.51% identical, 86% semantic similarity (89.7% of pairs &gt;0.8), ~4x length, 3.3 vs 1.3
+  entities, 61% entity-carry, 97% vs 89% citation rates, source-share deltas, the "may use
+  different models and techniques" citation, and the ~45% of AIO citations changing between
+  generations. Single generation, single data source — treated as the anchor, not the last word.
+- **Finseo, Sep 4, 2026** — 42,937 prompt-days: 13.7% URL / 18.7% domain overlap; AIO 6.31 vs AI
+  Mode 10.79 URLs per answer. Replicates Ahrefs' URL number at different scale.
+- **SE Ranking** — ~10.7% URL / ~16% domain overlap with caveats on corpus; consistent third
+  data point.
+- **Victorious, 1,540 queries** — 77% of unique cited domains appear on one surface only; zero
+  exact citation matches across surfaces. Method: query set on commercial topics.
+- **BrightEdge AI Catalyst, Apr 24, 2026** — pairwise top-100 domain overlap: AIO vs AI Mode
+  ~59% (highest pair), Gemini vs AIO 34%, Gemini vs AI Mode 27%, Gemini vs ChatGPT 39%; brand
+  overlap 36–55%. The reconciliation row; different unit from the per-query studies.
+- **Search Atlas (5.5M responses / 748,425 queries)** — 35–40% of queries share zero domains
+  across engines; Gemini–ChatGPT overlap ~42%. Cross-engine context.
+- **MR Research, Jul 2026** — AI Mode/AIO ratios by source type: G2 1.81, Grand View 1.90,
+  MarketsandMarkets 1.63, Mordor 1.60 (AI Mode-leaning); PR Newswire 0.67, Deloitte 0.71
+  (AIO-leaning); Crunchbase 0.59 outlier. Also carries the BrightEdge 16-month organic-overlap
+  32.3%→54.5% series and the ~45.5% outside-organic figure.
+- **Seer Interactive** — 3,119 queries, 42 clients, 25.1M impressions, Jun 2024–Sep 2025:
+  organic CTR 1.76%→0.61% (−61%) when AIO present.
+- **QuickSEO / BuzzStream / Semrush context** — brand-level disagreement 62%; BuzzStream 595
+  prompts, 30k citations → 37.4% Jaccard; Semrush's 58% corpus-level URL figure is a *different
+  unit* (set intersection over all citations) and is not comparable to the per-query numbers —
+  deliberately not quoted as an overlap headline for that reason.
+- **Users/reach (adamarant, mid-2026)** — reported ~2.5B monthly users for AI Overviews vs ~1B
+  for AI Mode; rough, directionally reliable, used only for distribution framing.
+- **I/O May 2026** — Google's "seamless experience" messaging positions AI Mode as default for
+  more queries; treated as UI-level merge, with retrieval-level divergence persisting.
+- All overlap figures labeled with their unit (per-query URL / per-query domain / top-100
+  aggregate); no vendor deck number imported without its method and date attached.

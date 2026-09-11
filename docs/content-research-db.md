@@ -322,4 +322,33 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
+## 013 — Google AI Is Two Engines: AI Mode vs AI Overviews (Article #13)
+
+- Status: **written + committed + pushed**
+- Commit: (see git log)
+- URL: https://promptco.online/resources/research/ai-mode-vs-ai-overviews-2026
+- Brief: docs/content-briefs/013-ai-mode-vs-ai-overviews-2026.md
+
+### Targeting
+- Primary query: "AI Mode vs AI Overviews" / "AI Mode SEO" / "cite both AI Overviews and AI Mode"
+- Intent: informational + practitioner decision; premium commercial. Spoke of hub 005; pairs with #12 (community) and flagship F1 (per-engine divergence, later). Scope: the two-Google-surfaces problem at query level.
+
+### Research (fresh 2026, measurement-units reconciliation)
+- Anchor: Ahrefs / Gavoyannis & Guan, **Dec 15, 2025**, US Brand Radar Sep 2025: 540k query pairs (citations) + 730k (similarity). URL overlap 13.7% (top-3 16.3%); word overlap ~16%; same first sentence 2.51%; identical 0.51%; semantic 86% (89.7% of pairs >0.8); AI Mode ~4x longer; entities 3.3 vs 1.3; 61% entity-carry; citation gaps 3% vs 11%; source-preference deltas (Wikipedia 28.9% vs 18.1%; Quora 3.5x; health ~2x; Facebook 2x; YouTube ~2x AIO; Reddit similar); query fan-out; ~45% of AIO citations change between generations.
+- Reconciliation (per-query vs top-100): Finseo Sep 4 2026 (42,937 prompt-days → 13.7% URL / 18.7% domain; AIO 6.31 vs AI Mode 10.79 URLs/answer); SE Ranking ~10.7% URL / ~16% domain; Victorious 1,540 queries (77% single-surface domains, 0 exact matches); **BrightEdge AI Catalyst Apr 2026 — top-100 domain overlap: AIO vs AI Mode ≈59% = HIGHEST pair**; Gemini vs AIO 34%, Gemini vs AI Mode 27%, Gemini vs ChatGPT 39%; brand overlap 36–55%.
+- Source-type profiles: MR Research Jul 2026 ratios (AI Mode-leaning: G2 1.81, Grand View 1.90, MarketsandMarkets 1.63, Mordor 1.60; AIO-leaning: PR Newswire 0.67, Deloitte 0.71; Crunchbase 0.59 outlier).
+- Reach & CTR: I/O May 2026 "seamless experience" (UI merge, AI Mode default for more queries); adamarant ~2.5B (AIO) vs ~1B (AI Mode) users; Seer Interactive (3,119 queries/42 clients/25.1M impressions, Jun 2024–Sep 2025): organic CTR 1.76%→0.61% when AIO present (−61%); BrightEdge 16-month (via MR): AIO/organic overlap 32.3%→54.5%, 45.5% citations outside organic top-10.
+- Cross-engine context (do not confuse units): Search Atlas 5.5M responses → 35–40% zero-shared-domain queries; Gemini–ChatGPT 42% overlap; QuickSEO 62% brand disagreement; BuzzStream 595 prompts → 37.4% Jaccard; Semrush 58% corpus-level URL figure is a different unit (deliberately not quoted as an overlap headline).
+- Competitors: Ahrefs blog, SEJ, SEOAuthori, ApiSerpent, MR Research, Link Building Journal, adamarant, outpaceseo, finseo, agencydashboard, BrightEdge. Gap: nobody reconciles per-query overlap (14%) with top-100 aggregates (59%) or pairs source-type profiles with a dual-surface allocation.
+
+### Gaps & differentiation
+- Gap: single-headline pieces reporting "13.7%" or "86% similar" in isolation; no reconciliation of units; no per-surface source-type allocation guidance.
+- Original contribution: "two engines wearing one coat" — the measurement-units reconciliation (per-query URL vs top-100 domain); divergence mechanism (query fan-out, passage-level scoring, citation-gap asymmetry); source-preference/source-type table per surface; 61% brand carry + 77% single-surface domains; dual-surface playbook (passage depth for AI Mode, video/community/press for AIO, entity/reference depth for both, separate 'diverged' tracking, revenue-not-clicks); volatility honesty (~45% AIO citation churn; labelled units; quarterly re-baseline).
+
+### QA & validation
+- Passed: lint (MDX ignored by config, 0 errors), tsc, build (21 routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 questions / canonical https://promptco.online/resources/research/ai-mode-vs-ai-overviews-2026 / sitemap ref / index ref / og:type article). Verified exactly one BlogPosting + one FAQPage ld+json block.
+- Pending: Phase 25 report delivered in-task; commit+push hash recorded above.
+
+---
+
 (End of file)
