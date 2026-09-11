@@ -671,8 +671,8 @@ Status: published.
 Score: 8.2.
 URL: https://promptco.online/resources/research/what-changed-ai-search-2026-year-in-review
 Brief: docs/content-briefs/24-what-changed-ai-search-2026.md
-Commit: 0000000
-Pushed: 0000000
+Commit: a4375f60ed5196fb076b5e39ebb9560f953c4476
+Pushed: a4375f60ed5196fb076b5e39ebb9560f953c4476
 
 ### Targeting
 - Primary query: "what changed AI search 2026" / "AI search year in review" / "GEO trends 2026" / "AI search 2027 predictions"
