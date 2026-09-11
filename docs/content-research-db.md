@@ -381,4 +381,33 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 
 ---
 
+## 015 — The Three-Layer Protocol Stack: Agent-Ready Content for MCP, A2A, and WebMCP (Article #15)
+
+- Status: **written + committed + pushed**
+- Commit: (see git log)
+- URL: https://promptco.online/resources/research/agent-ready-content-2026-mcp-a2a
+- Brief: docs/content-briefs/015-agent-ready-content-2026-mcp-a2a.md
+
+### Targeting
+- Primary query: "agent-ready content" / "MCP for content teams" / "AI agent content optimization" / "A2A content strategy"
+- Intent: informational + practitioner decision (B2B content/editorial, product marketing, SEO). Spoke of hub 005; complementary to #2 (crawlers), #13 (engine surfaces), measurement buyer's guide. Scope: the protocol stack as a content-editorial problem, not a developer one.
+
+### Research (fresh 2026)
+- MCP — settled tool layer: Anthropic Nov 2024 → Linux Foundation AAIF Dec 2025; ~190 members by May 2026; SDK downloads: npm 38.5M→156M monthly (Jul 2026), PyPI ~271M mcp + ~93M fastmcp; combined ~427M core alone (AgentsCamp Jul 1 2026). Servers: Smithery 6,652 / PulseMCP 20,120 / mcp.so ~23,000; ~10,000 active; 47 enterprise orgs production; 5 major clients native. Protocol revision Jul 2026: stateless, session removed, multi-round-trip; OAuth 2.1 mandatory but 8.5% implement; 53% hard-coded credentials. Stacklok Dec 2025: 41–45% software-industry production use (300 leaders); "78% enterprise" claim walked back. Toolradar Aug 2026: 228 tools (114x); Q3 132 new; 85% free tier. ArXiv 177,436 tools (Nov 2024–Feb 2026): software dev 67%/90%; action tools 27%→65%; AI-assisted 28%→62% new servers. VibeDNA: <5% monetized; Python 38.5%/TypeScript 27.3%.
+- A2A — horizontal layer: Google Apr 2025 → Linux Foundation Jun 2025; v1.0 Mar 2026, v1.2 Apr 2026 (signed Agent Cards); 150+ orgs production (Azure AI Foundry, Amazon Bedrock, Salesforce, SAP, ServiceNow); 22,000+ GitHub stars; 5 SDKs; native in ADK/LangGraph/CrewAI/LlamaIndex/Semantic Kernel/AutoGen; IBM ACP merged Aug 2025. Agent Card at /.well-known/agent-card.json; JSON-RPC 2.0; OAuth 2.0; gRPC. Production: supply chain, financial services, insurance, IT ops. Complements MCP (vertical vs horizontal).
+- WebMCP — browser layer (preview): Chrome Canary preview Feb 2026 (Google + Microsoft, W3C Web ML CG); declarative API (page elements as tools) + imperative JS (`navigator.modelContext`); "sites as MCP servers by consent not scraping"; Cloudflare partial; also Markdown for Agents (Feb 12 2026); Lighthouse 13.3.0 agentic-browsing audit May 7 2026; not production.
+- Content implications: 62% MCP deployments connect to knowledge bases (directional); Indig 44.2% citations in first 30% of page; Ahrefs 25.7% freshness premium; open access beats gated; Presenc AI: brands without agent-facing surface invisible in MCP journeys; schema null (Ahrefs) + correlational +44% reconciliation; Sunwest 95%+ AIO URLs updated <3 months; AGENTS.md 60,000+ repos.
+- Stack framing: IngestThis Jul 6 2026 (architecture not sprawl; MCP settled, A2A 1.0, WebMCP preview); o-mega Aug 1 2026 (MCP only first; A2A only across trust boundary); Pondero Jul 15 2026 (MCP/A2A/WebMCP compose not compete).
+- Competitors: MCP Institute, AgentsCamp, Presenc AI, IngestThis, NeuralCoreTech, Pondero, o-mega, Koenig, VibeDNA, Toolradar, Google DevBlog, arXiv. Gap: every piece developer-facing; no B2B content-editorial translation of the protocol stack.
+
+### Gaps & differentiation
+- Gap: protocol articles are for engineers; nobody translates the three-layer stack into what content teams write differently, or frames "agent-ready" as the structural minimum for both humans and machines, with protocol-layer status clearly marked.
+- Original contribution: "your content already lives in a three-layer protocol stack" framing; MCP/A2A/WebMCP content-side translation per layer; brand-visibility gap (Presenc); "build for settled layers, track preview"; schema-hygiene/honesty (Ahrefs null); publication cadence > date-stamp; Agent Card equivalent as editorial concept; editorial playbook table with protocol layer marked per row.
+
+### QA & validation
+- Passed: lint (MDX ignored by config, 0 errors), tsc, build (23 routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly one BlogPosting + one FAQPage ld+json block. Fixed raw `<3` and `or or` MDX-parse errors before build.
+- Pending: Phase 25 report delivered in-task; commit+push hash recorded above.
+
+---
+
 (End of file)

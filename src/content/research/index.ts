@@ -41,6 +41,9 @@ import AiModeVsAiOverviews, {
 import LocalNearMeAiCitations, {
   meta as localNearMeAiCitationsMeta,
 } from "./local-near-me-ai-citations-2026.mdx";
+import AgentReadyContent2026McpA2a, {
+  meta as agentReadyContent2026McpA2aMeta,
+} from "./agent-ready-content-2026-mcp-a2a.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -57,6 +60,7 @@ const smeta = llmsTxt2026EvidenceMeta as ResearchMeta;
 const tmeta = redditCommunityAiCitationsMeta as ResearchMeta;
 const umeta = aiModeVsAiOverviewsMeta as ResearchMeta;
 const vmeta = localNearMeAiCitationsMeta as ResearchMeta;
+const wmeta = agentReadyContent2026McpA2aMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -114,6 +118,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: vmeta,
     Content: LocalNearMeAiCitations as ComponentType,
+  },
+  {
+    meta: wmeta,
+    Content: AgentReadyContent2026McpA2a as ComponentType,
   },
 ];
 
