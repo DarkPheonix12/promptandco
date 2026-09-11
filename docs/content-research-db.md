@@ -567,4 +567,35 @@ Pushed: 5b1bee8
 
 ---
 
+## 021 — Which Content Formats Earn AI Citations in 2026
+
+Status: published.
+Score: 7.9.
+URL: https://promptco.online/resources/research/content-formats-ai-citations-listicles-2026
+Brief: docs/content-briefs/21-content-formats-ai-citations-listicles-2026.md
+Commit: TBD
+Pushed: TBD
+
+### Targeting
+- Primary query: "content formats AI citations" / "listicle AI search" / "best content type for ChatGPT" / "format AI SERPs"
+- Intent: informational (content strategists, editorial teams, SEO/GEO practitioners). Spoke of hub 005. Reclaims "formats/listicles" wedge.
+
+### Research (fresh 2026)
+- Wix AI Search Lab + HubSpot State of AEO 2026 (1M+ citations, 75k answers): listicles 21.9% / articles 16.7% / product pages 13.7% of all citations; commercial listicle share 40.86%; ChatGPT comparison 95%; Gemini blog 76%; AIO blog 42%; Perplexity product 84%; title patterns by engine.
+- Evertune (Mar–Apr 2026, ~400M occurrences, ~25k URLs, 6 engines): 63% of citations → listicles; ranked Top-N 71–86% of listicles; cited pages 1,000–2,000 words (Copilot ~964, Gemini ~1,977); ChatGPT median ~941 words, 4 H2s, 15 links, 10 images.
+- Presenc AI (Jun 2026, 2,400+ brands): comparison 33% / data 30% / definition 27% (39 avg words — best per-effort) / how-to 24% / listicle 19% median; listicle 23% ChatGPT vs 15% Perplexity; scannable 1.5× prose.
+- AirOps (Jun 5 2026): 44% citations from top 30%; stats +41%; schema 3.2×; sequential headings 2.8×; third-party listicles 80.9% vs self-promo 19.1%; only 38% AIO citations from top-10 (Digital Applied, 863k SERPs); 11% domains shared ChatGPT×Perplexity; 90-day refresh 1.6×.
+- Peec (Dec 2025–Feb 2026): self-promotional listicles ~11% of citations; ChatGPT 3.6–4%; AI Mode/Perplexity 10–11%.
+- Ahrefs: only 12% of ChatGPT/Gemini/Copilot citations in Google top-10 (15k prompts).
+- Princeton/Georgia Tech (KDD 2024): named quotes +40.9%; sourced stats +30.6%; inline citations +27.5%; keyword stuffing −8.3%.
+
+### Gaps & differentiation
+- Gap: competitors publish "lists win" cheerleading or "listicles are dying" scares. Nobody separates ranked vs self-promotional, or derives the format-to-intent matrix from both million-citation datasets side by side.
+- Original contribution: "ranked ≠ self-promotional" (third-party 80.9%, ChatGPT self-promo collapse 3.6%); format-to-intent matrix across six engines; the 1,000–2,000-word anti-pillar-page frame; structure-beats-prose (1.5×, 44% top-30%); definition-page per-word economics (27% from 39 words); rankings-don't-proxy-citations (12% / 38%).
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (29 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks.
+
+---
+
 (End of file)

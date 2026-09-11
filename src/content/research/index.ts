@@ -59,6 +59,9 @@ import MultilingualAiSearchInternationalGeo, {
 import ZeroClickSearchAiOverviewEconomics, {
   meta as zeroClickSearchAiOverviewEconomicsMeta,
 } from "./20-zero-click-search-ai-overview-economics-2026.mdx";
+import ContentFormatsAiCitationsListicles, {
+  meta as contentFormatsAiCitationsListiclesMeta,
+} from "./21-content-formats-ai-citations-listicles-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -81,6 +84,7 @@ const ymeta = answerEconomyB2bMeta as ResearchMeta;
 const zmeta = youtubeAiCitationsMeta as ResearchMeta;
 const aameta = multilingualAiSearchInternationalGeoMeta as ResearchMeta;
 const abmeta = zeroClickSearchAiOverviewEconomicsMeta as ResearchMeta;
+const acmeta = contentFormatsAiCitationsListiclesMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -162,6 +166,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: abmeta,
     Content: ZeroClickSearchAiOverviewEconomics as ComponentType,
+  },
+  {
+    meta: acmeta,
+    Content: ContentFormatsAiCitationsListicles as ComponentType,
   },
 ];
 
