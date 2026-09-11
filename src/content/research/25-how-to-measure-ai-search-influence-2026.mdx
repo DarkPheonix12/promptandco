@@ -1,0 +1,141 @@
+export const meta = {
+  slug: "how-to-measure-ai-search-influence-2026",
+  title: "How to Measure AI Search Influence in 2026: Three Layers, One Blind Spot",
+  description:
+    "Search Console's generative-AI report is impressions-only with no queries. GA4's native channel misses Perplexity. Only 1% of citation clicks land. The practical 2026 measurement stack.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Strategy",
+  icon: "📊",
+  tags: [
+    "AI visibility",
+    "measurement",
+    "Search Console",
+    "GA4",
+    "AI Mode",
+    "share of voice",
+    "AI citations",
+    "attribution",
+  ],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "How do I measure AI search visibility in 2026?",
+      answer:
+        "Run three layers in parallel. (1) Impressions: Google Search Console's Generative AI performance report shows how often your URLs appear in AI Overviews and AI Mode, by page, country, device, and date. (2) Referral traffic: GA4 captures AI referral clicks via its native AI Assistant channel plus a custom regex band above Referral for Perplexity and Copilot. (3) Citation presence: run a fixed 20–50 prompt battery across ChatGPT, Perplexity, Gemini, and Claude monthly, logging mention rate, citation rate, sentiment, and competitors. None of the three alone is sufficient — they measure different things.",
+    },
+    {
+      question: "Why doesn't Google Search Console show my AI queries?",
+      answer:
+        "Because Google split the data across two reports. The Generative AI performance report (launched June 3, 2026) has impressions, pages, countries, devices, and dates — but no Queries, Clicks, CTR, or position dimension. The query text that SOME AI Mode turns generate lands in the main Performance report, unlabeled, as conversational fragments like \"yes go on\" — because Google counts each follow-up question in AI Mode as a new query. Google also withholds rare queries from an anonymized pool, which one practitioner measured at roughly 58% of impressions.",
+    },
+    {
+      question: "What's the difference between mentions, citations, and clicks?",
+      answer:
+        "A mention is your brand being named in an AI answer's prose (with or without a link). A citation is a URL — often on a third party's domain — being linked as a source; a review site's page about you is a citation of their domain and a mention of your brand. A click is someone following a cited link to your site, which GA4 captures only when the referrer passes through. Semrush's 50,000-brand study found that in 79% of categories, the most-cited domain is not the most-mentioned brand — so track the three separately and never merge them.",
+    },
+    {
+      question: "Why is AI traffic invisible in GA4?",
+      answer:
+        "Three reasons. First, GA4's native AI Assistant channel (May 13, 2026) recognizes only ChatGPT, Gemini, and Claude, with no historical backfill — Perplexity and Copilot need a custom regex channel group placed above Referral. Second, ChatGPT only began appending utm_source in June 2025, and mobile/in-app browsers often strip referrers entirely, leaving traffic in Direct. Third, Google's AI Overviews and AI Mode report as normal organic — indistinguishable from a regular click. One estimate puts unattributed AI traffic as high as 70.6%; treat GA4 as a floor, not the total.",
+    },
+    {
+      question: "What is the minimal measurement setup for a small team?",
+      answer:
+        "Start free, for under an hour a month. (1) Verify the site in Search Console and Bing Webmaster Tools and read the Generative AI and Bing AI Performance reports monthly. (2) Add a GA4 custom channel group with a regex matching chatgpt.com, perplexity.ai, gemini.google.com, and claude.ai, ordered above Referral. (3) Keep a spreadsheet of 20–30 buyer-intent prompts run against ChatGPT and Perplexity monthly, logging whether you were mentioned, cited, and which competitors appeared instead. Monthly capture, quarterly trend review. Move to a paid tracker when manual work exceeds about three hours a month or you need five-plus competitors tracked.",
+    },
+  ],
+};
+
+<DefinitionCard>
+**AI search influence** is not one number. It is a stack of three measurements — impressions inside generative answers, referral clicks from AI platforms, and citation presence in prompt outputs — each capturing a different stage of the answer-to-purchase journey, and each blind to non-click influence. In 2026 the tooling matured, and the blind spots became visible enough to name.
+</DefinitionCard>
+
+This is the operational sequel to the [measurement buyer's guide](/resources/research/measurement-ai-earned-media-geo-state-2026), and it pairs with the [AI Mode vs AI Overviews](/resources/research/ai-mode-ai-overviews-13-percent-overlap-2026) and [zero-click economics](/resources/research/zero-click-search-ai-overview-economics-2026) studies.
+
+---
+
+## The three layers
+
+AI influence happens in three places, and none of the mainstream tools covers more than one of them.
+
+1. **Impressions.** How often your URLs appear inside a generative answer. First-party view: Google's new **Generative AI performance report** (Search Console, launched June 3, 2026) covers AI Overviews and AI Mode, by page, country, device, and date.
+2. **Referral clicks.** When a user actually follows a cited link. GA4 captures these — partially — via a native **AI Assistant** channel added May 13, 2026, plus a custom regex channel for the engines it misses (see below).
+3. **Citation presence.** Whether your brand is named and linked in answers that never produce a click. No first-party tool reports this; it is measured with fixed prompt sets run across engines, manually or with trackers like Ahrefs Brand Radar, Profound, or Otterly.
+
+The reason all three are required is that they measure different phenomena. GA4 tells you who clicked through; the GSC report tells you where Google chose to show you. **Neither tells you whether ChatGPT is recommending you for queries where nobody clicks** — which is where most AI influence on discovery actually happens (Pew measured users clicking a cited source just 1% of the time in AI summaries). Citation presence is the leading indicator; referral traffic is the trailing one.
+
+---
+
+## The blind spot: the report built for AI visibility cannot see AI queries
+
+Here is the 2026 inversion that most teams trip on. Google released the Generative AI performance report specifically to isolate AI visibility — and gave it **no Queries dimension at all**. Its dimensions are Pages, Countries, Devices, and Dates. No queries, no clicks, no CTR, no position. It tells you *which* pages Google surfaced in AI Overviews and AI Mode; it cannot tell you *why* — the queries that produced them.
+
+Meanwhile, the queries themselves show up somewhere else entirely. Because Google counts **every follow-up question in AI Mode as a brand-new query**, conversational fragments — "yes", "yes go on", "yes, pricing" — land as rows in the **main** Performance report, mixed in with your classic searches and carrying no AI label. Practitioners watched these appear through mid-2026 (a documented, intended behavior). You can pattern-match them with a regex on conversational strings, but you cannot clean them into a segment.
+
+Two further limits, both first-party:
+
+- **The anonymized pool.** Google withholds rare queries from reporting; one practitioner measured **57.7% of impressions sitting in the anonymized pool** over 59 days (Aug 2026). The fragments you can see are an undercount.
+- **The counting rules.** In AI Overviews, a link must be scrolled or expanded into view before it counts as an impression; in AI Mode, each turn re-counts. Compare exports across consistent periods rather than trusting daily totals.
+
+Practically: use the Generative AI report as a **diagnostic of where Google is willing to surface you**, and the main Performance report — with its living AI-conversation rows — as a journey signal. A "yes, pricing" turn is a late-funnel conversational breadcrumb; the teams that read it as such are building answer-first chunks for the follow-up turns, not just the opening question.
+
+---
+
+## GA4: native channel, mended with regex
+
+GA4's native AI Assistant channel covers **ChatGPT, Gemini, and Claude only**, has no historical backfill before May 13, 2026, and still loses sessions whose referrer is stripped by mobile apps or privacy browsers. **Perplexity and Copilot remain buried in Referral** unless you add a custom channel group.
+
+The fix is ten minutes: copy the default channel group, add a channel named "AI referrals" above Referral (channel rules evaluate in order — placed below, Referral wins), and set its source regex to something like `chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|claude\.ai|copilot\.microsoft\.com`. Then keep your expectations honest:
+
+- ChatGPT only began appending `utm_source` in June 2025; Google's AI Overviews and AI Mode pass **no attribution data at all** and report as ordinary organic.
+- One estimate places unattributed AI traffic as high as **70.6%**.
+- When you do see AI referral traffic, expect a conversion-rate story, not a volume story: Seer measured **15.9% AI-referral conversion versus 1.76% organic** on one B2B site — a fraction of the volume at several times the rate.
+
+There is one free first-party reporting exception worth exploiting: **Bing Webmaster Tools' AI Performance report** (public preview February 2026; June 2026 added Intents, Topics, Citation Share, and Compare views) shows which URLs Copilot and Bing's AI answers cite. Because ChatGPT's live search runs on the Bing index, Copilot citation is a leading indicator for ChatGPT too.
+
+---
+
+## Mention ≠ citation ≠ click
+
+The cleanest recent dataset on this is Semrush's 50,000-brand study: in **79% of categories, the most-cited domain is not the most-mentioned brand**. An engine can cite a review site's page *about* you (citation of their domain, mention of your brand) or name you from memory with no source at all (mention, no citation). Merge the two in a spreadsheet and you will misread your position in both directions. And across 53.7% of categories, there was **no dominant brand at all** in ChatGPT answers — "nobody consistently" is the normal state for most of the web.
+
+Track four ratios against a fixed prompt set, per engine:
+
+- **Mention rate** — share of runs naming your brand. The baseline for "does the model know you exist."
+- **Citation rate** — share of runs citing a URL from your domain.
+- **Share of voice** — your citations ÷ total citations in the same prompt set. The competitive number; per-engine splits are mandatory because ChatGPT and Perplexity draw from different corpora (our [divergence study](/resources/research/ai-mode-ai-overviews-13-percent-overlap-2026) measured ~11% domain overlap).
+- **Sentiment / framing** — recommended, neutral, or caveated.
+
+The single most useful output is the **gap matrix**: every prompt where you are absent, paired with the sources the engine cites instead. Indexly's data adds a structural lever: brands cited in at least three independent sources are extracted by AI at **3× the rate** of brands with no off-site mentions. And ranking gives you retrieval, not citation — Semrush found 85% of pages ChatGPT retrieves are never cited.
+
+---
+
+## The operational stack
+
+- **Cadence:** monthly prompt capture, quarterly trend review. Weekly numbers are noise — retrieval drifts, personalization residue, sampling variance. Monthly produces signal; react on the quarter.
+- **Prompt library:** 20–50 prompts across branded, category, comparison, and problem-intent, written in real buyer language (support tickets and search console data, not marketing copy). Refresh quarterly.
+- **Alerts:** a citation-rate drop above ~20% week-over-week, share-of-voice drop above ~5%, or a competitor breaking your top-3 co-mentions triggers investigation — usually an engine update or a redistribution event, not a content regression.
+- **Tooling thresholds:** manual works for one brand and a few engines. Automate when manual exceeds ≈3 hours/month or you track 5+ competitors (entry tiers ~$29–99/month; serious platforms $249–499+).
+- **Dashboard:** present — inclusion rate, citation coverage, share of voice by engine, answer placement. Do not present a single blended score.
+
+The honest summary, from the [year in review](/resources/research/what-changed-ai-search-2026-year-in-review): measurement closed partway in 2026 — first-party AI reporting exists, but it is impressions-only, unsegmented, and anonymized at the margin. The teams that track citation rate, share of voice, and attribution by engine hold the private dataset the public reports do not.
+
+---
+
+## Sources & notes
+
+1. Google. "Introducing Search Generative AI performance reports" (Search Console, Jun 1/3 2026; impressions for AI Overviews + AI Mode; Pages/Countries/Devices/Dates; no queries/clicks). https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports
+2. Google. "Generative AI performance report (Search)" help doc (dimensions list; impression rules; included in Web search type; global rollout affirmed Aug 31 2026). https://support.google.com/webmasters/answer/16984139
+3. Google. Search Console click/impression-counting help (AI Mode: follow-up = new query; clicks count; standard position rules). Via Search Engine Roundtable, Jun 17 2025; reaffirmed 2026. https://www.seroundtable.com/google-search-console-counting-ai-mode-39599.html
+4. Search Engine Journal / Carolyn Shelby. "Google Now Reports AI Search Impressions. Here's How to Read Them." (Gen-AI report limits: no queries/clicks/CTR/position/citation placement; excludes = Search Labs; block-from-AI testing; impression count rules). Aug 4 2026. https://www.searchenginejournal.com/google-reports-ai-search-impressions-how-to-read-them/582824/
+5. Digital Applied. "Why 'Yes Go On' Is Showing Up in Your Search Console" (AI Mode follow-ups as query rows; Gen-AI report has no Queries dimension; main report holds query text; exporter guidance). Aug 10 2026. https://www.digitalapplied.com/blog/search-console-ai-mode-followup-queries-data-quality
+6. Buffy. "Is Google Search Console showing your AI Mode conversations?" (two data homes; fragment shapes; journey-stage reading; no segment possible). Aug 9 2026. https://heybuffy.com/blog/ai-mode-conversations-in-search-console
+7. XBorder Insights. "How to Track Google AI Mode Traffic in Search Console" (57.7% anonymized pool over 59 days; Regex/Gabe API methods; classifier). Aug 19 2026. https://xborderinsights.com/how-to-track-google-ai-mode-traffic-in-search-console/
+8. Everyday on AI. "How to Track AI Search Visibility: GA4, Search Console & Beyond" (three layers; GA4 native AI Assistant channel May 13 2026 covers only ChatGPT/Gemini/Claude; regex above Referral; AI visibility ≠ AI traffic). Jun 30 2026. https://everydayonai.com/track-ai-search-visibility
+9. Sightivo / Jess O'Malley. "How to Track AI Visibility" (mention vs citation rate divergence; Seer 15.9% vs 1.76%; Bing WMT AI Performance report; GA4 floor not total; Pew 1%). Aug 24 2026. https://sightivo.com/blog/how-to-track-ai-visibility
+10. Indexly. "How to Track Your Brand's Citation Share in AI Search" (AI SoV formula; gap matrix; Gemini ~52% brand-owned / ChatGPT ~49% third-party / Perplexity niche; 70.6% unattributed; 3-independent-sources 3× extraction). Jul 14 2026. https://indexly.ai/blog/how-to-track-your-brands-citation-share-across-chatgpt-perplexity-and-gemini/
+11. Am I Cited. "The Complete Framework for Tracking AI Search Visibility" (mention/citation/SoV definitions; 40–60 prompt library; cadence; alert thresholds >20% WoW). Jul 10 2026. https://www.amicited.com/blog/ai-visibility-tracking-framework-cadence/
+12. Formative Digital. "How to Measure AI Visibility: 2026" (30–50 prompt battery; monthly capture / quarterly trend; manual→automated thresholds; tool tiers). Apr 26 2026. https://formativedigital.com/how-to-measure-ai-visibility/
+13. Semrush 50,000-brand study (79% most-cited ≠ most-mentioned; 53.7% no owner; 85% retrieved-never-cited). 2026; cited via Sightivo and pool records.
+14. Indexly/platform set: ChatGPT ~55–60% of AI referral traffic (Digital Applied, via SEOcrawl). Jun 2026.

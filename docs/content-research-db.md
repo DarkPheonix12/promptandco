@@ -691,4 +691,39 @@ Pushed: a4375f60ed5196fb076b5e39ebb9560f953c4476
 
 ---
 
+## 025 — How to Measure AI Search Influence in 2026: Three Layers, One Blind Spot
+
+### Status (filled after build & push)
+Status: published.
+Score: 7.9.
+URL: https://promptco.online/resources/research/how-to-measure-ai-search-influence-2026
+Brief: docs/content-briefs/25-measure-ai-search-influence-2026.md
+Commit: 0000000000000000000000000000000000000000
+Pushed: 0000000000000000000000000000000000000000
+
+### Targeting
+- Primary query: "measure AI search visibility" / "track ChatGPT citations" / "AI Mode Search Console" / "AI search reporting 2026" / "share of voice AI search"
+- Intent: informational (SEO/GEO leads, CMOs, analysts). Operational sequel to 004 measurement buyer's guide; pairs with 013 AI-Mode-vs-AIO and F1 divergence; the "how it shows up in your dashboard" installment.
+
+### Research (fresh verification + pool re-contact)
+- GSC Generative AI performance report (launched Jun 3 2026; global rollout affirmed Aug 31 2026): impressions-only for AI Overviews + AI Mode; dimensions Pages/Countries/Devices/Dates; no queries, clicks, CTR, position.
+- AI Mode counting rules: follow-up = new query; clicks count; "yes go on" fragments land unlabeled as rows in the MAIN Performance report.
+- Google anonymizes rare queries: XBorder measured 57.7% of impressions in the anonymized pool over 59 days (Aug 2026); regex/classifier workarounds.
+- GA4 native "AI Assistant" channel (May 13 2026): ChatGPT/Gemini/Claude only; no backfill; Perplexity/Copilot need a custom regex channel above Referral; AIO/AI Mode report as organic; ChatGPT utm_source since Jun 2025; 70.6% unattributed estimate (Indexly).
+- Bing Webmaster Tools AI Performance report (public preview Feb 2026; Jun 2026 added Intents/Topics/Citation Share/Compare); free Copilot view + ChatGPT live-search proxy (Bing index).
+- Semrush 50,000-brand: 79% of categories most-cited domain ≠ most-mentioned brand; 53.7% no dominant owner; 85% retrieved-never-cited.
+- Seer 15.9% AI-referral conversion vs 1.76% organic; Pew ~1% click rate on AI-summary citations.
+- Indexly: AI SoV formula; zero-citation gap matrix; ≥3 independent sources → 3× extraction rate; Gemini ~52% brand-owned / ChatGPT ~49% third-party directories / Perplexity niche-expert.
+- Am I Cited (mention/citation/SOV; >20% WoW alert threshold; 40–60 prompt library); Formative (30–50 prompt battery; monthly capture quarterly trend; tool tiers).
+- Pool re-contact: dark funnel 70–80% untracked (Similarweb); AI-referral converts 14.2% vs 2.8%; 11% cross-engine overlap (F1); AI Mode ~93% zero-click (013).
+
+### Gaps & differentiation
+- Gap: first-party AI measurement write-ups regurgitate the two reports; trackers sell tools without the "what can this never see" layer. Nobody operationalizes surface divergence plus the named blind spots (1% non-click influence; up-to-58% anonymous pool; no-Queries AI report; GA4 segment gaps).
+- Original contribution: "three layers, one blind spot" thesis; "the report built for AI visibility cannot see AI queries" inversion; mention ≠ citation ≠ click with the 79% decoupling stat; per-engine divergence tracking as the sequel; operational stack (cadence/alerts/prompt library/Bing-window proxy/gap matrix).
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (25 article routes), rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified BlogPosting + FAQPage ld+json blocks (site Organization blocks present on all article pages).
+
+---
+
 (End of file)
