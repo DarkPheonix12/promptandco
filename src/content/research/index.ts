@@ -68,6 +68,9 @@ import WikipediaWikidataEntityCorroboration, {
 import SaasAiSearchCitationPlaybook, {
   meta as saasAiSearchCitationPlaybookMeta,
 } from "./23-saas-ai-search-citation-playbook-2026.mdx";
+import WhatChangedAiSearch2026, {
+  meta as whatChangedAiSearch2026Meta,
+} from "./24-what-changed-ai-search-2026-year-in-review.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -93,6 +96,7 @@ const abmeta = zeroClickSearchAiOverviewEconomicsMeta as ResearchMeta;
 const acmeta = contentFormatsAiCitationsListiclesMeta as ResearchMeta;
 const admeta = wikipediaWikidataEntityCorroborationMeta as ResearchMeta;
 const aemeta = saasAiSearchCitationPlaybookMeta as ResearchMeta;
+const afmeta = whatChangedAiSearch2026Meta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -186,6 +190,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: aemeta,
     Content: SaasAiSearchCitationPlaybook as ComponentType,
+  },
+  {
+    meta: afmeta,
+    Content: WhatChangedAiSearch2026 as ComponentType,
   },
 ];
 

@@ -661,7 +661,33 @@ Pushed: 964d9a05b8ebcdfdb0e79586da8c9b73827aa3f1
 - Original contribution: "two pipelines, one vertical" thesis (ChatGPT website-first 68.8%/74.6% vs Perplexity/Gemini/Claude third-party-first 79%); "G2 consolidation is structural" (Feb 2026 acquisition, 55–58% influence, 100% Capterra presence = retrieval infra); "two-thirds surrender" (81% pricing vs 33% vs-rival vs 16% alternatives, comparison = #1 ChatGPT citation magnet); "pricing is the negative blind spot" (57% AI-readable, error-session 58% fallback, pricing answer stack); "the 36" (concentration + structural rubric beats DA).
 
 ### QA & validation
-- Passed: lint (0 errors), tsc, build, rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks; fixed `<4` MDX-parse error before build.
+- Passed: lint (0 errors), tsc, build, rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks; fixed `<20` MDX-parse error before build.
+
+---
+
+## 024 — What Changed in AI Search in 2026: The Year in Review
+
+Status: published.
+Score: 8.2.
+URL: https://promptco.online/resources/research/what-changed-ai-search-2026-year-in-review
+Brief: docs/content-briefs/24-what-changed-ai-search-2026.md
+Commit: 0000000
+Pushed: 0000000
+
+### Targeting
+- Primary query: "what changed AI search 2026" / "AI search year in review" / "GEO trends 2026" / "AI search 2027 predictions"
+- Intent: informational (CMOs, GEO leads, founders). Flagship synthesis re-contacting the full 2026 evidence pool. Hub 005 relationships.
+
+### Research (fresh verification + pool re-contact)
+- Milestones verified: Jan 910M MAU (Presenc); Feb 9 ChatGPT ads US (9 markets by Aug; $100M annualized in 6 weeks); Feb 5 G2/Capterra/SoftwareAdvice/GetApp ($110M; 55–58% review influence); Feb 18 AI Mode +53 languages; May 6 five AIO/AI Mode updates; May 7 ChatGPT link-prominence change (Similarweb referrals +157.7% w/w, homepage ~60%); May 19 I/O (AI Mode >1B MAU, 2×/quarter; Gemini 3.5 Flash default; AIO+AI Mode unified; Search agents; "not default" on record); Jun 3 GSC Generative AI reports (impressions-only) + block-from-AI (UK first); Jun 12 information agents (Ultra); Jul 22 Similarweb (ChatGPT cites web 6.8% of answers vs 1.3% YoY; ads 26% US chats; gen-AI share ~50%); Jul 22 France live (last major market, publisher opt-out); Jul 31 ChatGPT 1B weekly users; Aug 4 AI Mode follow-up = new query in GSC; Aug 6 GPT-5.6 Luna free default; Aug 9 Atlas browser shutdown; Aug 13 Gemini 3.7 Flash in AI Mode.
+- Pool re-contact (records 001–023): 68.01% US zero-click (SparkToro); AIO CTR −58% re-measure (Ahrefs Dec 2025 vs 34.5% Apr 2025); Pew 8% vs 15% (Google disputes); AI-referred converts 14.2% vs 2.8%; 11% cross-engine domain overlap; 13.7% AIO/AI-Mode URL overlap; Wikipedia 13.15% + Reddit 11.97% = 25%+ of US ChatGPT citations (5W/Similarweb); ChatGPT Reddit 60%→10% (Sep 2025 licensing) → ~13%; Wikipedia 55%→<20% (Semrush); 85% retrieved-never-cited; G2 network 8% of niche-B2B citations, G2.com 5.8%, Perplexity 71% of G2 citations (Overthink Group); 81/33/16 ownership (AreYouFoundByAI); 51%/71% buyers (G2); +312% SaaS signups (CapstonAI); commercial-intent 13.9%→19.2% (Poyar); 62% Tech/SaaS AI-share by Q4 2026 (presenceai); 3.5B+ AI answers weekly (Axis); Wikipedia 47.9% ChatGPT top-10; EU DMA fine + UK CMA opt-out + France precedent; two-58% rule.
+
+### Gaps & differentiation
+- Gap: vendor "year in review" roundups recount launches; research syntheses ignore the economics/regulation layer. Nobody re-contacts their own measured evidence pool into one verifiable annual narrative.
+- Original contribution: "economics not technology" thesis (ads/licensing/consolidation price citations); five-shifts framework (2nd Google surface matured; divergence as organizing principle; redistribution as normal; ownership gap; verifiable economics); two-58%-number rule; evidence-based 2027 preview.
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build, rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks.
 
 ---
 
