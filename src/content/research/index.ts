@@ -17,6 +17,9 @@ import CitationLevers, {
 import EntityOptimization, {
   meta as entityOptimizationMeta,
 } from "./entity-optimization-2026.mdx";
+import SeoGeoAeoLlmoGuide, {
+  meta as seoGeoAeoLlmoGuideMeta,
+} from "./seo-geo-aeo-llmo-guide-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -25,6 +28,7 @@ const fmeta = freshnessPlaybookMeta as ResearchMeta;
 const bmeta = buyersGuideMeta as ResearchMeta;
 const lmeta = citationLeversMeta as ResearchMeta;
 const nmeta = entityOptimizationMeta as ResearchMeta;
+const ometa = seoGeoAeoLlmoGuideMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -50,6 +54,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: nmeta,
     Content: EntityOptimization as ComponentType,
+  },
+  {
+    meta: ometa,
+    Content: SeoGeoAeoLlmoGuide as ComponentType,
   },
 ];
 

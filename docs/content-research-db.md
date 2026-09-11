@@ -110,7 +110,7 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ## 006 — Entity Optimization in 2026 (Article #6 — spoke of hub 005)
 
 - Status: **written + committed + pushed**
-- Commit: pending (this commit)
+- Commit: 8939e1a
 - URL: https://promptco.online/resources/research/entity-optimization-2026
 - Brief: docs/content-briefs/006-entity-optimization-2026.md
 
@@ -128,11 +128,11 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 - Original contribution: gating mechanism + ghost-citation link + 4-part build + 30-day sprint + per-engine layer divergence + "necessary not sufficient" tie to hub.
 
 ### QA & validation
-- Pending: commit + push + rendered verification + Phase 25 report.
+- Committed + pushed (8939e1a); rendered checks passed (200 / h1 / BlogPosting / FAQPage / canonical / sitemap / index).
 
 ---
 
-## 005 — The 11 Levers of AI Citation (Article #5 — hub) (Article #5 — hub)
+## 005 — The 11 Levers of AI Citation (Article #5 — hub)
 
 - Status: **written + committed + pushed**
 - Commit: c58643c
@@ -159,3 +159,27 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 - Pending: lint, tsc, build, rendered checks (200/h1/schema/canonical/sitemap/index), then commit + push + Phase 25 report.
 
 ---
+
+## 007 — SEO vs GEO vs AEO vs LLMO (Article #7 — strategy tier)
+
+- Status: **written** (validation in progress)
+- Commit: pending (this commit)
+- URL: https://promptco.online/resources/research/seo-geo-aeo-llmo-guide-2026
+- Brief: docs/content-briefs/007-seo-geo-aeo-llmo-guide-2026.md
+
+### Targeting
+- Primary query: "SEO vs GEO vs AEO vs LLMO" / "GEO definition" / "AEO vs GEO" / "LLMO SEO"
+- Intent: definitional + strategic; decision support. Tier-3 strategy post; stitches cluster.
+
+### Research (fresh 2026)
+- Sources: Search Counsel Co; Serpstat; Eastbound (China gap, 540-call Jaccard); The GEO Lab three-models; Google AI optimization guide (market-terms stance); Chen/Wang/Chen/Koudas arXiv 2601.16858 (pre-training divergence, citation-miss 0.06–0.73); Watanabe & Nakayashiki arXiv 2606.04362 (tailwind-adjusted 1.8–2.3×, placebo p=0.16); Ranqo/Kumar arXiv 2606.20065 (73/44/11 ladder); appwebseo funnel chain; Aggarwal KDD 2024; Puerto C-SEO Bench.
+- Competitors analyzed: Search Counsel Co, Serpstat, Eastbound, MV3, appwebseo, The GEO Lab, Google docs (+7).
+- Entities: SEO/AEO/GEO/LLMO/AIO/AAO, retrieval→extraction→compression→citation pipeline, pages-vs-sections, pre-training bias, earned media, platform tailwind, prompt recall, entity coverage, funnel chain.
+
+### Gaps & differentiation
+- Gap: no competitor anchors the taxonomy dispute on 2026 measurement studies or presents Google-vs-academy-vs-vendor tension as the organizing device.
+- Original contribution: three-models framing (adopted+cited); measurement-led tiebreaker (pre-training divergence + tailwind-controlled natural experiment); funnel chain; China substrate caveat; "name surface, intervention, metric, owner" rule; deep cross-link spine.
+
+### QA & validation
+- Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
+- Pending: commit + push + Phase 25 report.

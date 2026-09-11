@@ -1,0 +1,216 @@
+export const meta = {
+  slug: "seo-geo-aeo-llmo-guide-2026",
+  title:
+    "SEO vs. GEO vs. AEO vs. LLMO: The 2026 Decoder for an Overlapping Alphabet",
+  description:
+    "Four acronyms, three mental models, one discovery pipeline. What each term actually optimizes, where the 2026 taxonomy falls apart, and a measurement-led rule for choosing the one that fits your work.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Strategy",
+  tags: ["SEO", "GEO", "AEO", "LLMO", "AI visibility", "content strategy"],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "Is GEO a replacement for SEO or a separate discipline from it?",
+      answer:
+        "Neither exactly. GEO is built on top of SEO. Technical health, crawlability and domain authority remain prerequisites — pages must be eligible and indexed before they can be retrieved or cited. What shifts is the unit of optimization (sections rather than whole pages) and the success metric (retrieval and citation rate rather than position). Google itself says that for its Search features, the work AEO and GEO describe is still SEO.",
+    },
+    {
+      question: "Are AEO and GEO the same thing?",
+      answer:
+        "They overlap but model different stages. One 2026 framing, which we adopt, is that AEO is output-focused — getting selected as the direct answer — while GEO is pipeline-focused — engineering content to survive retrieval, extraction and compression before an answer exists. ChatGPT-era tools blurred the line, and some vendors treat them as synonyms; the GenAI-era distinction is that AEO optimizes the final citation step and GEO optimizes every stage of the pipeline, starting at retrieval.",
+    },
+    {
+      question: "When does LLMO mean something real and not just a rebrand?",
+      answer:
+        "LLMO has a legitimate distinct meaning when the work is genuinely model-layer: cross-model prompt panels, training-data presence audits, and token-level citation analysis — is your brand recalled by the model itself, independent of web retrieval. For most published work — 'get cited in ChatGPT answers' — the term is interchangeable with GEO, and several 2025–26 guides describe it as a rolling rebrand. If it only changes the label without changing the surface or the metric, treat it as marketing language.",
+    },
+    {
+      question: "Do I need a separate AIO or AAO strategy?",
+      answer:
+        "Not today. AIO (AI overviews / 'AI optimization') and AAO (AI agent optimization) describe adjacent surfaces, not new disciplines. AIO is Google's overview surface — an AEO/GEO concern. AAO, being selected by agents that take action, relies on the same foundations — clean structured data, accurate real-time details, credible reviews — but the agent economy is early. Teams should keep agents on a watch list, not rebuild around them.",
+    },
+    {
+      question: "Which term should my team actually use?",
+      answer:
+        "Choose by surface and metric, not by vendor branding. Use SEO for blue-link ranking work. Use AEO when the surface is direct-answer extraction (snippets, voice, AI Overviews). Use GEO for presence and citation inside generated answers. Use LLMO only when you can name a model layer you actually control — owned retrieval, feeds, evaluation. Always name the engine, the intervention, the metric, and the accountable owner; 'make every model recommend us' is not an executable scope.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **The four terms are not four jobs.** SEO optimizes pages for rankings in a ranked list. AEO
+  optimizes content to become the direct answer. GEO optimizes how content survives an
+  AI pipeline and gets cited inside generated answers. LLMO optimizes how a brand appears
+  in a model's own knowledge. They sit on top of each other — same infrastructure,
+  different surfaces, different metrics. The 2026 evidence is that the *labels* matter less
+  than most of the industry's keyboard (and every vendor) lets on.
+</DefinitionCard>
+
+The alphabet soup — SEO, AEO, GEO, LLMO, plus AIO and AAO — is the byproduct of a
+discipline relabeling itself in real time. Search Counsel's January 2026 review frames them
+as "four labels the industry coined at different moments to describe the same direction of
+travel," and Serpstat's July 2026 comparison is more blunt: "the industry does not use GEO,
+AEO, and LLMO consistently." This guide takes the taxonomy seriously because *which term you
+adopt changes what you optimize for* — then gives you a measurement rule so the label stays
+irrelevant.
+
+## What each term actually optimizes
+
+| Term | Coined | Surface | Unit | Goal | Signals | Typical metric |
+| --- | --- | --- | --- | --- | --- | --- |
+| SEO | mid-1990s | Ranked search results (Google, Bing) | Whole pages | Rank and clicks | Crawlability, relevance, links, authority | Position, CTR, organic traffic |
+| AEO | ~2019, featured-snippet era; revived for AI | Direct-answer boxes, voice, AI Overviews | Concise answer blocks / pages | Selected as the answer | Definition-first structure, schema, scoped claims | Snippet share, answer capture, share of answer |
+| GEO | 2024 KDD paper (Aggarwal et al.) | Generated answers (ChatGPT, Perplexity, Gemini, AI Overviews) | Sections | Retrieved and cited | Machine extractability, evidence density, entity clarity, third-party source graph | Citation frequency, mention share |
+| LLMO | emerging 2025, no canonical paper | The model layer (GPT/Claude/Gemini families) | The model's representation | Accurate, consistent brand representation | Entity consistency, authoritative coverage, training-data presence | Prompt recall rate, entity coverage, brand accuracy |
+| AIO | 2024-25 | Google AI Overviews (narrow) or AI visibility (loose) | Varies | Cited in the Overview | Same as AEO/GEO | Overview citation rate |
+| AAO | 2025-26 | Agentic assistants that take action | Machine-readable product/entity state | Chosen when the agent acts | Structured data, accurate live details, credible reviews | Agent recommendation share |
+
+Every row above matters most for what the even the vendors keep quiet: there is no settled,
+universal taxonomy. MV3's July 2026 review, Eastbound's May 2026 disambiguation and
+appwebseo's August 2026 decision guide each publish mutually incompatible glossaries — which
+is exactly the point: the *terms are operational shorthand*, and the work underneath is one
+discovery pipeline.
+
+## The three mental models behind the alphabet
+
+The sharpest framework comes from the GEO Lab (Ferreira, May 2026). The names matter less
+than the model they encode:
+
+1. **AEO is output-focused** — *how do I get selected as the answer?* It targets the final
+   citation step: being named in the visible output.
+2. **LLM SEO is channel-focused** — *how do I do SEO, but for LLMs?* Same playbook as SEO,
+   applied to a new surface. Same unit (pages), same mental model.
+3. **GEO is pipeline-focused** — *how does my content survive retrieval, extraction,
+   compression, and citation before an answer is even generated?* Content that isn't
+   retrieved never reaches citation; content retrieved but unclearly extractable gets
+   paraphrased into something unrecognizable; content that extracts cleanly but compresses
+   poorly loses its core claim.
+
+The unit shift this implies is the structural claim worth adopting: **pages for SEO/AEO,
+sections for GEO.** The GEO Lab's version: "a page that ranks first but has no clearly
+extractable sections gives the retrieval system nothing to work with. It ranks. It does not
+participate in the answer." Ahrefs' December 2025 analysis put a number on the same gap: AI
+Overviews reduce organic CTR by roughly 58% for top-ranking pages that aren't cited in the
+summary. First page, zero participation — that is the SEO-into-GEO gap in one statistic
+(as reported in the GEO Lab's breakdown).
+
+## Where the taxonomy breaks down in 2026
+
+Three tensions define the current landscape, and being honest about them is half the value of
+this article.
+
+**1. Google says it's all SEO; the academy and vendors disagree.** Google's own AI
+optimization guidance calls AEO and GEO "market terms" and instructs firms that for Google
+Search, "the work is still SEO" — including dismissive takes on chunking, llms.txt, and
+inauthentic mentions. Academic work went the other direction: the 2024 KDD GEO paper
+(Aggarwal et al.) found adding citations, direct quotes and statistics lifted visibility in
+generated answers up to ~40% (with the headline citation lift ~+115% in their controlled
+benchmark); the C-SEO Bench follow-up (Puerto et al.) found most "conversational SEO"
+tactics don't help and several hurt. Google's position and the vendors' position both contain
+a truth, because generative visibility lives in the retrieval layer and the SEO foundation
+that feeds it.
+
+**2. LLMO is a rebrand until it isn't.** The 2026 literature commonly treats GEO and LLMO as
+the same work ("a rolling rebrand of the same field," per Neil Patel; "AEO and GEO are the
+same thing," per Profound), while the tools sell "LLMO" as a differentiator. The legitimate
+distinct meaning is genuinely model-layer: cross-model prompt panels (does brand recall
+persist across GPT, Claude and Gemini?), training-data presence audits (is the model aware of
+you *without* a web fetch?), and token-level citation analysis (what content shape gets quoted
+verbatim?). If the vendor can't name the model layer, the data boundary, and the controlled
+intervention, the distinction is marketing (appwebseo, 2026).
+
+**3. The entire taxonomy is Western-engines-shaped.** Eastbound's May 2026 audit found the
+practitioner vocabulary defaults to ChatGPT, Claude, Perplexity, Gemini and AI Overviews —
+but Chinese engines (DeepSeek, Qwen, Doubao) rely on a source substrate that differs by
+70–80%, with a 540-call panel showing top-15 source overlap (Jaccard) of 0.20–0.30 between
+*any two Chinese engines*, far lower against Western ones. Zhihu not Reddit, Xiaohongshu not
+YouTube, Baidu Baike not Wikipedia. None of the four terms carry that caveat by default; we
+flag it rather than silently scope-creep around it.
+
+## What the 2026 measurement says (the part marketing skips)
+
+Terms resolve fastest when you look at the measurement, and two 2026 studies cut through the
+definitions:
+
+- **Pre-training bias, not just retrieval.** Chen, Wang, Chen & Koudas (arXiv 2601.16858)
+  compared GPT-4o, Claude and Perplexity against Google + Gemini across popular and niche
+  entities. Two findings: AI systems bias heavily toward earned media while Google keeps a
+  balanced owned-and-earned mix; and for *popular* entities, LLM pre-training dominates —
+  rankings were nearly invariant to snippet shuffling and entity swapping (citation-miss
+  rates ~0.06 for Toyota, ~0.73 for Infiniti), because retrieval merely *confirms* what the
+  model already "knows." For niche entities, context matters enormously. Implication: the
+  SEO foundation and earned-media coverage determine retrieval, but for well-known brands the
+  model's own priors decide naming — the "entity recognition gates everything" result from
+  our [entity article](/resources/research/entity-optimization-2026) reproduced at the
+  taxonomy level.
+- **Multiples are inflated by platform tailwind.** Watanabe & Nakayashiki (arXiv 2606.04362)
+  ran a natural experiment on a high-traffic domain: AEO-treated pages saw ChatGPT referral
+  growth of 6.1× raw — but untreated pages on the *same domain* grew 3.5× under the identical
+  platform tailwind, and the defensible, platform-adjusted treatment effect was roughly
+  1.8–2.3× and still merely suggestive under the most conservative test. Their conclusion is
+  the one to internalize: "headline AEO multiples substantially overstate causal effect,"
+  and on-domain controls are the standard correction. Whoever quotes you a giant GEO/AEO
+  multiple without a control group is quoting you a tailwind.
+
+Those two findings do the real work of this article: they tell you where each discipline is
+actually the bottleneck — retrieval-support and earned media for GEO (lever 1–4 and 9–10 in
+the [11-levers hub](/resources/research/ai-citation-levers-2026)), model-layer representation
+for LLMO, and extractability for AEO.
+
+## The decision rule
+
+1. **Start with SEO.** It is the foundation and the only discipline with a settled,
+   measurable surface. High rankings also double as AI-eligibility insurance (appwebseo:
+   eligibility → retrieval → mention → citation → visit → revenue — no step is guaranteed).
+2. **Layer AEO + GEO as one initiative.** Restructure extractable answer blocks (AEO),
+   tighten structure and schema, then add the evidence and entity layer (GEO). One set of
+   page moves serves both — because they share the pipeline we described.
+3. **Treat LLMO as a specific, model-layer mandate.** Prompt panels across engines; measure
+   whether your brand and claims survive *without* retrieval. That test tells you whether
+   your knowledge-graph presence (see
+   [entity optimization](/resources/research/entity-optimization-2026)) is working.
+4. **Watch AAO, don't invest yet.** The agent economy is early; the prerequisites are the
+   data and entity foundations you already need.
+5. **Never choose by the buzzword vendor.** Name the surface, name the intervention, name the
+   metric, name the accountable owner. If you can't, the label is doing the steering — and
+   the label is the least reliable part of the stack.
+
+For the measurement side of a combined program — what to track, and how not to fool yourself
+with a noisy week — the
+[citation-intelligence buyer's guide](/resources/research/ai-visibility-measurement-buyers-guide)
+covers the full battery, and the
+[crawler-readiness guide](/resources/research/ai-crawlers-2026-readiness) covers the technical
+layer beneath it all.
+
+## Sources & notes
+
+- **Search Counsel Co, Jan 2026** — SEO-vs-GEO-vs-AEO-vs-LLMO review (labels as "one
+  direction of travel"; AEO/GEO/LLMO same playbook; AAO watch).
+- **Serpstat, Jul 2026** — comparison framework; explicit "industry does not use consistently"
+  caveat; metrics (share of answer, prompt recall rate, entity coverage).
+- **Eastbound, May 2026** — term origins table; China/source-substrate caveat; 540-call panel
+  Jaccard 0.20–0.30; LLMO as vendor relabel (Patel, Profound).
+- **The GEO Lab / Ferreira, May 2026** — the three-models framing (output vs channel vs
+  pipeline); pages-vs-sections; Ahrefs Dec 2025 (~58% AI-Overview CTR drop for uncited
+  top-rankers) as reported in that breakdown.
+- **Google Search docs — AI optimization guide** — market-terms position; "work is still
+  SEO"; llms.txt/chunking/inauthentic-mentions dismissal.
+- **Chen, Wang, Chen & Koudas, arXiv 2601.16858 (Jan 2026)** — earned-media bias; pre-training
+  dominance for popular entities; citation-miss rates 0.06–0.73.
+- **Kumar, arXiv 2606.20065 (Jun 2026, Ranqo)** — AEO/AI-visibility as GEO-scoped; 100K+
+  prompts, 100+ brands; 73/44/11 brand-stature ladder; ~78% corporate citations; best-of
+  listicle ~21% most-cited format; YouTube top non-corporate source; sentiment flips ~6.7×
+  more than mention.
+- **Watanabe & Nakayashiki, arXiv 2606.04362 (Jun 2026)** — natural experiment; 1.8–2.3×
+  platform-adjusted effect vs ~3.5× tailwind; placebo p=0.16; SEO-protection finding.
+- **Aggarwal et al., KDD 2024** — GEO origin paper (10,000-query benchmark; citation/fresh
+  citations ~+115%, direct quotes +43%, statistics +33%).
+- **Puerto et al. (C-SEO Bench)** — most conversational-SEO tactics flat or harmful; source
+  relevance still works.
+- **appwebseo, Aug 2026** — operational definitions; Google-2026-guidance reading; funnel
+  chain (eligibility→retrieval→mention→citation→visit→revenue); "name the system, data
+  boundary, intervention, metric, owner" requirement for LLMO purchases.
+- Where a figure comes via a secondary synthesis (e.g., Ahrefs December 2025 via GEO Lab),
+  attribution reflects that. Every percentage is tied to its study inline; the taxonomy
+  framing is our synthesis of the three models plus the funnel, and we say so.
