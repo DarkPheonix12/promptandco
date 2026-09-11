@@ -636,8 +636,8 @@ Status: published.
 Score: 7.7.
 URL: https://promptco.online/resources/research/saas-ai-search-citation-playbook-2026
 Brief: docs/content-briefs/23-saas-ai-search-citation-playbook-2026.md
-Commit: 0000000
-Pushed: 0000000
+Commit: 964d9a05b8ebcdfdb0e79586da8c9b73827aa3f1
+Pushed: 964d9a05b8ebcdfdb0e79586da8c9b73827aa3f1
 
 ### Targeting
 - Primary query: "SaaS AI search" / "GEO for B2B SaaS" / "SaaS ChatGPT citations" / "software AI visibility" / "get SaaS mentioned by AI"
