@@ -65,6 +65,9 @@ import ContentFormatsAiCitationsListicles, {
 import WikipediaWikidataEntityCorroboration, {
   meta as wikipediaWikidataEntityCorroborationMeta,
 } from "./22-wikipedia-wikidata-entity-corroboration-ai-citations-2026.mdx";
+import SaasAiSearchCitationPlaybook, {
+  meta as saasAiSearchCitationPlaybookMeta,
+} from "./23-saas-ai-search-citation-playbook-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -89,6 +92,7 @@ const aameta = multilingualAiSearchInternationalGeoMeta as ResearchMeta;
 const abmeta = zeroClickSearchAiOverviewEconomicsMeta as ResearchMeta;
 const acmeta = contentFormatsAiCitationsListiclesMeta as ResearchMeta;
 const admeta = wikipediaWikidataEntityCorroborationMeta as ResearchMeta;
+const aemeta = saasAiSearchCitationPlaybookMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -178,6 +182,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: admeta,
     Content: WikipediaWikidataEntityCorroboration as ComponentType,
+  },
+  {
+    meta: aemeta,
+    Content: SaasAiSearchCitationPlaybook as ComponentType,
   },
 ];
 

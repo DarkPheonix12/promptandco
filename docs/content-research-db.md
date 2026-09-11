@@ -630,4 +630,39 @@ Pushed: d6c8eb8
 
 ---
 
+## 023 — The SaaS AI Search Playbook: Two Citation Pipelines, One Vertical
+
+Status: published.
+Score: 7.7.
+URL: https://promptco.online/resources/research/saas-ai-search-citation-playbook-2026
+Brief: docs/content-briefs/23-saas-ai-search-citation-playbook-2026.md
+Commit: 0000000
+Pushed: 0000000
+
+### Targeting
+- Primary query: "SaaS AI search" / "GEO for B2B SaaS" / "SaaS ChatGPT citations" / "software AI visibility" / "get SaaS mentioned by AI"
+- Intent: informational/commercial (SaaS founders, product marketers, growth leads). Bridges F2 buyer shortlist. Spoke of hub 005.
+
+### Research (fresh 2026)
+- Analyze (Aug 4 2026): 22,295 answers, 460 prompts, 115,843 citations, 12 months. AI Mode cites 97.4% / Perplexity 93.2% / ChatGPT 68.3%. ChatGPT 68.8% brand-website citations; +23.9pp directory transfer; +15.8pp website transfer; −9.2pp community; +60.4pp named-brand.
+- VisibleIQ (Apr 1 2026): ChatGPT 74.6% first-party product citations (site: fan-outs; GPT-5.3→5.4 vendor 8%→56%); Perplexity/Gemini/Claude 79% third-party; formats by stage (listicle 50% consideration, comparison 42% evaluation, pricing 30% decision w/ 80% numbers, how-to 46% implementation); blogs 66.9%.
+- Overthink Group (Jul 14 2026, 1,263 prompts): G2 network 8% of citations, G2.com 5.8% most-cited, Perplexity 71% of G2's citations; 70.8% best-listicles; 14.5%/11.3% synthetic spam; AIO/Gemini vendor-biased; niche-B2B Reddit only 1.4%.
+- GoGoChimp (Aug 2 2026): only 36 brands top-100 across engines; avg AI Presence Score 56.9; G2 supplies 55% of AI-cited SaaS refs; 11% cross-engine overlap; 14.2% AI-referred conversion; G2 acquired Capterra/Software Advice/GetApp Feb 5 2026 ($110M; 6M reviews; 55–58% review influence); 45% buyers review-citation confidence signal.
+- Pepper (Jul 9 2026): ~12% own-domain citations; 100% Capterra/99% G2/78.8% Wikipedia among cited tools; G2 Best Software Awards ≈60% of G2 LLM citations; 50–75 reviews threshold; 3-month freshness ~3×; bots can't run JS.
+- Poyar (Sep 2 2026, 7,600 pricing answers, Cloud 100): commercial-intent 13.9%→19.2%; pricing pages cited 46% but primary 12%; only 57% AI-readable; Vendr 18.7% / Reddit 18.6% / G2 15.9% external; Plaid docs 70% / pricing 64% / FAQs 50%; ChatGPT pricing-first 38%.
+- Siteline/Kaufman (Jun 18 2026, 534 agent sessions): ~1/3 access errors → 58% third-party content; 5% abandoned vendor site; 14% disclose no pricing; Zendesk client-rendered table → blog fallback; Supabase 24KB SSR template; 65% of plans priced.
+- Digital Applied (Apr 26 2026, 500 pages): top quartile 8.4× cited; comparison +38% (ChatGPT +51%); llms.txt +24%; SoftwareApplication +18%; answer-H2 +22%; DA +0.18 vs rubric +0.71; engine weightings (ChatGPT comparison, Perplexity depth, Claude methodology, Gemini schema).
+- GrackerAI (Feb 2026): 3–4 brands/ChatGPT answer vs ~13 Perplexity; review inclusion G2 67% (100+ @4.5+), Capterra 54%, TrustRadius 41%; vertical specialists (Pipedrive 23%→81%; Monday 89%→67%); vendor listicles ~40% of Perplexity/AIO citations, predicted 60–80% decline.
+- AreYouFoundByAI/Distribb (Jul 23 2026, 1,001 SERPs): brand pricing own-page 81%; vs rival 33%; alternatives 16% (84% third-party); median winning page 21 backlinks; #1 vs #2 = 82 vs 6.
+- Rankeo (May 2026, 142 sites): ChatGPT 3.8 distinct brands / top-share 24% (hardest); Claude 5.1; Perplexity long-tail; 100+ doc pages = 2.3× Claude citations; comparison pages 3.7× ChatGPT.
+
+### Gaps & differentiation
+- Gap: vendors publish either "GEO for SaaS" checklists or G2-partner cheerleading. Nobody cross-tabs the website-first vs third-party-first citation pipelines that the big datasets consistently split on.
+- Original contribution: "two pipelines, one vertical" thesis (ChatGPT website-first 68.8%/74.6% vs Perplexity/Gemini/Claude third-party-first 79%); "G2 consolidation is structural" (Feb 2026 acquisition, 55–58% influence, 100% Capterra presence = retrieval infra); "two-thirds surrender" (81% pricing vs 33% vs-rival vs 16% alternatives, comparison = #1 ChatGPT citation magnet); "pricing is the negative blind spot" (57% AI-readable, error-session 58% fallback, pricing answer stack); "the 36" (concentration + structural rubric beats DA).
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build, rendered smoke (200 / 1×h1 / BlogPosting / FAQPage 5 Questions / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks; fixed `<4` MDX-parse error before build.
+
+---
+
 (End of file)
