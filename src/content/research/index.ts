@@ -23,6 +23,9 @@ import SeoGeoAeoLlmoGuide, {
 import EeatAiTrustSignals, {
   meta as eeatAiTrustSignalsMeta,
 } from "./eeat-ai-trust-signals-2026.mdx";
+import EarnedMediaAiSearchPlaybook, {
+  meta as earnedMediaAiSearchPlaybookMeta,
+} from "./earned-media-ai-search-playbook-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -33,6 +36,7 @@ const lmeta = citationLeversMeta as ResearchMeta;
 const nmeta = entityOptimizationMeta as ResearchMeta;
 const ometa = seoGeoAeoLlmoGuideMeta as ResearchMeta;
 const pmeta = eeatAiTrustSignalsMeta as ResearchMeta;
+const qmeta = earnedMediaAiSearchPlaybookMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -66,6 +70,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: pmeta,
     Content: EeatAiTrustSignals as ComponentType,
+  },
+  {
+    meta: qmeta,
+    Content: EarnedMediaAiSearchPlaybook as ComponentType,
   },
 ];
 

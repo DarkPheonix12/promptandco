@@ -209,3 +209,29 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ### QA & validation
 - Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
 - Pending: commit + push + Phase 25 report.
+
+---
+
+## 009 — The Earned Media Engine (Article #9 — spoke of hub 005)
+
+- Status: **written** (validation in progress)
+- Commit: pending (this commit)
+- URL: https://promptco.online/resources/research/earned-media-ai-search-playbook-2026
+- Brief: docs/content-briefs/009-earned-media-ai-search-playbook-2026.md
+
+### Targeting
+- Primary query: "digital PR AI search" / "earned media AI citations" / "PR for AI" / "how to get cited by ChatGPT"
+- Intent: informational + commercial; PR/comm teams, CMOs; budget justification. Operationalizes hub levers 9–10.
+
+### Research (fresh 2026)
+- Sources: Muck Rack series (3 editions); 5WPR 680M synthesis; LLM Pulse 5.3M; Foglift Q3; Stacker controlled experiment; Ahrefs/LumenGEO/Evertune correlations; AirOps/Superlines/BrightEdge; SE Rank; Semrush PR protocol; U Toronto arXiv 2509.08919.
+- Competitors analyzed: machinerelations, firstmotion, semrush, atomicagi, 5wpr, foglift, llmpulse, authoritytech (+8).
+- Entities: earned media, digital PR, brand mentions, citation share, share of voice, service journalism, listicle, corroboration, review platforms, citation displacement, tailwind.
+
+### Gaps & differentiation
+- Gap: competitors sell "earned = 84%" as measurement; none give the per-engine audience map with dosage caveats (3.26% news share), tailwind calibration, and the mention-threshold/compounding loop together.
+- Original contribution: mechanical confirmation-problem framing; per-engine reading table; threshold + compounding loop; 5-move playbook; multiplier-honesty section (on-domain control); deep cross-link spine.
+
+### QA & validation
+- Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
+- Pending: commit + push + Phase 25 report.
