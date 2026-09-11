@@ -1,0 +1,211 @@
+export const meta = {
+  slug: "ai-crawlers-2026-readiness",
+  title:
+    "AI Crawlers in 2026: Are Bots Actually Reading Your Site? A Technical Readiness Playbook",
+  description:
+    "A dealer's-eye map of the AI crawler landscape — GPTBot, ClaudeBot, PerplexityBot, Google-Extended and friends — and the technical levers that decide whether an AI agent can parse your content at all.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Technical",
+  tags: ["AI crawlers", "robots.txt", "technical SEO", "AI readiness", "AEO"],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "Does robots.txt get me cited by AI?",
+      answer:
+        "No. robots.txt is an opt-out mechanism, not an opt-in one. Allow-listing every AI crawler does nothing to make you citable; it only avoids blocking them. The levers that matter are technical: parseable server-rendered HTML, real content per URL, fast responses, honest structured data, and freshness.",
+    },
+    {
+      question: "Should I block AI crawlers?",
+      answer:
+        "Only if you have a licensing or data-protection reason, or you are seeing abusive fetch volume — not as a visibility tactic. Blocking well-known assistants' crawlers removes the path for your pages to be retrieved and cited, and undisclosed agents will keep coming regardless.",
+    },
+    {
+      question: "Does Google's robots.txt automatically cover AI Mode?",
+      answer:
+        "Not reliably. Google has stated that robots.txt is not designed to govern every AI surface, and AI experiences can draw on independent indexing. If you rely on robots.txt to exclude content from AI, you should treat that as a tested assumption, not a guarantee.",
+    },
+    {
+      question: "Does llms.txt help my AI rankings?",
+      answer:
+        "Google has stated that llms.txt carries no special ranking weight. It can still be useful as a human-maintained map of your content, but it is not a ranking lever.",
+    },
+    {
+      question: "What is the single biggest technical blocker to AI citations?",
+      answer:
+        "Content that only exists after JavaScript runs client-side. In a million-citation technical audit, roughly 73% of sampled sites carried at least one technical barrier to being cited — and client-side rendering was the most common one. If your page's body isn't in the initial HTML, an agent may never see it.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **AI crawler** — an automated agent that retrieves web content to ground an AI
+  answer. Sometimes it is a named bot that honors robots.txt (GPTBot, ClaudeBot,
+  PerplexityBot); sometimes it is an undisclosed fetcher that behaves like a
+  browser. For brands, the rule is simple: if an agent cannot parse your page's
+  HTML, nothing else you do for AI visibility matters.
+</DefinitionCard>
+
+In our [article about who gets cited](/resources/research/2026-ai-citation-study), one
+finding kept insisting on being mentioned: the technical one. When OtterlyAI analyzed a
+million-citation sample, roughly **73% of sites carried at least one technical barrier**
+that could prevent them from being cited — most commonly content that only exists after
+client-side JavaScript runs. In other words, most of the conversation about "AI SEO" is
+happening upstream of the real gate, which is: **can the agent read you at all?**
+
+This article is the companion piece: who the major AI crawlers are in 2026, why robots.txt
+is a weaker lever than the industry assumes, and a concrete readiness playbook you can run
+today against your own site.
+
+## The crawlers worth knowing
+
+Every major assistant operates a retrieval crawler that can pull your pages into its
+answers, plus separate tuning crawlers that feed model training. The names that matter:
+
+| User-agent | Operator | What it feeds | Honours robots.txt |
+| --- | --- | --- | --- |
+| `GPTBot`, `OAI-SearchBot` | OpenAI | ChatGPT answers and ChatGPT Search | Named bots respect it |
+| `ClaudeBot` | Anthropic | Claude answers | Respects it |
+| `PerplexityBot` | Perplexity | Perplexity answers | Respects it |
+| `Google-Extended` | Google | Gemini grounding and AI training | Respects it |
+| `Googlebot` | Google | Search, AI Overviews, AI Mode | Respects it |
+| `Applebot-Extended` | Apple | Siri and Apple Intelligence | Respects it |
+| `Bingbot` | Microsoft | Copilot answers | Respects it |
+| `Bytespider` | ByteDance | Doubao / TikTok search | Historically imperfect |
+| `Amazonbot` | Amazon | Rufus and Alexa | Respects it |
+| `Meta-ExternalAgent` | Meta | Meta AI | Respects it |
+| `CCBot` | Common Crawl | Third-party model training corpora | Respects it |
+
+Two practical points stand out. First, there are two waves of the same company: the
+**grounding crawler** that retrieves for live answers (most likely to cite you) and the
+**training crawler** that copies for model weight (most likely to be worth blocking if you
+have licensing concerns). `robots.txt` lets you separate them — `GPTBot` from
+`OAI-Datalyzer`, `Google-Extended` from `Googlebot`. Second, some traffic still arrives from
+unlisted or disclosed fetchers that will not honor robots.txt, so never build your strategy
+on the assumption that robots.txt is a complete shield or a complete door.
+
+For reference, our own [robots.txt](https://promptco.online/robots.txt) is deliberately
+minimal and AI-friendly: universal crawl allowed, with only `/api/`, `/admin/` and
+`/_next/` excluded, and explicit `Allow` entries for OAI-SearchBot, ClaudeBot,
+PerplexityBot, Applebot-Extended and `anthropic-ai`.
+
+## Why robots.txt is not the lever people think it is
+
+Three well-documented truths, in order of how often they are ignored:
+
+- **robots.txt cannot make you more visible — it can only stop blocking you.** Allow-listing
+  an assistant's crawler does not increase your odds of citation; actively blocking it can
+  zero them out. The default assumption should be *allow and measure*, not *deny and brace*.
+- **Search-facing AI surfaces do not always follow robots.txt.** Google has been explicit
+  that robots.txt is not designed to govern every AI experience, and AI-assisted results
+  can draw on independently indexed content. Treat your robots file as a boundary for the
+  agents that honor it, and as nothing more.
+- **The community-contributed `llms.txt` file carries no special ranking weight.** Google
+  has said so directly. It remains a useful, human-maintained map of your content for
+  curious agents — but it is not a visibility lever.
+
+So the answer to "should I spend the week perfecting robots.txt?" is: spend 20 minutes
+deleting anything that blocks the grounding crawlers above, then spend the rest of the week
+on the levers below — because that is where citations are actually lost and won.
+
+## The technical levers that decide whether agents can read you
+
+The research on retrieval behavior points to a short checklist that separates the sites
+agents can reliably parse from the ones carrying barriers:
+
+**1. Content must exist in the initial server-rendered HTML.** This is the big one. If your
+product UI is fine as a client-side React/Vue/SPA shell but your content only hydrates after
+JavaScript, some agents — especially ones doing cheap or policy-restricted fetches — never
+see it. Static pre-rendering, server rendering, or SSG (like this site's [research
+pages](/resources/research)) puts the body in the raw HTML.
+
+**2. One URL must equal one distinct topic.** Retrieval systems budget limited fetches per
+query. Public measurements found an assistant retrieving on the order of a hundred pages
+per query while only a fraction of them surfaced into the final answer (Tw93, 2026). Pages
+that blend many topics into one URL make it easy for an agent to spend a fetch and find
+nothing directly quotable. Clean, single-topic URLs win.
+
+**3. Responses must be fast.** Agent research in 2026 repeatedly flags latency as a filter:
+assistants favour and cache pages that serve fast, and sub-600ms time-to-first-byte on the
+edge is the commonly cited target. If you are on a shared host with slow TLS or no edge
+cache, that is a readiness problem, not a luxury problem.
+
+**4. Depth matters more than breadth of navigation.** Agent-friendly crawling is shallow:
+landing-page-to-content in two or three clicks beats a giant taxonomy that buries the
+useful page six levels deep. If the route to your best content requires navigating a
+dropdown tree, flatten it.
+
+**5. Block the wrong things.** Verify that your security layer (CDN, WAF, bot-challenge) is
+not challenging the named AI user-agents. A "yes we allow GPTBot" robots.txt means nothing
+if a managed challenge or bot-detection script is sending `GPTBot` to a CAPTCHA page.
+
+**6. Make structured data factual and complete.** AI features and answer engines use schema
+for classification far more than for weighting — wrong or inflated schema can actively
+misclassify your content. Order of effort: `Organization`, `BreadcrumbList`, `WebPage`,
+`HowTo`/`FAQPage` where true, then per-page `Article`/`BlogPosting`. Never markup what the
+page does not actually contain.
+
+**7. Freshness is measured, not promised.** As we covered in [the citation
+study](/resources/research/2026-ai-citation-study), content updated in roughly the last
+month is cited at materially higher rates in large samples. Real `lastModified` signals and
+visible changes are what modern evidence rewards.
+
+**8. Sitemaps are the cheap win.** A correct `sitemap.xml` with canonical URLs and dates is
+the single cheapest way to tell every agent what your most important pages are. Ours is
+generated from the same registry that drives our [research index](/resources/research), so
+the two can never drift apart.
+
+## Our own recipe (what we do on this site)
+
+For the record, and because honesty is cheaper than marketing, here is exactly what
+promptco.online does today:
+
+- Fully **pre-rendered static pages** (Next.js SSG + Cloudflare edge) — the content sits in
+  the raw HTML, no JavaScript required to read it.
+- A **robots.txt** that allows all named AI crawlers and excludes only non-content paths,
+  plus an XML sitemap generated from the same data as the pages.
+- **BlogPosting + FAQPage structured data** generated from the article's own frontmatter
+  and FAQ, so schema never contradicts visible content.
+- **Single-topic URLs, ≤ 3-click depth**, canonical metadata, and edge-enabled serving.
+
+Is it perfect? No — we still ship missing `og-image.png`/`logo.png` references from earlier
+template work, and our service pages are still being built. But the accessibility core is
+non-negotiable, and it is the part this article is about.
+
+## A 10-point self-audit you can run today
+
+1. `curl -s https://yoursite.com | grep -c "<article\|<h1\|<p"` — does the raw HTML contain
+   real content beyond the app shell?
+2. View the page with JavaScript disabled. Is the answer to your core query still visible?
+3. `curl -sA "GPTBot" https://yoursite.com/page` — does the agent user-agent get the same
+   200 as a browser, or a challenge page?
+4. Run the same user-agent test for `ClaudeBot`, `PerplexityBot`, `Google-Extended`,
+   `Applebot-Extended` and `CCBot`.
+5. Confirm your robots.txt does not `Disallow:` the grounding crawlers listed above by
+   accident (shared `User-agent: *` rules included).
+6. Confirm `/sitemap.xml` returns 200, is referenced by robots.txt, and lists every page you
+   want referenced — dated and canonical.
+7. Check that the pages which matter return in under ~600ms time-to-first-byte from a
+   distant edge node.
+8. Validate your structured data against a validator; fix warnings rather than silencing
+   them.
+9. Confirm the most important content is reachable from the homepage in two to three clicks.
+10. Re-run this audit monthly. Citation pools churn on ~4-week windows — your readiness
+    check should too. The [citation study](/resources/research/2026-ai-citation-study) is
+    the reading list for what happens once agents can actually parse you.
+
+## Sources & notes
+
+- **OtterlyAI, February 2026** — technical-barrier analysis across a sample of one million
+  citations in the AI-search ecosystem; the ~73% figure is the share of domains carrying at
+  least one technical barrier to being cited or retrieved.
+- **Tw93, 2026** — public measurement of assistant retrieval behaviour, reporting on the
+  order of ~100 pages retrieved per query with only a fraction surfacing into final answers.
+- **Google, 2025** — statements that robots.txt is not designed to govern every AI surface
+  and that `llms.txt` carries no special ranking advantage. We read both as guidance about
+  where not to spend effort, not as an excuse to stop maintaining either.
+- **Respects-robots.txt column** — reflects publicly documented behaviour of each named
+  user-agent as of writing; undisclosed fetchers are excluded from the table by definition.
+- Where we cite our own infrastructure (pre-rendered pages, robots.txt, sitemap, schema),
+  that is our own implementation and can be inspected directly at
+  [promptco.online](https://promptco.online).
