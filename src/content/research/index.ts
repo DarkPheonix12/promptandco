@@ -53,6 +53,9 @@ import AnswerEconomyB2b, {
 import YoutubeAiCitations, {
   meta as youtubeAiCitationsMeta,
 } from "./youtube-ai-citations-video-search-2026.mdx";
+import MultilingualAiSearchInternationalGeo, {
+  meta as multilingualAiSearchInternationalGeoMeta,
+} from "./19-multilingual-ai-search-international-geo-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -73,6 +76,7 @@ const wmeta = agentReadyContent2026McpA2aMeta as ResearchMeta;
 const xmeta = perEngineCitationDivergenceMeta as ResearchMeta;
 const ymeta = answerEconomyB2bMeta as ResearchMeta;
 const zmeta = youtubeAiCitationsMeta as ResearchMeta;
+const aameta = multilingualAiSearchInternationalGeoMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -146,6 +150,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: zmeta,
     Content: YoutubeAiCitations as ComponentType,
+  },
+  {
+    meta: aameta,
+    Content: MultilingualAiSearchInternationalGeo as ComponentType,
   },
 ];
 

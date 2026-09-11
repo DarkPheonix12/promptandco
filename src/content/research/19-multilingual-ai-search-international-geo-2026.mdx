@@ -1,0 +1,197 @@
+export const meta = {
+  slug: "multilingual-ai-search-international-geo-2026",
+  title: "Query Language Selects the Market: The Multilingual AI Search Playbook for 2026",
+  description:
+    "Controlled experiments show language—not location—determines citation patterns. Here's the play-by-play for GEO outside English.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Strategy",
+  icon: "🌐",
+  tags: [
+    "multilingual GEO",
+    "AI search",
+    "international SEO",
+    "ChatGPT English bias",
+    "language bias",
+    "GEO",
+  ],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "Does query language or location matter more for AI search?",
+      answer:
+        "Language. A 2026 controlled study (234 runs, ChatGPT) found that the language of the query — not the reader's IP address — determined whether local suppliers appeared. Turkish queries from Berlin returned German suppliers written in Turkish. Location matters only when language and location coincide.",
+    },
+    {
+      question: "Does ChatGPT favor English content?",
+      answer:
+        "Yes, significantly. Search Engine Land's analysis of 18 non-English languages found ChatGPT fetched and cited English pages 65–79% of the time — 2.6× over-indexed versus actual search impressions. The bias is at answer-time, not crawl-time: the ChatGPT-User bot (live retrieval) prefers English, while GPTBot (training crawl) does not. Copilot was near-neutral; Google AI was slightly local-biased.",
+    },
+    {
+      question: "Can I just translate my English content into other languages?",
+      answer:
+        "Translation solves retrievability but not citation. A 2026 study across 40 pages and 8 brands found that natively written pages produced 2.3× the AI mention rate of machine-translated mirrors. The effect was strongest in German (+98% in ChatGPT, +114% in Gemini). Translation is a starting point, not an end point.",
+    },
+    {
+      question: "Which engines are most multilingual-friendly?",
+      answer:
+        "The Geodocs study (2026) found Perplexity cited in-language sources where the corpora were strong (German, French, Japanese). Gemini was the most bidirectional engine for mixing English and local-language sources. ChatGPT had the strongest English-language gravity and was the least likely to cite non-English sources. Claude depended on the host page's language.",
+    },
+    {
+      question: "How do I measure multilingual AI visibility?",
+      answer:
+        "Separately by language and by engine. One English benchmark does not tell you what is happening in Japanese or German. Run independent crawls per target language. The MaxAEO study recommends at minimum 40 query variations per language per engine. For Tier 2 and Tier 3 languages, the smaller citation pool means lower measurement noise per query — but you need enough queries to cover your brand's mention surface.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **Multilingual GEO** is the practice of earning citations and mentions across AI search engines when queries arrive in languages other than English. The key finding from 2026's research: the language you write in determines whether local markets find you—not the IP address of the reader.
+</DefinitionCard>
+
+This article continues from our [AI Citation Levers 2026 hub](/resources/research/ai-citation-levers-2026). It draws on [F1 Per-Engine Divergence](/resources/research/per-engine-citation-divergence-2026) and [F2 Answer Economy](/resources/research/answer-economy-b2b-ai-shortlist-2026) because multilingual is where engine behavior diverges most sharply.
+
+---
+
+## The language/location gap
+
+The dominant intuition in international SEO is that location matters most: if you have a `.de` domain, users in Germany find you. That intuition held through Google's blue-link era.
+
+In AI search, the data says the opposite.
+
+**Anchor finding — arXiv 2608.30052 (Żatuchin, Aug 30 2026):** 234 runs on ChatGPT web + OpenAI API across 4 countries × 6 languages. The result: **query language determines whether local suppliers appear, not the reader's location.** Turkish queries from a Berlin IP returned German suppliers written in Turkish. Russian queries from Tallinn returned Estonian suppliers written in Russian.
+
+The practical implication: a site written in English may be invisible in a market that speaks English—because the dominant query language is something else.
+
+The paper's own summary is blunt: *"When measured in English, a national market can be invisible to the buyers who live in it."*
+
+---
+
+## The three-tier citation system
+
+A second anchor study mapped the same phenomenon across 4,000 AI answers and 12 B2B SaaS brands.
+
+**MaxAEO (Jul 24 2026):** English prompts yielded 38.2% brand mention rates. Spanish: 24.1% (−37%). French: 20.9% (−45%). German: 17.3% (−55%). Japanese: 9.4% (−75%).
+
+The drop is not random. It follows a **three-tier model**:
+
+| Tier | Languages | Citation pool | Source character |
+|------|-----------|--------------|-----------------|
+| **Tier 1** | English | Widest; Anglophone indexes + translated content indexed | Global sources; English domains preferred |
+| **Tier 2** | Major EU/CJK (German, French, Japanese, Spanish, Portuguese) | In-language sources where corpora exist; English may still intrude | Brand-name biased in English; localized names in others |
+| **Tier 3** | Smaller / minority languages (Estonian, Finnish, Czech) | Narrower pool; some mix of host-language and English | Host-language domains appear; English less dominant |
+
+The tiers are not absolute. Perplexity's in-language citation rates in German and French were notably better than ChatGPT's. Gemini was the most bidirectional engine for mixing English and local sources. ChatGPT had the strongest English gravity.
+
+---
+
+## The ChatGPT English gravity
+
+**Search Engine Land (Serraris, Aug 5 2026):** Across 18 non-English languages, ChatGPT **fetched and cited English pages 65–79% of the time.** The median over-indexing versus actual search impression share was 2.6×.
+
+ChatGPT's own system confirms this: the `ChatGPT-User` bot—which handles live web retrieval—prefers English. The `GPTBot` crawl (training) does not. The bias enters at answer-time, not crawl-time.
+
+Sites that had an `/en/` folder got a 122% uplift in ChatGPT citations and a 52% uplift in Copilot citations.
+
+| Engine | English citation bias (vs search impressions) | Meaning |
+|--------|-----------------------------------------------|---------|
+| ChatGPT | 2.6× over-indexed | Strong English gravity in answer generation |
+| Copilot | 1.07 (near neutral) | Answers in the user's language; slightly English-leaning |
+| Google AI | 0.79 | Slightly local-biased; retains Google's local signals |
+
+The conclusion: if your content is in English only, you are visible to Copilot and Google AI readers but largely invisible to ChatGPT's non-English audience.
+
+---
+
+## Instability is a system property
+
+A less-noted finding from the arXiv study may matter most for operational planning.
+
+When the same query was repeated six times under identical conditions, the **top recommended provider changed in four of six prompts.** This instability appeared identically in the ChatGPT web interface and in the OpenAI API—with and without web search enabled.
+
+Instability is not a bug or a rate-limit artifact. It is a property of the system. Each run samples differently from the language model's output distribution. In multilingual contexts, the effect is amplified because the citation pool is narrower—fewer eligible sources means smaller probability differences between candidates.
+
+**Practical implication:** Single-point-in-time measurement is unreliable for multilingual GEO. A 40-trial benchmark is the minimum baseline; six runs is insufficient.
+
+---
+
+## Translation gets you retrievable; native writing gets you cited
+
+The MaxAEO study tested whether machine-translated pages performed as well as natively written ones across 40 pages, 8 brands, and 4 languages over 9 weeks.
+
+**Pages that were originally written in the target language produced 2.3× the mention rate of machine-translated mirrors.** The effect was strongest in German (+98% in ChatGPT, +114% in Gemini) and weaker in French (+49% and +30%) and Spanish (+17% and +33%).
+
+The 2.3× figure is not a one-off. The study controlled for domain authority, page content, and publication timing. The signal: natively authored pages carry linguistic markers—idiomatic phrasing, local terminology, culturally specific examples—that AI models use to judge relevance.
+
+Translation solves retrievability. Native writing solves citation.
+
+---
+
+## The language-gated funnel
+
+All of this adds up to a specific chain:
+
+1. **Visibility** depends on whether your content is in the same language as the query. English-only content is visible to English-language queries, regardless of market.
+2. **Retrieval** depends on whether the engine's crawl or live-fetch includes your language's index. ChatGPT-User is heavily English-weighted; Gemini and Perplexity are more multilingual.
+3. **Citation** depends on whether the engine judges your source authoritative *in that language.* Natively written content is cited 2.3× more than translated content.
+4. **Citation timing** depends on market competition. In English: thousands of competing sources. In German: dozens. In Estonian: single digits.
+
+The competitive advantage of multilingual GEO is therefore greatest in Tier 3 languages—where the citation pool is small and each native-language page has outsized influence on AI citations.
+
+---
+
+## Measurement blind spot
+
+The MaxAEO report flags what may be the most common operational mistake in international GEO: **measuring visibility in one language and calling it "global."**
+
+Their recommendation: if you operate in English, German, French, Spanish, and Japanese, you need five independent benchmarks. Each market has different citation pools, different engine preferences, and different competitive density. A single tracker covers one market at most.
+
+This is particularly acute for B2B SaaS. The arXiv study found that the language/location gap was largest for **nationally regulated categories**—legal, healthcare, financial services. In those verticals, a site may be perfectly authoritative in English and completely invisible to the domestic-language query.
+
+---
+
+## The Global Spanish problem
+
+One language-specific case study deserves attention: Spanish.
+
+**Global Spanish / Search Engine Land (Mar 30 2026):** AI models collapsed Spanish-speaking markets into a single entity. When queried in Spanish, Google AI Overview defaulted to Peninsular (Spain) Spanish even for Argentine audiences. All engines identified Peninsular Spanish most reliably.
+
+The implication: even within one language, dialectal variation matters. Content written in Argentine Spanish and content written in Mexican Spanish are not interchangeable. AI models appear to have the most training data on Peninsular Spanish, creating a bias that deprioritizes other dialects.
+
+**hreflang** — the traditional HTML tag used to signal regional language variants — appeared less influential in AI synthesis than in traditional search. AI models were less likely to match a query's regional dialect to the correct hreflang variant.
+
+---
+
+## Practical playbook
+
+For teams evaluating or beginning multilingual GEO:
+
+**Prioritization.** Start with Tier 2 languages where your brand already has traction and where citation pools are large enough to matter but small enough to compete. German, French, Japanese, and Portuguese consistently appear across studies.
+
+**Investment ratio.** The MaxAEO "100-point budget" approach: allocate points across local-language authority (Natively written, in-language backlinks), AI-retrieval hygiene (structured data, llms.txt, schema in the target language), brand mentions in local media, and local review profiles. For English, the allocation is different (20/30/30/20). For German, it is 40/30/20/10 (higher on native authority).
+
+**Measurement.** Separate by language. One English benchmark does not tell you what is happening in Japanese or French. Run separate crawls per language and per engine.
+
+**Write, don't just translate.** Translation solves the first barrier (retrievability) but not the second (citation). The 2.3× mention rate gap is the cost of skipping native authorship.
+
+---
+
+## What the research does not yet answer
+
+The most important open questions in multilingual GEO:
+
+- **How does dialect matter for Tier 1 languages?** Does Mexican Spanish content get cited for Argentine queries, or only for Mexican queries? The Global Spanish study suggests models default to Peninsular, but the question is unresolved.
+- **Is the ChatGPT English bias going away?** Search Engine Land's authors note that the bias may narrow as OpenAI trains on more multilingual data, but no timeline is published.
+- **What happens with small-market languages at scale?** The arXiv study covered Estonian (1.3M speakers) and found that even minority languages produced non-trivial local citations. Does that hold for languages with 100k speakers? Unknown.
+
+---
+
+## Sources & notes
+
+1. Żatuchin, V. "The Language of the Question Selects the Market: How ChatGPT Selects Suppliers Across Languages and Locations." arXiv 2608.30052, Aug 30 2026. https://arxiv.org/abs/2608.30052
+2. MaxAEO. "Multilingual AI Citations in Practice." maxaeo.com, Jul 24 2026. https://maxaeo.com/multilingual-ai-citations-in-practice
+3. Serraris, S. "ChatGPT fetches and cites English pages 65-79% of the time, no matter the query language." Search Engine Land, Aug 5 2026. https://searchengineland.com/chatgpt-english-language-bias-citations-462849
+4. Geodocs.dev. "AI Search Multilingual Citation Patterns." geodocs.dev, Apr 29 2026. https://geodocs.dev/blog/ai-search-multilingual-citations
+5. Weglot. "AI Overview Multilingual Citations." Weglot research, May 21 2026. https://www.weglot.com/ai-overview-multilingual-citations
+6. Profound. "Global AI Citation Tracker: Language Influences Source Selection." Mar 2026. https://getprofound.co/blog/global-ai-citation-tracker-language
+7. "Global Spanish." Search Engine Land, Mar 30 2026. https://searchengineland.com/global-spanish-ai-overviews-462849

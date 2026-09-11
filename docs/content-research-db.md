@@ -480,8 +480,8 @@ Status: published.
 Score: 7.5.
 URL: https://promptco.online/resources/research/youtube-ai-citations-video-search-2026
 Brief: docs/content-briefs/18-youtube-ai-citations-video-search-2026.md
-Commit: TBD
-Pushed: TBD
+Commit: 0b2d4a4
+Pushed: 0b2d4a4
 
 ### Targeting
 - Primary query: "YouTube AI citations" / "optimize YouTube for AI search" / "video GEO"
@@ -500,6 +500,37 @@ Pushed: TBD
 
 ### QA & validation
 - Passed: lint (0 errors), tsc, build (26 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref). Verified exactly 2 ld+json blocks.
+
+---
+
+## 019 — Query Language Selects the Market: The Multilingual AI Search Playbook for 2026
+
+Status: published.
+Score: 7.3.
+URL: https://promptco.online/resources/research/multilingual-ai-search-international-geo-2026
+Brief: docs/content-briefs/19-multilingual-ai-search-international-geo-2026.md
+Commit: TBD
+Pushed: TBD
+
+### Targeting
+- Primary query: "multilingual AI search" / "international GEO" / "AI search language bias" / "ChatGPT English bias"
+- Intent: informational (international marketing leads, global SEO teams, localization managers). Spoke of hub 005.
+
+### Research (fresh 2026)
+- arXiv 2608.30052 (Żatuchin, Aug 30 2026): 234 runs, ChatGPT web + API, 4 countries × 6 languages. Language (not location) gates local suppliers; Turkish from Berlin → German suppliers in Turkish; Russian from Tallinn → Estonian suppliers in Russian; minority language = middle tier; top recommendation unstable across identical runs (4/6 prompts); instability identical browser + API; nationally regulated category = no language effect.
+- MaxAEO (Jul 24 2026): 4,000 AI answers, 12 B2B SaaS. English 38.2% mention; Spanish 24.1% (-37%); French 20.9% (-45%); German 17.3% (-55%); Japanese 9.4% (-75%). Prompt language 16× more impact than location. Natively written 2.3× MT mirrors. Brand C: 6%→27% German in 9 weeks.
+- Search Engine Land / Serraris (Aug 5 2026): ChatGPT fetches English 65-79% (2.6× over-indexing); Copilot 1.07 neutral; Google AI 0.79. Bias at answer-time (ChatGPT-User), not training (GPTBot). /en/ folder → 122% ChatGPT uplift.
+- Geodocs.dev (Apr 29 2026): ChatGPT English-heavy; Perplexity in-language where corpora strong; Gemini most bidirectional; Claude host-dependent. CJK Perplexity/Gemini strongest local.
+- Weglot (May 21 2026): 1.3M citations; translated sites 327% more AI Overviews visibility; English-only → 80% citation drop for Japanese.
+- Profound (Mar 2026): 3.25B citations, 7 models, 14 countries; Spanish TikTok ×5; Portuguese YouTube 65%; Arabic Instagram 29%.
+- Global Spanish / Search Engine Land (Mar 30 2026): models collapse Spanish markets; Peninsular best identified; hreflang less influential in AI synthesis.
+
+### Gaps & differentiation
+- Gap: every competitor runs "translate your site for AI" listicles. Nobody centers the controlled-evidence core: query language selects the market; location only picks which market's suppliers.
+- Original contribution: "query language selects the market" thesis (controlled 234-run proof); three-tier citation system (official → minority → English); instability-as-system-property (40-trial measurement baseline); ChatGPT English gravity (2.6× answer-time bias); translation retrievable vs native cited (2.3×).
+
+### QA & validation
+- Passed: lint (0 errors), tsc, build (27 routes), rendered smoke (200 / 1×h1 / BlogPosting 2 / FAQPage 5 / canonical / sitemap ref / index ref). Verified exactly 2 ld+json blocks.
 
 ---
 
