@@ -540,8 +540,8 @@ Status: published.
 Score: 8.0.
 URL: https://promptco.online/resources/research/zero-click-search-ai-overview-economics-2026
 Brief: docs/content-briefs/20-zero-click-search-ai-overview-economics-2026.md
-Commit: TBD
-Pushed: TBD
+Commit: 5b1bee8
+Pushed: 5b1bee8
 
 ### Targeting
 - Primary query: "zero-click search 2026" / "AI Overviews reduce clicks" / "zero-click marketing" / "AI Mode traffic measurement"
