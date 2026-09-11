@@ -1,0 +1,211 @@
+export const meta = {
+  slug: "eeat-ai-trust-signals-2026",
+  title:
+    "E-E-A-T for the Machine: How AI Engines Operationalize Trust in 2026",
+  description:
+    "E-E-A-T was a human rater rubric; AI search has turned it into machine-extractable signals. The 2026 evidence on provenance, corroboration over links, author entities, and what is still honestly contested.",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  category: "Strategy",
+  tags: ["E-E-A-T", "trust signals", "provenance", "authorship", "corroboration", "AI citations"],
+  readingTimeMinutes: 11,
+  faq: [
+    {
+      question: "Is E-E-A-T a ranking factor for AI search?",
+      answer:
+        "No — for either classic or AI search. E-E-A-T is a description of the signals humans raters look for, and Google says it is not a single ranking factor. What AI engines do is infer the same qualities from signals they can parse: named authors, third-party mentions, consistent facts, methodology and sourcing. The four pillars still structure the work; they just no longer pass through a human evaluator.",
+    },
+    {
+      question: "What most separates cited pages from uncited pages in 2026?",
+      answer:
+        "Provenance and corroboration. A 2026 comparison of 100 frequently-cited and 100 rarely-cited sources across ChatGPT, Perplexity and Google AI Overviews found cited sources averaged 8–12 external citations and updates per piece, versus 2–3 for uncited ones. A single strong trust signal was rarely decisive; pages missing more than two out of five minimum signals (named author, transparent about page, dates, sourcing, external validation) failed mainly on trust itself.",
+    },
+    {
+      question: "Do I need author Person schema and a 'reviewedBy' role?",
+      answer:
+        "The machine-readable part of expertise is a resolvable author entity: a Person with a stable @id, a real browsable about page, credentials, and sameAs links. Whether a separate reviewer ('reviewedBy') matters varies by engine and topic — it is most heavily weighted in editorial-heavy engines and on YMYL content. But an anonymous byline is a negative signal everywhere; mark up what is true, and never ship an @id that points to a page that does not exist.",
+    },
+    {
+      question: "Does citing trustworthy sources guarantee accurate AI answers?",
+      answer:
+        "No, and this is the most under-discussed finding of the year. A large 2026 audit of Google AI Overviews (55,393 queries, 98,020 atomic claims) found 11% of claims were unsupported by the cited pages — and found source quality and claim fidelity were largely independent. Trust signals raise your citation odds; they do not make the engine's synthesis correct. Do not optimize trusted content into answers that then assert something you never said.",
+    },
+    {
+      question: "How fast can trust signals start producing citations?",
+      answer:
+        "Fast for the retrieval layer, slow for the reputation layer. Recency metadata, semantic structure and valid structured data correlate most strongly with citation in controlled audits and can be shipped in weeks. Corroboration — the mentions, listings and third-party coverage that move the most weight in 2026 — compounds over 6–18 months. New sites in one study earned a first AI citation within three months with a deliberate trust-and-retrieval program; 'earned authority' is the slow half.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **Operational trust** — the difference between E-E-A-T as Google defined it and E-E-A-T as
+  2026 AI engines practice it. Google's E-E-A-T (Experience, Expertise, Authoritativeness,
+  Trustworthiness) is a rubric for *human quality raters*; it was never a numbered ranking
+  factor. AI engines cannot interview your author or verify a certification — so they
+  infer the same four qualities from signals they *can* parse: a resolvable author entity,
+  third-party mentions, methodology, sourcing, dates, and facts that agree with themselves
+  everywhere. Every pillar now lives or dies on a machine-readable proxy.
+</DefinitionCard>
+
+When marketers say "E-E-A-T matters now more than ever," they are usually describing a
+situation that has actually changed shape. The framework did not get stronger — it got
+*executable*. Google's own documentation is explicit: E-E-A-T describes "a mix of factors"
+raters use to identify helpful content, is not itself a ranking factor, and gives more
+weight to "Your Money or Your Life" topics. Separately, Google's 2026 AI-search guidance
+calls AEO and GEO "market terms" and answers that for Google Search "the work is still SEO."
+Neither statement kills E-E-A-T. Both statements push the *why* questions — who, how, why
+was this made? — toward the mechanism that actually decides retrieval: does the page make
+its verifiability machine-readable?
+
+This article is the evidence map for that mechanism, and its honesty boundary.
+
+## The four pillars, operationalized
+
+| Pillar | What a rater does | What a machine parses | 2026 evidence |
+| --- | --- | --- | --- |
+| **Experience** | Looks for first-hand involvement | Original data only this brand holds; first-person method; declared audience | Proprietary/original data ranks as the single highest-impact trust signal in the 77-signal taxonomy (9.5/10; self-reported, see caveats); original-research pages dominate the most-cited set in engine analyses |
+| **Expertise** | Verifies credentials | A resolvable Person entity: stable `@id`, browsable about page, credentials, `sameAs` links to profiles the model already knows | Named authorship with credentials scores 7.5/10 (SIGI taxonomy); author-entity resolution is the "who is claiming this?" check every engine runs after retrieval |
+| **Authoritativeness** | Weighs recognition | Third-party corroboration: brand mentions, listings, reviews, coverage across sources the engine already retrieves | Branded mentions correlate roughly 0.50–0.74 with AI visibility versus below 0.30 for backlinks (Ahrefs); unlinked mentions ~0.67 in a separate analysis; ~85% of non-paid citations come from earned media (2026 syntheses) |
+| **Trustworthiness** | Reads for accuracy and transparency | Verifiability stack: methodology, citation arrays, visible dates, editorial-standards disclosure | Methodology sections score highest among authority-provenance signals (8.5/10); cited sources average 8–12 external citations vs 2–3 for uncited (100-piece paired study) |
+
+The far-right column is where the discipline lives now. Everything below explains what holds
+up under scrutiny and what is still contested.
+
+## Provenance is the cheapest trust lever
+
+The most consistent 2026 finding is that *verifiability* — not prominence, not polish — is
+the signal that travels across engines. Two independent lines of evidence converge:
+
+- **Structure-level.** In the GEO-16 audit of 1,702 citations, the on-page pillars most
+  strongly associated with citation were Metadata & Freshness (r = 0.68), Semantic HTML
+  (0.65), and Structured Data (0.63), with Evidence & Citations (0.61) and Authority & Trust
+  (0.59) close behind; pages scoring ≥ 0.70 across ≥ 12 pillars hit a 78% cross-engine
+  citation rate. These are page-level, shippable-in-weeks changes.
+- **Content-level.** A 100-cited-versus-100-uncited comparison across ChatGPT, Perplexity
+  and Google AI Overviews found cited sources averaged 8–12 external citations and regular
+  update dates, versus 2–3 for uncited ones, and that pages missing more than two of the
+  five minimum trust signals failed mainly on trust itself. The single most-cited trust
+  asset was original research: primary sources were cited at dramatically higher rates than
+  aggregators, an effect flozi's analysis formalizes as a tier system with proprietary data
+  at the top.
+
+That convergence is not a coincidence. The SIGI trust-taxonomy work proposes the mechanism:
+provenance signals act as *uncertainty reducers* — the model cites what it can verify because
+every wrong citation is reputationally expensive to the engine. Named authors reduce the
+"who even wrote this?" cost; methodology answers "how does this source know?"; inline
+citations let the engine check the claim chain before it commits to quoting you. In the
+same study, the model self-reported that the top 10 of 77 signals account for ~80% of
+estimated citation impact, and 9 of the 10 highest-impact signals operate at the inference
+layer — meaning most of the leverage is page-level and controllable, not a long brand build.
+
+Those exact findings are hypothesis-grade (single model, self-reported) — a limitation we
+flag because the entire discipline can oversell one model's introspection.
+
+## Corroboration outranks links
+
+The authority lever shifted from the link graph to the mention graph:
+
+- Ahrefs' 2025–26 brand correlation work: branded web *mentions* and video impressions
+  correlate with AI visibility at roughly 0.50–0.74, while backlinks and ad spend sit below
+  0.30. The December 2025 follow-up pushed the YouTube-impression line to ~0.74.
+- A Search Engine Journal analysis (November 2025) put unlinked brand mentions at ~0.67
+  correlation with AI Overview citations — above raw backlink counts.
+- A University-of-Toronto research finding, widely reproduced in 2026 syntheses: earned
+  media outperforms brand-owned content for citation rates by roughly 3×.
+- Yext's 6.8-million-citation analysis found ~86% of AI citations come from brand-managed
+  sources (44% first-party sites, 42% business listings, 8% reviews/social), with community
+  forums near 2% once location and intent were factored in.
+
+Read separately these look like competing claims about who gets cited. Read together they
+say the same thing our [entity article](/resources/research/entity-optimization-2026)
+established: the deciding factor is *recognition plus corroboration*, and engines lean on
+sources other people have already vouched for. The listings 42% line is exactly why the
+Google Business Profile matters for AI visibility even though Google's docs say there are "no
+special requirements" — local engines separately consume it.
+
+## What is still honestly contested
+
+No credible article on trust in AI search skips these four flags:
+
+1. **E-E-A-T was never a numbered factor.** Google's raters have "no control over how pages
+   rank," and the mechanism between rater feedback and ranking systems is not publicly
+   documented. Any tool selling "your E-E-A-T score is X" is selling a proxy at best.
+2. **Vendor effect sizes are unverifiable.** Figures like a "40.9% named-expert lift" or
+   "a 0.76 Knowledge Graph correlation with AI citation" circulate widely without traceable
+   primary sources (SEOHack's 2026 audit graded exactly this class of claim "Tier 3 — no
+   independent verification found"). The canonical, peer-reviewed numbers remain the KDD
+   2024 GEO experiment: citations +115%, direct quotes +43%, named statistics +33%. We use
+   those; treat the rest as directional.
+3. **Trust in the source does not fix fidelity.** The largest AIO audit of 2026 (55,393
+   queries; 98,020 atomic claims) found 11.0% of claims unsupported by their cited pages —
+   with *omission* the dominant failure mode — and found source quality and claim fidelity
+   largely independent. The same study found AIO-cited domains are *more* credible than
+   co-displayed first-page results (PC1 ≈ 0.73 vs 0.65), yet ~30% of cited domains do not
+   appear in first-page results at all. Citations function as a visibility-allocation
+   mechanism, per the peer-reviewed Springer CRD analysis, not purely as transparency cues.
+4. **Engine trust layers differ.** Google's AI Search runs on its ranking index and
+   Knowledge Graph; ChatGPT leans on training-time knowledge plus retrieval; Perplexity is
+   retrieval-first; Claude performs live page fetches. In GEO-16, engines even cited
+   different *quality thresholds* (Brave 0.73, AI Overviews 0.69, Perplexity 0.30 mean). One
+   trust foundation must serve several different selection logics — the reason entity-level
+   work pays across all of them.
+
+## The trust build, sequenced
+
+1. **Week 1–2 (eligibility).** Verify AI crawler access; add visibility dates and recency
+   metadata. These are the binary gates — absent means never retrieved.
+2. **Week 2–6 (structure).** Add a resolvable author Person entity with a real about page
+   and `sameAs`; state the critical facts of every contextually important page declaratively
+   (who it is for, what it asserts, what backs it up). Add a methodology section where any
+   claim of research exists. This is [claude-style live-fetch](/resources/research/seo-geo-aeo-llmo-guide-2026)
+   trust: what reads as rigorous reads as citable.
+3. **Month 2–6 (corroboration).** The slow lever. Align the facts on your site with every
+   listing, profile and review surface (entity consistency), then earn mentions on sources
+   the engines already retrieve — the [entity-chain build](/resources/research/entity-optimization-2026)
+   in parallel with [earned coverage](/resources/research/ai-citation-levers-2026).
+4. **Ongoing (audit).** Re-benchmark quarterly with brand-name prompts and citation tracking
+   using the [measurement guide's](/resources/research/ai-visibility-measurement-buyers-guide)
+   battery. Track whether engines *name and quote* you, not just whether they describe your
+   category.
+
+The honest timeline is the SEOHack one: implementation of the machine-readable trust stack
+takes 4–6 weeks with measurable output; earned authority takes 6–18 months with compounding.
+New sites can clear the retrieval layer and earn a first citation within about three months
+on a deliberate program. Nothing in 2026 makes trust instant; the shift is that it is now
+*a build you can do*, rather than a reputation you hope someone attributes to you.
+
+## Sources & notes
+
+- **Google Search Central — "Creating helpful, reliable, people-first content"** and **AI
+  optimization guide** — E-E-A-T definitions; raters-not-ranking clarification; YMYL; AI
+  content disclosure; "work is still SEO."
+- **Xu, Iqbal & Montgomery, arXiv 2605.14021 (May 2026)** — Google AI Overviews audit
+  (55,393 queries, 98,020 atomic claims, 11.0% unsupported; PC1 0.73 vs 0.65; ~30% cited
+  domains outside first-page; AIO 13.7% activation, 64.7% on question-form; 38% organic-CTR
+  suppression per Agarwal & Sen and −15% Wikipedia traffic per Khosravi & Yoganarasimhan as
+  reported therein).
+- **Kumar & Palkhouski, arXiv 2509.10762 (GEO-16)** — pillar correlations (Metadata &
+  Freshness 0.68 … Authority & Trust 0.59); G ≥ 0.70 / ≥ 12 pillars → 78% citation; engine
+  quality thresholds (Brave 0.727 / AIO 0.687 / Perplexity 0.300).
+- **Aggarwal et al., KDD 2024** — canonical GEO experiment (+115% citations, +43% direct
+  quotes, +33% statistics).
+- **SIGI-2026-024 / 021 / 030 (Mar 2026)** — authority-provenance signal scores
+  (methodology 8.5, named authorship 7.5, inline citations 7.5); 77-signal taxonomy; 80/20
+  and 9-of-10-inference-layer claims — all *self-reported by a single LLM*, hypothesis-grade,
+  flagged as such.
+- **flozi.io (Mar 2026)** — 100-cited vs 100-uncited paired study (8–12 vs 2–3 external
+  citations; institutional-halo effect; minimum-trust-threshold; ~3-month first-citation
+  timeline).
+- **Authoritytech.io / cite.solutions / Nadia Mohamed (2026)** — 2026 syntheses, used only
+  for directionally reputable figures (85% earned-media share; mention-vs-link correlations;
+  38% → 88% top-10 divorce) and explicitly not for unverifiable effect sizes.
+- **Springer Nature — "Human-Centric Auditing of AI-Powered Generative Search" (Sep 2026)** —
+  Citation-Ranking Divergence (CRD) framework; 3,000 observations across 5 locales.
+- **mentionLAB (Jul 2026)** — two trust systems (training-time vs retrieval-time);
+  corroboration-after-retrieval mechanism. **SEOHack (Apr 2026)** — evidence-tier audit of
+  E-E-A-T/AI claims (Tier 3 flags). **Ahrefs / SEJ (2025–26)** — mention-correlation
+  figures. **Zoomout-Yext (2026)** — 6.8M-citation composition.
+- Where a number comes from a vendor synthesis rather than the primary study, we say so
+  inline; unverifiable effect sizes circulating in the market are flagged, not reproduced
+  as fact.

@@ -20,6 +20,9 @@ import EntityOptimization, {
 import SeoGeoAeoLlmoGuide, {
   meta as seoGeoAeoLlmoGuideMeta,
 } from "./seo-geo-aeo-llmo-guide-2026.mdx";
+import EeatAiTrustSignals, {
+  meta as eeatAiTrustSignalsMeta,
+} from "./eeat-ai-trust-signals-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -29,6 +32,7 @@ const bmeta = buyersGuideMeta as ResearchMeta;
 const lmeta = citationLeversMeta as ResearchMeta;
 const nmeta = entityOptimizationMeta as ResearchMeta;
 const ometa = seoGeoAeoLlmoGuideMeta as ResearchMeta;
+const pmeta = eeatAiTrustSignalsMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -58,6 +62,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: ometa,
     Content: SeoGeoAeoLlmoGuide as ComponentType,
+  },
+  {
+    meta: pmeta,
+    Content: EeatAiTrustSignals as ComponentType,
   },
 ];
 

@@ -183,3 +183,29 @@ Score: overall opportunity score (1–10), see Phase 21 of the master directive.
 ### QA & validation
 - Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
 - Pending: commit + push + Phase 25 report.
+
+---
+
+## 008 — E-E-A-T for the Machine (Article #8 — spoke of hub 005)
+
+- Status: **written** (validation in progress)
+- Commit: pending (this commit)
+- URL: https://promptco.online/resources/research/eeat-ai-trust-signals-2026
+- Brief: docs/content-briefs/008-eeat-ai-trust-signals-2026.md
+
+### Targeting
+- Primary query: "E-E-A-T AI search" / "Google E-E-A-T algorithm" / "trust signals AI citations"
+- Intent: informational + strategic; operationalizes hub lever 6; pairs with entity spoke (recognition + corroboration).
+
+### Research (fresh 2026)
+- Sources: Xu/Iqbal/Montgomery arXiv 2605.14021 (AIO audit); Google creating-helpful-content + AI guide; SIGI 77-signal taxonomy ×3; flozi 100-vs-100 paired study; GEO-16; KDD 2024; Ahrefs/SEJ/U Toronto/Yext; Springer CRD (Sep 2026); SEOHack evidence tiers; mentionLAB; Area51 trust triangle.
+- Competitors analyzed: SEOHack, cite.solutions, Nadia Mohamed, Area 51, authoritytech, flozi, mentionLAB, SIGI (+8).
+- Entities: E-E-A-T, provenance, corroboration, author entity, methodology, trust signals, fidelity, training-time vs retrieval trust, institutional halo, CRD.
+
+### Gaps & differentiation
+- Gap: competitors argue "E-E-A-T dead/reborn" or vend unverifiable effect sizes; none surface the fidelity-independence finding (11% unsupported despite credible sources) or split training-time vs retrieval trust alongside entity work.
+- Original contribution: rater-rubric→machine-signals reframe; 4-pillar evidence map; provenance-as-uncertainty-reducer (flagged attribution); corroboration-over-links cluster; "what is honestly contested"; sequenced 4–6wk/6–18mo timeline.
+
+### QA & validation
+- Passed: lint, tsc, build, rendered checks (200 / 1×h1 / BlogPosting / FAQPage / canonical / sitemap / index).
+- Pending: commit + push + Phase 25 report.
