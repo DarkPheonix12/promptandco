@@ -46,21 +46,14 @@ export const metadata: Metadata = {
     title: "Prompt&Co. | AI Search Optimization Agency | AEO & GEO",
     description:
       "Be the brand AI recommends. Prompt&Co. helps brands become more discoverable, understandable, citable and recommendable across the AI search ecosystem.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Prompt&Co. — AI Search Optimization Agency",
-      },
-    ],
+    // Image is provided by src/app/opengraph-image.tsx (generated PNG).
   },
   twitter: {
     card: "summary_large_image",
     title: "Prompt&Co. | AI Search Optimization Agency",
     description:
       "Be the brand AI recommends. AEO + GEO + AI Search Optimization.",
-    images: ["/og-image.png"],
+    // Image is provided by src/app/opengraph-image.tsx (generated PNG).
   },
   robots: {
     index: true,

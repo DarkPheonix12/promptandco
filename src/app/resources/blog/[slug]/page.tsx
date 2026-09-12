@@ -37,7 +37,9 @@ export async function generateMetadata({
       description: post.meta.description,
       publishedTime: post.meta.datePublished,
       modifiedTime: post.meta.dateModified,
-      images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: post.meta.title }],
+      // Use the generated root OG image (opengraph-image.tsx). The legacy
+      // /og-image.svg is not a valid OG format for some platforms.
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: post.meta.title }],
     },
     twitter: {
       card: "summary_large_image",

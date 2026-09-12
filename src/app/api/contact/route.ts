@@ -49,7 +49,7 @@ function buildNotificationEmail(data: ContactFormData): string {
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #64748b; font-size: 13px;">Email</td>
-              <td style="padding: 8px 0; color: #0f172a; font-size: 14px;"><a href="mailto:${data.email}" style="color: #2563eb;">${data.email}</a></td>
+              <td style="padding: 8px 0; color: #0f172a; font-size: 14px;">${data.email ? `<a href="mailto:${data.email}" style="color: #2563eb;">${data.email}</a>` : "(not provided)"}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #64748b; font-size: 13px;">Company</td>
@@ -222,17 +222,18 @@ export async function POST(request: NextRequest) {
 
     const data: ContactFormData = await request.json();
 
-    // Validate required fields
-    if (!data.name || !data.email || !data.company || !data.website || !data.improve) {
+    // Validate required fields. Email/company are optional: the homepage
+    // mini-form submits website + market only, and we still want the lead.
+    if (!data.name || !data.website || !data.improve) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       );
     }
 
-    // Validate email format
+    // Validate email format only when provided
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
+    if (data.email && !emailRegex.test(data.email)) {
       return NextResponse.json(
         { error: "Invalid email address" },
         { status: 400 }
@@ -243,9 +244,9 @@ export async function POST(request: NextRequest) {
     const notificationResult = await resend.emails.send({
       from: FROM_EMAIL,
       to: NOTIFICATION_EMAIL,
-      subject: `New Lead: ${data.name} from ${data.company} — ${data.improve}`,
+      subject: `New Lead: ${data.name} from ${data.company || "(no company)"} — ${data.improve}`,
       html: buildNotificationEmail(data),
-      replyTo: data.email,
+      replyTo: data.email || undefined,
     });
 
     if (notificationResult.error) {
@@ -307,35 +308,42 @@ export async function POST(request: NextRequest) {
       // Build and send the AI visibility report email
       const reportHtml = buildReportEmail(scrapedData, analysis);
 
-      const reportResult = await resend.emails.send({
-        from: FROM_EMAIL,
-        to: data.email,
-        subject: `Your AI Visibility Report for ${scrapedData.title || data.website} — Prompt&Co.`,
-        html: reportHtml,
-      });
+      // Send the report to the lead only when we have their email. The
+      // homepage mini-form may submit without one — the founder notification
+      // above still fires either way.
+      if (data.email) {
+        const reportResult = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: data.email,
+          subject: `Your AI Visibility Report for ${scrapedData.title || data.website} — Prompt&Co.`,
+          html: reportHtml,
+        });
 
-      if (reportResult.error) {
-        console.error("[Pipeline] Report email error:", reportResult.error);
-      } else {
-        console.log(`[Pipeline] Report sent successfully to ${data.email}`);
+        if (reportResult.error) {
+          console.error("[Pipeline] Report email error:", reportResult.error);
+        } else {
+          console.log(`[Pipeline] Report sent successfully to ${data.email}`);
+        }
+
+        // Also send report to founder
+        await resend.emails.send({
+          from: FROM_EMAIL,
+          to: NOTIFICATION_EMAIL,
+          subject: `AI Report Generated: ${data.name} from ${data.company || "(no company)"}`,
+          html: reportHtml,
+          replyTo: data.email,
+        });
       }
-
-      // Also send report to founder
-      await resend.emails.send({
-        from: FROM_EMAIL,
-        to: NOTIFICATION_EMAIL,
-        subject: `AI Report Generated: ${data.name} from ${data.company}`,
-        html: reportHtml,
-        replyTo: data.email,
-      });
     } else {
-      // No website provided, send basic thank you
-      await resend.emails.send({
-        from: FROM_EMAIL,
-        to: data.email,
-        subject: `Thank you for reaching out, ${data.name}! — Prompt&Co.`,
-        html: buildThankYouEmail(data),
-      });
+      // No website provided, send basic thank you (only possible with email)
+      if (data.email) {
+        await resend.emails.send({
+          from: FROM_EMAIL,
+          to: data.email,
+          subject: `Thank you for reaching out, ${data.name}! — Prompt&Co.`,
+          html: buildThankYouEmail(data),
+        });
+      }
     }
 
     return NextResponse.json({

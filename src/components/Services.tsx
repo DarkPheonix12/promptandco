@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { services } from "@/lib/data";
 import { Icon } from "./Icons";
 
@@ -91,13 +92,13 @@ export function Services() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-10">
-          <a
+          <Link
             href="/services/ai-search-optimization"
             className="inline-flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm border border-white/[0.12] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-white/[0.1] transition-all duration-300"
           >
             Explore All Services
             <Icon name="arrow-right" size={16} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

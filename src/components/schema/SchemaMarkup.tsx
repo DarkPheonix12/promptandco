@@ -7,8 +7,9 @@ export function OrganizationSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    logo: `${siteConfig.url}/logo.png`,
-    sameAs: [],
+    logo: `${siteConfig.url}/og-image.png`,
+    // sameAs intentionally omitted until real profiles exist — an empty array
+    // is worse than absent. Add LinkedIn/Wikidata/X here the day they exist.
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -42,11 +43,8 @@ export function WebSiteSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteConfig.url}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
+    // No potentialAction: the /search route doesn't exist, and a SearchAction
+    // pointing at a 404 is invalid structured data.
   };
 
   return (
@@ -95,8 +93,7 @@ export function BreadcrumbSchema({
   items: Array<{ name: string; url: string }>;
 }) {
   const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",      "@type": "BreadcrumbList",
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,

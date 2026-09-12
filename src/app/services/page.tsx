@@ -51,10 +51,10 @@ export default function ServicesHubPage() {
                 Get your free AI visibility audit
               </Link>
               <Link
-                href="/case-studies"
+                href="/pricing"
                 className="rounded-xl border border-white/[0.12] bg-white/[0.06] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/[0.1]"
               >
-                See the results
+                See pricing
               </Link>
             </div>
           </div>

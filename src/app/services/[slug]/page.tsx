@@ -24,7 +24,8 @@ export async function generateMetadata({
   const detail = serviceDetails[slug];
   if (!service || !detail) return {};
 
-  const title = `${service.title} Services | Prompt&Co.`;
+  // No brand suffix: the layout's "%s | Prompt&Co." template appends it once.
+  const title = `${service.title} Services`;
   const description = service.description;
 
   return {

@@ -40,17 +40,17 @@ export const navigation = {
     },
     {
       label: "Resources",
-      href: "/resources",
+      // Parent links to the blog index — the /resources hub page isn't built
+      // yet, and a nav parent that 404s is worse than a pragmatic parent URL.
+      href: "/resources/blog",
       children: [
         { label: "Blog", href: "/resources/blog" },
-        { label: "Guides", href: "/resources/guides" },
         { label: "Research", href: "/resources/research" },
         { label: "FAQ", href: "/faq" },
-        { label: "Glossary", href: "/resources/glossary" },
       ],
     },
     { label: "About", href: "/about" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Pricing", href: "/pricing" },
   ],
   cta: { label: "Get AI Visibility Audit", href: "/contact" },
 };
@@ -322,23 +322,32 @@ export const industries = [
   { name: "Local Services", slug: "local-services", icon: "map" },
 ];
 
-// ─── Testimonials ───
-export const testimonials = [
+// ─── Proof points ───
+// NOTE: The previous version of this file shipped fabricated testimonials with
+// invented names, roles, companies and star ratings. That is a trust liability
+// for an agency selling credibility — replaced with honest, verifiable proof
+// points. Real client testimonials and named case studies get added ONLY when
+// genuine, permissioned results exist. See docs/seo-strategy-2026-09.md §10.
+export const proofPoints = [
   {
-    quote:
-      "Prompt&Co. completely transformed how we think about search visibility. Their AEO strategy helped us become a top recommendation across AI platforms in our category.",
-    name: "Rajesh Kumar",
-    role: "Head of Marketing",
-    company: "TechScale Solutions",
-    rating: 5,
+    title: "Research-first, evidence-cited",
+    description:
+      "Our strategies are built on published 2026 studies covering tens of millions of measured AI citations — and our own research hub analyzes what the data actually shows, per engine.",
   },
   {
-    quote:
-      "Within six months of working with Prompt&Co., our brand mentions in AI-generated answers increased significantly. Their systematic approach to entity optimization and authority building is unmatched.",
-    name: "Priya Sharma",
-    role: "CMO",
-    company: "CloudFirst India",
-    rating: 5,
+    title: "Measured, not promised",
+    description:
+      "Every engagement starts with a baseline: how often, where and how accurately AI systems mention your brand today. Progress is reported against that baseline, month over month.",
+  },
+  {
+    title: "No guaranteed placements — by principle",
+    description:
+      "We can't promise what a third-party model will generate, and we say so in our own FAQ. Anyone promising \"#1 in ChatGPT\" is selling certainty that doesn't exist.",
+  },
+  {
+    title: "Operators, not theorists",
+    description:
+      "Founded by practitioners with hands-on AI/ML engineering and enterprise digital strategy backgrounds — including work with globally recognized consumer brands.",
   },
 ];
 
@@ -417,18 +426,21 @@ export const faqData = [
 
 // ─── SEO Metadata for Pages ───
 export const seoMetadata = {
+  // Page-level titles carry NO brand suffix — the root layout's
+  // "%s | Prompt&Co." template appends it. Duplicating it here produced
+  // doubled titles like "... | Prompt&Co. | Prompt&Co." in the SERPs.
   home: {
-    title: "AI Search Optimization Agency | AEO & GEO | Prompt&Co.",
+    title: "AI Search Optimization Agency | AEO & GEO",
     description:
       "Prompt&Co. helps brands improve AI discoverability through AEO, GEO, entity optimization, content and authority across modern AI search.",
   },
   about: {
-    title: "About Prompt&Co. | AI Search & AEO/GEO Agency",
+    title: "About — AI Search & AEO/GEO Agency",
     description:
       "Learn about Prompt&Co., an AI search optimization agency specializing in AEO, GEO, entity optimization and AI discoverability.",
   },
   contact: {
-    title: "Contact Prompt&Co. | Get Your AI Visibility Audit",
+    title: "Contact — Get Your AI Visibility Audit",
     description:
       "Get a free AI visibility assessment. Find out what AI says about your brand and discover opportunities to improve your AI search presence.",
   },
@@ -438,8 +450,18 @@ export const seoMetadata = {
       "Answers to common questions about Answer Engine Optimization, Generative Engine Optimization, AI search and how Prompt&Co. helps brands become AI-discoverable.",
   },
   services: {
-    title: "AI Search Optimization Services | AEO, GEO & More | Prompt&Co.",
+    title: "AI Search Optimization Services | AEO, GEO & More",
     description:
       "Comprehensive AI search optimization services including AEO, GEO, entity optimization, AI content, citation optimization and digital PR.",
+  },
+  industries: {
+    title: "Industries — AI Search Optimization by Vertical",
+    description:
+      "How AI-assisted buying works in SaaS, e-commerce, B2B, professional services and local services — with the 2026 data behind each vertical's strategy.",
+  },
+  pricing: {
+    title: "AEO & GEO Pricing — What AI Search Optimization Costs",
+    description:
+      "Published 2026 market ranges for AEO/GEO agency retainers, audits and tools — plus what drives cost and how Prompt&Co. engagements are scoped.",
   },
 };

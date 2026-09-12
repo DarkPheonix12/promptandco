@@ -251,7 +251,7 @@ export function Hero() {
                   <div className="w-3 h-3 rounded-full bg-[#28c840] shadow-sm" />
                 </div>
                 <div className="flex-1 bg-gray-100 rounded-lg px-3 py-1.5 text-[11px] text-gray-400 font-mono truncate">
-                  promptco.online/audit
+                  promptco.online — AI visibility demo
                 </div>
               </div>
 
@@ -349,8 +349,8 @@ export function Hero() {
                           AI Visibility Report
                         </p>
                       </div>
-                      <span className="text-[10px] text-green-600 bg-green-50 px-2 py-0.5 rounded-full font-medium">
-                        Live Analysis
+                      <span className="text-[10px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full font-medium">
+                        Sample report
                       </span>
                     </div>
 

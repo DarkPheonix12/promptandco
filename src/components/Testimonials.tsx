@@ -1,24 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { testimonials } from "@/lib/data";
+import Link from "next/link";
+import { proofPoints } from "@/lib/data";
 import { Icon } from "./Icons";
 
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Icon
-          key={i}
-          name="star"
-          size={16}
-          className={i < rating ? "text-amber-400" : "text-brand-border"}
-        />
-      ))}
-    </div>
-  );
-}
-
+/**
+ * Proof section. Previously presented fabricated testimonials (invented names,
+ * companies, star ratings) as "real results from real brands" — an E-E-A-T and
+ * integrity liability for an agency selling trust. Replaced with honest,
+ * verifiable proof points. Real testimonials/case studies ship only when
+ * genuine, permissioned client evidence exists.
+ */
 export function Testimonials() {
   return (
     <section className="relative py-16 lg:py-24 bg-white overflow-hidden">
@@ -31,7 +24,7 @@ export function Testimonials() {
             className="inline-flex items-center gap-2 bg-brand-primary/5 border border-brand-primary/10 rounded-full px-4 py-1.5 mb-4"
           >
             <span className="text-xs font-semibold text-brand-primary uppercase tracking-widest">
-              Proof
+              Why Prompt&Co.
             </span>
           </motion.span>
 
@@ -52,53 +45,57 @@ export function Testimonials() {
             transition={{ delay: 0.2 }}
             className="text-base lg:text-lg text-brand-muted"
           >
-            Real results from real brands that trusted Prompt&Co. to improve
-            their AI discoverability.
+            We&apos;re a young agency, and we&apos;d rather earn trust the slow
+            way. Here&apos;s what you can verify about us today — and the
+            moment we have client results we can publish, they&apos;ll appear
+            here as real case studies with real numbers.
           </motion.p>
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Proof Points Grid */}
         <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-          {testimonials.map((testimonial, i) => (
+          {proofPoints.map((point, i) => (
             <motion.div
-              key={i}
+              key={point.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="relative bg-brand-surface/50 rounded-2xl p-6 border border-brand-border/40 hover:border-brand-border/60 transition-colors"
             >
-              {/* Rating */}
-              <div className="mb-3">
-                <StarRating rating={testimonial.rating} />
-              </div>
-
-              {/* Quote */}
-              <blockquote className="text-sm text-brand-dark-700 leading-relaxed italic mb-5">
-                &ldquo;{testimonial.quote}&rdquo;
-              </blockquote>
-
-              {/* Attribution */}
-              <div className="flex items-center gap-3 pt-4 border-t border-brand-border/30">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary/80 to-brand-accent/80 flex items-center justify-center flex-shrink-0">
+                  <Icon name="check" size={18} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-brand-dark">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-[11px] text-brand-muted">
-                    {testimonial.role}, {testimonial.company}
+                  <h3 className="text-base font-bold text-brand-dark">
+                    {point.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-brand-dark-700 leading-relaxed">
+                    {point.description}
                   </p>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Honest CTA row */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-primary to-brand-accent text-white px-6 py-3 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-brand-primary/25 transition-all duration-300"
+          >
+            <Icon name="sparkles" size={16} />
+            Judge us by the free audit
+          </a>
+          <Link
+            href="/resources/research"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:gap-2.5 transition-all"
+          >
+            Or judge us by our research
+            <Icon name="arrow-right" size={14} />
+          </Link>
         </div>
 
         {/* Trust Bar */}

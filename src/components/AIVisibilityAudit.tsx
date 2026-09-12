@@ -8,11 +8,48 @@ export function AIVisibilityAudit() {
   const [website, setWebsite] = useState("");
   const [market, setMarket] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // BUGFIX: this form previously only flipped local state — it never POSTed
+  // anywhere, so visitors believed they'd requested an audit when nothing was
+  // sent. It now submits to /api/contact (same pipeline as /contact).
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!website.trim() || !market.trim()) return;
-    setSubmitted(true);
+    if (!website.trim() || !market.trim() || isSubmitting) return;
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: "Website visitor",
+          email: "", // not collected by this mini-form
+          company: "",
+          website: website.trim(),
+          industry: market.trim(),
+          targetMarket: "",
+          budget: "",
+          improve: "AI Visibility",
+          message: `Submitted via homepage audit form. Market/industry: ${market.trim()}`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -95,12 +132,31 @@ export function AIVisibilityAudit() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-3">
+                      <p className="text-sm text-red-600 text-center">{error}</p>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-brand-primary to-brand-accent text-white py-3 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-brand-primary/25 transition-all duration-300 hover:scale-[1.01] flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-brand-primary to-brand-accent text-white py-3 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-brand-primary/25 transition-all duration-300 hover:scale-[1.01] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <Icon name="sparkles" size={18} />
-                    Analyze My Visibility
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Icon name="sparkles" size={18} />
+                        Analyze My Visibility
+                      </>
+                    )}
                   </button>
 
                   <p className="text-center text-[11px] text-brand-muted/70">

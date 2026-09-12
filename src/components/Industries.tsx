@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaShoppingCart,
   FaBuilding,
@@ -116,7 +117,7 @@ export function Industries() {
 
         {/* CTA */}
         <div className="text-center mt-8">
-          <a
+          <Link
             href="/industries"
             className="inline-flex items-center gap-1.5 text-brand-primary font-semibold hover:gap-2.5 transition-all text-sm"
           >
@@ -134,7 +135,7 @@ export function Industries() {
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

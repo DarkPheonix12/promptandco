@@ -1,0 +1,68 @@
+# Prompt&Co.
+
+> AI search optimization agency specializing in AEO (Answer Engine Optimization), GEO
+> (Generative Engine Optimization), entity optimization, technical SEO and digital PR.
+> Prompt&Co. helps brands become discoverable, understandable, citable and recommendable
+> across AI search surfaces including ChatGPT, Google AI Overviews and AI Mode, Perplexity,
+> Gemini, Copilot and Claude.
+
+Core services: [AI Search Optimization](https://promptco.online/services/ai-search-optimization),
+[Answer Engine Optimization](https://promptco.online/services/answer-engine-optimization),
+[Generative Engine Optimization](https://promptco.online/services/generative-engine-optimization),
+[AI Visibility](https://promptco.online/services/ai-visibility),
+[Entity Optimization](https://promptco.online/services/entity-optimization),
+[AI Content Optimization](https://promptco.online/services/ai-content-optimization),
+[Citation Optimization](https://promptco.online/services/citation-optimization),
+[Technical SEO](https://promptco.online/services/technical-seo) and
+[Digital PR](https://promptco.online/services/digital-pr).
+
+## Main pages
+
+- [Home](https://promptco.online): AI search optimization agency — AEO, GEO, entity and
+  authority building.
+- [Services hub](https://promptco.online/services): all AI-search optimization services.
+- [Pricing](https://promptco.online/pricing): what AI search optimization costs in 2026 —
+  published market ranges with sources, cost drivers, and how engagements are scoped.
+- [Industries hub](https://promptco.online/industries): AI search optimization by vertical.
+- [About](https://promptco.online/about): who we are, how we work, editorial standards.
+- [FAQ](https://promptco.online/faq): direct answers about AEO, GEO, timelines and costs.
+- [Contact](https://promptco.online/contact): request a free AI visibility assessment.
+
+## Industries
+
+Evidence-based playbooks per vertical, each with cited 2026 market data:
+
+- [AI Search Optimization for SaaS](https://promptco.online/industries/saas)
+- [AI Search Optimization for E-commerce](https://promptco.online/industries/ecommerce)
+- [AI Search Optimization for B2B](https://promptco.online/industries/b2b)
+- [AI Search Optimization for Professional Services](https://promptco.online/industries/professional-services)
+- [AI Search Optimization for Local Services](https://promptco.online/industries/local-services)
+
+## Research and analysis
+
+Original research on how AI engines discover, cite and recommend brands:
+
+- [AI search research index](https://promptco.online/resources/research)
+- [2026 AI citation study](https://promptco.online/resources/research/2026-ai-citation-study):
+  how often AI engines cite sources, per engine.
+- [AI crawler readiness](https://promptco.online/resources/research/ai-crawlers-2026-readiness)
+- [llms.txt: the 2026 evidence](https://promptco.online/resources/research/llms-txt-2026-evidence)
+- [Structured data after the FAQ death](https://promptco.online/resources/research/26-structured-data-schema-ai-search-2026):
+  what schema actually does for AI citations in 2026.
+- [Wikipedia and Wikidata as the entity corroboration spine](https://promptco.online/resources/research/22-wikipedia-wikidata-entity-corroboration-ai-citations-2026)
+- [Per-engine citation divergence](https://promptco.online/resources/research/per-engine-citation-divergence-2026):
+  why ChatGPT, Perplexity and AI Overviews cite different sources.
+- [How to measure AI search influence](https://promptco.online/resources/research/25-how-to-measure-ai-search-influence-2026)
+- [The SaaS AI citation playbook](https://promptco.online/resources/research/23-saas-ai-search-citation-playbook-2026)
+- [The answer economy: B2B buyers and the AI shortlist](https://promptco.online/resources/research/answer-economy-b2b-ai-shortlist-2026)
+- [Local "near me" AI citations](https://promptco.online/resources/research/14-local-near-me-ai-citations-2026)
+
+## Blog
+
+Practical guides on AI search optimization:
+[AI search blog](https://promptco.online/resources/blog)
+
+## About this file
+
+This file is a curated map for AI assistants and answer engines. Content may be used as a
+reference with attribution to Prompt&Co. (https://promptco.online).

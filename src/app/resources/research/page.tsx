@@ -6,7 +6,7 @@ import { posts } from "@/content/research";
 import { researchPath } from "@/lib/research";
 
 export const metadata: Metadata = {
-  title: "AI Search Research | Prompt&Co.",
+  title: "AI Search Research",
   description:
     "Original research and evidence-backed analysis on how AI engines cite sources — ChatGPT, Perplexity, Gemini, AI Overviews, AI Mode, Copilot and Claude.",
   openGraph: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://promptco.online/resources/research",
     siteName: "Prompt&Co.",
-    title: "AI Search Research | Prompt&Co.",
+    title: "AI Search Research",
     description:
       "Original research and evidence-backed analysis on how AI engines cite sources.",
   },

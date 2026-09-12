@@ -6,7 +6,7 @@ import { Icon } from "./Icons";
 const caseStudies = [
   {
     id: 1,
-    title: "SaaS Company Increases AI Mentions by 340%",
+    title: "Illustrative model: mid-market SaaS company invisible in AI answers",
     industry: "SaaS",
     market: "India & Southeast Asia",
     engagement: "AEO + GEO + Entity Optimization",
@@ -23,7 +23,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    title: "Professional Services Firm Becomes Top AI Recommendation",
+    title: "Illustrative model: professional-services firm absent from AI recommendations",
     industry: "Professional Services",
     market: "India",
     engagement: "AI Search Optimization + Digital PR",
@@ -54,7 +54,7 @@ export function CaseStudies() {
             className="inline-flex items-center gap-2 bg-brand-primary/5 border border-brand-primary/10 rounded-full px-4 py-1.5 mb-4"
           >
             <span className="text-xs font-semibold text-brand-primary uppercase tracking-widest">
-              Case Studies
+              Engagement Models
             </span>
           </motion.span>
 
@@ -65,7 +65,7 @@ export function CaseStudies() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-brand-dark leading-tight mb-4"
           >
-            Results that speak for themselves.
+            What an engagement actually looks like.
           </motion.h2>
 
           <motion.p
@@ -75,8 +75,10 @@ export function CaseStudies() {
             transition={{ delay: 0.2 }}
             className="text-base lg:text-lg text-brand-muted"
           >
-            See how Prompt&Co. has helped brands become discoverable,
-            citable and recommendable across the AI search ecosystem.
+            Illustrative engagement models showing how Prompt&Co. approaches
+            AI visibility work — the same framework we apply to every client.
+            Named client case studies with verified results are published only
+            when real data is available.
           </motion.p>
         </div>
 
@@ -150,12 +152,13 @@ export function CaseStudies() {
                   </p>
                 </div>
 
-                {/* CTA */}
+                {/* CTA — /case-studies is not built yet; route to contact
+                    rather than promising a page that doesn't exist. */}
                 <a
-                  href="/case-studies"
+                  href="/contact"
                   className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-primary hover:gap-2.5 transition-all"
                 >
-                  See the full case study
+                  Ask us how this framework applies to you
                   <Icon name="arrow-right" size={14} />
                 </a>
               </div>
@@ -166,10 +169,10 @@ export function CaseStudies() {
         {/* CTA */}
         <div className="text-center mt-10">
           <a
-            href="/case-studies"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-primary to-brand-accent text-white px-7 py-3.5 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-brand-primary/25 transition-all duration-300 hover:scale-[1.02]"
           >
-            View All Case Studies
+            Apply this framework to your brand
             <Icon name="arrow-right" size={16} />
           </a>
         </div>

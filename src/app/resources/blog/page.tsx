@@ -6,7 +6,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import { blogPosts, primeBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "AI Search Blog | Prompt&Co.",
+  title: "AI Search Blog",
   description:
     "Practical guides and analysis on AI search optimization — how ChatGPT, Perplexity, Gemini, AI Overviews, AI Mode, Copilot and Claude discover, cite and recommend brands.",
   openGraph: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://promptco.online/resources/blog",
     siteName: "Prompt&Co.",
-    title: "AI Search Blog | Prompt&Co.",
+    title: "AI Search Blog",
     description:
       "Practical guides and analysis on AI search optimization — how AI engines discover, cite and recommend brands.",
   },

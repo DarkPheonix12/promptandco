@@ -20,18 +20,16 @@ const footerLinks = {
     { label: "B2B", href: "/industries/b2b" },
     { label: "Professional Services", href: "/industries/professional-services" },
     { label: "Local Services", href: "/industries/local-services" },
+    { label: "All industries", href: "/industries" },
   ],
   resources: [
     { label: "Blog", href: "/resources/blog" },
-    { label: "Guides", href: "/resources/guides" },
     { label: "Research", href: "/resources/research" },
     { label: "FAQ", href: "/faq" },
-    { label: "Glossary", href: "/resources/glossary" },
+    { label: "Pricing", href: "/pricing" },
   ],
   company: [
     { label: "About", href: "/about" },
-    { label: "Reviews", href: "/reviews" },
-    { label: "Case Studies", href: "/case-studies" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
@@ -65,9 +63,22 @@ export function Footer() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-primary to-brand-accent text-white px-5 py-2.5 rounded-xl text-xs font-semibold hover:shadow-lg hover:shadow-brand-primary/25 transition-all duration-300"
             >
-              Make Your Brand Discoverable in AI
+              Get your free AI visibility audit
               <Icon name="arrow-right" size={14} />
             </a>
+            {/* Legal links sit with company info until the legal column is
+                warranted; keeps them crawlable and consistent. */}
+            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
+              {footerLinks.legal.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-[11px] text-white/40 hover:text-white/70 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Services */}
@@ -154,15 +165,12 @@ export function Footer() {
               © {new Date().getFullYear()} Prompt&Co. All rights reserved.
             </p>
             <div className="flex items-center gap-5">
-              {footerLinks.legal.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-[11px] text-white/25 hover:text-white/50 transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              <a
+                href="/sitemap.xml"
+                className="text-[11px] text-white/25 hover:text-white/50 transition-colors"
+              >
+                Sitemap
+              </a>
             </div>
           </div>
         </div>
