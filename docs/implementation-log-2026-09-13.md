@@ -261,4 +261,59 @@ These require human access, credentials, decisions, or real-world evidence:
 
 ---
 
+---
+
+## Session addendum — 2026-09-13 (continuation)
+
+**State found:** The Phase 28 batch was left uncommitted in the working tree — a new
+`geo-strategy-2026.mdx` article (registered in the research index), a `PersonSchema`
+component (gated: renders nothing until real founder details exist), expanded
+`knowsAbout`, extra related-reading links on the GEO guide and market-map pages, and an
+llms.txt correction pointing `best-geo-agencies-2026-honest-market-map` at the article's
+actual slug (the article frontmatter uses `best-geo-agencies-2026-honest-market-map`;
+the old llms.txt entry pointed at a non-existent `/best-geo-agencies-2026`).
+
+**Fresh competitive research (SERPs re-checked this session):**
+
+- "Best GEO agencies 2026" — still 100% listicle SERP: Minuttia (#1), Thrive (#2),
+  YesOptimist (#3), Grizzle (#4), Digital Elevator (#5), beOmniscient (#6), CSP (#7),
+  Nutshell (#9). New listicle entrants since the morning run: Digital Elevator, CSP
+  Agency, Hamster Garage, Nutshell. Confirms the market-map play.
+- "Best AEO agencies 2026" — Callbox (#1), Minuttia (#2), Hamster Garage (#3),
+  YesOptimist (#5). LinkedIn Pulse listicles now also rank (#4) — another surface the
+  market-map content can be adapted for.
+- "AI search optimization agency" — won by big-DA generalist *service* pages (Thrive,
+  NP Digital, Coalition, OuterBox, Level Agency), not listicles. Confirms the existing
+  strategy split: listicles for "best X" queries; substantive service pages for generic
+  commercial queries.
+- Conclusion: no strategy change; prior findings hold.
+
+**Gap closed (this session's implementation):** the new strategy article had **zero
+inbound links** from any commercial page. Added `src/lib/service-research-links.ts` —
+a per-service map of relevant published research — and wired a new "The research behind
+this service" section into the shared service template
+(`src/app/services/[slug]/page.tsx`). Seven service pages now interlink into their
+topical clusters (GEO, AEO, AI search optimization, AI visibility, citation
+optimization, entity optimization, digital PR). The GEO service page links to the new
+strategy article, the GEO definitive guide, the 11-levers hub and the market map. All
+mapped slugs are resolved against the research index at build time, so a stale slug
+would fail the build rather than ship a dead link.
+
+**Build validation (this session):**
+
+| Check | Result |
+|---|---|
+| `npx tsc --noEmit` | ✅ 0 errors |
+| `npm run lint` | ✅ 0 errors (7 pre-existing warnings) |
+| `npx next build` (plain) | ✅ **Clean** — 31 research routes prerendered incl. `geo-strategy-2026`; all service/industry/pricing pages present; sitemap.xml contains both `geo-strategy-2026` and `best-geo-agencies-2026-honest-market-map` |
+| `npm run build` (opennextjs-cloudflare) | ⚠️ **Timed out at 10 min on this host** (twice across sessions). `.open-next` was never produced, so it is the OpenNext worker-bundling stage, not the Next compile — the plain Next build above compiles and prerenders everything successfully. CI (GitHub Actions) remains the right place to validate the OpenNext layer. |
+| Rendered HTML spot-checks | ✅ research-links module present on GEO/AI-visibility/digital-PR/citation pages; Person schema correctly absent (gated); Organization schema present |
+
+**Files changed in this session:**
+- `src/lib/service-research-links.ts` — NEW: per-service research-link map + resolver
+- `src/app/services/[slug]/page.tsx` — added "The research behind this service" section
+
+**Sitemap/llms.txt impact:** sitemap picks up `geo-strategy-2026` automatically (verified
+in build output). llms.txt correction verified against the article's actual slug.
+
 *End of log.*

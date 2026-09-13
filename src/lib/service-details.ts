@@ -287,7 +287,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
           "No responsible practitioner can guarantee what a third-party model generates. What we do is measurably strengthen the signals those systems weigh — and show you the movement in recommendation share over time.",
       },
     ],
-    related: ["citation-optimization", "digital-pr", "ai-search-optimization"],
+    related: ["citation-optimization", "digital-pr", "ai-search-optimization", "entity-optimization"],
   },
 
   "ai-visibility": {

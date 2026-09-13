@@ -83,6 +83,9 @@ import AiContactFlowLeadRouting2026, {
 import WhatIsGeo, {
   meta as whatIsGeoMeta,
 } from "./what-is-generative-engine-optimization.mdx";
+import GeoStrategy, {
+  meta as geoStrategyMeta,
+} from "./geo-strategy-2026.mdx";
 import AiSearchStatistics, {
   meta as aiSearchStatisticsMeta,
 } from "./ai-search-statistics-2026.mdx";
@@ -119,6 +122,7 @@ const agmeta = howToMeasureAiSearchInfluence2026Meta as ResearchMeta;
 const ahmeta = structuredDataSchemaAiSearch2026Meta as ResearchMeta;
 const aimeta = aiContactFlowLeadRouting2026Meta as ResearchMeta;
 const hwmeta = whatIsGeoMeta as ResearchMeta;
+const hw2meta = geoStrategyMeta as ResearchMeta;
 const ismeta = aiSearchStatisticsMeta as ResearchMeta;
 const bgmeta = bestGeoAgenciesMeta as ResearchMeta;
 
@@ -234,6 +238,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: hwmeta,
     Content: WhatIsGeo as ComponentType,
+  },
+  {
+    meta: hw2meta,
+    Content: GeoStrategy as ComponentType,
   },
   {
     meta: ismeta,

@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Icon } from "@/components/Icons";
 import { services, siteConfig } from "@/lib/data";
 import { serviceDetails } from "@/lib/service-details";
+import { getResearchLinks } from "@/lib/service-research-links";
 import { serviceUrl } from "@/lib/service-path";
 
 export const dynamicParams = false;
@@ -79,6 +80,7 @@ export default async function ServicePage({
   const relatedServices = detail.related
     .map((rel) => services.find((s) => s.slug === rel))
     .filter((s): s is (typeof services)[number] => Boolean(s));
+  const researchLinks = getResearchLinks(slug);
 
   return (
     <>
@@ -282,6 +284,42 @@ export default async function ServicePage({
             </div>
           </div>
         </section>
+
+        {/* ─── Research cluster ─── */}
+        {researchLinks.length > 0 && (
+          <section className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
+              The research behind this service
+            </h2>
+            <p className="mt-2 max-w-2xl text-[15px] leading-7 text-brand-dark-700">
+              Our published methodology and evidence — the same frameworks this service applies.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {researchLinks.map((link) => (
+                <Link
+                  key={link.slug}
+                  href={link.href}
+                  className="group rounded-2xl border border-brand-border bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary/40 hover:shadow-xl hover:shadow-brand-primary/5"
+                >
+                  <h3 className="text-base font-bold text-brand-dark group-hover:text-brand-primary">
+                    {link.title}
+                  </h3>
+                  <p className="mt-2 text-[14px] leading-6 text-brand-dark-700">
+                    {link.description}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary">
+                    Read the research
+                    <Icon
+                      name="arrow-right"
+                      size={14}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ─── CTA ─── */}
         <section className="border-t border-brand-border">

@@ -16,6 +16,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import {
   OrganizationSchema,
+  PersonSchema,
   WebSiteSchema,
   BreadcrumbSchema,
   FAQSchema,
@@ -27,6 +28,7 @@ export default function Home() {
     <>
       {/* Structured Data */}
       <OrganizationSchema />
+      <PersonSchema />
       <WebSiteSchema />
       <BreadcrumbSchema
         items={[
