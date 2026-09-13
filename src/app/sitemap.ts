@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { posts } from "@/content/research";
+import { postsMeta } from "@/content/research/research-meta";
 import { blogPath } from "@/lib/blog";
 import { services } from "@/lib/data";
 import { industryDetails } from "@/lib/industry-details";
@@ -50,16 +50,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/research`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 },
   ];
 
-  const researchPages = posts.map((post) => ({
-    url: `${baseUrl}/resources/research/${post.meta.slug}`,
-    lastModified: new Date(post.meta.dateModified),
+  const researchPages = postsMeta.map((post) => ({
+    url: `${baseUrl}/resources/research/${post.slug}`,
+    lastModified: new Date(post.dateModified),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
-  const blogPages = posts.map((post) => ({
-    url: `${baseUrl}${blogPath(post.meta.slug)}`,
-    lastModified: new Date(post.meta.dateModified),
+  const blogPages = postsMeta.map((post) => ({
+    url: `${baseUrl}${blogPath(post.slug)}`,
+    lastModified: new Date(post.dateModified),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));

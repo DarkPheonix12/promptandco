@@ -1,4 +1,5 @@
-import { posts } from "@/content/research";
+import { postsMeta } from "@/content/research/research-meta";
+import type { ResearchMeta } from "@/lib/research";
 
 /**
  * The blog reuses the research article pipeline — the same MDX content is
@@ -24,7 +25,7 @@ export const blogPath = (slug: string) => `/resources/blog/${slug}`;
 export const blogUrl = (slug: string) =>
   `https://promptco.online/resources/blog/${slug}`;
 
-const toBlogPost = (post: (typeof posts)[number]["meta"]): BlogPost => ({
+const toBlogPost = (post: ResearchMeta): BlogPost => ({
   slug: post.slug,
   title: post.title,
   description: post.description,
@@ -36,8 +37,8 @@ const toBlogPost = (post: (typeof posts)[number]["meta"]): BlogPost => ({
   href: blogPath(post.slug),
 });
 
-export const blogPosts: BlogPost[] = posts
-  .map((post) => toBlogPost(post.meta))
+export const blogPosts: BlogPost[] = postsMeta
+  .map((post) => toBlogPost(post))
   .sort(
     (a, b) =>
       new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()

@@ -4,14 +4,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import ArticleLayout from "@/components/research/ArticleLayout";
 import PrimeReads from "@/components/blog/PrimeReads";
-import { getPost, posts } from "@/content/research";
+import { getPostMeta, postsMeta } from "@/content/research/research-meta";
+import { loadArticleContent } from "@/content/research/research-content";
 import { researchPath, researchUrl } from "@/lib/research";
 import { siteConfig } from "@/lib/data";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.meta.slug }));
+  return postsMeta.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -20,31 +21,31 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = getPostMeta(slug);
   if (!post) return {};
 
   return {
-    title: post.meta.title,
-    description: post.meta.description,
-    keywords: post.meta.tags,
+    title: post.title,
+    description: post.description,
+    keywords: post.tags,
     authors: [{ name: siteConfig.name, url: siteConfig.url }],
     openGraph: {
       type: "article",
       locale: "en_US",
       url: researchUrl(slug),
       siteName: siteConfig.name,
-      title: post.meta.title,
-      description: post.meta.description,
-      publishedTime: post.meta.datePublished,
-      modifiedTime: post.meta.dateModified,
+      title: post.title,
+      description: post.description,
+      publishedTime: post.datePublished,
+      modifiedTime: post.dateModified,
       // Use the generated root OG image (opengraph-image.tsx). The legacy
       // /og-image.svg is not a valid OG format for some platforms.
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: post.meta.title }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.meta.title,
-      description: post.meta.description,
+      title: post.title,
+      description: post.description,
       images: ["/og-image.svg"],
     },
     alternates: {
@@ -59,19 +60,22 @@ export default async function ResearchArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
-  if (!post) notFound();
+  const meta = getPostMeta(slug);
+  if (!meta) notFound();
 
-  const Content = post.Content;
+  // Article bodies are lazy-loaded per slug so each MDX file is its own
+  // chunk and this route never bundles the whole content library.
+  const Content = await loadArticleContent(slug);
+  if (!Content) notFound();
 
   return (
     <>
       <Header />
       <main>
-        <ArticleLayout meta={post.meta}>
+        <ArticleLayout meta={meta}>
           <Content />
         </ArticleLayout>
-        <PrimeReads excludeSlug={post.meta.slug} />
+        <PrimeReads excludeSlug={meta.slug} />
       </main>
       <Footer />
     </>

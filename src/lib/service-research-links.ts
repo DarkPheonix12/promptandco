@@ -4,7 +4,7 @@
  * in the research index may appear here — a stale slug breaks the static
  * build, so this stays in sync with src/content/research/index.ts.
  */
-import { posts } from "@/content/research";
+import { postsMeta } from "@/content/research/research-meta";
 
 export interface ServiceResearchLink {
   slug: string;
@@ -136,7 +136,7 @@ export const serviceResearchLinks: Record<string, ServiceResearchLink[]> = {
 export function getResearchLinks(slug: string): ResolvedResearchLink[] {
   const links = serviceResearchLinks[slug];
   if (!links) return [];
-  const known = new Set(posts.map((p) => p.meta.slug));
+  const known = new Set(postsMeta.map((p) => p.slug));
   return links.flatMap((link) =>
     known.has(link.slug)
       ? [{ ...link, href: `/resources/research/${link.slug}` }]
