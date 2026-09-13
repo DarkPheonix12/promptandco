@@ -316,4 +316,104 @@ would fail the build rather than ship a dead link.
 **Sitemap/llms.txt impact:** sitemap picks up `geo-strategy-2026` automatically (verified
 in build output). llms.txt correction verified against the article's actual slug.
 
+---
+
+# Phase 29 — Commercial Search Expansion + AEO Authority (2026-09-13, session 3)
+
+**Commit:** `c7c7032` was the baseline (Phase 28 continuation). This section documents Phase 29.
+
+## Research performed (fresh, this session)
+
+Queries checked against live Google SERPs:
+
+| Query | SERP pattern | Winners | Implication |
+|---|---|---|---|
+| best GEO agencies 2026 | 100% listicle | Minuttia, Thrive, YesOptimist, Grizzle, Digital Elevator, beOmniscient, CSP, Nutshell | Market-map format confirmed |
+| best AEO agencies 2026 | 100% listicle | Callbox, Minuttia, Hamster Garage, YesOptimist, + LinkedIn Pulse listicles ranking (#4) | Same format; AEO map gap confirmed |
+| best AEO agencies for SaaS/B2B | Vertical listicle | beOmniscient, Discovered Labs, Posirank, Online Optimism, Contently | Vertical modifiers are listicle-led too |
+| AI search optimization agency | Big-DA service pages | Thrive, NP Digital, Coalition, OuterBox, Level Agency | Service-page intent; not listicle |
+| GEO services pricing/cost | Cost guides | WebFX ($10–$50k), First Page Sage (tiered), Mainstreethost ($199–$999 tiers), PageTraffic ($1.5k–$10k), Icecube ($1.5k–$50k+) | /pricing already targets this; ranges needed refresh |
+| AEO vs SEO vs GEO | Guides + Medium/Reddit | Medium, Reddit threads, Semrush, hibu, Terra | Comparison intent is informational; existing taxonomy article already covers and out-structures most |
+| GEO vs SEO | Guides | Semrush, Contentful, Writesonic, dotcms, Reddit #1 | Same — no dedicated page justified; cannibalization risk with taxonomy guide |
+| AI visibility services/tools | Tool-first SERP | Rankscale, Hamster Garage ($5k–$150k pricing listicle), Peec, Profound, SE Ranking | Tool-intent, not service-intent; /services/ai-visibility + measurement buyer's guide cover the agency angle |
+
+### Intent buckets (Phase 3)
+
+- **A. Commercial service:** "GEO agency", "AI search optimization services", "AI visibility agency" → covered by 9 service pages + research-links module (Phase 28 cont.). No new pages.
+- **B. Recommendation/listicle:** "best AEO/GEO agency" (+ vertical modifiers) → GEO map existed; **AEO map was the gap — created**.
+- **C. Informational:** "AEO vs SEO vs GEO", "GEO vs SEO" → covered by `seo-geo-aeo-llmo-guide-2026`; a second comparison page would cannibalize. Strengthened with a pricing bridge link instead.
+- **D. Tool/measurement:** "AI visibility tracking", "AI citation tracking" → tool-intent SERP owned by vendors. Not a service opportunity; measurement buyer's guide already captures the agency-angle traffic. No action.
+
+### URL/intent map verdicts (Phase 4)
+
+| Cluster | URL | Action |
+|---|---|---|
+| Best AEO agencies | (none) | **CREATE** → `/resources/research/best-aeo-agencies-2026` |
+| Best GEO agencies | `/resources/research/best-geo-agencies-2026-honest-market-map` | KEEP (+ cross-link to AEO sibling) |
+| GEO/AEO/AI-SEO pricing | `/pricing` | OPTIMIZE (fresh sourced ranges) |
+| AEO vs SEO vs GEO | `/resources/research/seo-geo-aeo-llmo-guide-2026` | KEEP (+ pricing bridge link) |
+| GEO vs SEO | same taxonomy article | KEEP — do not create duplicate |
+| AI SEO for SaaS/ecommerce/B2B | `/industries/*` + `/services/*` | KEEP — already hybrid-covered; no per-vertical new pages |
+| ChatGPT/Gemini/Perplexity optimization | covered as sections in service pages + research | KEEP — no per-platform pages justified |
+
+### Information-gain test (Phase 13)
+
+The AEO map passes: the AEO-specific irony (the "best AEO agency" SERP is itself an answer surface and winning listicles demonstrate AEO in practice) is an observation no competitor listicle makes; named 2026 players with strengths/watch-fors reflect this session's SERP data; evaluation criteria and red flags are AEO-specific (named surfaces, AEO/GEO distinction, extraction-format competence) rather than copied from the GEO map. Pricing updates are sourced additions, not invention.
+
+### Authority gaps (Phase 11)
+
+On-site implementable: none found this session beyond what's shipped (schema, entity consistency, internal links are in place).
+External/human-required (unchanged, documented in Phase 28 sections): Cloudflare deploy + AI-bot unblock, GSC/Bing resubmission, LinkedIn company page + founder details for Person/sameAs schema, first real client proof.
+
+### First-party research (Phase 12)
+
+The AI Visibility Benchmark was evaluated and **deferred**: a defensible benchmark requires a founder-approved methodology and real multi-engine data collection that cannot be self-run from this repository. Documented as a plan, not faked. (Phase 28's "map-with-commitment" note in both market maps already commits to the methodology-publicly-stated approach.)
+
+## Changes implemented
+
+### New page (1)
+
+**`/resources/research/best-aeo-agencies-2026`** — "Best AEO Agencies in 2026: An Honest Market Map" (~2,900 words)
+
+- File: `src/content/research/best-aeo-agencies-2026.mdx`, registered in `src/content/research/index.ts`
+- AEO sibling of the GEO market map, same honesty rules: named players (iPullRank, First Page Sage, Discovered Labs, Optimist, WebFX, Thrive, Coalition et al., Profound/Peec/Otterly tools side), strengths + watch-fors, no self-ranking, conflicts-of-interest note
+- AEO-specific content the GEO map doesn't cover: AEO-vs-GEO hiring distinction, the listicle-is-AEO irony, AEO-specific evaluation criteria (named surfaces, extraction-format competence) and red flags
+- 6-question FAQ block (rendered as FAQ schema via the article template)
+- Sources: 2026 AEO listicle SERP entries (Callbox, Minuttia, YesOptimist, beOmniscient, Discovered Labs, Posirank, Contently, Online Optimism, Hamster Garage, GrowPad) + pricing guides
+
+### Improved pages (4)
+
+1. **`/pricing`** (`src/app/pricing/page.tsx`) — added the low-cost tier reality ($199–$999 Mainstreethost tiers) and the under-$1,500 rebrand-consensus note to the GEO-cost FAQ; expanded the sources footnote with PageTraffic ($1.5k–$10k, up to $30k), Icecube ($1.5k–$50k+) and Mainstreethost. All ranges remain market-sourced; no Prompt&Co. pricing invented.
+2. **`/resources/research/best-geo-agencies-2026-honest-market-map`** — added cross-link to the AEO sibling at the top of Related reading.
+3. **`/resources/research/seo-geo-aeo-llmo-guide-2026`** — added pricing bridge link (comparison intent → commercial page) at the end of the closing guidance.
+4. **`/services/answer-engine-optimization`** (via `src/lib/service-research-links.ts`) — added the AEO market map to the AEO service page's research cluster module.
+
+### Also updated
+
+- `public/llms.txt` — added the AEO market map entry with description.
+
+## Validation (this session)
+
+| Check | Result |
+|---|---|
+| `npx tsc --noEmit` | ✅ 0 errors |
+| `npm run lint` | ✅ 0 errors (7 pre-existing warnings) |
+| `npx next build` (plain) | ✅ Clean — 32 research routes prerendered; `/resources/research/best-aeo-agencies-2026` present |
+| Sitemap | ✅ contains `best-aeo-agencies-2026` (verified in build output) |
+| Schema | ✅ article FAQ block renders via existing template |
+| Internal links | ✅ verified in rendered HTML: AEO service page research module includes the map; GEO map → AEO sibling; taxonomy → pricing; pricing ranges present |
+| `npm run build` (OpenNext) | ⚠️ Not run this session — established last session as an environment-level timeout (OpenNext bundling stage), distinct from the passing Next compile. CI remains the validator. |
+
+## Remaining manual tasks
+
+Unchanged from Phase 28 (all external/credential-required): Cloudflare deploy fix, Cloudflare AI-bot unblock, GSC/Bing sitemap resubmission, LinkedIn + founder entity, real client proof, founder-approved benchmark methodology.
+
+## Next priorities
+
+1. Deploy (still the highest-leverage action — nothing ships until production catches up to main).
+2. Monitor both market maps for indexing/citation once live.
+3. Founder-approved AI Visibility Benchmark methodology.
+4. Vertical market-map variants ("best GEO agency for SaaS") only if the SERP check confirms listicle-intent per modifier.
+5. Author bylines once founder identity is confirmed.
+
 *End of log.*

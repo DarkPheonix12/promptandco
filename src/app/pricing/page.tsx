@@ -27,7 +27,7 @@ const pricingFaqs = [
   {
     question: "How much does Generative Engine Optimization (GEO) cost?",
     answer:
-      "Published 2026 market guides put GEO/AEO agency retainers roughly between $2,000 and $15,000 per month depending on scope and competitiveness, with one-off AI visibility audits typically $1,000–$4,000. Final pricing depends on your market's competitiveness, the state of your technical foundation and how much content and third-party work is required.",
+      "Published 2026 market guides put GEO/AEO agency retainers roughly between $2,000 and $15,000 per month depending on scope and competitiveness, with one-off AI visibility audits typically $1,000–$4,000. Budget-tier offerings exist ($199–$999/month), but market consensus is that retainers under ~$1,500/month are usually traditional SEO rebranded. Final pricing depends on your market's competitiveness, the state of your technical foundation and how much content and third-party work is required.",
   },
   {
     question: "How much does an AI visibility audit cost?",
@@ -176,10 +176,14 @@ export default function PricingPage() {
           <p className="mt-4 text-[12.5px] leading-5 text-brand-muted">
             Sources: 2026 pricing guides from OutreachBloom ($2k–$10k B2B
             retainers; $1k–$4k audits), RevvGrowth ($3k–$6k basic, $6k–$12k
-            growth tiers), The Remarkable Agency ($3k–$15k retainers), and
-            tool-cost roundups from Strategi.is and XSeek ($50–$1,000/mo
-            platforms). Ranges vary by market and study methodology; treat them
-            as orientation, not quotes.
+            growth tiers), The Remarkable Agency ($3k–$15k retainers),
+            PageTraffic ($1.5k–$10k/mo, up to $30k), Icecube Digital
+            ($1.5k–$50k+), and tool-cost roundups from Strategi.is and XSeek
+            ($50–$1,000/mo platforms). Low-cost subscription GEO tiers
+            ($199–$999/mo, Mainstreethost) exist but sit far below the
+            consensus floor for genuine multi-engine work. Ranges vary by
+            market and study methodology; treat them as orientation, not
+            quotes.
           </p>
 
           <div className="mt-8 rounded-2xl border border-amber-300/40 bg-amber-50/60 p-5">

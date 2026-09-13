@@ -46,6 +46,11 @@ export const serviceResearchLinks: Record<string, ServiceResearchLink[]> = {
       description: "What separates the acronyms, and where each discipline actually earns its keep.",
     },
     {
+      slug: "best-aeo-agencies-2026",
+      title: "Best AEO Agencies 2026: An Honest Market Map",
+      description: "How to evaluate any AEO agency — including us.",
+    },
+    {
       slug: "26-structured-data-schema-ai-search-2026",
       title: "Schema and Structured Data After the FAQ Death",
       description: "What structured data still does for answer engines in 2026.",

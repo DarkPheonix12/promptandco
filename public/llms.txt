@@ -51,6 +51,8 @@ Original research on how AI engines discover, cite and recommend brands:
   curated, sourced roundup of AI citation, overview presence, overlap, source-type and schema statistics.
 - [Best GEO agencies 2026: honest market map](https://promptco.online/resources/research/best-geo-agencies-2026-honest-market-map):
   a practitioner's map of the GEO/AI-search agency landscape, with strengths, red flags and methodology notes.
+- [Best AEO agencies 2026: honest market map](https://promptco.online/resources/research/best-aeo-agencies-2026):
+  the AEO sibling: answer-surface specialists, generalists with real AI practices, evaluation criteria and red flags.
 - [2026 AI citation study](https://promptco.online/resources/research/2026-ai-citation-study):
   how often AI engines cite sources, per engine.
 - [AI crawler readiness](https://promptco.online/resources/research/ai-crawlers-2026-readiness)

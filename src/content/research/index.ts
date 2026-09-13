@@ -92,6 +92,9 @@ import AiSearchStatistics, {
 import BestGeoAgencies, {
   meta as bestGeoAgenciesMeta,
 } from "./best-geo-agencies-2026.mdx";
+import BestAeoAgencies, {
+  meta as bestAeoAgenciesMeta,
+} from "./best-aeo-agencies-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -125,6 +128,7 @@ const hwmeta = whatIsGeoMeta as ResearchMeta;
 const hw2meta = geoStrategyMeta as ResearchMeta;
 const ismeta = aiSearchStatisticsMeta as ResearchMeta;
 const bgmeta = bestGeoAgenciesMeta as ResearchMeta;
+const bameta = bestAeoAgenciesMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -250,6 +254,10 @@ export const posts: ResearchArticle[] = [
   {
     meta: bgmeta,
     Content: BestGeoAgencies as ComponentType,
+  },
+  {
+    meta: bameta,
+    Content: BestAeoAgencies as ComponentType,
   },
 ];
 
