@@ -17,9 +17,10 @@ import { Footer } from "@/components/Footer";
 import {
   OrganizationSchema,
   WebSiteSchema,
+  BreadcrumbSchema,
   FAQSchema,
 } from "@/components/schema/SchemaMarkup";
-import { faqData } from "@/lib/data";
+import { faqData, siteConfig } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -27,6 +28,11 @@ export default function Home() {
       {/* Structured Data */}
       <OrganizationSchema />
       <WebSiteSchema />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: siteConfig.url },
+        ]}
+      />
       <FAQSchema faqs={faqData} />
 
       {/* Page Sections — per strategy §62 */}

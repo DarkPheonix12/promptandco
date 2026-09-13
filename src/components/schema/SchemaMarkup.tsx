@@ -25,7 +25,15 @@ export function OrganizationSchema() {
       "Entity Optimization",
       "Technical SEO",
       "Digital PR",
+      "AI Citations",
+      "ChatGPT Visibility",
+      "Perplexity Optimization",
+      "Google AI Overviews",
+      "LLM SEO",
+      "Brand Visibility in AI",
+      "Citation Optimization",
     ],
+    foundingDate: "2024",
   };
 
   return (

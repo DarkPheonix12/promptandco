@@ -75,10 +75,12 @@ export function CaseStudies() {
             transition={{ delay: 0.2 }}
             className="text-base lg:text-lg text-brand-muted"
           >
-            Illustrative engagement models showing how Prompt&Co. approaches
-            AI visibility work — the same framework we apply to every client.
-            Named client case studies with verified results are published only
-            when real data is available.
+            Illustrative engagement models — not real client results. These show
+            the framework we apply to every engagement. The metrics shown are
+            representative examples of what movement can look like, not
+            measurements from an actual client. Named case studies with verified
+            results are published only when real, permissioned data is available.
+            No results have been fabricated or implied to be real.
           </motion.p>
         </div>
 
@@ -127,7 +129,7 @@ export function CaseStudies() {
                   {cs.challenge}
                 </p>
 
-                {/* Metrics */}
+                {/* Metrics — labeled illustrative */}
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   {Object.entries(cs.metrics).map(([key, value]) => (
                     <div
@@ -142,6 +144,13 @@ export function CaseStudies() {
                       </p>
                     </div>
                   ))}
+                </div>
+
+                {/* Illustrative badge */}
+                <div className="bg-amber-50/80 border border-amber-200/50 rounded-lg p-2 mb-2">
+                  <p className="text-[10px] font-semibold text-amber-700 uppercase tracking-wider">
+                    Illustrative example — not a real client result
+                  </p>
                 </div>
 
                 {/* Result */}

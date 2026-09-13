@@ -80,6 +80,15 @@ import StructuredDataSchemaAiSearch2026, {
 import AiContactFlowLeadRouting2026, {
   meta as aiContactFlowLeadRouting2026Meta,
 } from "./27-ai-contact-flow-lead-routing-2026.mdx";
+import WhatIsGeo, {
+  meta as whatIsGeoMeta,
+} from "./what-is-generative-engine-optimization.mdx";
+import AiSearchStatistics, {
+  meta as aiSearchStatisticsMeta,
+} from "./ai-search-statistics-2026.mdx";
+import BestGeoAgencies, {
+  meta as bestGeoAgenciesMeta,
+} from "./best-geo-agencies-2026.mdx";
 import type { ResearchArticle, ResearchMeta } from "@/lib/research";
 
 const remeta = aiCitationStudyMeta as ResearchMeta;
@@ -109,6 +118,9 @@ const afmeta = whatChangedAiSearch2026Meta as ResearchMeta;
 const agmeta = howToMeasureAiSearchInfluence2026Meta as ResearchMeta;
 const ahmeta = structuredDataSchemaAiSearch2026Meta as ResearchMeta;
 const aimeta = aiContactFlowLeadRouting2026Meta as ResearchMeta;
+const hwmeta = whatIsGeoMeta as ResearchMeta;
+const ismeta = aiSearchStatisticsMeta as ResearchMeta;
+const bgmeta = bestGeoAgenciesMeta as ResearchMeta;
 
 export const posts: ResearchArticle[] = [
   {
@@ -218,6 +230,18 @@ export const posts: ResearchArticle[] = [
   {
     meta: aimeta,
     Content: AiContactFlowLeadRouting2026 as ComponentType,
+  },
+  {
+    meta: hwmeta,
+    Content: WhatIsGeo as ComponentType,
+  },
+  {
+    meta: ismeta,
+    Content: AiSearchStatistics as ComponentType,
+  },
+  {
+    meta: bgmeta,
+    Content: BestGeoAgencies as ComponentType,
   },
 ];
 

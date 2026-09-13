@@ -1,0 +1,368 @@
+export const meta = {
+  slug: "ai-search-statistics-2026",
+  title:
+    "AI Search Statistics 2026: The Numbers Behind AI Citations, Recommendations and Visibility",
+  description:
+    "A curated, sourced roundup of the 2026 AI search statistics: AI Overview presence, citation rates by engine, citation half-life, ranking-to-citation overlap, source-type breakdown, schema multipliers, and the levers that controlled experiments say move visibility.",
+  datePublished: "2026-09-13",
+  dateModified: "2026-09-13",
+  category: "Statistics",
+  tags: ["AI search statistics", "GEO", "AEO", "AI citations", "AI visibility", "research"],
+  readingTimeMinutes: 10,
+  faq: [
+    {
+      question: "What are the most important AI search statistics for 2026?",
+      answer:
+        "The numbers worth anchoring on: AI is present in roughly half of US searches (BrightEdge put AI Overview presence around 48% of queries in early 2026); most AI citations are one-and-done, with 73.5% of cited URLs appearing only once across a ten-month, eight-model study (Trakkr); citation presence decays with a half-life around 31 days (Trakkr); only about 23% of brand mentions become citations (BuzzStream); ranking and citation overlap sits around 32–38% across the largest datasets (Ahrefs 37.9%, seoClarity ~32%, The Stacc 38%); and FAQ structured data is associated with citation multiples of roughly 2.3–2.8× in a 1,000-AI-Overview sample (The Stacc).",
+    },
+    {
+      question: "Which AI engine cites sources most often?",
+      answer:
+        "ChatGPT (Search), Google AI Mode, Google AI Overviews, Perplexity and Copilot cite in the large majority of answers — typically 95%+ in the datasets that measure it. Gemini is the outlier: across the cloro, SurfacedBy and OtterlyAI datasets it cites sources in only about 41% of answers, meaning a brand invisible in Gemini may be a symptom of Gemini's lower citation rate rather than of the brand itself.",
+    },
+    {
+      question: "How often do AI answers cite the same sources as Google's top 10?",
+      answer:
+        "The overlap is real but modest and varies by study. The largest 2026 datasets — Ahrefs (4M cited URLs), seoClarity (362K keywords), DerivateX (1,259 citations) and The Stacc (1,000 AI Overviews) — consistently find that roughly 32–38% of AI-cited URLs also rank in Google's top 10. Longitudinal studies disagree on the trend: BrightEdge tracked a rise from roughly 32% to ~54.5% for AI Overviews specifically, while 5WPR tracked a collapse from roughly 70% to under 20% for branded queries over about two years. The disagreement is method, not error — different engines, surfaces and query sets.",
+    },
+    {
+      question: "Which sources do AI engines cite most?",
+      answer:
+        "It depends on the engine. For Google AI Overviews, one 1,000-AI-Overview sample found Wikipedia around 24%, Reddit around 22% and YouTube around 23% of cited domains. The top 1% of domains collected roughly 47% of citations in that sample (The Stacc). For ChatGPT, the Semrush 100M-citation analysis found a Reddit share collapse from ~60% to ~10% over the study period, with the engine rotating UGC and product pages. Claude is the outlier on source type: a five-engine study found about 0.02% of Claude's citations went to YouTube, far below the 20%+ typical of other engines — Claude favors documentation and primary sources.",
+    },
+    {
+      question: "What increases the chance of being cited by AI?",
+      answer:
+        "The best-evidenced levers come from controlled experiments (Aggarwal et al., KDD 2024) and large citation datasets: named expert sources in content (about +41% visibility in controlled tests), statistics and data in answers (about +33%), citations and references in content (about +28%), FAQ structured data (about +44% in the experiment; FAQ/how-to schema cited at roughly 2.3–2.8× baseline in a 1,000-AI-Overview sample), and content freshness — updated within roughly the last month — associated with about 3.2× citation rate in a large sample. Keyword stuffing reduced visibility by about 8% in the same experiments.",
+    },
+    {
+      question: "How long do AI citations last?",
+      answer:
+        "Not long. Trakkr's longitudinal study across ten months and eight models found that 73.5% of cited URLs appeared exactly once, and that brand-level citation presence decays with a half-life around 31 days. Wellows reported 79.6% of sources cited by exactly one engine (just 0.31% cited by all five). The practical implication: citation equity does not compound the way backlinks were taught to, and measurement cadence — monthly at minimum — matters more than a single snapshot.",
+    },
+    {
+      question: "What percentage of searches have AI overviews?",
+      answer:
+        "Estimates vary by method and vertical. BrightEdge tracked AI Overview presence around 48% of US queries in early 2026, with wide variance: roughly 88% for healthcare, 83% for education, 82% for B2B technology, and low single digits for some retail query patterns. SparkToro's long-running zero-click data put roughly 68% of US searches ending without a click, and Ahrefs found roughly a 58% CTR reduction for top results when AI Overviews appear on a query. Treat any single number as a range.",
+    },
+    {
+      question: "Are AI citations replacing traditional search traffic?",
+      answer:
+        "Not in a clean either/or way. Zero-click behavior has been rising for years, and AI Overviews suppress click-through when they appear — but they also create new citation and recommendation visibility for brands that earn it. The more useful framing is that the discovery pipeline is being rebuilt: some queries that used to send clicks now resolve in the answer, and the brands that appear in those answers gain a new form of visibility that rankings alone do not capture. The Statista/SparkToro-style zero-click data and the AI-answers data are two views of the same shift.",
+    },
+  ],
+};
+
+<DefinitionCard>
+  **AI search statistics (2026)** — the published numbers on AI citations, AI Overview presence,
+  ranking-to-citation overlap, source types, citation half-life, schema multipliers and the levers
+  that controlled experiments say move visibility in AI-generated answers. This page is a curated
+  roundup of the 2026 research we cite across the rest of the site — updated as new datasets land.
+</DefinitionCard>
+
+This is the statistics page for Prompt&Co.'s research hub. It aggregates the published 2026 AI-search
+data we reference across our service pages, industry playbooks and guides — with sources, dates and,
+where the numbers disagree, an explanation of why.
+
+The point of this page is not to drown you in numbers. It is to give you the handful of statistics
+that actually bear on AI visibility decisions, and to separate the findings that replicate from the
+headline numbers that don't.
+
+## The headline numbers
+
+These are the statistics most worth knowing — the ones that show up in strategy conversations and that
+bear on what GEO, AEO and AI visibility work actually involve.
+
+### AI is present in roughly half of US searches
+
+**BrightEdge (early 2026):** AI Overview presence around **48%** of US queries, with wide vertical
+variance — roughly **88%** for healthcare, **83%** for education, **82%** for B2B technology, and
+low single digits for some retail query patterns.
+
+**SparkToro (2026):** roughly **68%** of US searches end without a click — the zero-click baseline
+that AI Overviews sit on top of.
+
+**Ahrefs (2026):** roughly **58%** CTR reduction for top results when AI Overviews appear on the query.
+
+The takeaway: AI is now a normal part of the search layer for a large share of queries, and its
+presence suppresses clicks to the traditional results. The brands that only optimize for clicks are
+optimizing for a shrinking slice of the discovery pipeline.
+
+### Most AI citations are one-and-done
+
+**Trakkr (2026):** across **108K URLs, 8 models and 10 months**, **73.5%** of cited URLs appeared
+exactly once. Brand-level citation presence decays with a **half-life around 31 days**.
+
+**Wellows (2026):** across **22.7M citations**, **79.6%** of sources were cited by exactly one engine;
+just **0.31%** were cited by all five engines studied.
+
+**SurfacedBy (2026):** **127,198 citations across 5 engines including Claude**; the "single-engine-only"
+figure in a comparable sample was **69.6%**.
+
+The takeaway: citation presence is volatile, not cumulative. A single citation snapshot is not a trend,
+and citation equity does not compound the way backlinks were taught to. Measurement cadence matters.
+
+### Only a minority of brand mentions become citations
+
+**BuzzStream (June 2026):** across **12,000 AI responses**, only about **23%** of brand mentions became
+citations — meaning being named in an answer is necessary but not sufficient to be a cited source.
+
+The takeaway: mention equity and citation equity are different. A brand can be named in an answer without
+being a cited source, and the gap between the two is where a lot of visibility work sits.
+
+### Ranking and citation overlap is real but modest
+
+**Ahrefs (March 2026):** ~**37.9%** of AI Overview-cited URLs also rank in Google's top 10 — across
+**4M cited URLs and 863K keywords**.
+
+**seoClarity (October 2025):** ~**32%** of top sources for cited keywords rank in the top 10 — across
+**362K keywords**.
+
+**The Stacc (May 2026):** **38%** of cited pages rank in the top 10 — across **1,000 AI Overviews**.
+
+**DerivateX (July 2026):** ~**35%** cross-engine source overlap for B2B queries — across **100 queries
+and 1,259 citations**.
+
+**BrightEdge (longitudinal):** AI Overviews' overlap with the organic top 10 rose from roughly **32%**
+in May 2024 to roughly **54.5%** by late 2025.
+
+**5WPR (May 2026):** AI answer vs ranking overlap for branded queries fell from roughly **70%** to
+under **20%** over about two years of tracked branded queries.
+
+The takeaway: the overlap is real, it is moderate, and it is not the same number everywhere. Ranking
+helps you get cited — it is not the same as being cited. The longitudinal disagreement (BrightEdge's rise
+vs 5WPR's collapse) is method: AI Overviews increasingly mirror Google's own top results, while standalone
+assistants such as ChatGPT build their own source pools.
+
+### The top 1% of domains collect a disproportionate share of citations
+
+**The Stacc (May 2026):** across **1,000 AI Overviews**, the top **1%** of domains collected roughly
+**47%** of citations. Health vertical analyses show similar concentration — top-10 domains ≈ **71%** of
+citations, led by NIH, Mayo Clinic and CDC.
+
+The takeaway: citation authority is concentrated. If you are not in the elite for your category, your
+fight is real but winnable — the other ~53% is a long tail of thousands of mid-sized domains.
+
+### Source types vary sharply by engine
+
+**Google AI Overviews (1,000-AI-Overview sample, The Stacc):** Wikipedia ~**24%**, Reddit ~**22%**,
+YouTube ~**23%** of cited domains.
+
+**ChatGPT (Semrush 100M-citation analysis, 2026):** Reddit share collapsed from ~**60%** to ~**10%**
+over the study period; the engine rotates UGC and product pages.
+
+**Claude (five-engine study, SurfacedBy):** ~**0.02%** of citations went to YouTube — far below the
+20%+ typical of other engines. Claude favors documentation and primary sources.
+
+**Perplexity:** the most link-transparent assistant; citation density high and stable.
+
+**Gemini:** cites in only ~**41%** of answers (cloro, SurfacedBy, OtterlyAI); when it does cite, it is
+source-dense.
+
+The takeaway: there is no single "make yourself citable" playbook. The right playbook is engine-aware —
+what works for ChatGPT visibility is not identical to what works for Gemini or Claude.
+
+### Controlled experiments find specific levers that move visibility
+
+**Aggarwal et al. (KDD 2024), plus published replications:** in controlled GEO experiments,
+
+- **Named sources (expert quotes + attribution):** ~**+41%** visibility
+- **Statistics and data in answers:** ~**+33%** visibility
+- **Citations and references in content:** ~**+28%** visibility
+- **FAQ structured data:** ~**+44%** visibility in the experiment
+- **Keyword stuffing:** ~**-8%** visibility (a negative control)
+
+**The Stacc (1,000 AI Overviews):** FAQ and how-to schema pages cited at roughly **2.3–2.8×** the
+baseline rate of pages without.
+
+**Freshness (large citation sample):** content updated within roughly the last month cited at
+~**3.2×** the rate of older content.
+
+The takeaway: the levers with the best evidence are structural and substantive — named sources,
+data, citations, FAQ schema, freshness — and the one clear negative is keyword stuffing. These are
+evidence-backed, not guaranteed, and they compound best as part of a broader program.
+
+### Technical barriers are common and consequential
+
+**OtterlyAI (February 2026):** across a **1M-citation sample**, roughly **73%** of sites carried at
+least one technical barrier that could prevent citation — primarily client-side rendering that hides
+content from crawlers.
+
+The takeaway: if an AI agent cannot parse your page's raw HTML, nothing else you do matters. This is
+the highest-impact, least-glamorous GEO fix, and it is prerequisite to everything else.
+
+## The statistics by engine
+
+A quick reference table for the engine-level numbers that come up most often.
+
+| Engine | Sources per answer (typical) | Citation rate | Distinctive behavior |
+| --- | --- | --- | --- |
+| ChatGPT (Search) | ~3.7–12 depending on study | Cites in 95%+ of answers | Large unique source pool (~76% of its citations unique in one large sample); rotates UGC and community pages heavily |
+| Google AI Mode | ~17–20 | High | Source-dense; leans on top domains (~58% from top-10 domains in one instrumentation study); shares only ~13.7% of URLs with classic AI Overviews |
+| Google AI Overviews | ~4.2 | High | Listicle-friendly; Wikipedia ~24%, Reddit ~22%, YouTube ~23% of cited domains in one 1,000-AIO sample; ~47% of citations to top 1% of domains |
+| Perplexity | High | 95%+ | Most link-transparent assistant; citation density high and stable |
+| Copilot | ~5 | High | Sparser citations, fewer sources per answer |
+| Gemini | ~11 (SurfacedBy) | ~41% | The outlier: cites in well under half of answers; source-dense when it does |
+| Claude | — | High | Filters out UGC almost entirely (~0.02% YouTube citations in a five-engine study); prefers documentation and primary sources |
+
+## The statistics by category
+
+### B2B and SaaS
+
+**G2 Buyer Behavior (2026):** **82%** of B2B buyers sourced recommendations from an AI chatbot in
+the last 24 months; AI chatbots were the **#1** influence on the vendor shortlist, ahead of review
+sites; **69%** of buyers say AI research surfaced information that changed their vendor choice.
+
+**G2 (2026):** B2B software buyers who start research with an AI chatbot more often than with Google:
+**51%** (up from lower figures seven months earlier); **71%** rely on AI chatbots during software
+research.
+
+**6sense (via G2):** **80%** of deals are won by the pre-contact favorite — the vendor who was
+preferred before sales ever engaged.
+
+The takeaway: the B2B shortlist is being assembled before first contact, and AI chatbots are the
+leading influence on it. For B2B brands, AI visibility is not a side channel — it is increasingly the
+first gate.
+
+### E-commerce and product discovery
+
+**SparkToro (2026):** **68%** of US searches end without a click — product research included.
+
+**Ahrefs (2026):** ~**58%** CTR reduction for top results when Google AI Overviews appear.
+
+**OtterlyAI (2026):** **31.8%** of social/video citations in AI answers come from YouTube — where
+product content lives.
+
+**SparkToro (2026):** **20%+** of SERPs now show AI Overviews, with coverage still expanding.
+
+The takeaway: product discovery is being rebuilt around answers, and video plus structured product data
+are underweighted by most e-commerce strategies relative to their citation weight.
+
+### Local search
+
+**SearchAtlas (104,855 local citations, 2026):** **+0.16** correlation between Google Business Profile
+signals and AI local ranking — the strongest measured factor; **+0.11** for businesses that reply to
+reviews.
+
+**Cairrot (1.5M-prompt study, 2026):** **1.83→3.17%** local "near me" lift on Perplexity when local
+signals are present.
+
+**5W (680M-citation audit, 2026):** ~**25%** of US ChatGPT citations draw on Wikipedia + Reddit
+combined.
+
+The takeaway: for local businesses, profiles and review behavior — not domain authority — are the
+measured drivers of AI local visibility. Domain authority shows a *negative* correlation in local AI
+results in the SearchAtlas data.
+
+### Trust-heavy professional categories
+
+**Red-engage (10k-citation study, 2026):** **46.7%** of Perplexity's citations flow through Reddit-style
+community discussion.
+
+**5W (680M-citation audit, 2026):** ~**25%** of US ChatGPT citations draw on Wikipedia + Reddit
+combined.
+
+**Overthink Group (2026):** **70.8%** of citations for "best/top" commercial queries come from
+listicle-style pages.
+
+**G2 (2026):** **38%** of B2B buyers say review sites are their most confidence-inspiring shortlist
+signal.
+
+The takeaway: for trust-heavy categories, third-party corroboration — community discussion, listicles,
+review platforms — dominates the sources AI systems cite. A brand's own website is necessary but not
+sufficient to be recommended.
+
+## The citation concentration data
+
+A reference for the citation concentration findings.
+
+| Study | Scale | Concentration finding |
+| --- | --- | --- |
+| The Stacc (May 2026) | 1,000 AI Overviews | Top 1% of domains ≈ 47% of citations |
+| Health vertical analyses (2026) | Multiple | Top-10 domains ≈ 71% of citations (NIH, Mayo Clinic, CDC leading) |
+| Wellows (2026) | 22.7M citations | 79.6% of sources cited by exactly one engine; 0.31% by all five |
+| Trakkr (2026) | 108K URLs, 8 models, 10 months | 73.5% of cited URLs appeared exactly once |
+| SurfacedBy (2026) | 127,198 citations, 5 engines | 69.6% single-engine-only; Gemini outlier at ~41% citation rate |
+
+## The schema and structure multipliers
+
+| Lever | Evidence | Source type | Approximate effect |
+| --- | --- | --- | --- |
+| FAQ structured data | Controlled experiment | Experiment | ~+44% visibility |
+| FAQ / how-to schema | 1,000 AI Overviews sample | Correlation | Cited at ~2.3–2.8× baseline |
+| Named expert sources | Controlled experiment | Experiment | ~+41% visibility |
+| Statistics and data in answers | Controlled experiment | Experiment | ~+33% visibility |
+| Citations and references in content | Controlled experiment | Experiment | ~+28% visibility |
+| Content freshness (updated ~30 days) | Large citation sample | Correlation | ~3.2× citation rate |
+| Keyword stuffing | Controlled experiment | Experiment | ~−8% visibility (negative control) |
+
+## The zero-click and AI Overview presence data
+
+| Metric | Figure | Source |
+| --- | --- | --- |
+| US searches ending without a click | ~68% | SparkToro (2026) |
+| AI Overview presence, US queries | ~48% | BrightEdge (early 2026) |
+| AI Overview presence, healthcare | ~88% | BrightEdge (early 2026) |
+| AI Overview presence, education | ~83% | BrightEdge (early 2026) |
+| AI Overview presence, B2B technology | ~82% | BrightEdge (early 2026) |
+| CTR reduction for top results with AIO | ~58% | Ahrefs (2026) |
+| SERPs showing AI Overviews | 20%+ | SparkToro (2026) |
+
+## The measurement cadence data
+
+| Finding | Figure | Source |
+| --- | --- | --- |
+| Citation half-life (brand level) | ~31 days | Trakkr (2026) |
+| Cited URLs appearing exactly once | 73.5% | Trakkr (2026) |
+| Single-engine-only sources | 79.6% | Wellows (2026) |
+| Source overlap between repeated runs of same prompt | 32–43% | Schulte and colleagues (2026) |
+| Recommended repeated runs per query per session | 7–8+ | Schulte and colleagues (2026) |
+| Recommended remeasurement window | 2–4 weeks | Schulte and colleagues (2026) |
+
+## The method note on conflicting numbers
+
+Several of the statistics above appear to conflict — BrightEdge's rising overlap vs 5WPR's collapsing
+overlap, for example. The reconciliation is method, not error:
+
+- **Different engines:** AI Overviews increasingly mirrors Google's own top results (BrightEdge's rising
+  line), while standalone assistants such as ChatGPT build their own source pools (5WPR's falling line).
+- **Different query sets:** branded vs non-branded, commercial vs informational — the overlap behaves
+  differently for each.
+- **Different definitions of "overlap":** "cited pages that rank" vs "ranking pages that get cited" are
+  not the same number.
+
+When you see a single AI-search statistic, the right question is not "is it true?" but "what exactly is
+it measuring, on what query set, for which engine?" The numbers above are reported as published, with
+the method where it matters.
+
+## Sources
+
+- BrightEdge — ZERO guide: AI Overview presence and overlap tracking (September 2025 / February 2026).
+- SparkToro — zero-click search data (2026).
+- Ahrefs — SEO and AI: 4M AI Overview-cited URLs, 863K keywords (March 2026).
+- seoClarity — AI search visibility: 362K cited keywords and ranking overlap (October 2025).
+- The Stacc — 1,000 AI Overviews: domain concentration and schema multipliers (May 2026).
+- DerivateX — B2B overlap audit: 100 queries, 1,259 citations (July 2026).
+- Trakkr — AI citations across 108K URLs, 8 models, 10 months: half-life and volatility (2026).
+- Wellows — 22.7M citations: source pools and cross-engine overlap (2026).
+- SurfacedBy — 5-engine citation study: 127,198 citations including Claude (2026).
+- OtterlyAI — 1M AI citations: technical-barrier analysis (February 2026).
+- BuzzStream — 12,000 AI responses: mention-to-citation conversion and AI Mode source counts (June 2026).
+- Semrush — 100M AI citations: Reddit share shift and LinkedIn shares by engine (2026).
+- cloro — State of AI Search and AI Search Index: engine citation rates, source counts (July 2026).
+- SearchAtlas — 104,855 local citations: local ranking factor correlations (2026).
+- Cairrot — 1.5M-prompt local study: Perplexity local signal lift (2026).
+- 5W — 680M-citation audit: ChatGPT source breakdown (2026).
+- Red-engage — 10k-citation Perplexity study (2026).
+- Overthink Group — "best/top" commercial query citation formats (2026).
+- G2 — Buyer Behavior and software-research surveys (2026).
+- 6sense — pre-contact favorite data (via G2, 2026).
+- Aggarwal et al. — AEO/GEO controlled experiments, KDD 2024, plus published replications.
+- Schulte and colleagues — "Don't Measure Once": repeated-run methodology (2026).
+- Ranqo — 102K prompt responses: brand ladder and listicle formats, arXiv:2606.20065 (2026).
+- Statista — search and zero-click trend data (2026).
+
+**Data caveats.** AI assistants change deployment constantly; these are point-in-time studies with
+differing methods and dates. We report them as published and flag where they conflict. Where you see
+"typical" or "roughly," the figure varies by study and query set. We do not claim access to any engine's
+internal ranking data — only to what the engines return to prompts.
