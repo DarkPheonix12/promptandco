@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Icon } from "./Icons";
 import { AnimatedLogo } from "./AnimatedLogo";
+import { externalProfiles } from "@/lib/entity";
 
 const footerLinks = {
   services: [
@@ -20,6 +21,7 @@ const footerLinks = {
     { label: "B2B", href: "/industries/b2b" },
     { label: "Professional Services", href: "/industries/professional-services" },
     { label: "Local Services", href: "/industries/local-services" },
+    { label: "India", href: "/industries/india" },
     { label: "All industries", href: "/industries" },
   ],
   resources: [
@@ -165,6 +167,19 @@ export function Footer() {
               © {new Date().getFullYear()} Prompt&Co. All rights reserved.
             </p>
             <div className="flex items-center gap-5">
+              {Object.values(externalProfiles)
+                .filter((p) => p.url.length > 0)
+                .map((p) => (
+                  <a
+                    key={p.name}
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] text-white/25 hover:text-white/60 transition-colors"
+                  >
+                    {p.name}
+                  </a>
+                ))}
               <a
                 href="/sitemap.xml"
                 className="text-[11px] text-white/25 hover:text-white/50 transition-colors"

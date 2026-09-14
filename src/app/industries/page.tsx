@@ -114,7 +114,7 @@ export default function IndustriesHubPage() {
 
           {/* Honest note about scope */}
           <p className="mt-8 max-w-3xl text-[13px] leading-6 text-brand-muted">
-            We work with brands in many other industries — these five are the
+            We work with brands in many other industries — these are the
             verticals we&apos;ve studied most deeply and written about most,
             not the only ones we serve. If your industry isn&apos;t listed,
             the free AI visibility audit is still the right starting point.

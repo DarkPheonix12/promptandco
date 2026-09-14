@@ -15,9 +15,7 @@ import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import {
-  OrganizationSchema,
-  PersonSchema,
-  WebSiteSchema,
+  EntityGraphSchema,
   BreadcrumbSchema,
   FAQSchema,
 } from "@/components/schema/SchemaMarkup";
@@ -27,9 +25,7 @@ export default function Home() {
   return (
     <>
       {/* Structured Data */}
-      <OrganizationSchema />
-      <PersonSchema />
-      <WebSiteSchema />
+      <EntityGraphSchema />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: siteConfig.url },

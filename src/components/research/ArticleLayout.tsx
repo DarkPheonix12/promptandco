@@ -1,6 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { siteConfig } from "@/lib/data";
+import { entityIds } from "@/lib/entity";
+import {
+  foundationOrganizationNode,
+  foundationWebSiteNode,
+} from "@/lib/entity-graph-nodes";
 import { researchUrl, type ResearchMeta } from "@/lib/research";
 
 const sanitizeLd = (jsonLd: Record<string, unknown>) =>
@@ -13,26 +18,45 @@ export default function ArticleLayout({
   meta: ResearchMeta;
   children: ReactNode;
 }) {
-  const blogPostingLd = {
+  const articleId = `${researchUrl(meta.slug)}#article`;
+
+  const graph: Record<string, unknown>[] = [
+    foundationOrganizationNode(),
+    foundationWebSiteNode(),
+    {
+      "@type": "Article",
+      "@id": articleId,
+      headline: meta.title,
+      description: meta.description,
+      datePublished: meta.datePublished,
+      dateModified: meta.dateModified,
+      inLanguage: "en",
+      keywords: meta.tags.join(", "),
+      image: `${siteConfig.url}/opengraph-image`,
+      author: { "@id": entityIds.organization },
+      publisher: { "@id": entityIds.organization },
+      isPartOf: { "@id": entityIds.website },
+      mainEntityOfPage: { "@type": "WebPage", "@id": researchUrl(meta.slug) },
+      about: { "@id": entityIds.organization },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Research",
+          item: `${siteConfig.url}/resources/research`,
+        },
+        { "@type": "ListItem", position: 3, name: meta.title, item: researchUrl(meta.slug) },
+      ],
+    },
+  ];
+
+  const articleLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: meta.title,
-    description: meta.description,
-    datePublished: meta.datePublished,
-    dateModified: meta.dateModified,
-    inLanguage: "en",
-    keywords: meta.tags.join(", "),
-    author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    mainEntityOfPage: researchUrl(meta.slug),
+    "@graph": graph,
   };
 
   const faqLd = meta.faq?.length
@@ -51,7 +75,7 @@ export default function ArticleLayout({
     <article className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: sanitizeLd(blogPostingLd) }}
+        dangerouslySetInnerHTML={{ __html: sanitizeLd(articleLd) }}
       />
       {faqLd ? (
         <script
@@ -89,6 +113,10 @@ export default function ArticleLayout({
 
         <p className="mt-4 text-lg leading-8 text-brand-dark-700">
           {meta.description}
+        </p>
+
+        <p className="mt-3 text-[13px] font-medium text-brand-muted">
+          By <span className="text-brand-primary">Prompt&Co.</span> Research
         </p>
 
         <div className="mt-8 border-b border-brand-border/60 pb-8">{children}</div>

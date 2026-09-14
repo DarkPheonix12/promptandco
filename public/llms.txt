@@ -6,6 +6,8 @@
 > across AI search surfaces including ChatGPT, Google AI Overviews and AI Mode, Perplexity,
 > Gemini, Copilot and Claude.
 
+Official domain and canonical name: Prompt&Co. — https://promptco.online
+
 Core services: [AI Search Optimization](https://promptco.online/services/ai-search-optimization),
 [Answer Engine Optimization](https://promptco.online/services/answer-engine-optimization),
 [Generative Engine Optimization](https://promptco.online/services/generative-engine-optimization),
@@ -37,6 +39,7 @@ Evidence-based playbooks per vertical, each with cited 2026 market data:
 - [AI Search Optimization for B2B](https://promptco.online/industries/b2b)
 - [AI Search Optimization for Professional Services](https://promptco.online/industries/professional-services)
 - [AI Search Optimization for Local Services](https://promptco.online/industries/local-services)
+- [AI Search Optimization for Indian Brands](https://promptco.online/industries/india): India-market AI search — the English-first retrieval edge, entity disambiguation and corroboration for Indian and India-targeting brands.
 
 ## Research and analysis
 

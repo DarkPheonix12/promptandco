@@ -36,6 +36,7 @@ export const navigation = {
         { label: "B2B", href: "/industries/b2b" },
         { label: "Professional Services", href: "/industries/professional-services" },
         { label: "Local Services", href: "/industries/local-services" },
+        { label: "India", href: "/industries/india" },
       ],
     },
     {
@@ -320,6 +321,7 @@ export const industries = [
   { name: "Hospitality", slug: "hospitality", icon: "star" },
   { name: "Technology", slug: "technology", icon: "cpu" },
   { name: "Local Services", slug: "local-services", icon: "map" },
+  { name: "India", slug: "india", icon: "globe" },
 ];
 
 // ─── Proof points ───
@@ -421,6 +423,11 @@ export const faqData = [
     question: "How long does AEO/GEO take?",
     answer:
       "Timelines vary by domain authority, competition, technical condition, content depth, industry and the scope of the engagement. We establish a baseline first and measure progress against defined visibility and business metrics.",
+  },
+  {
+    question: "Is Prompt&Co. the same company as promptco.ai?",
+    answer:
+      "No. Prompt&Co. is an independent AI search optimization agency operating at promptco.online. The product at promptco.ai is an unrelated, similarly-named entity with no affiliation to us. Our official domain is promptco.online and our canonical name is Prompt&Co. (with the ampersand).",
   },
 ];
 

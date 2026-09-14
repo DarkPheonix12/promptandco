@@ -166,6 +166,29 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* ─── Official identity ─── */}
+        <section className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
+            Official identity and domain
+          </h2>
+          <p className="mt-4 text-[15.5px] leading-8 text-brand-dark-700">
+            Prompt&Co. operates solely at{" "}
+            <a
+              href="https://promptco.online"
+              className="font-medium text-brand-primary hover:underline"
+            >
+              promptco.online
+            </a>
+            . Our canonical company name is{" "}
+            <strong>Prompt&Co.</strong> (with the ampersand).
+          </p>
+          <p className="mt-4 text-[15.5px] leading-8 text-brand-dark-700">
+            A separate, unrelated product operating at promptco.ai uses a similar
+            name. Prompt&Co. is an independent AI search optimization agency with
+            no affiliation, ownership or partnership with that entity.
+          </p>
+        </section>
+
         {/* ─── Team honesty section ─── */}
         <section className="border-y border-brand-border bg-brand-surface/60">
           <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8">

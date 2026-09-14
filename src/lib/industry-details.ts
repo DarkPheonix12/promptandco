@@ -555,5 +555,110 @@ export const industryDetails: Record<string, IndustryDetail> = {
     ],
   },
 
+  india: {
+    slug: "india",
+    heroTag: "Market",
+    heroTitle: "AI Search Optimization for Indian Brands",
+    heroSubtitle:
+      "Indian buyers ask AI first — and the answers usually favor English-first, third-party-corroborated brands regardless of where they're from. We help Indian and India-targeting brands become discoverable, disambiguated and cited in ChatGPT, Perplexity, Gemini, AI Overviews and Copilot.",
+    marketData: [
+      { stat: "65–79%", label: "of ChatGPT citations for 18 non-English languages flowed to English pages — English-first content is a structural advantage in AI retrieval (Search Engine Land, Aug 2026)" },
+      { stat: "38.2%", label: "English-prompt brand mention rate vs 20.9% French and 9.4% Japanese — English-language answers dominate the retrieval pool (MaxAEO, Jul 2026)" },
+      { stat: "2.3×", label: "higher mention rate for content written natively in the target language vs machine-translated mirrors (2026 multilingual citation study)" },
+      { stat: "70.8%", label: "of citations for 'best/top' commercial queries come from listicle-style pages — the format most brands in the Indian market never publish (Overthink Group, 2026)" },
+    ],
+    intro: {
+      heading: "India's buyers ask an AI first — and the answer rarely starts in India",
+      body: [
+        "India is among the fastest-adopting AI-search markets, and its buyers behave like modern buyers everywhere: they ask assistants for recommendations, shortlists and comparisons before they ever visit a brand's website. But when the query is in English — which most Indian commercial queries are — the retrieval stack favors English-first, third-party-corroborated sources regardless of geography. Being an Indian brand does not offset that bias; being English-first, entity-clear and independently cited does.",
+        "The data makes the opportunity explicit. Across 18 non-English languages ChatGPT fetched and cited English pages 65–79% of the time, and English-prompt brand mention rates (38.2%) dwarf non-English ones. An Indian market is, in retrieval terms, an English-first market with compounding advantages for brands that structure their entity, content and corroboration correctly. The failure mode is that domestic competition chases Google keywords while global sources quietly own the AI answer.",
+        "We measure first — a fixed prompt panel across ChatGPT, Perplexity, Gemini, AI Overviews and Copilot for your category, in the language your buyers actually ask in — then fix the entity, content and corroboration layers in priority order. Baseline before promises, always.",
+      ],
+    },
+    dynamics: [
+      {
+        title: "English bias is an edge if you use it",
+        description:
+          "ChatGPT's retrieval is heavily English-weighted. English-first Indian brands over-index in the citation pool relative to local-language competitors — but only if the underlying entity and page structure are sound.",
+      },
+      {
+        title: "Global sources crowd out domestic ones",
+        description:
+          "Commercial prompts lean on listicle and review sources built for US/European audiences. Indian brands absent from those roundups lose answer share even for home-market queries.",
+      },
+      {
+        title: "Engines diverge per engine",
+        description:
+          "ChatGPT prefers brand domains, Perplexity leans on community and review platforms, AI Overviews favors formatted, entity-backed pages. An India play must be per-engine, not one-size-fits-all.",
+      },
+      {
+        title: "Locale nuance is multiplying",
+        description:
+          "Hinglish and regional-language queries are rising. Native-language content still outperforms machine-translated mirrors by ~2.3× on mention rate — author locally, don't translate.",
+      },
+    ],
+    priorities: [
+      {
+        title: "Entity clarity and disambiguation",
+        description:
+          "Consistent company naming, Organization schema with a stable @id and real sameAs, and visible founder identities — so systems resolve your brand instead of a similarly-named entity.",
+      },
+      {
+        title: "English-first answer architecture",
+        description:
+          "Server-rendered, question-led pages with structured FAQs, extractable tables and explicit category definitions that assistants can quote with confidence.",
+      },
+      {
+        title: "Third-party corroboration in India and abroad",
+        description:
+          "Directories, reviews, Indian publications and the global listicles AI answers are built from — the corroboration layer that turns mentions into recommendations.",
+      },
+      {
+        title: "Comparison and listicle content",
+        description:
+          "Honest 'best/alternatives/compare' pages in your category — the single most-cited commercial format — produced fairly and structured for extraction.",
+      },
+      {
+        title: "Per-engine measurement panel",
+        description:
+          "Branded, commercial and informational prompts tracked weekly across five engines, with accuracy checks on what AI says about you.",
+      },
+    ],
+    metrics: [
+      { title: "India prompt mention share", description: "How often your brand appears for Indian-buyer intents across engines." },
+      { title: "Citation source mix", description: "Vendor-site vs listicle vs review vs community per engine — so you know which pipeline to invest in." },
+      { title: "Answer accuracy", description: "Whether systems describe your positioning, pricing and credentials correctly — the failure mode nobody tracks." },
+      { title: "India-sourced pipeline", description: "Attributable leads and dark-funnel influence from AI-mediated research." },
+    ],
+    faq: [
+      {
+        question: "Does AI search optimization actually work for Indian brands?",
+        answer:
+          "Yes — and India has a structural advantage. AI retrieval over-indexes on English content, so an English-first Indian brand with a clear entity and third-party corroboration can out-cite competitors of any country. We prove it per engine with a baseline before changing anything.",
+      },
+      {
+        question: "Should we optimize in English or in Hinglish / regional languages?",
+        answer:
+          "English first — it carries the retrieval weight (65–79% of ChatGPT citations for non-English queries flow to English pages). If you serve regional-language intent, author content natively in that language; machine-translated mirrors measurably underperform (~2.3× lower mention rate).",
+      },
+      {
+        question: "We target global clients from India. Does our location matter?",
+        answer:
+          "For global intent, location matters far less than entity clarity and corroboration. For India-local intent, business profiles, reviews and consistent citations behave like the local playbook. Most global-first Indian brands need both, in that order.",
+      },
+      {
+        question: "How is this different from what Indian SEO agencies offer?",
+        answer:
+          "Most optimize for Google rankings. This works the answer surfaces — per-engine measurement, entity disambiguation, listicle/review corroboration and answer-formatted content. Google SEO is the foundation underneath, not the program itself.",
+      },
+    ],
+    relatedServices: ["ai-search-optimization", "entity-optimization", "ai-visibility", "citation-optimization"],
+    relatedResearch: [
+      { title: "Multilingual AI search & international GEO", href: "/resources/research/multilingual-ai-search-international-geo-2026" },
+      { title: "Per-engine citation divergence", href: "/resources/research/per-engine-citation-divergence-2026" },
+      { title: "Wikipedia and Wikidata as entity corroboration", href: "/resources/research/22-wikipedia-wikidata-entity-corroboration-ai-citations-2026" },
+      { title: "Content formats that earn AI citations", href: "/resources/research/21-content-formats-ai-citations-listicles-2026" },
+    ],
+  },
 
 };
