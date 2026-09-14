@@ -45,10 +45,11 @@ export function Testimonials() {
             transition={{ delay: 0.2 }}
             className="text-base lg:text-lg text-brand-muted"
           >
-            We&apos;re a young agency, and we&apos;d rather earn trust the slow
-            way. Here&apos;s what you can verify about us today — and the
-            moment we have client results we can publish, they&apos;ll appear
-            here as real case studies with real numbers.
+            We don&apos;t do narratives — we do numbers. The only proof that
+            matters has receipts behind it, and the moment a client result
+            is ours to publish, it goes up here verified — never invented,
+            never borrowed. Until then, judge us by the audit and the
+            research: free, fast, and impossible to fake.
           </motion.p>
         </div>
 
