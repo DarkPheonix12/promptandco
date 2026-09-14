@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import { Icon } from "./Icons";
 
-const brandLogos = [
-  { name: "Lululemon", color: "#D31334" },
-  { name: "Sephora", color: "#000000" },
-  { name: "Marriott Vacations Club", color: "#1C1C1C" },
-  { name: "And Many More", color: "#2563eb" },
+const brandExperience = [
+  { label: "Top Fashion & Lifestyle", color: "#D31334" },
+  { label: "Global Consumer Brands", color: "#7C3AED" },
+  { label: "Hospitality & Travel", color: "#1C1C1C" },
+  { label: "And many more", color: "#2563eb" },
 ];
 
 const expertise = [
@@ -79,7 +79,7 @@ export function Founders() {
             transition={{ delay: 0.2 }}
             className="text-base lg:text-lg text-brand-muted leading-relaxed"
           >
-            Our founders have spent years at the intersection of technology, AI and enterprise strategy — working with some of the world&apos;s most recognized brands to solve complex digital challenges at scale.
+            Our founders have spent years at the intersection of technology, AI and enterprise strategy — working with top fashion and other global brands to solve complex digital challenges at scale.
           </motion.p>
         </div>
 
@@ -92,12 +92,12 @@ export function Founders() {
           className="mb-14"
         >
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.15em] text-brand-muted mb-6">
-            Trusted by world-class brands
+            Founders have worked with top fashion and other global brands
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {brandLogos.map((brand, i) => (
+            {brandExperience.map((item, i) => (
               <motion.div
-                key={brand.name}
+                key={item.label}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -106,9 +106,9 @@ export function Founders() {
               >
                 <span
                   className="text-sm font-bold tracking-tight"
-                  style={{ color: brand.color }}
+                  style={{ color: item.color }}
                 >
-                  {brand.name}
+                  {item.label}
                 </span>
               </motion.div>
             ))}

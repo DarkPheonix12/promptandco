@@ -13,12 +13,12 @@ const caseStudies = [
     duration: "8 months",
     challenge:
       "A mid-market SaaS company was invisible in AI-generated answers despite strong organic rankings. Competitors were being recommended by ChatGPT and Perplexity while their brand was absent.",
-    result: "340% increase in AI brand mentions, 5x improvement in recommendation rate",
+    result: "140% increase in AI brand mentions, 3x improvement in recommendation rate",
     metrics: {
-      mentions: "+340%",
-      citations: "+220%",
-      recommendations: "5x",
-      shareOfVoice: "38%",
+      mentions: "+140%",
+      citations: "+90%",
+      recommendations: "3x",
+      shareOfVoice: "18%",
     },
   },
   {
@@ -30,12 +30,12 @@ const caseStudies = [
     duration: "6 months",
     challenge:
       "A professional services firm needed to be visible when potential clients asked AI systems for recommendations in their category.",
-    result: "From zero AI visibility to top-3 recommendation across major platforms",
+    result: "From zero AI visibility to top-5 recommendation across major platforms",
     metrics: {
-      mentions: "+480%",
-      citations: "+310%",
-      recommendations: "Top 3",
-      shareOfVoice: "52%",
+      mentions: "+120%",
+      citations: "+75%",
+      recommendations: "Top 5",
+      shareOfVoice: "24%",
     },
   },
 ];
