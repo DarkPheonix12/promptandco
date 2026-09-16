@@ -474,8 +474,8 @@ export const seoMetadata = {
       "How AI-assisted buying works in SaaS, e-commerce, B2B, professional services and local services — with the 2026 data behind each vertical's strategy.",
   },
   pricing: {
-    title: "AEO & GEO Pricing — What AI Search Optimization Costs",
+    title: "Pricing — Book a Call, We Scope the Work, Then We Price It",
     description:
-      "Published 2026 market ranges for AEO/GEO agency retainers, audits and tools — plus what drives cost and how Prompt&Co. engagements are scoped.",
+      "No fixed packages. Book a call, we'll discuss the scope of work, then set a price together. See everything Prompt&Co. works on — AEO, GEO, entity, technical SEO, AI content, citations and more.",
   },
 };

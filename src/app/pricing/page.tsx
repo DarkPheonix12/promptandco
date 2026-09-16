@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { siteConfig } from "@/lib/data";
-import { BreadcrumbSchema, FAQSchema } from "@/components/schema/SchemaMarkup";
+import { siteConfig, services } from "@/lib/data";
+import { BreadcrumbSchema } from "@/components/schema/SchemaMarkup";
+import { Reveal } from "@/components/about/Reveal";
 
 export const metadata: Metadata = {
-  title: "AEO & GEO Pricing — What AI Search Optimization Costs",
+  title: "Pricing — Book a Call, We Scope the Work, Then We Price It",
   description:
-    "What AI search optimization (AEO/GEO) actually costs in 2026: published market ranges for agencies, audits and tools, what drives price, and how Prompt&Co. engagements are scoped.",
+    "No fixed packages. Book a call, we'll discuss your goals and the scope of work, then set a price together. Everything Prompt&Co. works on — AEO, GEO, entity, technical SEO, AI content, citations and more.",
   alternates: {
     canonical: "/pricing",
   },
@@ -17,37 +18,30 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://promptco.online/pricing",
     siteName: siteConfig.name,
-    title: "AEO & GEO Pricing — What AI Search Optimization Costs",
+    title: "Pricing — Book a Call, We Scope the Work, Then We Price It",
     description:
-      "Published 2026 market ranges for AI search optimization, what drives cost, and how Prompt&Co. engagements are scoped.",
+      "No fixed packages. We agree the scope of work on a call first, then set a price you can trust.",
   },
 };
 
-const pricingFaqs = [
+const steps = [
   {
-    question: "How much does Generative Engine Optimization (GEO) cost?",
-    answer:
-      "Published 2026 market guides put GEO/AEO agency retainers roughly between $2,000 and $15,000 per month depending on scope and competitiveness, with one-off AI visibility audits typically $1,000–$4,000. Budget-tier offerings exist ($199–$999/month), but market consensus is that retainers under ~$1,500/month are usually traditional SEO rebranded. Final pricing depends on your market's competitiveness, the state of your technical foundation and how much content and third-party work is required.",
+    number: "01",
+    title: "Book a call",
+    description:
+      "Free and no obligation. Tell us what you're working on, where you want to grow, and what questions you have about AI discoverability.",
   },
   {
-    question: "How much does an AI visibility audit cost?",
-    answer:
-      "Third-party 2026 guides cite roughly $1,000–$4,000 for a professional audit. Prompt&Co. starts with a free preliminary AI visibility assessment, then scopes a paid, full-depth audit only when there is a genuine engagement to plan.",
+    number: "02",
+    title: "We discuss scope",
+    description:
+      "Your goals, your category, your current AI visibility and what success actually looks like for you. We'll be straight about what's worth doing — and what isn't.",
   },
   {
-    question: "Can we just use an AI visibility tool instead of an agency?",
-    answer:
-      "Tools and agencies do different jobs. Monitoring platforms (roughly $50–$1,000/month in 2026) tell you where you stand; they don't fix rendering problems, build comparison content, or earn third-party citations. Many engagements pair a tool for measurement with an agency for the work — Prompt&Co.'s monitoring-only option works this way.",
-  },
-  {
-    question: "Why doesn't Prompt&Co. publish fixed price tiers?",
-    answer:
-      "Because honest scoping comes before honest pricing. The cost of an AI visibility program is driven by measurable factors — baseline visibility, technical condition, content depth, competitive citation footprint — that we assess first. Quoting a tier before the audit would be guessing, and we'd rather show you the assessment than a number picked to close a call.",
-  },
-  {
-    question: "How long do engagements run?",
-    answer:
-      "Audits are one-off projects. Foundation work typically runs three to six months, and measurement plus authority building compounds best over six to twelve. Monitoring engagements can run standalone indefinitely. We baseline everything in week one, so continuation is a decision based on measured movement — not lock-in.",
+    number: "03",
+    title: "Set the price together",
+    description:
+      "You get a price only once the scope is defined: what's included, how it's measured, and what the deliverables are. You decide from there. No lock-in, no pressure.",
   },
 ];
 
@@ -60,305 +54,186 @@ export default function PricingPage() {
           { name: "Pricing", url: `${siteConfig.url}/pricing` },
         ]}
       />
-      <FAQSchema faqs={pricingFaqs} />
       <Header />
       <main>
         {/* ─── Hero ─── */}
         <section className="bg-gradient-hero text-white relative overflow-hidden">
           <div className="absolute inset-0 grid-pattern opacity-20" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-primary/[0.08] rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-primary/[0.08] rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
           <div className="relative mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-accent">
               Pricing
             </p>
             <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
-              What AI search optimization actually{" "}
-              <span className="text-gradient">costs in 2026</span>
+              Let&apos;s scope the work together —{" "}
+              <span className="text-gradient">then we&apos;ll set the price.</span>
             </h1>
             <p className="mt-4 max-w-2xl text-[15px] leading-7 text-white/60 sm:text-base sm:leading-8">
-              Straight answer first: published market guides put AEO/GEO agency
-              retainers between roughly <strong className="text-white">$2,000 and $15,000 per month</strong>,
-              one-off audits around <strong className="text-white">$1,000–$4,000</strong>, and
-              monitoring tools at <strong className="text-white">$50–$1,000 per month</strong>.
-              Here&apos;s what drives those numbers — and how we scope engagements.
+              We don&apos;t sell fixed packages, because an honest price depends
+              on what your situation actually requires. Book a call, we&apos;ll
+              discuss your goals and the scope of work — and only then agree a
+              price you can trust. No obligation, no pressure.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
               >
-                Get your free AI visibility audit
+                Book a call
               </Link>
               <Link
-                href="/services/ai-visibility"
+                href="#what-we-work-on"
                 className="rounded-xl border border-white/[0.12] bg-white/[0.06] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/[0.1]"
               >
-                See what monitoring includes
+                See what we work on
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ─── Market rate table ─── */}
+        {/* ─── How pricing works ─── */}
         <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
-            2026 market rates, with sources
-          </h2>
-          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-brand-dark-700">
-            These are ranges reported by independent 2026 pricing guides — not
-            our price list. We publish them because almost every &ldquo;what does GEO
-            cost&rdquo; page online is an agency hiding its own number; the ranges are
-            useful context regardless of who you hire.
-          </p>
-
-          <div className="mt-8 overflow-hidden rounded-2xl border border-brand-border">
-            <table className="w-full text-left text-[14px]">
-              <thead className="bg-brand-surface text-[12px] uppercase tracking-wider text-brand-muted">
-                <tr>
-                  <th className="px-5 py-3.5 font-semibold">Engagement type</th>
-                  <th className="px-5 py-3.5 font-semibold">Typical 2026 range</th>
-                  <th className="px-5 py-3.5 font-semibold">What it buys</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-brand-border/60 bg-white">
-                <tr>
-                  <td className="px-5 py-4 font-semibold text-brand-dark">
-                    AI visibility audit (one-off)
-                  </td>
-                  <td className="px-5 py-4 text-brand-dark-700">~$1,000 – $4,000</td>
-                  <td className="px-5 py-4 text-brand-dark-700">
-                    Baseline measurement, technical + content + citation audit,
-                    prioritized roadmap
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-semibold text-brand-dark">
-                    Foundation retainer
-                  </td>
-                  <td className="px-5 py-4 text-brand-dark-700">~$2,000 – $6,000 / mo</td>
-                  <td className="px-5 py-4 text-brand-dark-700">
-                    Technical fixes, answer architecture, initial content and
-                    entity work for a focused scope
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-semibold text-brand-dark">
-                    Growth retainer
-                  </td>
-                  <td className="px-5 py-4 text-brand-dark-700">~$6,000 – $15,000 / mo</td>
-                  <td className="px-5 py-4 text-brand-dark-700">
-                    Competitive categories: content programs, digital PR,
-                    citation building, full measurement
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-semibold text-brand-dark">
-                    Monitoring-only
-                  </td>
-                  <td className="px-5 py-4 text-brand-dark-700">Below retainer rates</td>
-                  <td className="px-5 py-4 text-brand-dark-700">
-                    Prompt-panel tracking, share-of-answer and accuracy reporting
-                    without execution
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-semibold text-brand-dark">
-                    Self-serve AI visibility tools
-                  </td>
-                  <td className="px-5 py-4 text-brand-dark-700">~$50 – $1,000 / mo</td>
-                  <td className="px-5 py-4 text-brand-dark-700">
-                    Software-only tracking — useful measurement, no execution
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-[12.5px] leading-5 text-brand-muted">
-            Sources: 2026 pricing guides from OutreachBloom ($2k–$10k B2B
-            retainers; $1k–$4k audits), RevvGrowth ($3k–$6k basic, $6k–$12k
-            growth tiers), The Remarkable Agency ($3k–$15k retainers),
-            PageTraffic ($1.5k–$10k/mo, up to $30k), Icecube Digital
-            ($1.5k–$50k+), and tool-cost roundups from Strategi.is and XSeek
-            ($50–$1,000/mo platforms). Low-cost subscription GEO tiers
-            ($199–$999/mo, Mainstreethost) exist but sit far below the
-            consensus floor for genuine multi-engine work. Ranges vary by
-            market and study methodology; treat them as orientation, not
-            quotes.
-          </p>
-
-          <div className="mt-8 rounded-2xl border border-amber-300/40 bg-amber-50/60 p-5">
-            <p className="text-[14px] leading-6 text-brand-dark-700">
-              <strong className="text-brand-dark">One warning from the market:</strong>{" "}
-              2026 guides consistently note that AI-search retainers priced
-              under ~$1,500/month are usually traditional SEO rebranded — the
-              economics of genuine AI visibility work (audits across engines,
-              content restructuring, citation building, measurement) don&apos;t
-              support it. If a quote seems too cheap, ask what specifically
-              gets delivered.
-            </p>
-          </div>
-        </section>
-
-        {/* ─── What drives cost ─── */}
-        <section className="border-y border-brand-border bg-brand-surface/60">
-          <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
+          <Reveal>
             <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
-              What actually drives the price
+              How pricing works
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                {
-                  title: "Competitive density of your prompts",
-                  description:
-                    "Getting cited for \"best CRM for dentists\" costs less than displacing incumbents for \"best CRM\". We measure prompt-level competitiveness before quoting.",
-                },
-                {
-                  title: "Technical condition",
-                  description:
-                    "A site blocking AI crawlers or rendering empty to agents needs foundation work before content or PR can compound. Clean sites skip that phase entirely.",
-                },
-                {
-                  title: "Content depth vs. gap",
-                  description:
-                    "Rebuilding existing strong content into answer-ready form is cheaper than creating the comparison, research and vertical pages your category's answers require.",
-                },
-                {
-                  title: "Third-party footprint",
-                  description:
-                    "If review platforms, directories and publications already corroborate your brand, the authority phase is shorter. If you're absent from them, that build-out is the bulk of the effort.",
-                },
-                {
-                  title: "Number of surfaces measured",
-                  description:
-                    "Full-panel measurement across ChatGPT, AI Overviews, AI Mode, Perplexity, Gemini, Copilot and Claude costs more to run than a two-engine check — but it's the difference between data and anecdotes.",
-                },
-                {
-                  title: "Who executes",
-                  description:
-                    "We implement directly, work alongside your team, or hand engineering-ready tickets. More of your team executing means lower cost and faster internal capability.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-brand-border bg-white p-6"
-                >
-                  <h3 className="text-base font-bold text-brand-dark">
-                    {item.title}
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-brand-dark-700">
+              Scope first, price second. That&apos;s the whole model — so the
+              number you hear is for the work you actually need, not a menu
+              option.
+            </p>
+          </Reveal>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {steps.map((step, i) => (
+              <Reveal key={step.number} delay={i * 0.1} className="h-full">
+                <div className="flex h-full flex-col rounded-2xl border border-brand-border bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-primary/30 hover:shadow-lg hover:shadow-brand-primary/[0.07]">
+                  <span className="font-mono text-[13px] font-bold tracking-widest text-brand-primary">
+                    {step.number}
+                  </span>
+                  <h3 className="mt-3 text-base font-bold text-brand-dark">
+                    {step.title}
                   </h3>
                   <p className="mt-2 text-[14px] leading-6 text-brand-dark-700">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── How Prompt&Co. engagements work ─── */}
-        <section className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
-            How Prompt&Co. engagements are scoped
-          </h2>
-          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-brand-dark-700">
-            We don&apos;t publish fixed tiers because the honest price depends on
-            what the audit finds. Every engagement follows the same sequence:
-          </p>
-          <ol className="mt-8 space-y-6">
-            {[
-              {
-                title: "Free preliminary assessment",
-                description:
-                  "We run a focused AI visibility check on your brand across the major engines and share what we find — including whether there's enough opportunity to justify a paid engagement. If there isn't, we'll say so.",
-                price: "Free",
-              },
-              {
-                title: "Full audit & roadmap",
-                description:
-                  "Baseline measurement on a defined prompt panel, technical and content audit, citation-landscape mapping and a prioritized roadmap with effort estimates you could hand to any competent team.",
-                price: "Fixed fee, scoped before start",
-              },
-              {
-                title: "Foundation phase",
-                description:
-                  "Technical fixes, structured data, answer architecture, priority content and entity work — the highest-impact changes first, measured against the baseline.",
-                price: "Monthly, sized to scope",
-              },
-              {
-                title: "Growth & authority phase",
-                description:
-                  "Content program, digital PR and citation building, tracked monthly with share-of-answer reporting and accuracy checks. Continue because the numbers moved — not because a contract says so.",
-                price: "Monthly, sized to scope",
-              },
-              {
-                title: "Monitoring-only option",
-                description:
-                  "Already have execution capacity in-house? We run the measurement layer — prompt panel, share of answer, citation sources, accuracy — and hand you the prioritized actions each month.",
-                price: "Monthly, below retainer rates",
-              },
-            ].map((step, i) => (
-              <li key={step.title} className="flex gap-4">
-                <span className="font-mono text-[13px] font-bold tracking-widest text-brand-primary">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="flex-1 rounded-2xl border border-brand-border bg-white p-5">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-base font-bold text-brand-dark">
-                      {step.title}
-                    </h3>
-                    <span className="rounded-full bg-brand-surface-alt px-3 py-1 text-[12px] font-semibold text-brand-primary">
-                      {step.price}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-[14.5px] leading-7 text-brand-dark-700">
                     {step.description}
                   </p>
                 </div>
-              </li>
+              </Reveal>
             ))}
-          </ol>
+          </div>
+
+          <Reveal delay={0.1} className="mt-6">
+            <div className="rounded-2xl border border-brand-border bg-brand-surface/60 p-5">
+              <p className="text-[13.5px] leading-6 text-brand-dark-700">
+                <strong className="text-brand-dark">A note on honesty:</strong>{" "}
+                we won&apos;t quote a price before we understand the work, and we
+                won&apos;t promise results we can&apos;t control. Every engagement
+                is measured against a baseline — so if you continue, you continue
+                because the numbers moved, not because a contract says so.
+              </p>
+            </div>
+          </Reveal>
         </section>
 
-        {/* ─── FAQ ─── */}
-        <section className="border-t border-brand-border bg-brand-surface/60">
-          <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
-              Pricing FAQs
-            </h2>
-            <div className="mt-6 divide-y divide-brand-border/60 rounded-xl border border-brand-border/60 bg-white">
-              {pricingFaqs.map((item) => (
-                <div key={item.question} className="p-5">
-                  <h3 className="text-[15px] font-semibold text-brand-dark">
-                    {item.question}
-                  </h3>
-                  <p className="mt-2 text-[14.5px] leading-7 text-brand-dark-700">
-                    {item.answer}
-                  </p>
-                </div>
+        {/* ─── What we work on ─── */}
+        <section
+          id="what-we-work-on"
+          className="border-y border-brand-border bg-brand-surface/60"
+        >
+          <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
+            <Reveal>
+              <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
+                What we work on
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="mt-3 max-w-3xl text-[15px] leading-7 text-brand-dark-700">
+                Everything below is part of the same discipline: making your
+                brand discoverable, understandable, citable and recommendable
+                across AI-driven search. Most engagements combine several — the
+                mix is decided on the call.
+              </p>
+            </Reveal>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service, i) => (
+                <Reveal key={service.slug} delay={(i % 3) * 0.08} className="h-full">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="group relative block h-full overflow-hidden rounded-2xl border border-brand-border bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl hover:shadow-brand-primary/10"
+                  >
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-primary/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-[15px] font-bold text-brand-dark transition-colors group-hover:text-brand-primary">
+                        {service.title}
+                      </h3>
+                      <span className="flex h-6 w-6 -translate-x-1 items-center justify-center rounded-full border border-brand-border text-brand-muted opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m12 5 7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                    <p className="mt-1.5 text-[13.5px] leading-5 text-brand-dark-700">
+                      {service.description}
+                    </p>
+                  </Link>
+                </Reveal>
               ))}
             </div>
+
+            <Reveal delay={0.1}>
+              <p className="mt-6 text-[12.5px] leading-5 text-brand-muted">
+                Not sure which of these your brand needs? That&apos;s exactly what
+                the call is for.{" "}
+                <Link
+                  href="/contact"
+                  className="font-medium text-brand-primary hover:underline"
+                >
+                  Book a call
+                </Link>{" "}
+                and we&apos;ll help you figure it out.
+              </p>
+            </Reveal>
           </div>
         </section>
 
         {/* ─── CTA ─── */}
         <section className="border-t border-brand-border">
           <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
-            <div className="rounded-2xl bg-gradient-hero p-6 sm:p-10">
-              <h2 className="text-xl font-bold text-white sm:text-2xl">
-                The audit is free. The findings are yours either way.
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-brand-surface/80 sm:text-[15px] sm:leading-7">
-                Start with a free AI visibility assessment across ChatGPT,
-                Perplexity, Gemini, AI Overviews, AI Mode, Copilot and Claude —
-                then decide if a paid engagement is worth it, with numbers in
-                hand.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-5 inline-block rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
-              >
-                Get your free AI visibility audit
-              </Link>
-            </div>
+            <Reveal>
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-hero p-6 sm:p-10">
+                <div className="absolute inset-0 grid-pattern opacity-10" />
+                <div className="absolute -top-16 right-0 h-[220px] w-[220px] rounded-full bg-brand-primary/20 blur-[90px] animate-glow-pulse" />
+                <div className="relative">
+                  <h2 className="text-xl font-bold text-white sm:text-2xl">
+                    Let&apos;s talk scope first.
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-brand-surface/80 sm:text-[15px] sm:leading-7">
+                    Book a free, no-obligation call. We&apos;ll discuss where you
+                    want to grow, what the work looks like — and agree a price
+                    that fits the actual scope.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-block rounded-lg bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+                  >
+                    Book a call
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
       </main>
