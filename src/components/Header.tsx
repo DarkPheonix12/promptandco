@@ -44,19 +44,26 @@ export function Header() {
                 onMouseEnter={() => setActiveDropdown(item.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
-                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-brand-dark-700 hover:text-brand-primary transition-colors rounded-lg hover:bg-brand-surface/80"
-                  aria-expanded={!!item.children}
-                >
-                  {item.label}
-                  {item.children && (
+                {item.children ? (
+                  <button
+                    className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-brand-dark-700 hover:text-brand-primary transition-colors rounded-lg hover:bg-brand-surface/80"
+                    aria-expanded={!!item.children}
+                  >
+                    {item.label}
                     <Icon
                       name="chevron-down"
                       size={12}
                       className="opacity-40"
                     />
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-brand-dark-700 hover:text-brand-primary transition-colors rounded-lg hover:bg-brand-surface/80"
+                  >
+                    {item.label}
+                  </Link>
+                )}
 
                 {/* Dropdown */}
                 {item.children && activeDropdown === item.label && (
