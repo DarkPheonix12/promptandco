@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { siteConfig } from "@/lib/data";
+import { siteConfig, industries } from "@/lib/data";
+import { industryDetails } from "@/lib/industry-details";
 import { BreadcrumbSchema } from "@/components/schema/SchemaMarkup";
 
 export const metadata: Metadata = {
@@ -119,6 +120,74 @@ export default function AboutPage() {
             >
               Read the research
             </Link>
+          </div>
+        </section>
+
+        {/* ─── Industries we serve ─── */}
+        <section className="border-y border-brand-border bg-brand-surface/60">
+          <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-brand-dark sm:text-3xl">
+              Industries we deliver AI search optimization for
+            </h2>
+            <p className="mt-4 max-w-3xl text-[15.5px] leading-8 text-brand-dark-700">
+              Every page below maps to our full service stack — AEO, GEO,
+              entity optimization, technical SEO, citation optimization, AI
+              content and digital PR. Nothing about the method changes by
+              vertical; what changes is which signals, corroboration sources
+              and KPIs matter most in your category.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {industries
+                .filter((ind) => industryDetails[ind.slug])
+                .map((ind) => {
+                  const detail = industryDetails[ind.slug];
+                  const industryLabel = ind.name;
+                  const capabilityLines: Record<string, string> = {
+                    saas: "Product and pricing pages made answer-ready; comparison content that earns AI citations; review platform presence your buyers actually read.",
+                    ecommerce: "Product and category data cleanup at catalog scale; buying guides that assistant systems extract; review-footprint development.",
+                    b2b: "Category education content that buying committees ask for; expert entities, review platforms and the PR footprint that makes systems trust and cite you.",
+                    "professional-services": "Entity clarity, credential signals and directory alignment; practitioner-authored expertise content that demonstrates rather than claims.",
+                    "local-services": "Profile excellence, genuine review systems, consistent local entity signals and answer-formatted local pages.",
+                    education: "Authority content that AI systems retrieve for learner and enrollment queries; structured course data, program comparisons and third-party corroboration.",
+                    healthcare: "Accurate clinical and practice entity signals; answer-ready service and condition pages; directory, review and citation hygiene where trust is non-negotiable.",
+                    finance: "Entity resolution, compliance-sensitive content architecture, comparison pages and the corroboration layer that makes assistants recommend you — not a competitor.",
+                    technology: "Developer and technical documentation structured for extraction; product, integration and comparison content; category authority that AI systems actually cite.",
+                    legal: "Credential-readiness across site, schema and directories; practice-area expertise content that earns trust; local and specialty AI visibility.",
+                    "real-estate": "Listings, location and market intelligence made answer-ready; review and directory signals; local and property-search visibility in AI-mediated discovery.",
+                    hospitality: "Experience, availability and local-inventory signals that assistants retrieve; review-response and listing consistency; travel and booking intent visibility.",
+                    india: "English-first retrieval strategy; entity disambiguation for the Indian market; third-party corroboration that cuts through global and domestic noise.",
+                  };
+                  return (
+                    <Link
+                      key={ind.slug}
+                      href={`/industries/${ind.slug}`}
+                      className="group rounded-2xl border border-brand-border bg-white p-5 transition hover:-translate-y-0.5 hover:border-brand-primary/40 hover:shadow-xl hover:shadow-brand-primary/5"
+                    >
+                      <p className="text-sm font-semibold text-brand-primary">
+                        {industryLabel}
+                      </p>
+                      <h3 className="mt-2 text-[15px] font-bold text-brand-dark group-hover:text-brand-primary">
+                        {detail.heroTitle}
+                      </h3>
+                      <p className="mt-1.5 text-[13.5px] leading-5 text-brand-dark-700">
+                        {capabilityLines[ind.slug] ?? "Full AEO / GEO capability, adapted to this vertical."}
+                      </p>
+                    </Link>
+                  );
+                })}
+            </div>
+            <p className="mt-6 text-[12.5px] leading-5 text-brand-muted">
+              Don&apos;t see your vertical listed here? Our methodology applies
+              to any category where AI-assisted discovery is happening — the
+              starting point is always a measured baseline.{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-brand-primary hover:underline"
+              >
+                Get a free AI visibility audit
+              </Link>{" "}
+              and we&apos;ll tell you what your category looks like today.
+            </p>
           </div>
         </section>
 
