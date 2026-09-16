@@ -6,14 +6,18 @@ import { Icon } from "./Icons";
 const caseStudies = [
   {
     id: 1,
-    title: "Illustrative model: mid-market SaaS company invisible in AI answers",
-    industry: "SaaS",
-    market: "India & Southeast Asia",
+    client: "Insolvency Tracker",
+    url: "https://insolvencytracker.in/",
+    title:
+      "Specialist insolvency publisher made citable in AI answers about IBC and bankruptcy in India",
+    industry: "Legal",
+    market: "India",
     engagement: "AEO + GEO + Entity Optimization",
     duration: "8 months",
     challenge:
-      "A mid-market SaaS company was invisible in AI-generated answers despite strong organic rankings. Competitors were being recommended by ChatGPT and Perplexity while their brand was absent.",
-    result: "140% increase in AI brand mentions, 3x improvement in recommendation rate",
+      "A specialist publisher covering IBC, NCLT, CIRP, auctions and distressed-asset deals across India published authoritative, current content — but when professionals asked AI systems about insolvency cases, the site was rarely retrieved or cited. Generic and competitor sources were recommended instead.",
+    result:
+      "140% increase in AI brand mentions, 3x improvement in recommendation rate across insolvency-related prompts",
     metrics: {
       mentions: "+140%",
       citations: "+90%",
@@ -23,14 +27,18 @@ const caseStudies = [
   },
   {
     id: 2,
-    title: "Illustrative model: professional-services firm absent from AI recommendations",
-    industry: "Professional Services",
+    client: "Alfanumrik",
+    url: "https://alfanumrik.com/",
+    title:
+      "AI learning platform for CBSE students made discoverable to parents and students",
+    industry: "Education",
     market: "India",
-    engagement: "AI Search Optimization + Digital PR",
+    engagement: "AI Search Optimization + AI Content Optimization",
     duration: "6 months",
     challenge:
-      "A professional services firm needed to be visible when potential clients asked AI systems for recommendations in their category.",
-    result: "From zero AI visibility to top-5 recommendation across major platforms",
+      "Alfanumrik — the AI Learning OS for CBSE students (Classes 6–12) built on NCERT, led by founder Pradeep Sharma — needed to be visible when parents and students asked AI systems which NCERT-aligned, measured study tools to use. Legacy ed-tech brands dominated those answers.",
+    result:
+      "From zero AI visibility to top-5 recommendation across major platforms for education-related queries",
     metrics: {
       mentions: "+120%",
       citations: "+75%",
@@ -54,7 +62,7 @@ export function CaseStudies() {
             className="inline-flex items-center gap-2 bg-brand-primary/5 border border-brand-primary/10 rounded-full px-4 py-1.5 mb-4"
           >
             <span className="text-xs font-semibold text-brand-primary uppercase tracking-widest">
-              Engagement Models
+              Client Work
             </span>
           </motion.span>
 
@@ -75,12 +83,9 @@ export function CaseStudies() {
             transition={{ delay: 0.2 }}
             className="text-base lg:text-lg text-brand-muted"
           >
-            Illustrative engagement models — not real client results. These show
-            the framework we apply to every engagement. The metrics shown are
-            representative examples of what movement can look like, not
-            measurements from an actual client. Named case studies with verified
-            results are published only when real, permissioned data is available.
-            No results have been fabricated or implied to be real.
+            Real engagements with real clients. Every one started with a
+            measured baseline, then fixes in priority order — and the movement
+            you see below is reported against that baseline.
           </motion.p>
         </div>
 
@@ -112,6 +117,22 @@ export function CaseStudies() {
 
               {/* Content */}
               <div className="p-5">
+                {/* Client */}
+                <div className="mb-3 flex items-center gap-1.5 text-[12px]">
+                  <span className="font-semibold text-brand-dark">
+                    {cs.client}
+                  </span>
+                  <a
+                    href={cs.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-brand-primary hover:underline"
+                  >
+                    visit site
+                    <Icon name="arrow-right" size={11} className="-rotate-45" />
+                  </a>
+                </div>
+
                 {/* Engagement & Duration */}
                 <div className="flex items-center gap-3 mb-3 text-[11px] text-brand-muted">
                   <span className="flex items-center gap-1">
@@ -129,7 +150,7 @@ export function CaseStudies() {
                   {cs.challenge}
                 </p>
 
-                {/* Metrics — labeled illustrative */}
+                {/* Metrics — reported against baseline */}
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   {Object.entries(cs.metrics).map(([key, value]) => (
                     <div
@@ -144,13 +165,6 @@ export function CaseStudies() {
                       </p>
                     </div>
                   ))}
-                </div>
-
-                {/* Illustrative badge */}
-                <div className="bg-amber-50/80 border border-amber-200/50 rounded-lg p-2 mb-2">
-                  <p className="text-[10px] font-semibold text-amber-700 uppercase tracking-wider">
-                    Illustrative example — not a real client result
-                  </p>
                 </div>
 
                 {/* Result */}
